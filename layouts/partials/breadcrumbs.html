@@ -1,0 +1,15 @@
+<div class="wrap-breadcrumb">
+    <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
+        <ul>
+            {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+            {{ define "breadcrumbnav" }}
+              {{ if and .p1.Parent.Parent (not .p1.Parent.Parent.IsHome) }}
+                {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 ) }}
+              {{ end }}
+              <li{{ if eq .p1 .p2 }} class=" is-active" {{ end }}>
+                <a href="{{ .p1.Permalink }}">{{.p1.Title}}</a>
+              </li>
+            {{ end }}
+        </ul>
+    </nav>
+</div>

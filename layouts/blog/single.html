@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-two-thirds">
+      <div class="container is-fluid">
+        <h1 class="title is-1">{{.Title}}</h1>
+        <p class="is-italic">Published on {{.Date.Format "02 Jan 2006"}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-two-thirds">
+      <div class="container is-fluid">
+        <div class="content">
+          {{.Content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns">
+    <div class="column is-one-third">
+      <div class="content">
+        {{partial "related" .}}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

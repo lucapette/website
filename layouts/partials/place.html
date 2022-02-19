@@ -1,0 +1,32 @@
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <a href="{{.Permalink}}">
+                <p class="title">{{.Title}}</p>
+            </a>
+        </div>
+
+        <nav class="level">
+            <div class="level-left">
+                {{ template "placenav" (dict "p1" .Parent "p2" .) }}
+                  {{ define "placenav" }}
+                    {{ if and .p1.Parent (ne .p1.Parent.Params.Name "atlas")  }}
+                      {{ template "placenav" (dict "p1" .p1.Parent "p2" .p2 ) }}
+                    {{ end }}
+
+                    <div class="level-item">
+                      <div class="tags">
+                        <a class="tag" href="{{.p1.Permalink}}">{{.p1.Params.Name}}</a>
+                      </div>
+                    </div>
+                {{ end }}
+            </div>
+
+            <div class="level-right">
+                <div class="level-item">
+                    <span class="is-italic">{{.Lastmod.Format "02 Jan 2006"}}</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</article>

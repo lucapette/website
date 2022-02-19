@@ -1,0 +1,22 @@
+baseURL = "https://chessatlas.net/"
+languageCode = "en-us"
+title = "Chess atlas"
+summaryLength = 30
+enableGitInfo = true
+
+
+[menu]
+  [[menu.main]]
+    indentifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = "keywords"
+    weight = 100
