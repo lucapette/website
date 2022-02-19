@@ -1,0 +1,19 @@
+@import "theme/main.scss";
+
+@import "icons.scss";
+
+.wrap-breadcrumb {
+    padding-left: 1rem;
+}
+
+.is-separated-right {
+    &:not(:last-child) {
+        border-right: 1px solid $grey-lighter;
+    }
+}
+
+.is-separated-bottom {
+    &:not(:last-child) {
+        border-bottom: 1px solid $grey-lighter;
+    }
+}
