@@ -1,6 +1,6 @@
-baseURL = "https://chessatlas.net/"
+baseURL = "https://lucapette.me"
 languageCode = "en-us"
-title = "Chess atlas"
+title = "Luca Pette"
 summaryLength = 30
 enableGitInfo = true
 

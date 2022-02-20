@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  {{ partial "head" . }}
+
+  <body>
+    <div class="wrap">
+      {{ partial "header" . }}
+
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title has-text-centered">
+              Hi! You just found Luca Pette's website.
+            </h1>
+          </div>
+        </div>
+        <div class="content">
+          <p class="has-text-centered">
+            I love sharing what I write and I use this website to publish my
+            articles. I love writing about anything related to my interests.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="tile is-4 is-vertical is-parent is-separated-right">
+          <h2>Recent articles:</h2>
+
+          {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
+          <div class="tile is-child is-separated-bottom">
+            {{ partial "post" .}}
+          </div>
+          {{end}}
+        </div>
+      </section>
+    </div>
+
+    {{ partial "footer" . }}
+  </body>
+</html>
