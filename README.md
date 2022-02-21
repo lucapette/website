@@ -9,3 +9,4 @@ My personal website
 - rewrite about page
 - blog index page should group things logically 
 - paginate archive
+- import images from old website
