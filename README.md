@@ -7,4 +7,5 @@ My personal website
 
 - add relevant links to footer
 - rewrite about page
-- blog inde page should group things logically 
+- blog index page should group things logically 
+- paginate archive

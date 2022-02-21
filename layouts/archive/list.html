@@ -11,9 +11,13 @@
 <section class="section">
   <div class="columns">
     <div class="column is-two-thirds">
-      {{ range .Pages }}
-      <div class="box">{{partial "post" .}}</div>
-      {{ end }}
+      <ul>
+        {{ range (where site.RegularPages "Type" "in" "writing") }}
+        <li>
+          <span><a href="{{.Permalink}}">{{.Title}}</a></span>
+        </li>
+        {{ end }}
+      </ul>
     </div>
   </div>
 </section>
