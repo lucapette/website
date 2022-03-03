@@ -1,7 +1,0 @@
-<div id="{{.Get "id"}}" class="diagram"></div>
-<script>
-    new ChessBoard.Board(document.getElementById('{{.Get "id"}}'), {
-        startingFENPosition: '{{.Get "position"}}',
-        coordinates: true,
-    })
-</script>
