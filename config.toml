@@ -3,8 +3,6 @@ languageCode = "en-us"
 title = "Luca Pette"
 summaryLength = 30
 enableGitInfo = true
-
-
 [menu]
   [[menu.main]]
     indentifier = "home"
