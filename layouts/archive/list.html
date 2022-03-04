@@ -5,19 +5,23 @@
 </section>
 
 <section class="section">
-  <div class="content">{{.Content}}</div>
-</section>
-
-<section class="section">
   <div class="columns">
     <div class="column is-two-thirds">
-      <ul>
-        {{ range (where site.RegularPages "Type" "in" "writing") }}
-        <li>
-          <span><a href="{{.Permalink}}">{{.Title}}</a></span>
-        </li>
-        {{ end }}
-      </ul>
+      <div class="content">
+        <p>{{.Content}}</p>
+        <ul>
+          {{ range (where site.RegularPages "Type" "in" "writing") }}
+          <li>
+            <span
+              ><a href="{{.Permalink}}">{{.Title}}</a>
+              <span class="has-text-grey-light is-size-7 is-italic"
+                >{{.Date | time.Format ":date_long" }}</span
+              ></span
+            >
+          </li>
+          {{ end }}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

@@ -8,4 +8,4 @@ menu:
     parent: writing
 ---
 
-All my public writing in order of publication.
+My public writing in order of publication date.

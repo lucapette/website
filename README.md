@@ -6,6 +6,5 @@ My personal website
 ## TODO
 
 - rewrite about page
-- blog index page should group things logically 
-- paginate archive
+- blog index page should group things logically
 - add credit page
