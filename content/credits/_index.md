@@ -9,5 +9,7 @@ menu:
 
 This website uses the following:
 
-- gohugo
-- lucide
+- [gohugo](https://gohugo.io/)
+- [lucide](https://lucide.dev/)
+- [scss](https://sass-lang.com/)
+- [bulma](https://bulma.io/)

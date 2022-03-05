@@ -1,20 +1,20 @@
 {{ define "main" }}
-<section class="section">
-  <h1 class="title is-1">{{.Title}}</h1>
-  <p class="subtitle">{{.Description}}</p>
-</section>
+  <section class="section">
+    <h1 class="title is-1">{{ .Title }}</h1>
+    <p class="subtitle">{{ .Description }}</p>
+  </section>
 
-<section class="section">
-  <div class="content">{{.Content}}</div>
-</section>
+  <section class="section">
+    <div class="content">{{ .Content }}</div>
+  </section>
 
-<section class="section">
-  <div class="columns">
-    <div class="column is-two-thirds">
-      {{ range .Pages }}
-      <div class="box">{{partial "post" .}}</div>
-      {{ end }}
+  <section class="section">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        {{ range .Pages }}
+          <div class="box">{{ partial "post" . }}</div>
+        {{ end }}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 {{ end }}

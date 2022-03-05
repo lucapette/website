@@ -1,20 +1,31 @@
 <nav class="navbar " role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="navbarPrimary"
-            onclick="document.querySelectorAll('.navbar-menu, .burger').forEach(el => el.classList.toggle('is-active'));">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+  <div class="navbar-brand">
+    <a
+      role="button"
+      class="navbar-burger burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarPrimary"
+      onclick="document.querySelectorAll('.navbar-menu, .burger').forEach(el => el.classList.toggle('is-active'));"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  {{ $currentPage := . }}
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      {{ range .Site.Menus.main }}
+        <a
+          class="navbar-item {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "main" .) }}
+            is-active
+          {{ end }}"
+          href="{{ .URL }}"
+          title="{{ .Title }}"
+          >{{ .Name }}</a
+        >
+      {{ end }}
     </div>
-    {{ $currentPage := . }}
-    <div class="navbar-menu">
-        <div class="navbar-start">
-            {{ range .Site.Menus.main }}
-            <a class="navbar-item {{if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{end}}"
-                href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-            {{ end }}
-        </div>
-    </div>
+  </div>
 </nav>

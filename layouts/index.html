@@ -2,9 +2,11 @@
 <html>
   {{ partial "head" . }}
 
+
   <body>
     <div class="wrap">
       {{ partial "header" . }}
+
 
       <section class="hero">
         <div class="hero-body">
@@ -27,10 +29,10 @@
           <h2>Recent articles:</h2>
 
           {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
-          <div class="tile is-child is-separated-bottom">
-            {{ partial "post" .}}
-          </div>
-          {{end}}
+            <div class="tile is-child is-separated-bottom">
+              {{ partial "post" . }}
+            </div>
+          {{ end }}
         </div>
       </section>
     </div>

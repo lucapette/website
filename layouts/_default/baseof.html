@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-{{ partial "head" . }}
+  {{ partial "head" . }}
 
-<body>
-  <div class="wrap">
-    {{ partial "header" . }}
 
-    <div class="container is-fluid">
+  <body>
+    <div class="wrap">
+      {{ partial "header" . }}
 
-      {{block "breadcrumbs" . }} {{end}}
 
-      {{ block "main" . }} {{ end }}
+      <div class="container is-fluid">
+        {{ block "breadcrumbs" . }}{{ end }}
+
+        {{ block "main" . }}{{ end }}
+      </div>
     </div>
-  </div>
-  {{ partial "footer" . }}
-</body>
-
+    {{ partial "footer" . }}
+  </body>
 </html>
