@@ -1,13 +1,13 @@
 ---
 categories:
-- reading
+  - reading
 date: "2012-08-08T00:00:00Z"
 description: a brief review of the kindle touch
 keywords: kindle, kindle touch, amazon, review, reading
 title: A brief review of the kindle touch
 ---
 
-I generally write about Vim or Rails but this will be a small exception.  I'm
+I generally write about Vim or Rails but this will be a small exception. I'm
 writing about this little amazing device because a lot of people I respect
 (like [@sickill](https://twitter.com/sickill)
 [@wikimatze](https://twitter.com/wikimatze) and
@@ -36,7 +36,7 @@ wouldn't need such a device. Well, it left me surprised for the first time
 when the delivery guy brought it home. The weight and the dimensions are
 perfect. For some reason, I was sure it should have been more heavy. It fits
 perfectly in my hands. But this surprising feeling is nothing compared to the
-killing feature of the kindle. The *readability*. I know, I'm sure you're
+killing feature of the kindle. The _readability_. I know, I'm sure you're
 going to say that of course it's more readable than a monitor. But that is not
 surprising. The really surprising thing is that it's actually more readable
 than an average book. It really is. I was shocked by its readability.
@@ -45,15 +45,15 @@ Since my wife bought me the kindle touch I read about 15 novels and two
 technical books. The experience with novels (or more generally non-technical
 books) is absolute fantastic. There is no reason to buy a dead tree version of
 this books if you have a kindle. And it should be even more friendly for the
-environment. The experience with technical books is a bit different. I guess
-it really depends on the book you're reading. I read [Practical
+environment. The experience with technical books is a bit different. I guess it
+really depends on the book you're reading. I read [Practical
 Vim](http://pragprog.com/book/dnvim/practical-vim) (that you should buy if you
-use Vim) and [Object on Rails](http://objectsonrails.com/) (You should read
-this too if you want to avoid the ordinary Rails spaghetti-code architecture).
-Well, it has been a bit difficult to follow long code examples. I've the
-impression that the device should be a bit bigger for these kind of books.
+use Vim) and [Object on Rails](http://objectsonrails.com/) (You should read this
+too if you want to avoid the ordinary Rails spaghetti-code architecture). Well,
+it has been a bit difficult to follow long code examples. I've the impression
+that the device should be a bit bigger for this kind of book.
 
 So my final response is: if you read a lot of non-technical books you'll love
-it. It's just perfect and I could not be more happy. On the other
-hand, if you are considering buying it for just technical books I'm not
-totally sure you'll be enthusiast about it as much as I am.
+it. It's just perfect and I could not be more happy. On the other hand, if you
+are considering buying it for just technical books I'm not totally sure you'll
+be enthusiast about it as much as I am.
