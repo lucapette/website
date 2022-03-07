@@ -1,15 +1,16 @@
 ---
 categories:
-- deloominator
+  - golang
 date: "2017-05-30T00:00:00Z"
-description: deloominator is a Go/React application I've been working in the past
+description:
+  deloominator is a Go/React application I've been working in the past
   few months and it's time to open-source it
 keywords: golang, react, data visualization, vega-lite, sql, databases
-title: 'deloominator: a data visualization tool for SQL users'
+title: "deloominator: a data visualization tool for SQL users"
 ---
 
 Today I'm open-sourcing `deloominator`: a data visualization tool for SQL
-users.  You write SQL queries into a small web UI, you run your queries and
+users. You write SQL queries into a small web UI, you run your queries and
 `deloominator` automatically renders a chart if it can detect an appropriate
 visualization. Soon enough, you will be able to save your visualizations,
 create dashboards and reports.
@@ -44,32 +45,32 @@ ORDER BY 1
 
 The result may look like this:
 
-| country |  period  | acquisitions  |
-|---------|----------|---------------|
-| DE      |  2016-06 |  195          |
-| DE      |  2016-07 |  181          |
-| DE      |  2016-08 |  173          |
-| DE      |  2016-09 |  190          |
-| DE      |  2016-10 |  153          |
-| DE      |  2016-11 |  156          |
-| DE      |  2016-12 |  152          |
-| DE      |  2017-01 |  179          |
-| IT      |  2016-06 |  0            |
-| IT      |  2016-07 |  79           |
-| IT      |  2016-08 |  106          |
-| IT      |  2016-09 |  113          |
-| IT      |  2016-10 |  123          |
-| IT      |  2016-11 |  113          |
-| IT      |  2016-12 |  155          |
-| IT      |  2017-01 |  179          |
-| NL      |  2016-06 |  100          |
-| NL      |  2016-07 |  90           |
-| NL      |  2016-08 |  110          |
-| NL      |  2016-09 |  102          |
-| NL      |  2016-10 |  122          |
-| NL      |  2016-11 |  164          |
-| NL      |  2016-12 |  195          |
-| NL      |  2017-01 |  177          |
+| country | period  | acquisitions |
+| ------- | ------- | ------------ |
+| DE      | 2016-06 | 195          |
+| DE      | 2016-07 | 181          |
+| DE      | 2016-08 | 173          |
+| DE      | 2016-09 | 190          |
+| DE      | 2016-10 | 153          |
+| DE      | 2016-11 | 156          |
+| DE      | 2016-12 | 152          |
+| DE      | 2017-01 | 179          |
+| IT      | 2016-06 | 0            |
+| IT      | 2016-07 | 79           |
+| IT      | 2016-08 | 106          |
+| IT      | 2016-09 | 113          |
+| IT      | 2016-10 | 123          |
+| IT      | 2016-11 | 113          |
+| IT      | 2016-12 | 155          |
+| IT      | 2017-01 | 179          |
+| NL      | 2016-06 | 100          |
+| NL      | 2016-07 | 90           |
+| NL      | 2016-08 | 110          |
+| NL      | 2016-09 | 102          |
+| NL      | 2016-10 | 122          |
+| NL      | 2016-11 | 164          |
+| NL      | 2016-12 | 195          |
+| NL      | 2017-01 | 177          |
 
 From a business perspective, there's hardly anything I can understand looking at
 the raw data set. The only thing I can figure out is that we had no acquisitions
@@ -121,7 +122,7 @@ Simple SQL queries like the one I presented here can lead to important
 business discussions. Which, in turn, can change the future of a company.
 Transforming the data set of a simple SQL query into a chart helped me
 understand there was something wrong with our acquisition efforts during
-Christmas in Germany.  Maybe there's a bug in the localized code, maybe the
+Christmas in Germany. Maybe there's a bug in the localized code, maybe the
 marketing campaign was set up wrongly. Once again, without the graph I
 wouldn't know we had a problem.
 

@@ -1,6 +1,6 @@
 ---
 categories:
-- go
+  - terraform
 date: "2017-06-06T00:00:00Z"
 description: A short introduction to terraform
 keywords: terraform, operations, github
@@ -33,7 +33,7 @@ different colors. It's a small thing, but it hurts my visual memory and I
 don't want to manually sync them. Fortunately, `terraform` has a
 [GitHub](https://www.terraform.io/docs/providers/github/index.html) provider
 that exposes a
-[github\_issue\_label](https://www.terraform.io/docs/providers/github/r/issue\_label.html)
+[github_issue_label](https://www.terraform.io/docs/providers/github/r/issue_label.html)
 resource. A few days ago, I decided to try syncing labels using `terraform`.
 It took literally two minutes to implement a first working configuration.
 
@@ -75,7 +75,7 @@ projects. I could have replicated the `github_issue_labels` with a copy and
 paste and call it a day: it surely works that way, but it's not the most
 maintainable approach. Furthermore, writing the configuration manually is a
 pretty boring task. While reading the documentation, I ran into
-[meta-parameters](https://www.terraform.io/docs/configuration/resources.html#meta\-parameters),
+[meta-parameters](https://www.terraform.io/docs/configuration/resources.html#meta-parameters),
 which are parameters available to all the resources. With the help of the
 `count` parameter and some syntax, I wrote the following:
 

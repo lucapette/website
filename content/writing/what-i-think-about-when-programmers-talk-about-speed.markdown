@@ -1,6 +1,6 @@
 ---
 categories:
-- leading
+  - leading
 date: "2015-04-28T00:00:00Z"
 description: Some random thoughts about development and its relation to speed
 keywords: developers, speed, career
@@ -10,12 +10,12 @@ title: What I think about when programmers talk about speed
 A couple of weeks ago I had an interesting conversations with one of my team
 members. She confessed to me that she felt slow. I was pretty surprised but
 before moving on let me make a small premise: I hate the word performance. I'm
-not sure how this word feels to native speakers or to people who didn't work
-for Accenture. But to me, it sounds like "oh the gigantic pile of bullshit
-coming from the manager that has no clue, again." That's my usual reaction to
-the word and I don't like to use it at all because of this reason. I must
-confess I tried to find a better word for a long time but I ended up settling
-down for programmers' performance when it comes about measuring our job.
+not sure how it feels to native speakers or to people who didn't work for
+Accenture. But to me, it sounds like "oh the gigantic pile of bullshit coming
+from that manager that has no clue. Again." That's my usual reaction to
+"performance" and that's why I don't like to use it. I must confess I tried to
+find a better word for a long time but I ended up settling down for programmers'
+performance when it comes about measuring our job.
 
 With this premise in mind, I told her I was surprised and then she asked me to
 tell her more. And that conversation lead me to write this article, it had two
@@ -54,7 +54,7 @@ very fast at writing code, others are not. What matters here is your review
 culture. Are programmers helping each other? Are they moving code to the staging
 environment before/after a review? How does the review process work? I focus
 on those questions because, from what I've seen, most programmers that are
-"really fast" write code that is not ready to go anywhere.  They miss the
+"really fast" write code that is not ready to go anywhere. They miss the
 details, their code has a lot of "one time workarounds", there are typical
 startup comments everywhere ("#TODO Fix this").
 
@@ -115,7 +115,7 @@ try to convince you to go my way. Well, sorry. I'm going to disappoint you a
 bit. I think there isn't a third way. And I like that. I like that our job as
 managers is to find a moving stable equilibrium between the two sides of the
 spectrum. The balance between "ship this shit" and "oh wait let's make this
-perfect first" dictates your speed in the short and in the long run.  Focusing
+perfect first" dictates your speed in the short and in the long run. Focusing
 too much on the "ship this shit" will produce too much debt and focusing too
 much on "let's make it perfect" won't produce enough. A few paragraphs before
 I said we focus on the wrong metrics. And I really believe so. The balance I'm
@@ -134,7 +134,7 @@ It is important to keep in mind that what we do is not writing code but adding
 a feature on your website so your customers can enjoy your product more. This
 attitude kills a lot of discussion around technology. It keeps priorities
 focused on what matters for your company and your product. This discussion
-plays a major role in "developers' speed".  I'm not looking at their code, I'm
+plays a major role in "developers' speed". I'm not looking at their code, I'm
 looking at the features they write. And that's what I told the developer who
 felt slow. She might be kinda "slow" in the first two steps but we don't need
 to do almost anything in the third step. I like that and while explaining to

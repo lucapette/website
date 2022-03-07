@@ -3,17 +3,15 @@
     <h1 class="title is-1">{{ .Title }}</h1>
     <p class="subtitle">{{ .Description }}</p>
   </section>
-
-  <section class="section">
-    <div class="content">{{ .Content }}</div>
-  </section>
-
   <section class="section">
     <div class="columns">
       <div class="column is-two-thirds">
-        {{ range .Pages }}
+        {{ $paginator := .Paginate .Pages }}
+        {{ template "partials/pagination.html" . }}
+        {{ range $paginator.Pages }}
           <div class="box">{{ partial "post" . }}</div>
         {{ end }}
+        {{ template "partials/pagination.html" . }}
       </div>
     </div>
   </section>

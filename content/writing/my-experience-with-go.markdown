@@ -1,8 +1,9 @@
 ---
 categories:
-- go
+  - golang
 date: "2017-11-09T00:00:00Z"
-description: I have been using Go for a project long enough to form opinions around
+description:
+  I have been using Go for a project long enough to form opinions around
   it
 keywords: golang, deloominator
 title: My experience with Go
@@ -64,7 +65,7 @@ Good documentation is invaluable. Since everyone has their own definition of
 - Good docs have working examples I can start with
 - Good docs follow clear conventions that foster reading habits
 
-Official Go documentation is *really* good. I almost never have to search the
+Official Go documentation is _really_ good. I almost never have to search the
 web – the official docs are enough. As I use the superb
 [Dash](https://kapeli.com/dash) for browsing documentation, I can learn just
 with dash and the editor. There is little context switch.
@@ -89,7 +90,7 @@ was only toying around with Go. This was my first "big" Go project and
 [effective go](https://golang.org/doc/effective_go.html) was vital for me at the
 time. I'm not sure if the name of the document is inspired by the wonderful
 [Effective
-Java](https://www.goodreads.com/book/show/105099.Effective\_Java\_Programming\_Language_Guide).
+Java](https://www.goodreads.com/book/show/105099.Effective_Java_Programming_Language_Guide).
 Either way, the result is the same: I constantly went back to it as the ultimate
 source of inspiration for writing code. If you're relatively new to Go and want
 to learn more, "effective Go" is a perfect companion for your journey.
@@ -234,22 +235,22 @@ are a few things I enjoy about the standard library:
 
 - [net/http](https://golang.org/pkg/net/http/)
 
-   `deloominator` has only a few endpoints and `http` has almost everything I needed so
-   far. I only needed [goji](http://goji.io/) for registering endpoints under a
-   specific pattern.
+  `deloominator` has only a few endpoints and `http` has almost everything I needed so
+  far. I only needed [goji](http://goji.io/) for registering endpoints under a
+  specific pattern.
 
 - [net/httptest](https://golang.org/pkg/net/httptest/)
 
-   `httptest` provides a response recorder that makes testing HTTP handlers
-   easy and fun. It gives me great confidence, because I can assert behavior over
-   the actual response output; I do not mock anything.
+  `httptest` provides a response recorder that makes testing HTTP handlers
+  easy and fun. It gives me great confidence, because I can assert behavior over
+  the actual response output; I do not mock anything.
 
 - [database/sql](https://golang.org/pkg/database/sql)
 
-   Despite using a small ORM for the internal storage, I'm satisfied with `sql`.
-   It feels low-level compared to any other library I've used (I did mostly Ruby.
-   And Ruby has Sequel – an incredible library that deservers its own article).
-   Despite the low-level feeling, the package is well-designed and easy to use.
+  Despite using a small ORM for the internal storage, I'm satisfied with `sql`.
+  It feels low-level compared to any other library I've used (I did mostly Ruby.
+  And Ruby has Sequel – an incredible library that deservers its own article).
+  Despite the low-level feeling, the package is well-designed and easy to use.
 
 For some reason, working with time and dates has always been a
 bit painful in any language I used. Sadly, Go manages to do worse than other
@@ -339,6 +340,6 @@ twitter and I _really_ loved how
 [NateTheFinch](https://twitter.com/NateTheFinch) handled it. Another great
 example of positive attitude comes from a recent [twitter
 thread](https://twitter.com/_rsc/status/921211286591098880) by
-[_rsc](https://twitter.com/_rsc). We need  to see many more examples of this
+[\_rsc](https://twitter.com/_rsc). We need to see many more examples of this
 attitude, especially from members of the core team. Because, you know,
 "leading by example" has quite some truth in it.
