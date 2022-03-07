@@ -10,7 +10,7 @@
         <div class="content">
           <p>{{ .Content }}</p>
           <ul>
-            {{ range (where site.RegularPages "Type" "in" "writing") }}
+            {{ range .Pages }}
               <li>
                 <span
                   ><a href="{{ .Permalink }}">{{ .Title }}</a>

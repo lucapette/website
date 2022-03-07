@@ -1,15 +1,15 @@
 ---
 categories:
-- writing
+  - writing
 date: "2015-02-02T00:00:00Z"
 description: thoughts about journaling
 keywords: journaling
 title: What I'm learning with journaling
 ---
 
-A few months ago I started writing a journal and I'd like to share some
-thoughts about journaling and why I'm still doing it. I think it's something
-worth giving a try.
+A few months ago I started writing a journal and I'd like to share some thoughts
+about journaling and why I'm still doing it. I think it's something worth giving
+a try.
 
 ## I'm not sure why I started journaling
 

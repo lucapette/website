@@ -4,6 +4,9 @@
       <p class="title">
         <a class="has-text-grey-darker" href="{{ .Permalink }}">{{ .Title }}</a>
       </p>
+      <p class="subtitle is-small is-italic">
+        {{ .Date | time.Format ":date_long" }}
+      </p>
     </div>
 
     <div class="content">
@@ -12,7 +15,13 @@
 
     <nav class="level">
       <div class="level-left">
-        <p class="is-italic">{{ .Date | time.Format ":date_long" }}</p>
+        {{ range .Params.categories }}
+          <p>
+            <span class="tag has-text-grey-light"
+              ><a href="/categories/{{ . }}">{{ . }}</a></span
+            >
+          </p>
+        {{ end }}
       </div>
 
       <div class="level-right">

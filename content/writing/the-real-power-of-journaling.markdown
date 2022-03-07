@@ -1,12 +1,14 @@
 ---
 categories:
-- writing
+  - writing
 date: "2016-10-09T00:00:00Z"
-description: Some time ago I wrote about my first experiences with journaling. Now,
+description:
+  Some time ago I wrote about my first experiences with journaling. Now,
   it's more than one year I'm doing it and it changed everything
 keywords: journaling, day one, writing
 title: The real power of journaling
 ---
+
 I wrote about journaling a [while ago](/what-im-learning-with-journaling). At
 the time, I did it because I wanted to go back to writing and share something.
 It was a way of unblocking myself. Back then, I did not know where journaling
@@ -22,10 +24,10 @@ and I decided it was time to try something new. I bought [day
 one](http://dayoneapp.com/) and never looked back. I loved the app from the
 first day and I’ve been using it since then.
 
-Day One has a feature I did not understand when I started using the app.  The
+Day One has a feature I did not understand when I started using the app. The
 feature is simple and maybe even obvious: the app reminds you to have a look
 at what you wrote exactly one year ago on the same day. When the app started
-notifying me I could now check the feature, I actually did not do it.  I did
+notifying me I could now check the feature, I actually did not do it. I did
 not think it was such a big deal. At some point this summer thought, I Decided
 to give it a try and it was a revealing experience.
 
@@ -56,6 +58,6 @@ adult but they are still 365 days long each. It is a long time for my mind, I
 was never able to figure out patterns with my own behaviour. Now I can and I
 can correct what I do not like about it. I can at least try.
 
-I feel I will never give up on journaling anymore.  Reading my past self is so
+I feel I will never give up on journaling anymore. Reading my past self is so
 much more interesting than I’ve ever thought it would be. I hope this short
 piece of writing encourages you to try journaling yourself!

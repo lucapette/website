@@ -4,7 +4,13 @@
       <div class="column is-two-thirds">
         <div class="container is-fluid">
           <h1 class="title is-1">{{ .Title }}</h1>
-          <p class="is-italic">Published on {{ .Date.Format "02 Jan 2006" }}</p>
+          <p class="is-italic">
+            Published
+            {{ .Params.categories }}
+            {{ with .Params.catagories }}{{ delimit . ", " }}{{ end }}
+            on
+            {{ .Date.Format "02 Jan 2006" }}
+          </p>
         </div>
       </div>
     </div>

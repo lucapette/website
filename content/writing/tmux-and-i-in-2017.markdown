@@ -1,5 +1,6 @@
 ---
-catagory: tmux
+catagories:
+  - tmux
 date: "2017-03-26T00:00:00Z"
 description: Why and how I use tmux in 2017
 keywords: tmux, productivity, programming
@@ -54,7 +55,7 @@ else from a zsh shell. As my workflow for programming consists of:
 - one or more zsh instances,
 
 tmux is what makes this workflow possible for me nowadays. That's why I consider
-it *indispensable*. It allows me to move shell sessions around, rearrange them,
+it _indispensable_. It allows me to move shell sessions around, rearrange them,
 open new ones on the fly. I can resize windows when I need more space. And I
 only need the keyboard for that. I may spend an entire pomodoro session (in
 English that's a 25-minute session) without ever touching the mouse. Since I can
@@ -62,7 +63,7 @@ scroll windows up and down with the keyboard only, I find myself creating tmux
 sessions even when I don't need multiple windows. I can stay mouse free as long
 as I'm in the terminal.
 
-That's in short why *I* use tmux. If you're new to tmux and you want to give it
+That's in short why _I_ use tmux. If you're new to tmux and you want to give it
 a try, my advice is to do so only if your workflow is heavily based on shell
 sessions. I don't think I would invest in learning it otherwise.
 

@@ -1,6 +1,9 @@
 ---
+categories:
+  - leading
 date: "2017-02-06T00:00:00Z"
-description: The first time you do something, you learn a lot. It's time to share
+description:
+  The first time you do something, you learn a lot. It's time to share
   that.
 keywords: product management, product teams, product development
 title: All I have done wrong running a product team
@@ -47,7 +50,7 @@ useful information. One day I came to realise data is nothing. Blazer was
 useful because it could help with information, not because it increased data
 availability for the rest of the company. No one really cares about the
 conversion rate comparison in two different countries. Everyone wants to know
-the *why* of the differences and similarities. The information that explains
+the _why_ of the differences and similarities. The information that explains
 the data is the key. People can do a better job if they can extract
 knowledge out of data. Knowing _why_ a company performs better in a market is
 the key information. Finding the answer will improve your marketing strategy,
@@ -140,17 +143,17 @@ understand a no without any context?
 
 We were saying no but we were not explaining its benefit. It turns out this is
 easy to fix: you say no to people and always provide them with an explanation on
-what you are going to do *instead*. It's as easy as that. This approach comes
+what you are going to do _instead_. It's as easy as that. This approach comes
 with mutual benefits for both your product team and the rest of your company:
 
 - The rest of the company understands better how you prioritise product work.
-It's vital they get it.
+  It's vital they get it.
 - You have to convince people your prioritisation is
-correct. Great side-effects:
+  correct. Great side-effects:
   - You learn how to express things clearly and in plain English. No jargon, no
-  acronyms. It makes your communication more inclusive.
-  - Together with other teams you can catch errors in the prioritisation and that is a *great*
-  outcome too.
+    acronyms. It makes your communication more inclusive.
+  - Together with other teams you can catch errors in the prioritisation and that is a _great_
+    outcome too.
 
 ## Do not ship what you can't measure
 
@@ -166,7 +169,7 @@ never tested it yet. I think it would be as easy as:
 
 - Require all the feature specs to provide an expected impact.
 - Set up a recurrent meeting with the product team to evaluate expected impact
-versus reality.
+  versus reality.
 - Share the outcome of the meeting twice: with the development teams and with
   the rest of the company.
 
@@ -199,8 +202,8 @@ should be doing it up to a point when you don't need any set of changes
 refactored code. Applying this approach to product management can translate
 loosely into:
 
-> Simplify your product with *every* new feature. Give more to your customers by
-> having *only* the features they need and use.
+> Simplify your product with _every_ new feature. Give more to your customers by
+> having _only_ the features they need and use.
 
 # Conclusion
 
