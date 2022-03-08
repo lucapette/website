@@ -6,8 +6,9 @@
           <h1 class="title is-1">{{ .Title }}</h1>
           <p class="is-italic">
             Published
-            {{ .Params.categories }}
-            {{ with .Params.catagories }}{{ delimit . ", " }}{{ end }}
+            {{ with .Params.catagories }}
+              {{ delimit .Params.catagories ", " }}
+            {{ end }}
             on
             {{ .Date.Format "02 Jan 2006" }}
           </p>

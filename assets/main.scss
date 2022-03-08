@@ -1,11 +1,27 @@
 @import "theme/main.scss";
 
-.wrap-breadcrumb {
-  padding-left: 1rem;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 1rem;
 }
 
 .is-separated-bottom {
   &:not(:last-child) {
+    padding-bottom: 0.5em;
     border-bottom: 1px solid $grey-lighter;
   }
 }
