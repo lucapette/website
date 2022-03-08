@@ -1,13 +1,17 @@
 {{ define "main" }}
   <section class="section">
-    <div class="columns is-centered">
+    <div class="columns">
       <div class="column is-two-thirds">
         <div class="container is-fluid">
           <h1 class="title is-1">{{ .Title }}</h1>
           <p class="is-italic">
             Published
-            {{ with .Params.catagories }}
-              {{ delimit .Params.catagories ", " }}
+            {{ with .Params.categories }}
+              in
+              {{ $sort := sort . }}
+              {{ $links := apply $sort "partial" "tag" "." }}
+              {{ $clean := apply $links "chomp" "." }}
+              {{ delimit $clean ", " }}
             {{ end }}
             on
             {{ .Date.Format "02 Jan 2006" }}
@@ -16,7 +20,7 @@
       </div>
     </div>
 
-    <div class="columns is-centered">
+    <div class="columns">
       <div class="column is-two-thirds">
         <div class="container is-fluid">
           <div class="content">

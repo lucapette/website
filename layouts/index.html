@@ -22,18 +22,20 @@
         <div class="content">
           <p class="has-text-centered">
             I use this website to share my <a href="/writing">writing</a>. If
-            you're looking for more information about me, that's what I wrote
-            the <a href="/about">about me</a> page for.
+            you're looking for more information about me, check out the
+            <a href="/about">about me</a> page.
           </p>
         </div>
-        <div class="tile is-6 is-vertical is-parent">
-          <h2>Recents writing:</h2>
+        <div class="tile is-ancestor">
+          <div class="tile is-7 is-vertical is-parent">
+            <h2>Recents writing:</h2>
 
-          {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
-            <div class="tile is-child is-separated-bottom">
-              {{ partial "post" . }}
-            </div>
-          {{ end }}
+            {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
+              <div class="tile is-child is-separated-bottom">
+                {{ partial "post" . }}
+              </div>
+            {{ end }}
+          </div>
         </div>
       </section>
     </div>

@@ -3,7 +3,7 @@ title: "About me"
 menu:
   main:
     identifier: about
-    name: About
+    name: About me
     weight: 50
 ---
 
