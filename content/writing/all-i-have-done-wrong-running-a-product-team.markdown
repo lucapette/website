@@ -1,6 +1,6 @@
 ---
 categories:
-  - leading
+  - "product management"
 date: "2017-02-06T00:00:00Z"
 description:
   The first time you do something, you learn a lot. It's time to share
@@ -11,29 +11,27 @@ title: All I have done wrong running a product team
 
 Two years ago I had an opportunity to shift my career towards product
 management. It took me a while to accept the job, it was no easy decision. I
-needed to be ready for leading people who were doing a job I had never done
-before, I needed to take product decisions. While I felt ready on the
-leadership part, I was afraid of not being able to get up to speed with the
-product part fast enough.
+needed to be ready to lead people doing a job I had never done before. I needed
+to take product decisions. While I felt ready on the leadership part, I was
+afraid of not being able to get up to speed with the product part fast enough.
 
 Two years passed and I learned a lot. Along the way, I made a few mistakes and
-in this article I want to focus my attention on those four or five things I consider crucial.
-Now these learning seem just _common sense_ to me. I often find myself
-summarising this experience in a joke:
+in this article I want to focus my attention on those four or five things I
+consider crucial. Now these learning seem just _common sense_ to me. I often
+find myself summarising this experience in a joke:
 
 > Common sense is not so common
 
-This is the reason why I feel compelled to share the learnings I consider
-basic product management now. I will present my list in no particular order.
+This is the reason why I feel compelled to share the learnings I consider basic
+product management now. I will present my list in no particular order.
 
 ## Data is nothing. Information is the key
 
-We have introduced [blazer](https://github.com/ankane/blazer) at work
-recently. I've wanted to add this little tool to our portfolio of internal
-applications for a long time. The reaction coming from other departments
-was great. Everyone was happy about the tool and it was a stimulating
-process for me. I started asking myself what the real difference between these
-two processes is:
+We have introduced [blazer](https://github.com/ankane/blazer) at work recently.
+I've wanted to add this little tool to our portfolio of internal applications
+for a long time. The reaction coming from other departments was great. Everyone
+was happy about the tool and it was a stimulating process for me. I started
+asking myself what the real difference between these two processes is:
 
 - A product development team providing data for the rest of the company, and
 - Everyone being able to ask questions on their own

@@ -1,8 +1,9 @@
 ---
 categories:
-- leading
+  - "engineering management"
 date: "2016-07-18T00:00:00Z"
-description: I literally hate the way our industry does the hiring. It's time to talk
+description:
+  I literally hate the way our industry does the hiring. It's time to talk
   about it.
 keywords: hiring, development, juniors
 title: A few words about hiring
@@ -12,7 +13,7 @@ I find myself in conversations about hiring all the time. The reason is pretty
 obvious: we need more people to help us reach the goals we want to reach. More
 talent. It takes a collective effort to ship 99% of things we build and that
 makes hiring a central problem when it comes about building, scaling, running
-a business.  But do not get me wrong: the actual reason I am writing about
+a business. But do not get me wrong: the actual reason I am writing about
 hiring is not the fact that it is so central to the development of our teams
 and our businesses. The actual reason is that despite hiring is a core
 subject, most people approach it in a way that I barely understand.
@@ -79,7 +80,7 @@ requirements:
   you work on specific projects. For example, I once had to hire a lot of
   developers with a degree while leading a project for the Italian government
   (yeah we do have some form of "government", there's no proof it is helpful
-  though), because it was one of their non-sense requirements.  If you must
+  though), because it was one of their non-sense requirements. If you must
   hire people with a degree please give a proper explanation about it in your
   ad. The only significant difference I found while working with people that
   have a degree is that they sometimes start a sentence with "I've read in
@@ -215,7 +216,7 @@ Moreover, I try to be as thorough as possible in the actual feedback I share
 with people: I hate canned answers. So I do tell them things along the lines
 of "Sorry I just liked someone else more than you. You were fine". And I get
 quite some good feedback about that. And I know why. People hate when you lie
-to them in their face without shame.  Please note that I do use canned answers
+to them in their face without shame. Please note that I do use canned answers
 in some cases. And this cost me a lot of thinking to accept I do need canned
 answers from time to time. So I split my answers in two categories:
 

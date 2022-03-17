@@ -1,12 +1,14 @@
 ---
 categories:
-- leading
+  - "engineering management"
 date: "2017-04-28T00:00:00Z"
-description: My experience running and attending standups. What I like and what I
+description:
+  My experience running and attending standups. What I like and what I
   don't like about them.
 keywords: standup, leading developers
 title: My experience with standups
 ---
+
 I have been running standups for many years and I've never liked them. I often
 state that they are a symptom of suboptimal communication within a team and that
 the best teams I worked with did not need a standup. After having an enjoyable
@@ -41,7 +43,7 @@ recently in my career; at the time, I did not have this wonderful tool. Assuming
 people's best intentions makes you see things from a different perspective. My
 managers didn't want to control us, they were good people. They just didn't know
 how to run a standup. That was our problem. At some point, we realised something
-was wrong and introduced a form of mediation.  Things got better. People were
+was wrong and introduced a form of mediation. Things got better. People were
 more keen to communicate because they started seeing value in attending the
 standup.
 
@@ -50,7 +52,7 @@ hard. The key to improvement is constant feedback and the ability to experiment
 things every day. When I started running standups, I knew nothing about it. I
 did it by the book. I was reading about SCRUM and that felt like sci-fi to my
 fresh corporate background. Doing things by the book makes me uncomfortable
-though. I started asking myself what the goal of a standup was.  Why would I
+though. I started asking myself what the goal of a standup was. Why would I
 want to run a standup? It was the turning point. My answer changed often over
 the years and my current answer is: getting people closer to each other. Leading
 a team comes with a unique perspective over the rest of the team members. As the
@@ -59,7 +61,7 @@ with faster than the team themselves. She can recognise behavioural patterns,
 understand why someone is having a hard time and set up a path to help. Team
 members learn about each other slower than their leaders as they have less
 chance to interact with everyone else. Teams tend to create sub-teams. Sub-teams
-emerge out of a sitting plan, or the fact that people work  on the same part of
+emerge out of a sitting plan, or the fact that people work on the same part of
 the system or like to go to lunch together. I think there's nothing wrong with
 it and I welcome whatever helps people have more productive communication. From
 this perspective, running a standup has been a powerful tool over the past ten
@@ -74,8 +76,8 @@ clarify my statement. In my view, great teams share the following:
 - Everyone is happy to work with each member of the team.
 
 I didn't see such teams often in my career, so my experience tells me they are
-rare.  And I wish they weren't, and I wish I had been able to build more teams
-like that.  So far, I didn't feel the need for standups only twice in my career.
+rare. And I wish they weren't, and I wish I had been able to build more teams
+like that. So far, I didn't feel the need for standups only twice in my career.
 The two teams had something special in common: they were _completely_
 self-organised. We didn't need inspiration or structure to figure out what we
 were doing next. We had minimal electronic support. We used whiteboards with
@@ -119,4 +121,3 @@ every morning is a sad activity from that perspective. Because it's a constant
 reminder: we could be doing a better job at basic communication.
 
 Thank you for reading me and stay tuned for the next article!
-

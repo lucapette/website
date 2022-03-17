@@ -1,30 +1,29 @@
 ---
 categories:
-- leading
+  - "engineering management"
 date: "2015-07-06T00:00:00Z"
 description: How I think Kanban works and what I like about it
 keywords: kanban, management, productivity, team, development
 title: My experience with Kanban
 ---
 
-I've wanted to write about Kanban for a long time. I consider sharing our
-views about the way we organise processes vital to the development of the
-techniques themselves. In the end, we try things out and see what works and
-what does not. Most of the time this process is pretty slow as we do not share
-as much as we could with the people trying to solve similar problems. Or, even
-more dangerously, we do things by the book since we believe there is a true
-way. I believe there is no such thing as "the true way" when it comes to
-putting more than one brain in the same room to build something. Not to
-mention the fact that most books tend to generalise a lot as they want to
-reach a broader audience and in many cases the result is an unusable,
-unapplicable set of rules. I do not think what I am saying is controversial
-either. Quite the opposite: I give for granted we have to adapt whatever
-process to the team we are working with.  I want to stress the fact that all I
-am trying to do is sharing my experience with what I think Kanban is and in no
-way you should do what I am discussing in this article. My team is not your
-team, so there are high chances our workflow would not work for you. I would
-just take everything with a grain of salt and consider this article just food
-for thought.
+I've been wanting to write about Kanban for a long time. I consider sharing the
+way we organise processes vital to the development of the techniques themselves.
+In the end, we try things out and see what works and what does not. Most of the
+time this process is pretty slow as we do not share as much as we could with the
+people trying to solve similar problems. Or, even more dangerously, we do things
+by the book since we believe there is a true way. I believe there is no such
+thing as "the true way" when it comes to putting more than one brain in the same
+room to build something. Not to mention the fact that most books tend to
+generalise a lot as they want to reach a broader audience and in many cases the
+result is an unusable, unapplicable set of rules. I do not think what I am
+saying is controversial either. Quite the opposite: I give for granted we have
+to adapt whatever process to the team we are working with. I want to stress the
+fact that all I am trying to do is sharing my experience with what I think
+Kanban is and in no way you should do what I am discussing in this article. My
+team is not your team, so there are high chances our workflow would not work for
+you. I would just take everything with a grain of salt and consider this article
+just food for thought.
 
 # By the way, what is Kanban?
 
@@ -36,44 +35,42 @@ other people. I know what it means for me and here are my key points:
 I consider every version of Kanban is a variation of the sequential stages: to
 do, doing, done. As we are talking specifically about development it is likely
 to imagine there is a stage for QA processes (we have two, for example). A lot
-of teams I know assign different people in their team different roles.  Each
+of teams I know assign different people in their team different roles. Each
 person in a specific role would move things from a stage to another or have a
-special right or duty at a stage. In my view, this is not a thing.  Everyone
-does everything at every stage and I have a lot of reasons for "gently
-forcing" my teams to work this way. I do not like "special rights". I worked
-for companies where developers could not access production machines (which is
-a bad sign), I even worked for a company where developers could not access
-staging machines. Everyone does everything means everyone can help improving
-every stage, everyone gets the full picture, everyone feels the pleasure and
-the pain of what works and what does not in the process. The great side-effect
-of forcing a no-roles policy is that it helps forming a team quicker and to
-introduce new members to an existing team. The reason is quite obvious but
-most people seem to overlook it: if everyone does everything people need to
-talk to each other more to get or give help about specific tasks they're
-trying to accomplish. You are not creating sub-teams inside your teams, good
-communication is a key factor.
+special right or duty at a stage. In my view, this is not a thing. Everyone does
+everything at every stage and I have a lot of reasons for "gently forcing" my
+teams to work this way. I do not like "special rights". I worked for companies
+where developers could not access production machines (which is a bad sign), I
+even worked for a company where developers could not access staging machines.
+Everyone does everything means everyone can help improving every stage, everyone
+gets the full picture, everyone feels the pleasure and the pain of what works
+and what does not in the process. The great side-effect of forcing a no-roles
+policy is that it helps forming a team quicker and to introduce new members to
+an existing team. The reason is quite obvious but most people seem to overlook
+it: if everyone does everything people need to talk to each other more to get or
+give help about specific tasks they're trying to accomplish. You are not
+creating sub-teams inside your teams, good communication is a key factor.
 
 ### Focus on what is in progress
 
-I like this aspect of Kanban: after some time people get used to the fact that
-a lot of work in progress is not a good thing. Being 100% busy is not a good
-thing and old school managers shake when they hear me advising your team
-should never be fully busy. I like when everyone runs out of work almost
+I like this aspect of Kanban: after some time people get used to the fact that a
+lot of work in progress is not a good thing. Being 100% busy is not a good thing
+and old school managers shake their head when they hear me advising your team
+should never be fully busy. I like it so that everyone runs out of work almost
 daily. By design, our process lets people run out of things they can start
-working on. And I love it.  The reason is pretty simple: writing the code is
-the fun part. Code needs to be reviewed, tested and validated in different
-environments. The rule I came up with in order to be sure we would focus on
-what is actually important (aka shipping code that makes your customers happy)
-is very simple and very strict: you cannot start working on anything new
-unless something else you did not write the code for can be moved further in
-the process (testing, review, deployment or whatever, it does not really
-matter). This rule "forces" people to think about the process itself. Starting
-to work on something new is exciting, writing code to solve a problem as well.
-No one cares about that until it is released though. And that is what matters
-for the focus. I have to admit it is not always easy to work this way.
-Everything comes with trade-offs and the downside of being always about to run
-out of work is that managers have to work more than usual. This process requires
-constant attention.
+working on. And I love it. The reason is pretty simple: writing the code is the
+fun part. Code needs to be reviewed, tested and validated in different
+environments. The rule I came up with in order to be sure we would focus on what
+is actually important (aka shipping code that makes your customers happy) is
+very simple and very strict: you cannot start working on anything new unless
+something else you did not write the code for can be moved further in the
+process (testing, review, deployment or whatever, it does not really matter).
+This rule "forces" people to think about the process itself. Starting to work on
+something new is exciting, writing code to solve a problem as well. No one cares
+about that until it is released though. And that is what matters for the focus.
+I have to admit it is not always easy to work this way. Everything comes with
+trade-offs and the downside of being always about to run out of work is that
+managers have to work more than usual. This process requires constant attention.
 
 ### No batching, everything is done just in time
 
@@ -127,7 +124,7 @@ junior people in your team is necessary so the workflow you use should not be
 a barrier, the less new-comers have to learn the better. I do not think I have
 to explain why you need junior people or why you need a diverse team, in case
 you do not have any of those two features you may want to stop reading and fix
-that instead. I think I have to write about this topic too at some point.  In
+that instead. I think I have to write about this topic too at some point. In
 my experience, Kanban is easy to use but hard to understand and that is the
 reason why I like it for starters. It is a bit like Ruby. You can start being
 productive with Ruby in a few hours, in the end it is almost English but it
@@ -233,7 +230,7 @@ I have started showing those graphs to my workmates and I noticed something
 very important I have always ignored so far. They care about the insights,
 they care a lot. I often found myself in situations where my manager would
 tell me "we need more developers for your team" or "we need another QA person"
-and I would not be able to explain the reasoning on my own.  Graphs help
+and I would not be able to explain the reasoning on my own. Graphs help
 people understand why you want to change something and help them see things
 that are not obvious.
 
