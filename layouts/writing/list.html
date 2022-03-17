@@ -5,13 +5,27 @@
   </section>
   <section class="section">
     <div class="columns">
-      <div class="column is-two-thirds">
+      <div class="column is-8">
         {{ $paginator := .Paginate .Pages }}
-        {{ template "partials/pagination.html" . }}
         {{ range $paginator.Pages }}
           <div class="box">{{ partial "post" . }}</div>
         {{ end }}
         {{ template "partials/pagination.html" . }}
+      </div>
+
+      <div class="column is-offset-3 is-1">
+        {{ $categories := $.Site.Taxonomies.categories.ByCount }}
+        <div class="tags are-medium">
+          <h2>Categories:</h2>
+          {{ range $categories }}
+            {{ if .Term }}
+              {{ $categoryURL := printf "categories/%s" .Term | relURL }}
+              <a href="{{ $categoryURL }}" class="tag is-link"
+                >{{ .Term }} <span class="badge">({{ .Count }})</span></a
+              >
+            {{ end }}
+          {{ end }}
+        </div>
       </div>
     </div>
   </section>
