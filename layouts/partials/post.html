@@ -19,7 +19,9 @@
           <div class="tags">
             {{ range .Params.categories }}
 
-              <a class="tag is-link" href="/categories/{{ . }}">{{ . }}</a>
+              <a class="tag is-link is-light" href="/categories/{{ . }}"
+                >{{ . }}</a
+              >
             {{ end }}
           </div>
         </div>
