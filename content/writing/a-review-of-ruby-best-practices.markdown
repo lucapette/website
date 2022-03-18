@@ -1,31 +1,30 @@
 ---
 categories:
-- reading
+  - books
 date: "2011-02-11T00:00:00Z"
-description: A review of Ruby Best Practices by Gregory Brown. Published by O'Reilly
+description:
+  A review of Ruby Best Practices by Gregory Brown. Published by O'Reilly
   in June 2009
 keywords: ruby best practices, book, review, Gregory Brown
 title: A review of Ruby Best Practices
 ---
 
-Introduction
-------------
+## Introduction
 
 [Ruby Best Practices](http://rubybestpractices.com/) is the latest book of a
 Ruby-related series I have read in the past weeks. In this period, I’m
 focusing myself on learning real Ruby, I mean there is a big difference
-between *using Ruby to write code* and *coding in Ruby to solve problems*. I
+between _using Ruby to write code_ and _coding in Ruby to solve problems_. I
 think I’m on the right path to master Ruby and a big part of my recent
 improvements derives from reading books. In the following weeks I’m going to
 review all the Ruby-related books I have recently read as a way to give back
 to the community and as a way to wrap-up what I learnt.
 
-The book
---------
+## The book
 
 Ruby Best Practices is well-organized and it covers many interesting aspects
 of the Ruby programming world. I think the main aim of the book was to offer
-an optimal introduction into how a problem can be *well* solved and how Ruby
+an optimal introduction into how a problem can be _well_ solved and how Ruby
 should be used to solve it. In my opinion, the book is well-written and the
 aim is respected throughout most chapters. One of the most interesting aspects
 of this book is the complete independence of the topics covered in the
@@ -49,15 +48,15 @@ My consideration grouped by chapter:
   understanding its true beauty. You write Ruby code but you don’t speak Ruby
   yet. Then, you need something that puts you on the right path to speak this
   wonderful language. This chapter can help you to enter the path because it
-  is full of great advice about how APIs can be written.  The examples about
-  *parameters* is the most interesting part of the chapter.
+  is full of great advice about how APIs can be written. The examples about
+  _parameters_ is the most interesting part of the chapter.
 
 - **Mastering The Dynamic Toolkit**
 
   This is the most difficult chapter to read but, in spite of that, it is one
   of the most interesting parts of the book. Surely it is one of those you
   shouldn’t miss. If you are relatively new to Ruby you’ll enjoy it because
-  Gregory Brown covers the *“meta”* side of Ruby in it. In my opinion, *this*
+  Gregory Brown covers the _“meta”_ side of Ruby in it. In my opinion, _this_
   is the most notable aspect of Ruby that makes it wonderful.
 
 - **Text Processing File Management**
@@ -67,7 +66,7 @@ My consideration grouped by chapter:
   started reading this one with great expectations for the topic I really
   like, and I got a bit disappointed when I found out I didn’t like the
   chapter.
-  
+
 - **Functional Programming Techniques**
 
   Generally speaking, functional programming is not a simple programming topic
@@ -102,16 +101,14 @@ My consideration grouped by chapter:
   helped me a lot. I found the other two appendixes less interesting but still
   very enjoyable if you care about the topics covered.
 
-What I liked most
------------------
+## What I liked most
 
 I have a general good opinion of this book. It has several good aspects and
 above all it offers a very good approach to Ruby programming and to problem
 solving. While reading the book I found out nice things about Ruby and Ruby
 libraries and this is the aspect of the book I enjoyed a lot.
 
-What I disliked most
---------------------
+## What I disliked most
 
 There are a few aspects I disliked in the book. If I have to be critic about
 it I would say it covers aspects of programming that I consider neither

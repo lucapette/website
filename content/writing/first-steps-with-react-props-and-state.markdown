@@ -1,6 +1,6 @@
 ---
 categories:
-- react
+  - react
 date: "2017-03-16T00:00:00Z"
 description: Third article of the series "my journey with React and its ecosystem"
 keywords: react, webpack, passata, pomodoro technique
@@ -13,14 +13,14 @@ that out first!
 
 ## passata design and features
 
-The [pomodoro technique](http://cirillocompany.de/pages/pomodoro-technique) is
-a time management technique. I used it in the past and I plan to use it in the
-coming months, as it works well for me when I work alone. I don't really need
-an application for it, but since I started my journey with React, I decided
-that building an application for the pomodoro technique would be a good
-playground.  Having the pomodoro in my hands, I "processed" it and called my
-application [passata](https://github.com/lucapette/passata). I guess my
-passion for cooking played its role here.
+The [pomodoro technique](http://cirillocompany.de/pages/pomodoro-technique) is a
+time management technique. I used it in the past and I plan to use it in the
+coming months, as it works well for me when I work alone. I don't really need an
+application for it, but since I started my journey with React, I decided that
+building an application for the pomodoro technique would be a good playground.
+Having the pomodoro in my hands, I "processed" it and called my application
+[passata](https://github.com/lucapette/passata). I guess my passion for cooking
+played its role here.
 
 Here is a list of features I wanted to work on:
 
@@ -41,14 +41,14 @@ with three screens:
 The home screen presents available categories. I can start a new pomodoro and
 access my stats.
 
-![home screen](img/home.jpg)
+![home screen](/img/home.jpg)
 
 #### Run screen
 
 The run screen is shown when a pomodoro is running. I can take notes and
 check the progress of the running pomodoro.
 
-![run screen](img/run.jpg)
+![run screen](/img/run.jpg)
 
 #### Rest screen
 

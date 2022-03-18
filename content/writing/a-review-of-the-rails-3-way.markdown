@@ -1,6 +1,6 @@
 ---
 categories:
-- reading
+  - books
 date: "2011-05-06T00:00:00Z"
 description: Published by Addison Wesley in Dicember 2010
 keywords: the rails 3 way, book, review, Obie Fernandez
@@ -33,7 +33,7 @@ well-explained and perfectly detailed.
 In my humble opinion, routing is one of the killer features of the Rails
 stack. It has an elegant, simple and powerful APIs. Obie explains in detail
 all the aspects of the routing API. Furthermore, you’ll find a good discussion
-about \*path and\_url version of a route helper, it’s a topic I enjoyed a lot.
+about \*path and_url version of a route helper, it’s a topic I enjoyed a lot.
 
 ### REST, Resources and Rails
 
@@ -89,7 +89,7 @@ ActiveRecord.
 ### Action View
 
 The chapter starts with a description of how Rails renders templates, that’s
-just the right starting point. Then, the author talks about decent\_exposure,
+just the right starting point. Then, the author talks about decent_exposure,
 a very nice gem for declarative exposing of data to the layer view. I will not
 suggest adopting this way of preparing information for the view layer, but I
 can say I like opinionated people, so I liked this part of the chapter.
@@ -100,7 +100,7 @@ enjoy it.
 ### All About Helpers
 
 Helpers are helpers, there is no much to write about them. But once again the
-author made a great work. He presents *all about helpers* in a way you can
+author made a great work. He presents _all about helpers_ in a way you can
 only enjoy. There is just everything you need about helpers in this chapter.
 
 ### Ajax on Rails
@@ -129,7 +129,7 @@ called “The Rails way”.
 ### Xml and activeresource
 
 The chapter covers aspects of Rails that aren’t well-covered and well-known.
-You’ll find very useful information, I’ve found out that to\_xml is more
+You’ll find very useful information, I’ve found out that to_xml is more
 powerful than I thought :)
 
 ### Action Mailer
@@ -163,7 +163,7 @@ topic very well.
 
 ### Background processing
 
-The chapter covers notable solutions for handling jobs as delayed\_jobs and
+The chapter covers notable solutions for handling jobs as delayed_jobs and
 resque. As for the chapter about authentication, I’m not quite sure about the
 inclusion of this topic in a book called “The Rails way”. But it’s worth
 reading.
@@ -173,15 +173,13 @@ topics covered shallowly. However, the appendixes of Rails 3 are a very
 pleasing exception. They cover ActiveSupport and ActiveModel APIs, you’ll find
 them useful.
 
-What I liked most
------------------
+## What I liked most
 
 If you have read the introduction to this review you already know what I think
 about this book. **There are no excuses, if you are seriously interested in
 Rails you have to buy this book. No more to say.**
 
-What I disliked most
---------------------
+## What I disliked most
 
 This is nearly a perfect book in my opinion. If I have to be overcritical
 about it I'd say that, although I really liked the choice of haml, I would

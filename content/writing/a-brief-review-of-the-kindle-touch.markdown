@@ -1,6 +1,6 @@
 ---
 categories:
-  - reading
+  - books
 date: "2012-08-08T00:00:00Z"
 description: a brief review of the kindle touch
 keywords: kindle, kindle touch, amazon, review, reading

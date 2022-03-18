@@ -1,6 +1,6 @@
 ---
 categories:
-- reading
+  - books
 date: "2011-02-24T00:00:00Z"
 description: Published by The Pragmatic Bookshelf in 2010
 keywords: metaprogramming ruby, book, review, Paolo Perrotta
@@ -13,8 +13,7 @@ available on the market. So, in this review, I’ll try to give an overview of
 the book still I guess I won’t be good enough to explain how good this book
 is.
 
-The book
---------
+## The book
 
 The aim of [Metaprogramming
 Ruby](http://pragprog.com/titles/ppmetr/metaprogramming-ruby) is very clear
@@ -39,31 +38,31 @@ This book is not intended for beginners, at least not for absolute ones, but
 this chapter is so clear, simple and enjoyable to read that I would recommend
 reading it to everyone. It is a very readable introduction to how modules,
 classes and objects are meant to be in Ruby. Furthermore, this chapter
-contains the best definition of the *private* Ruby keyword I have ever read.
+contains the best definition of the _private_ Ruby keyword I have ever read.
 
 ### Tuesday: Methods
 
 The chapter covers some of the most fascinating aspects of metaprogramming. It
 starts with a nice example of how some simple Ruby features can be used to
 refactor a class in a very elegant way. The main topics of the chapter are
-*Dynamic Methods* and *method\_missing*. Both topics are very well-covered. At
+_Dynamic Methods_ and _method_missing_. Both topics are very well-covered. At
 the end of the chapter the author warns you about some problems you might face
 while using the techniques mentioned above. He uses nice examples to explain
-these issues.  
+these issues.
 
 ### Wednesday: Blocks
 
 The chapter starts with a general introduction to blocks and goes on with
 various types of scope, procs and lambdas. It presents a very good DSL
-example, used to explain how *instance\_eval* works. Surely, the chapter is
-worth reading.  
+example, used to explain how _instance_eval_ works. Surely, the chapter is
+worth reading.
 
 ### Thursday: Class Definitions
 
 This is one of the most important chapters of the book, maybe it is actually
 the most important one. I’m still impressed by its clarity and I often reread
 chunks of it. In this chapter Paolo Perrotta uses very good definitions like
-the one of *“current class”*. I have to say that one of the most notable
+the one of _“current class”_. I have to say that one of the most notable
 aspects of the book is the perfect choice of definitions for “wild” Ruby
 features. Furthermore you’ll find a very great explanation of the eigenclass.
 I have to warn you: if you aren’t an expert, this chapter will wear you out,
@@ -74,7 +73,7 @@ should read it as I do: many times.
 ### Friday: Code That Write Code
 
 The chapter covers very fascinating topics. You’ll learn important features of
-Ruby as *Kernel\#eval*. A very fitting example comes through all the parts of
+Ruby as _Kernel\#eval_. A very fitting example comes through all the parts of
 the chapter. This is one of the most funny chapters of the book.
 
 ### The design of ActiveRecord
@@ -88,9 +87,9 @@ of it.
 ActiveRecord is a great framework. Many of us, Ruby programmers, approach this
 wonderful language through Rails and ActiveRecord is one of the most beautiful
 part of ror. It contains many features that for programmers new to Ruby look
-like magic. The author wrote a simple introduction to topics like *Dynamic
-Finders* and *Dynamic Attributes*. If you wonder how on earth these great
-features work, you’ll get a good picture of them.  
+like magic. The author wrote a simple introduction to topics like _Dynamic
+Finders_ and _Dynamic Attributes_. If you wonder how on earth these great
+features work, you’ll get a good picture of them.
 
 ### Metaprogramming Safely
 

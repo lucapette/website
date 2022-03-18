@@ -1,13 +1,16 @@
 ---
 categories:
-- reading
+  - books
 date: "2011-10-07T00:00:00Z"
-description: A review of Crafting Rails Applications by José Valim. Published by The
+description:
+  A review of Crafting Rails Applications by José Valim. Published by The
   Pragmatic Programmer in March 2011
-keywords: a review of Crafting Rails Applications, ruby, book review, rails, enginex,
+keywords:
+  a review of Crafting Rails Applications, ruby, book review, rails, enginex,
   José Valim
 title: A review of Crafting Rails Applications
 ---
+
 As usual, my considerations grouped by chapter:
 
 ### Creating our own renderer
@@ -30,7 +33,7 @@ chapter.
 
 Once again nice topic. The author guides you though a complete understanding
 of how rails magically retrieves view template and gives view a wonderful
-explanation of what is the view\_context object and how it works. Then, he
+explanation of what is the view_context object and how it works. Then, he
 introduces you to the resolver API and will show you how you can use that API
 to write an sqlresolver. The latest part of the chapter describes how to run
 your resolver in production. This part contains an enjoyable and detailed
@@ -87,7 +90,7 @@ covered, the example are great. It’s absolutely fair to say that this book is
 actually the most advanced Rails book on the market. So, **you have to read it
 if you’re not a rails beginner**. And I would to say just another thing. We
 need other books like this one. Imagine to read something like “Rails
-internals” written by *choose-your-favourites-rails-core-member*.
+internals” written by _choose-your-favourites-rails-core-member_.
 
 ## What I disliked most
 

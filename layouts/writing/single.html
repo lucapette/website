@@ -9,7 +9,7 @@
             {{ with .Params.categories }}
               in
               {{ $sort := sort . }}
-              {{ $links := apply $sort "partial" "tag" "." }}
+              {{ $links := apply $sort "partial" "category" "." }}
               {{ $clean := apply $links "chomp" "." }}
               {{ delimit $clean ", " }}
             {{ end }}

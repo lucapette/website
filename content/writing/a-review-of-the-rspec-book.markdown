@@ -1,6 +1,6 @@
 ---
 categories:
-- reading
+  - books
 date: "2011-09-01T00:00:00Z"
 description: Published by The Pragmatic Programmer in Dicember 2010
 keywords: the rspec book, ruby, book review, David Chelimsky, tdd, bdd, cucumber
@@ -137,8 +137,8 @@ Like the previous chapter but for cucumber.
 
 ### Simulating The Browser With Webrat
 
-Webrat is a nice DSL that will help you to test an application *simulating the
-browser*. It makes it possible to test how various layers of a Rails
+Webrat is a nice DSL that will help you to test an application _simulating the
+browser_. It makes it possible to test how various layers of a Rails
 application work together.
 
 ### Automating The Browser With Webrat And Selenium
@@ -167,8 +167,7 @@ a nice introduction to a really wonderful project:
 [rubyspec](http://rubyspec.org/). I strongly recommend you to take a look to
 this project.
 
-What I liked most
------------------
+## What I liked most
 
 This book covers topics I like very much, so it would be strange if I disliked
 it. **You surely have to read this book** if you care about topics covered.
@@ -177,8 +176,7 @@ many things covered with implementation details about the framework. This
 approach increases the quality of a technical book and I’d like to see this
 kind of details in other books too.
 
-What I disliked most
---------------------
+## What I disliked most
 
 Nothing in particular. The book covers many other things apart from RSpec and,
 ironically, this could be considered a flaw because you would prefer to stay

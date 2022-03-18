@@ -1,8 +1,9 @@
 ---
 categories:
-- reading
+  - books
 date: "2013-01-21T00:00:00Z"
-description: A few thoughts about Practical Object-Oriented Design In Ruby by Sandi
+description:
+  A few thoughts about Practical Object-Oriented Design In Ruby by Sandi
   Metz. Published by Addison-Wesley in 2012
 keywords: object-oriented programming, ruby, book, review, poodr, Sandi Metz
 title: A few thoughts about Practical Object-Oriented Design In Ruby
@@ -16,8 +17,8 @@ all this attention to the topic in the Ruby community. Be careful I'm not
 blaming the framework, I'm making a living by using it. I'm just saying that
 if you're writing non trivial applications with Rails you generally end up
 asking yourself why everything looks so messed-up and is hard to maintain. The
-first question I ask myself when I consider reading a technical book is: *is
-this book worth my reading time?* Well, I think ["Practical Object-Oriented
+first question I ask myself when I consider reading a technical book is: _is
+this book worth my reading time?_ Well, I think ["Practical Object-Oriented
 Design In Ruby"](http://www.poodr.info/) finally fills the gap for a
 need that was pretty clear to me: explaining simple OOD that feels like Ruby
 using proper examples. So yes, the answer is yes. The book is worth reading,
@@ -26,8 +27,8 @@ are still a lot of doubts about OOD.
 
 # The book
 
-OK, let me focus on the book itself now. It explains *simple* OOD that *feels
-like Ruby* using *proper examples*. I divide my short review in three
+OK, let me focus on the book itself now. It explains _simple_ OOD that _feels
+like Ruby_ using _proper examples_. I divide my short review in three
 paragraphs as I think the winning in this book is in the words I put in
 italics.
 
@@ -56,7 +57,7 @@ Then the dead simple masterpiece:
 
 Well, that's the kind of awesomeness you'll find in the book. It's completely
 full of sentences so dense and simple at the same time. I think it's the first
-technical *Ruby* book in which I was actually highlighting sentences.
+technical _Ruby_ book in which I was actually highlighting sentences.
 
 ## Feels like Ruby
 
@@ -70,21 +71,21 @@ the Ruby code that made me crazy about the language some years ago.
 And this is great for two reasons:
 
 - It's the first time that I read code samples in Ruby on the subject that can
-help you shaping the API of your objects in a way they become polite citizens
-of the Ruby world. Well, with the exception of [Eloquent
-Ruby](http://eloquentruby.com/) that is perfect for writing code that looks
-like Ruby even though it helps to improve code not from a design technique
-perspective, but from the language perspective. So it doesn't count.
+  help you shaping the API of your objects in a way they become polite citizens
+  of the Ruby world. Well, with the exception of [Eloquent
+  Ruby](http://eloquentruby.com/) that is perfect for writing code that looks
+  like Ruby even though it helps to improve code not from a design technique
+  perspective, but from the language perspective. So it doesn't count.
 
 - [@sandimetz](https://twitter.com/sandimetz) repeats it many times in the book
-that the aim of OOD is reducing costs. I can't agree more and this is the
-second reason why I think the code samples are great. While reading articles
-about OOD techniques in Ruby, most of the time I had some difficulties reading
-the code.  since there were too many levels of indirection or maybe just too
-many things.  This felt wrong because Ruby has a clean and simple syntax and it
-has to be simple to read. In this book the examples are always very readable.
-We spend a lot of time reading code at work, so writing readable code reduces
-costs because we'll read code more often than we'll write new one.
+  that the aim of OOD is reducing costs. I can't agree more and this is the
+  second reason why I think the code samples are great. While reading articles
+  about OOD techniques in Ruby, most of the time I had some difficulties reading
+  the code. since there were too many levels of indirection or maybe just too
+  many things. This felt wrong because Ruby has a clean and simple syntax and it
+  has to be simple to read. In this book the examples are always very readable.
+  We spend a lot of time reading code at work, so writing readable code reduces
+  costs because we'll read code more often than we'll write new one.
 
 ## Proper examples
 
@@ -97,7 +98,7 @@ There is another very good book out there about OOD in the Ruby community -
 [Objects on Rails](http://objectsonrails.com/). The book is great and I
 recommend it heartily. But it has this small issue with the blog example. I
 talked to a lot of people about the book and I got this sad response from many
-of them: "Yeah, it's cool but man it's too much complicated for a blog".  Of
+of them: "Yeah, it's cool but man it's too much complicated for a blog". Of
 course, that's not book's fault. It's just that we keep fixating on the code.
 Because we're programmers. And for this very reason, the code samples are
 crucial for the success of this kind of book.
