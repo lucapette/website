@@ -10,7 +10,9 @@
     "prettier:check": "prettier --check '**/*.{ts,js,css,scss,html}'",
     "prettier:write": "prettier --write '**/*.{ts,js,css,scss,html}'"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bulma": "0.9.3"
+  },
   "devDependencies": {
     "prettier": "^2.5.1",
     "prettier-plugin-go-template": "^0.0.11"
