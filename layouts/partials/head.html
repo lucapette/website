@@ -5,18 +5,18 @@
   <!-- https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/ -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400..700&display=swap&family=Literata:wght@400..700&display=swap"
     as="style"
   />
   <link
-    href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400..700&display=swap&family=Literata:wght@400..700&display=swap"
     rel="stylesheet"
     media="print"
     onload="this.media='all'"
   />
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400..700&display=swap&family=Literata:wght@400..700&display=swap"
     />
   </noscript>
   {{ $css := resources.Get "main.scss" | resources.ToCSS }}
