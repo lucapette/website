@@ -2,10 +2,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title .Title }}</title>
-  {{ $style := resources.Get "main.scss" | resources.ToCSS | resources.Minify |
-    resources.Fingerprint
-  }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ $css := resources.Get "main.scss" | resources.ToCSS }}
+  {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+  <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 
   {{ with .OutputFormats.Get "rss" -}}
     {{ printf `
