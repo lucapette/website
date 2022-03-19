@@ -2,12 +2,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title .Title }}</title>
+  <!-- https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/ -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
+    as="style"
+  />
   <link
     href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
     rel="stylesheet"
     media="print"
     onload="this.media='all'"
   />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
+    />
+  </noscript>
   {{ $css := resources.Get "main.scss" | resources.ToCSS }}
   {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
   <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
