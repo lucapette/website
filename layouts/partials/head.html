@@ -2,6 +2,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title .Title }}</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap|Literata:400,700&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+  />
   {{ $css := resources.Get "main.scss" | resources.ToCSS }}
   {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
   <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
