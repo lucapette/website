@@ -1,11 +1,11 @@
 ---
-categories:
-- react
+tags:
+  - react
 date: "2017-02-14T00:00:00Z"
 description: First steps with webpack, babel, and yarn
 keywords: react, yarn, babel, webpack, flowtype
 redirect_from:
-- /my-journey-with-react-and-its-ecosystem-first-steps-with-webpack-babel-and-yarn
+  - /my-journey-with-react-and-its-ecosystem-first-steps-with-webpack-babel-and-yarn
 title: First steps with webpack, babel, and yarn
 ---
 
@@ -21,7 +21,7 @@ focus on:
 - What does the community look like? Is it inclusive? Is it active? Is it
   welcoming to newcomers?
 
-Furthermore, I knew *nothing at all* about React when I started my journey,
+Furthermore, I knew _nothing at all_ about React when I started my journey,
 which makes me an experienced newcomer: I have been working in the industry for
 more than a decade but I know nothing about React.
 
@@ -48,19 +48,17 @@ everyday is a fun way to understand if I'm heading in the right direction.
 I started with a React "hello world":
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<h1>Hello World!</h1>,
-document.getElementById("root"));
+ReactDOM.render(<h1>Hello World!</h1>, document.getElementById("root"));
 ```
 
 ```html
 <html>
   <body>
-    <div id="root">
-    </div>
-    <script src="/App.js"  type="text/javascript"></script>
+    <div id="root"></div>
+    <script src="/App.js" type="text/javascript"></script>
   </body>
 </html>
 ```
@@ -94,9 +92,8 @@ git init
 yarn init
 ```
 
-I felt good about yarn. Its output is helpful and the [UI](
-https://github.com/lucapette/passata/commit/c223ce6abb79aa7fac2b5e86e164ec559126086f)
-is intuitive. And it is fast, *really* fast.
+I felt good about yarn. Its output is helpful and the [UI](https://github.com/lucapette/passata/commit/c223ce6abb79aa7fac2b5e86e164ec559126086f)
+is intuitive. And it is fast, _really_ fast.
 
 ## Hello world
 
@@ -115,11 +112,11 @@ Since the hello world code I wrote uses ES6, I needed to bring Babel in right
 after the obvious dependencies were met. I had no idea what Babel was and what
 it did, so I checked the website to understand the basics. And that was the
 first roadblock of my tiny project: the [home page](https://babeljs.io/) says
-*nothing* about how to get started with it. It has two big CTAs:
+_nothing_ about how to get started with it. It has two big CTAs:
 
 - **Setup**: There are thirty seven buttons on the page and I knew nothing about
-most of the them. I knew I needed webpack so I clicked that one. That brought up
-some incredibly minimal documentation.
+  most of the them. I knew I needed webpack so I clicked that one. That brought up
+  some incredibly minimal documentation.
 - **Trying it out**: I get it, it does cool stuff. I still didn't get how to use
   it and where to start, though.
 
@@ -174,10 +171,10 @@ Once I got the right version, I could correct another little mistake in the
 configuration and then finally build my first React application.
 
 It took only a few hours and it was great experience. The most important
-learning was: documentation is *vital* and it's hard to write. And it's even
+learning was: documentation is _vital_ and it's hard to write. And it's even
 harder to write documentation for newcomers. In this regard, React'
 documentation is great. I needed only the installation guide to get things work
-and I knew *nothing* about React when I started. Webpack 2 docs are good too.
+and I knew _nothing_ about React when I started. Webpack 2 docs are good too.
 It's great they take quite some time to explain the main concepts. I cannot say
 the same about Babel, the experience with the documentation has been very
 frustrating so far.

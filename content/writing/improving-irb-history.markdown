@@ -1,8 +1,10 @@
 ---
-categories:
-- ruby
+tags:
+  - ruby
+  - irb
 date: "2011-03-18T00:00:00Z"
-description: Improving IRB history. Some ways to improve your interaction with IRB
+description:
+  Improving IRB history. Some ways to improve your interaction with IRB
   history
 keywords: ruby, irb, console
 title: Improving IRB history
@@ -27,38 +29,38 @@ This is the code I wrote:
 
 {{< highlight ruby >}}
 def history_a(n=Readline::HISTORY.size)
-    size=Readline::HISTORY.size
-    Readline::HISTORY.to_a[(size - n)..size-1]
+size=Readline::HISTORY.size
+Readline::HISTORY.to_a[(size - n)..size-1]
 end
 
 def decorate_h(n)
-    size=Readline::HISTORY.size
-    ((size - n)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
+size=Readline::HISTORY.size
+((size - n)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
 end
 
 def h(n=10)
-    entries = decorate_h(n)
-    puts entries
-    entries.size
+entries = decorate_h(n)
+puts entries
+entries.size
 end
 
 def hgrep(word)
-    matched=decorate_h(Readline::HISTORY.size - 1).select {|h| h.match(word)}
-    puts matched
-    matched.size
+matched=decorate_h(Readline::HISTORY.size - 1).select {|h| h.match(word)}
+puts matched
+matched.size
 end
 
 def h!(start, stop=nil)
-    stop=start unless stop
-    code = history_a[start..stop]
-    code.each_with_index { |e,i|
-        irb_context.evaluate(e,i)
-    }
-    Readline::HISTORY.pop
-    code.each { |l|
-        Readline::HISTORY.push l
-    }
-    puts code
+stop=start unless stop
+code = history_a[start..stop]
+code.each_with_index { |e,i|
+irb_context.evaluate(e,i)
+}
+Readline::HISTORY.pop
+code.each { |l|
+Readline::HISTORY.push l
+}
+puts code
 end
 {{< / highlight >}}
 
@@ -77,7 +79,7 @@ ruby-1.9.2-p0 > h
 206 hgrep "toy"
 207 h! 197
 208 h
- => 10
+=> 10
 ruby-1.9.2-p0 > hgrep "toy"
 89 a=Arra.toy
 97 a=Array.toy
@@ -86,12 +88,12 @@ ruby-1.9.2-p0 > hgrep "toy"
 204 h "toy"
 206 hgrep "toy"
 209 hgrep "toy"
- => 7
+=> 7
 ruby-1.9.2-p0 > h! 197
 a=Array.toy
- => nil
+=> nil
 ruby-1.9.2-p0 > a=Array.toy
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 {{< / highlight >}}
 
 I wanted a bash like history and none of the solutions I found had a working
@@ -102,27 +104,25 @@ with the eval version is easy to explain with an example:
 
 {{< highlight ruby >}}
 ruby-1.9.2-p0 > eval("a=Array.toy")
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ruby-1.9.2-p0 > a
-NameError: undefined local variable or method `a' for main:Object
-    from (irb):2
-    from /home/lucapette/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>'
+NameError: undefined local variable or method `a' for main:Object from (irb):2 from /home/lucapette/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>'
 ruby-1.9.2-p0 > a=Array.toy
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ruby-1.9.2-p0 > a="l"
- => "l"
+=> "l"
 ruby-1.9.2-p0 > h 5
 200 eval("a=Array.toy")
 201 a
 202 a=Array.toy
 203 a="l"
 204 h 5
- => 5
+=> 5
 ruby-1.9.2-p0 > h! 202
 a=Array.toy
- => nil
+=> nil
 ruby-1.9.2-p0 > a
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 {{< / highlight >}}
 
 Not a big deal but I really prefer my implementation of the re-execute
@@ -143,19 +143,21 @@ It means erasing your duplicates commands from your history and I came up with
 the following:
 
 {{< highlight ruby >}}
+
 # Don't save duplicates
+
 IRB.conf[:AT_EXIT].unshift Proc.new {
-    no_dups = []
-    Readline::HISTORY.each_with_index { |e,i|
-        begin
-            no_dups << e if Readline::HISTORY[i] != Readline::HISTORY[i+1]
-        rescue IndexError
-        end
-    }
-    Readline::HISTORY.clear
-    no_dups.each { |e|
-        Readline::HISTORY.push e
-    }
+no_dups = []
+Readline::HISTORY.each_with_index { |e,i|
+begin
+no_dups << e if Readline::HISTORY[i] != Readline::HISTORY[i+1]
+rescue IndexError
+end
+}
+Readline::HISTORY.clear
+no_dups.each { |e|
+Readline::HISTORY.push e
+}
 }
 {{< / highlight >}}
 

@@ -17,11 +17,8 @@
       <div class="level-left">
         <div class="level-item">
           <div class="tags">
-            {{ range .Params.categories }}
-
-              <a class="tag is-link is-light" href="/categories/{{ . }}"
-                >{{ . }}</a
-              >
+            {{ range .Params.tags }}
+              <a class="tag is-link is-light" href="/tags/{{ . }}">{{ . }}</a>
             {{ end }}
           </div>
         </div>

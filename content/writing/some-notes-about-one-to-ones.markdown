@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - "engineering management"
 date: "2015-11-30T00:00:00Z"
 description:

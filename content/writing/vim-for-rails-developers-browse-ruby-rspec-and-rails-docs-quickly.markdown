@@ -1,11 +1,13 @@
 ---
-categories:
-- vim
+tags:
+  - vim
+  - rails
 date: "2012-01-30T00:00:00Z"
 description: Install vim-ruby-doc and vim-jquery-doc for better API docs browsing
 keywords: vim, ruby, rails, rspec, jquery, API doc, apidock.com
-title: 'Vim for Rails developers: browse Ruby, RSpec and Rails docs quickly'
+title: "Vim for Rails developers: browse Ruby, RSpec and Rails docs quickly"
 ---
+
 In this post I just want to bring to your attention a little plugin I
 extracted from my [vimfiles](http://github.com/lucapette/vimfiles). We all
 need to read some API docs during our work day. And I dislike a lot the idea
@@ -23,7 +25,7 @@ suddenly I was reading the doc I was looking for.
 So, just a couple of days ago, I found out that
 [api.jquery.com](http://api.jquery.com) has a very nice feature. In fact, if
 you go to [http://api.jquery.com/each](http://api.jquery.com/each) it just
-works fine.  It works fine even if you go to
+works fine. It works fine even if you go to
 [http://api.jquery.com/ea](http://api.jquery.com/ea). I searched for a plugin
 similar to what I had in my vimfiles and didn't find anything, so I decided I
 could have created it. And here we are. It's a very small plugin, you can find

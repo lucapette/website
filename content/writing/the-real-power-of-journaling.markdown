@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - writing
 date: "2016-10-09T00:00:00Z"
 description:

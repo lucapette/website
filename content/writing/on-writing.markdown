@@ -1,6 +1,6 @@
 ---
-categories:
-- writing
+tags:
+  - writing
 date: "2017-04-04T00:00:00Z"
 description: I love writing. And I love to write about it.
 keywords: writing
@@ -43,17 +43,17 @@ Italian student. By now, I'm convinced nothing works like that. And I'm happy I
 could get past this prejudice (that's all it is). Here is a list of books I
 read with a short review:
 
-- *The element of style* It's the classic everyone recommends. And rightly so:
+- _The element of style_ It's the classic everyone recommends. And rightly so:
   it's a **must-read**. If you care about improving your English writing, this
   is the book for you. I have not got around to buy a dead-tree version yet, so
   I'm using my Kindle application to consult it every now and then. But it
   deserves to live on one's desk.
-- *On writing well* It's a good book. I loved the first chapters, but I can't
+- _On writing well_ It's a good book. I loved the first chapters, but I can't
   say I liked the rest of the book as much. After the introduction, each chapter
   covers writing techniques on different topics (like travelling, interviews)
   and some of them were too boring. I did skip some chapters, overall a good
   read.
-- *Writing tools*  Above-mentioned books can teach you most of what matters
+- _Writing tools_ Above-mentioned books can teach you most of what matters
   about writing in English, so this book may feel a little repetitive. I enjoyed
   it anyway for two reasons:
   - Each chapters comes with a workshop section. The information is helpful and
@@ -84,7 +84,7 @@ the following steps:
 
 Then I would proof-read the draft with the help of someone else's eyes and I
 would call it a day. It was a presumptuous process. These books, in particular
-*on writing well*, teach you to love the rewriting process, they help you
+_on writing well_, teach you to love the rewriting process, they help you
 understand its value. I realised I could work on my drafts and apply the rules I
 was learning. It was a fascinating discovery. I built some confidence as I could
 see I was learning. My sentences were getting better, the proof-reader started
@@ -145,7 +145,7 @@ to write every day. It _only_ took me seven years.
 
 ## Outline expansion
 
-I use [outlining](https://en.wikipedia.org/wiki/Outline_(list)) every time I
+I use [outlining](<https://en.wikipedia.org/wiki/Outline_(list)>) every time I
 have no clue what I'm doing. As that's true for most of what I do (and yes,
 that's true for you too. Don't lie to yourself), I organise lists this way every
 day. When it comes to writing, it helps me to structure ideas that have been on

@@ -1,10 +1,11 @@
 ---
-categories:
-- vim
+tags:
+  - vim
+  - rails
 date: "2011-03-10T00:00:00Z"
 description: a review of a screencast by Ben Orenstein
 keywords: vim, rails, screencast
-title: 'Vim for rails developers: a screencast review'
+title: "Vim for rails developers: a screencast review"
 ---
 
 I have recently published my first
@@ -14,7 +15,7 @@ encourages me to keep it on. As part of the feedback I got a very nice email
 from [Ben Orenstein](http://codeulate.com/). He was so kind to send me a copy
 of his screencast [Vim for
 rails](http://www.codeulatescreencasts.com/products/vim-for-rails-developers),
-asking me for feedback. So, here we are.  I was already familiar with most of
+asking me for feedback. So, here we are. I was already familiar with most of
 the topics covered in the screencast and I think this is a good point if you
 were asked for feedback. I would like to cover it in an article because Ben’s
 work is definitely worth spreading.
@@ -40,10 +41,10 @@ Ben shows you how to familiarize with Rfind, one of the most important
 commands of rails.vim (I have to confess I still prefer
 [FuzzyFinderTextMate](https://github.com/jamis/fuzzyfinder_textmate)
 though). He follows with the explanation of the R\* command set. Then he
-gives you a very good explanation of the *gf* feature, describing it with
-a perfect definition *context-aware*. Ben covers the most important
+gives you a very good explanation of the _gf_ feature, describing it with
+a perfect definition _context-aware_. Ben covers the most important
 aspects of rails.vim and he finishes his tour with various examples of the
-*related-files* feature of rails.vim.
+_related-files_ feature of rails.vim.
 
 ### Snipmate
 
@@ -82,6 +83,6 @@ vim.
 
 ## Conclusion
 
-So here we are. I think the point is *Should I buy it?* and I want to answer
+So here we are. I think the point is _Should I buy it?_ and I want to answer
 straight away. Yes, you should. It will give you great information and
 inspiration. You get a product of great value for little money.

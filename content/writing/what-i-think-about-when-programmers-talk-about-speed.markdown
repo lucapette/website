@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - "engineering management"
 date: "2015-04-28T00:00:00Z"
 description: Some random thoughts about development and its relation to speed

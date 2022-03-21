@@ -1,6 +1,7 @@
 ---
-categories:
+tags:
   - golang
+  - react
 date: "2017-05-30T00:00:00Z"
 description:
   deloominator is a Go/React application I've been working in the past
@@ -21,20 +22,19 @@ status of the project and what's coming next.
 ## Why?
 
 As a developer, I've always liked data visualization. I like looking at graphs
-to spot problems in our systems. I like guessing how a graph would look like
-if I knew the system's behavior. As I got closer and closer to product
-management, my understanding of data visualization changed: I understood why I
-personally like graphs and why they're so important for a company. Data
-visualizations can express more than raw data sets. You look at a graph and
-you can extract insights from what you see, and these insights can change the
-course of a company. Data visualization is a powerful and much needed
-discipline, even more so now that storing data is cheaper than ever.
+to spot problems in our systems. I like guessing how a graph would look like if
+I knew the system's behavior. As I got closer and closer to product management,
+my understanding of data visualization changed: I understood why I personally
+like graphs and why they're so important for a company. Data visualizations can
+express more than raw data sets. You look at a graph and you can extract
+insights from what you see, and these insights can change the course of a
+company. Data visualization is a powerful and much needed discipline, even more
+so now that storing data is cheaper than ever.
 
-Let me share a trivial example with you to better explain why I'm so
-fascinated by data visualization. Let's say I have a `users` table in my
-database that stores customers information and I want to get a better
-understanding of how we're doing in terms of acquisitions. I can write a SQL
-query like this:
+Let me share a trivial example with you to better explain why I'm so fascinated
+by data visualization. Let's say I have a `users` table in my database that
+stores customers information and I want to get a better understanding of how
+we're doing in terms of acquisitions. I can write a SQL query like this:
 
 ```sql
 SELECT country, to_chr(signup_date, 'yyyy-mm') period, count(*) acquisitions
@@ -83,13 +83,12 @@ acquisitions by country:
 
 ![grouped by contry](img/grouped-by-country.png)
 
-The insight is obvious: Germany is the country where we acquired more
-customers, Netherlands is doing good and Italy is not quite there yet. An
-interesting side note: just a few weeks ago I would have presented the same
-information as a pie chart. I've used pie charts for a long time in my
-presentations. But I learned that [they don't really work], so I'm always
-defaulting to bar charts now. It's the beauty of the building process: you
-learn something new everyday.
+The insight is obvious: Germany is the country where we acquired more customers,
+Netherlands is doing good and Italy is not quite there yet. An interesting side
+note: just a few weeks ago I would have presented the same information as a pie
+chart. I've used pie charts for a long time in my presentations. But I learned
+that [they don't really work], so I'm always defaulting to bar charts now. It's
+the beauty of the building process: you learn something new everyday.
 
 The other question I had was about trends. Trends tell you a lot about a
 business:

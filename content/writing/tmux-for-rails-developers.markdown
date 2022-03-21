@@ -1,6 +1,7 @@
 ---
-categories:
-- rails
+tags:
+  - rails
+  - tmux
 date: "2012-03-27T00:00:00Z"
 description: tmux for rails developers
 keywords: tmux, rails, vim, pair programming
@@ -11,7 +12,7 @@ There has been a lot of buzz about [tmux](http://tmux.sourceforge.net/)
 recently. The fine pragmatic programmers folks published a very good
 [book](http://pragprog.com/book/bhtmux/tmux) about it and on twitter, at least
 on my stream, there are a lot people in love with it. Actually, I run into it
-for a *real word* need (I'll explain this later) and I found it incredible
+for a _real word_ need (I'll explain this later) and I found it incredible
 useful in a lot of other situations. So, I would like to share them with you.
 
 I assume you already know what tmux **is**, it's pointless to write again what
@@ -43,24 +44,24 @@ Using tmux means meeting the following implicit requirements:
   Vim, so if you, like me, are a Vim user you're lucky. But that's not the
   real point. You need a whatever editor that works fine in the terminal. So,
   if you use some fancy editor (or some super-fancy IDE) that doesn't work
-  well in the terminal you can stop reading this article. *You're wasting your
-  time here.*
+  well in the terminal you can stop reading this article. _You're wasting your
+  time here._
 
 ## Why You should use tmux for Rails development
 
-Well, this is the *real* question, right?
+Well, this is the _real_ question, right?
 
 I have my simple answer: tmux will help you to stay totally focused on what
 you're doing. Plain and simple. I talked to people that were saying "I don't
-know. It really is that better than switching terminal tabs?  Or switching
+know. It really is that better than switching terminal tabs? Or switching
 applications?". It's a fair point but the answer is "Yes, it is **better**".
 In my experience, there is always a context switch when you have to read why a
 test is failing or you have to read the log or you have to open up a terminal
-tab or you have to...  OK you got it.
+tab or you have to... OK you got it.
 
 tmux answer is panes.
 
-Tmux has this *killer* feature that responds to the name of panes. They are
+Tmux has this _killer_ feature that responds to the name of panes. They are
 better that windows because you really don't have to switch a context, what
 you're looking for is already there. It's a tiny difference but it's a very
 important one. Furthermore, tmux has a lot of keyword shortcuts. Fortunately,
@@ -76,7 +77,7 @@ tmux feature here, it has various pane layouts and you can switch through them
 with a single keystroke). In the top pane (that is the bigger one) I usually
 have Vim with a spec open and in the bottom pane I run the spec, usually with
 Guard. When a I need to read the log or to open a console I open a new window
-and I read it there.  It a simple setup but it's like a dream for me because I
+and I read it there. It a simple setup but it's like a dream for me because I
 can do all I need to do while developing within the same visual space. I
 [configured](https://github.com/lucapette/dotfiles/blob/master/tmux.conf) tmux
 in a manner it's more similar to Vim. So I don't even have to remember new
@@ -89,9 +90,9 @@ stuff. And I'm pretty happy with its appearance too now:
 It looks nice, doesn't it?
 
 Panes are not all tmux has to offer. There are windows and sessions too. I
-personally use windows when I do want a *context switch* but you could find
-them useful for another reason. Sessions are the *real word* reason why I run
-into tmux.  In this period, I'm doing a lot of remote pair programming. When
+personally use windows when I do want a _context switch_ but you could find
+them useful for another reason. Sessions are the _real word_ reason why I run
+into tmux. In this period, I'm doing a lot of remote pair programming. When
 we started to pair we tried a lot of different solutions combining video
 calling and screen sharing. But none of them worked well. These technologies
 are an amazing way of communicating with people but unfortunately they
@@ -102,7 +103,7 @@ programming. So I did a bit of a research and I found that a lot of people
 solved this problem using tmux. And that is how I run into tmux. At first, I
 didn't understood how tmux could help in such a situation. Then, I finally
 understood what tmux session are and how you can easily attach your terminal
-to an existing tmux session.  I think that tmux is a perfect solution for
+to an existing tmux session. I think that tmux is a perfect solution for
 remote pair programming. It's fast, light (in terms of connection) and very
 easy to set-up.
 
@@ -134,7 +135,7 @@ Furthermore, when awesome-project is a Rails project (that is quite always the
 case for me) I generally create another window where I start the server or run
 tail for the logging. After some days of executing always the very same steps
 I run into [tmuxinator](https://github.com/aziz/tmuxinator), thanks to the
-mentioned book. This gem is a way to *manage complex tmux sessions easily* and
+mentioned book. This gem is a way to _manage complex tmux sessions easily_ and
 I have to say I like the idea very much. Actually, I would have written such a
 gem if there wasn't already one. The basic idea behind the gem is giving you
 the opportunity to run just a single command in order to create a complex tmux
@@ -142,19 +143,20 @@ session, with panes and windows. tmuxinator uses a simple configuration file
 that is really is self-explanatory:
 
 {{< highlight ruby >}}
-project\_name: awesome-project
-project\_root: ~/code/awesome-project
-socket\_name: awesome-project
+project_name: awesome-project
+project_root: ~/code/awesome-project
+socket_name: awesome-project
 pre: alias tmux='tmux -2'
 tabs:
+
 - editor:
-layout: main-horizontal
-panes:
+  layout: main-horizontal
+  panes:
 - git st
 -
 - logs: tail -f log/test.log
 - console: rails c test
-{{< / highlight >}}
+  {{< / highlight >}}
 
 So each tab creates a window, there you can just run a command or create panes
 and run commands in them. Pretty neat.
@@ -162,7 +164,7 @@ and run commands in them. Pretty neat.
 I'm very glad there is a `pre` option because, using gnome-terminal, tmux
 won't behave correctly if it doesn't assume it's running inside a 256 colours
 terminal. tmuxinator is a good gem and there is some room for improvements
-too.  For example, at this very moment there is no way to specify a socket
+too. For example, at this very moment there is no way to specify a socket
 name and it would be great to have it because using a socket name is a quick
 way to do some pair programming using tmux. By the way, I checked the
 pull-requests and there is a lot of nice stuff there (included a patch for the

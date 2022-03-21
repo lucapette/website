@@ -3,7 +3,7 @@ date: "2017-08-11T00:00:00Z"
 description: A quick overview of deloominator tech stack
 keywords: golang, react, graphql, semantic-ui, vega, vega-lite
 title: deloominator tech stack
-categories:
+tags:
   - golang
   - react
 ---

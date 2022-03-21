@@ -1,6 +1,7 @@
 ---
-categories:
+tags:
   - "engineering management"
+  - hiring
 date: "2016-07-18T00:00:00Z"
 description:
   I literally hate the way our industry does the hiring. It's time to talk

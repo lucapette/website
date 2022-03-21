@@ -1,6 +1,6 @@
 ---
-categories:
-- rails
+tags:
+  - rails
 date: "2012-04-16T00:00:00Z"
 description: Grouping validations
 keywords: rails, state_machine, with_options, validations
@@ -17,20 +17,21 @@ DataMapper provides the following great API:
 
 {{< highlight ruby >}}
 class Article
-  include DataMapper::Resource
+include DataMapper::Resource
 
-  property :id,          Serial
-  property :title,       String
-  property :picture_url, String
-  property :body,        Text
-  property :published,   Boolean
+property :id, Serial
+property :title, String
+property :picture_url, String
+property :body, Text
+property :published, Boolean
 
-  # validations
-  validates_presence_of :title,       :when => [ :draft, :publish ]
-  validates_presence_of :picture_url, :when => [ :publish ]
-  validates_presence_of :body,        :when => [ :draft, :publish ]
-  validates_length_of   :body,        :when => [ :publish ], :minimum => 1000
-  validates_absence_of  :published,   :when => [ :draft ]
+# validations
+
+validates_presence_of :title, :when => [ :draft, :publish ]
+validates_presence_of :picture_url, :when => [ :publish ]
+validates_presence_of :body, :when => [ :draft, :publish ]
+validates_length_of :body, :when => [ :publish ], :minimum => 1000
+validates_absence_of :published, :when => [ :draft ]
 end
 {{< / highlight >}}
 
@@ -52,9 +53,9 @@ To cook this recipe with need the following ingredients:
 - a state machine
 
   I'm going to use
-  [state\_machine](https://github.com/pluginaweek/state_machine)
+  [state_machine](https://github.com/pluginaweek/state_machine)
 
-- with\_options
+- with_options
 
   A very nice class macro, kindly offered by
   [ActiveSupport](http://api.rubyonrails.org/classes/Object.html#method-i-with_options).
@@ -65,7 +66,7 @@ To cook this recipe with need the following ingredients:
   going to use something very similar. Sorry about that.
 
 Let's start with the fancy example: Suppose you have a client that works with
-articles. In order to publish an article, the following *fancy* requirements
+articles. In order to publish an article, the following _fancy_ requirements
 must be meet:
 
 - A draft article should have at least one page and a title.
@@ -78,30 +79,30 @@ Now that we've got the business rules we can say an article can be in the
 following statuses:
 
 - draft
-- ready\_for\_review
-- queued\_for\_publication
+- ready_for_review
+- queued_for_publication
 - published
 
 I confess I don't like the naming very much. And yes, I know that naming is
 hard but, for me, invent a reasonable example is probably more difficult.
-Well, using the neat state\_machine gem, we can do something like the
+Well, using the neat state_machine gem, we can do something like the
 following:
 
 {{< highlight ruby >}}
 class Article < ActiveRecord::Base
-  has_many :pages
+has_many :pages
 
-  state_machine :status, initial: :draft do
-    event :ready do
-      transition draft: :ready_for_review
-    end
-    event :queue do
-      transition ready_for_review: :queued_for_publication
-    end
-    event :publish do
-      transition queued_for_publication: :published
-    end
-  end
+state_machine :status, initial: :draft do
+event :ready do
+transition draft: :ready_for_review
+end
+event :queue do
+transition ready_for_review: :queued_for_publication
+end
+event :publish do
+transition queued_for_publication: :published
+end
+end
 end
 {{< / highlight >}}
 
@@ -128,19 +129,19 @@ irb(main):010:0> a.status
 => "published"
 {{< / highlight >}}
 
-Simple and effective. If you're not familiar with state\_machine I strongly
+Simple and effective. If you're not familiar with state_machine I strongly
 recommend you to take a look at the README. You'll find out a lot of
 interesting and useful features.
 
 As we just saw, now we have an easily way to track the current status of an
-article for our workflow. We *just* have to add the validations. Before we
+article for our workflow. We _just_ have to add the validations. Before we
 start writing them, let's take a quick look at the other ingredients of this
 recipe: `with_options`. This class macro gives us the opportunity of writing
 less verbose code. A lot of people would say that it will help you to write
-DRY code. Actually, DRY does not mean *"don't type a lot"*. It means:
-*Every piece of knowledge must have a single, unambiguous, authoritative
-representation within a system.*. So, I don't like very much when people
-makes their code just shorter and say *"It's DRY"*.
+DRY code. Actually, DRY does not mean _"don't type a lot"_. It means:
+_Every piece of knowledge must have a single, unambiguous, authoritative
+representation within a system._. So, I don't like very much when people
+makes their code just shorter and say _"It's DRY"_.
 
 Well, we were talking about `with_options`. In Rails, there are a lot of
 methods that take an Hash as the last argument, and when you have pass several
@@ -148,36 +149,39 @@ methods the very same options you can use `with_options` to make the call
 shorter. It has the nice side-effect of logically grouping calls:
 
 {{< highlight ruby >}}
+
 # before
+
 class User
-  validates :name, presence: true
-  validates :surname, presence: true
-  validates :password, presence: true, if: -> user { user.new_record? }
+validates :name, presence: true
+validates :surname, presence: true
+validates :password, presence: true, if: -> user { user.new_record? }
 end
 
 # after
+
 class User
-  with_options presence: true do |user|
-    validates :name
-    validates :surname
-    validates :password, if: -> user { user.new_record? }
-  end
+with_options presence: true do |user|
+validates :name
+validates :surname
+validates :password, if: -> user { user.new_record? }
+end
 end
 {{< / highlight >}}
 
-OK, now we know how to use `with_options` and we have a nice state\_machine.
+OK, now we know how to use `with_options` and we have a nice state_machine.
 The only thing we have to do now is writing the validations. We'll proceed by
 state, starting with the draft:
 
 {{< highlight ruby >}}
- with_options if: -> article { article.status?(:draft) } do |article|
-   article.validates :title, presence: true
-   article.validates :pages, presence: true
- end
+with_options if: -> article { article.status?(:draft) } do |article|
+article.validates :title, presence: true
+article.validates :pages, presence: true
+end
 {{< / highlight >}}
 
 That's all. The `article.status?(:draft)` is a nice API kindly offered by
-state\_machine. And now we can give it a try:
+state_machine. And now we can give it a try:
 
 {{< highlight ruby >}}
 irb(main):001:0> a = Article.new
@@ -210,15 +214,15 @@ reasonable approach could be the following:
 
 {{< highlight ruby >}}
 with_options if: -> article { article.status?(:ready_for_review) } do |article|
-  article.validates :short_description, presence: true
-  article.validates :long_description,  presence: true
-  article.validates :tags,              presence: true
-  article.validate  :at_least_three_tags, if: 'tags.present?'
+article.validates :short_description, presence: true
+article.validates :long_description, presence: true
+article.validates :tags, presence: true
+article.validate :at_least_three_tags, if: 'tags.present?'
 end
 
 private
 def at_least_three_tags
-  self.errors[:tags] = "can't be less than three" if self.tags.split(',').length < 3
+self.errors[:tags] = "can't be less than three" if self.tags.split(',').length < 3
 end
 {{< / highlight >}}
 
@@ -231,7 +235,7 @@ irb(main):002:0> article.ready
 => false
 irb(main):003:0> article.errors.full_messages
 => ["Short description can't be blank", "Tags can't be blank"]
-irb(main):004:0> article.short_description  = 'short desc'
+irb(main):004:0> article.short_description = 'short desc'
 => "short desc"
 irb(main):006:0> article.ready
 => false
@@ -259,13 +263,13 @@ least two keywords. Quite similar to the previous step:
 
 {{< highlight ruby >}}
 with_options if: -> article { article.status?(:queued_for_publication) } do |article|
-  article.validates :long_description,  presence: true
-  article.validates :keywords,          presence: true
-  article.validate  :at_least_two_keywords, if: 'keywords.present?'
+article.validates :long_description, presence: true
+article.validates :keywords, presence: true
+article.validate :at_least_two_keywords, if: 'keywords.present?'
 end
 
 def at_least_two_keywords
-  self.errors[:keywords] = "can't be less than two" if self.keywords.split(',').length < 2
+self.errors[:keywords] = "can't be less than two" if self.keywords.split(',').length < 2
 end
 {{< / highlight >}}
 
@@ -304,45 +308,45 @@ readable way. Let's see how the article model looks like now:
 
 {{< highlight ruby >}}
 class Article < ActiveRecord::Base
-  has_many :pages
+has_many :pages
 
-  state_machine :status, initial: :draft do
-    event :ready do
-      transition draft: :ready_for_review
-    end
-    event :queue do
-      transition ready_for_review: :queued_for_publication
-    end
-    event :publish do
-      transition queued_for_publication: :published
-    end
-  end
+state_machine :status, initial: :draft do
+event :ready do
+transition draft: :ready_for_review
+end
+event :queue do
+transition ready_for_review: :queued_for_publication
+end
+event :publish do
+transition queued_for_publication: :published
+end
+end
 
-  with_options if: -> article { article.status?(:draft) } do |article|
-    article.validates :title, presence: true
-    article.validates :pages, presence: true
-  end
+with_options if: -> article { article.status?(:draft) } do |article|
+article.validates :title, presence: true
+article.validates :pages, presence: true
+end
 
-  with_options if: -> article { article.status?(:ready_for_review) } do |article|
-    article.validates :short_description, presence: true
-    article.validates :tags,              presence: true
-    article.validate  :at_least_three_tags, if: 'tags.present?'
-  end
+with_options if: -> article { article.status?(:ready_for_review) } do |article|
+article.validates :short_description, presence: true
+article.validates :tags, presence: true
+article.validate :at_least_three_tags, if: 'tags.present?'
+end
 
-  with_options if: -> article { article.status?(:queued_for_publication) } do |article|
-    article.validates :long_description,  presence: true
-    article.validates :keywords,          presence: true
-    article.validate  :at_least_two_keywords, if: 'keywords.present?'
-  end
+with_options if: -> article { article.status?(:queued_for_publication) } do |article|
+article.validates :long_description, presence: true
+article.validates :keywords, presence: true
+article.validate :at_least_two_keywords, if: 'keywords.present?'
+end
 
-  private
-  def at_least_three_tags
-    self.errors[:tags] = "can't be less than three" if self.tags.split(',').length < 3
-  end
+private
+def at_least_three_tags
+self.errors[:tags] = "can't be less than three" if self.tags.split(',').length < 3
+end
 
-  def at_least_two_keywords
-    self.errors[:keywords] = "can't be less than two" if self.keywords.split(',').length < 2
-  end
+def at_least_two_keywords
+self.errors[:keywords] = "can't be less than two" if self.keywords.split(',').length < 2
+end
 end
 {{< / highlight >}}
 

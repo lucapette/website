@@ -1,6 +1,6 @@
 ---
-categories:
-- golang
+tags:
+  - golang
 date: "2017-05-18T00:00:00Z"
 description: One way of doing end to end testing of Go CLI applications
 keywords: golang, testing, integration tests, end to end tests
@@ -14,12 +14,12 @@ exactly what I was looking for, I decided to write a small Go CLI application
 to solve this problem. CLI applications are one of my favorite use cases for
 Go, and I knew I'd enjoy writing it. A few weeks after I released
 [fakedata](https://github.com/lucapette/fakedata), [Kevin
-Gimbel](https://twitter.com/\_kevinatari) found a
+Gimbel](https://twitter.com/_kevinatari) found a
 [bug](https://github.com/lucapette/fakedata/issues/12). The issue was a direct
 consequence of a feature we introduced on the day Kevin found the bug. It was
 an obvious regression, and fakedata clearly had no tests covering the feature
 end to end. It made me think about testing how to test a CLI application end
-to end.  I wanted to do something like:
+to end. I wanted to do something like:
 
 - create a binary of the CLI app
 - run the binary with some specific argument

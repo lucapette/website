@@ -1,6 +1,6 @@
 ---
-categories:
-- docker
+tags:
+  - docker
 date: "2014-04-19T00:00:00Z"
 description: A couple of useful aliases for docker that I use everyday
 keywords: docker, bash, zsh
@@ -18,32 +18,32 @@ Dockerfile I noticed there were a few commands I was typing all the time. And
 they were tedious to write. Since I'm a bit lazy I started looking into
 aliases other people were using to solve the same problem (being lazy also
 means you don't want to re-invent the wheel). I think I found something that
-really fits my needs and it is done the way I would do it.  However,  I
+really fits my needs and it is done the way I would do it. However, I
 couldn't find the reference anymore so I finished re-implementing the aliases
 on my own (that felt like re-inventing the wheel somehow) and I can't give
 credit to the person that originated this idea.
 
-The basic idea is adding aliases to docker in a way they feel like *native*
+The basic idea is adding aliases to docker in a way they feel like _native_
 commands. They look like:
 
-{{< highlight sh >}}
+```sh
 docker clean
-{{< / highlight >}}
+```
 
 instead of following the usual `alias foo=bar` approach. In order to achieve
-the *native feeling* I implemented the following function:
+the _native feeling_ I implemented the following function:
 
-{{< highlight sh >}}
+```sh
 docker() {
   if command -v "docker-$1" > /dev/null 2>&1; then
-    subcommand=$1
-    shift
-    docker-$subcommand $@
+      subcommand=$1
+      shift
+      docker-$subcommand $@
   else
     /usr/local/bin/docker $@
   fi
 }
-{{< / highlight >}}
+```
 
 The function is using its first argument to check if there is a command on the
 system that matches the argument itself using a convention that I have already
@@ -53,7 +53,7 @@ command exists
 Basically, if you want to add a `docker clean` command, you need to make an
 executable named `docker-clean` available in your path. If this command
 exists, it gets executed. Otherwise the function delegates the execution of
-the given command to docker. Pretty simple and pretty neat.  So far I added
+the given command to docker. Pretty simple and pretty neat. So far I added
 two aliases for commands I'm executing all the time. I have a `docker clean`
 that looks like this:
 

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - react
 date: "2017-03-16T00:00:00Z"
 description: Third article of the series "my journey with React and its ecosystem"

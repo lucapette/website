@@ -1,10 +1,10 @@
 ---
-categories:
-- vim
+tags:
+  - vim
 date: "2011-05-24T00:00:00Z"
 description: How to use vim macros and ack.vim to get done repetitive tasks
 keywords: vim, rails, recursive macros, macro, ack, ack.vim
-title: 'Vim for Rails developers: Recursive macros and Ack.vim'
+title: "Vim for Rails developers: Recursive macros and Ack.vim"
 ---
 
 Programmers are [lazy](http://c2.com/cgi/wiki?LazinessImpatienceHubris). We all
@@ -31,18 +31,18 @@ introduction to both topics:
 The story is simple: Vim gives you three wonderful commands to achieve the
 execution of repetitive tasks:
 
-- *q{0-9a-zA-Z"}*
+- _q{0-9a-zA-Z"}_
   The q command stands for start to record and, as many other Vim commands, is
   register based. That means you can type qq to start recording a macro called
   q.
 
-- *q*
+- _q_
   That stands for stop recording.
 
-- *@{0-9a-zA-Z"}*
+- _@{0-9a-zA-Z"}_
   That stands for execute the macro stored in the given register.
 
-There is a command to re-execute the last executed macro, i.e. *@@*.
+There is a command to re-execute the last executed macro, i.e. _@@_.
 It's very useful and I recommend to map it, I've used _map Q @@_.
 
 Well, just to make things as clear as possible. You have something like:
@@ -64,44 +64,44 @@ and you want to get
 Well, you can do it in a huge number of ways. A good way, without counting
 macros, is (consider the cursor on the first line):
 
-- *^df=3ea!&lt;esc&gt;* go to start of line ^ delete until an =, go to end of the third word and insert a !.
+- _^df=3ea!&lt;esc&gt;_ go to start of line ^ delete until an =, go to end of the third word and insert a !.
 - j
-- *^df=3ea!&lt;esc&gt;*
+- _^df=3ea!&lt;esc&gt;_
 - j
-- *^df=3ea!&lt;esc&gt;*
+- _^df=3ea!&lt;esc&gt;_
 
 It is quite efficient and, as you have already noticed, there is a pattern
 repeated three times, each per line. Obviously, this is a perfect situation
 for macro and you can reach this:
 
-- *qq*
-_start recording_
-- *^df=3ea!&lt;esc&gt;j*
-_record the command_
-- *q* stop recording
+- _qq_
+  _start recording_
+- _^df=3ea!&lt;esc&gt;j_
+  _record the command_
+- _q_ stop recording
 - j
-- *@q*
-_execute the macro recorded_
+- _@q_
+  _execute the macro recorded_
 - j
-- *@@*
-_re-execute the macro_
+- _@@_
+  _re-execute the macro_
 
 OK, if you like Vim you'll like that. But we can do it better because Vim is
 so wonderful to offer you the opportunity to store a recursive macro. So, you
 can store a sequence of vim commands that includes the current macro like the
 following:
 
-- *qqq*
-_clear the q register_
-- *qq*
-_start recording_
-- *^df=3ea&lt;esc&gt;!j@q*
-_record the recursive macro, note the @q_
-- *q*
-_stop recording_
+- _qqq_
+  _clear the q register_
+- _qq_
+  _start recording_
+- _^df=3ea&lt;esc&gt;!j@q_
+  _record the recursive macro, note the @q_
+- _q_
+  _stop recording_
 
 And you get a recursive macro. It's very simple to use it, just put it on the
-second line and type *@q*.
+second line and type _@q_.
 
 A very important thing you have to care about is _end of recursion_. A
 recursive macro will end only if it reaches the end of file or runs into an
@@ -109,10 +109,10 @@ error. So when you think about a recursive macro don't forget to write in a
 proper way. Thinking about our example I could have written the first part of
 the command in the following way:
 
-- *3dw*
+- _3dw_
 
 but, because of recursion, I could have deleted things I did not mean to. I
-used *df=* because it will end the recursion when Vim can't find a = in the
+used _df=_ because it will end the recursion when Vim can't find a = in the
 current line.
 
 ## Ack.vim
@@ -121,7 +121,7 @@ current line.
 repeating it. If you don't use it you should stop reading this post and go to
 install it. Well, Ack.vim is a very well-done interface plugin for ack, it
 gives you some commands to work with and it opens a quickfix window when you
-perform a search. Furthermore, I strongly suggest you map *:cn* and *:cp* in
+perform a search. Furthermore, I strongly suggest you map _:cn_ and _:cp_ in
 normal mode, I have mapped them to &lt;c-n&gt; and &lt;c-p&gt; respectively.
 Personally, I use ack a lot. It's a perfect tool, while you dig into source
 code written by others. Another perfect use for ack is code maintenance.
@@ -139,10 +139,10 @@ By the way, in that situation I choose to solve the problem in the following
 way:
 
 - vim app
-Ack.vim searches, by default, in the current directory
+  Ack.vim searches, by default, in the current directory
 - :Ack has_role \\?
-I searched for has_role? references with ack.vim. (codepath.vim)
-- *qqqeas&lt;esc&gt;:cn@qq*
+  I searched for has_role? references with ack.vim. (codepath.vim)
+- _qqqeas&lt;esc&gt;:cn@qq_
 
 I recorded a recursive macro that adds an s to the end of the current word,
 searches for the next reference through ack and reapplies the macro. The end

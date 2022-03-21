@@ -1,6 +1,7 @@
 ---
-categories:
+tags:
   - books
+  - ruby
 date: "2013-01-21T00:00:00Z"
 description:
   A few thoughts about Practical Object-Oriented Design In Ruby by Sandi

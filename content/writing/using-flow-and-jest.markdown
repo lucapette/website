@@ -1,6 +1,7 @@
 ---
-categories:
-- react
+tags:
+  - react
+  - flow
 date: "2017-03-21T00:00:00Z"
 description: Fourth article of the series "my journey with React and its ecosystem"
 keywords: react, flowtype, jest, pomodoro technique

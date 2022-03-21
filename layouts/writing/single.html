@@ -6,10 +6,10 @@
           <h1 class="title is-1">{{ .Title }}</h1>
           <p class="is-italic">
             Published
-            {{ with .Params.categories }}
+            {{ with .Params.tags }}
               in
               {{ $sort := sort . }}
-              {{ $links := apply $sort "partial" "category" "." }}
+              {{ $links := apply $sort "partial" "tag" "." }}
               {{ $clean := apply $links "chomp" "." }}
               {{ delimit $clean ", " }}
             {{ end }}

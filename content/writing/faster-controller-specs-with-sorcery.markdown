@@ -1,28 +1,28 @@
 ---
-categories:
-- rails
+tags:
+  - rails
 date: "2012-01-24T00:00:00Z"
 description: How you can speed up your controller specs if you're using sorcery
 keywords: rails, rspec, factory_girl, sorcery
 title: Faster controller specs with sorcery
 ---
 
-It looks like the entire Rails community is paying attention on the
-*testing-is-not-enough-your-tests-should-be-fast* mantra. And I have to say I
-agree with the topic on the whole. It's good to focus on speeding up your
-tests because, as [Corey Haines](http://coreyhaines.com/) keeps saying, it
-will help you to focus on the design of your project. But still I'm convinced
-you have to concentrate on the design and business logic first. When your
-project grows enough and you get a slow test suite, you should focus on test
-speed. Practically, I'm just focusing on the good advice "premature
-optimization is evil". Always, even when talking about tests.
+It looks like the entire Rails community is paying attention to the
+_testing-is-not-enough-your-tests-should-be-fast_ mantra. And I have to say I
+agree with the topic. It's good to focus on speeding up your tests because, as
+[Corey Haines](http://coreyhaines.com/) keeps saying, it will help you to focus
+on the design of your project. But still I'm convinced you have to concentrate
+on the design and business logic first. When your project grows enough and you
+get a slow test suite, you should focus on test speed. Practically, I'm just
+focusing on the good advice "premature optimization is evil". Always, even when
+talking about tests.
 
 Well, having said that, I want to talk about a simple addition I made to my
 rspec suite in my latest project. The project has a lot of controllers specs
 because it involves many different user types, specific rules and actions that
-users can or cannot do. The controllers specs were a bit slow. I wanted to
-speed them up a bit and remembered that I'd read somewhere about faster
-controller specs with devise. Actually, [Kevin
+users can or cannot do. The controllers specs were a bit slow. I wanted to speed
+them up a bit and remembered that I'd read somewhere about faster controller
+specs with devise. Actually, [Kevin
 Rutherford](http://www.kevinrutherford.co.uk/) wrote a great
 [article](http://silkandspinach.net/2011/08/07/faster-rails-controller-specs/)
 on the topic and I said to myself I could have reproduced the technique with
@@ -33,63 +33,63 @@ It's a nice technique, think about it. Sorcery gives you a nice
 for controller spec and you can call it in the following way (supposing you're
 using FactoryGirl):
 
-{{< highlight ruby >}}
+```ruby
 login_user Factory(:user)
-{{< / highlight >}}
+```
 
-In this way you're hitting the database for a lot of reasons. Stuff like
-updating the fields last_login_at and last_activity_at of your users to the
-current time. Generally, this stuff is useless to your specific spec and you
-can get rid of it by mocking the use and passing it to the sorcery method. So,
-using this technique, you completely mock the user and don't hit the database
-at all.
+This way you're hitting the database in many ways. Stuff like updating the
+fields last_login_at and last_activity_at of your users to the current time.
+Generally, this stuff is useless to your specific spec and you can get rid of it
+by mocking the user and passing it to the sorcery method. So, using this
+technique, you completely mock the user and don't hit the database at all.
 
 Actually I didn't know how many things I had to mock to get it working nicely
-with the sorcery helper but I came up with a nice technique. If you do
-something like:
+with the sorcery helper but I came up with a nice technique. If you do something
+like:
 
-{{< highlight ruby >}}
+```ruby
 user = mock_model(User, email: ‘email@example.com')
 
 thirdy_part_code(user)
-{{< / highlight >}}
+```
 
 You'll probably get an error like:
 
-{{< highlight ruby >}}
+```ruby
 Mock "User_1001" received unexpected message :foo_method with (:baz, Sun, 22 Jan 2012 19:26:03 UTC +00:00)
-{{< / highlight >}}
+```
 
-And it's nice because this error is telling you how the thirdy_part_code
-method intends to use your object. So, that's exactly what I did. I passed in
-a mocked user to the login_user method provided by sorcery and I found out
-very quickly what I needed to mock in order to make it working.
+And it's nice because this error is telling you how the thirdy_part_code method
+intends to use your object. So, that's exactly what I did. I passed in a mocked
+user to the login_user method provided by sorcery and I found out very quickly
+what I needed to mock in order to make it working.
 
 So eventually I created a `spec/support/controller_helpers.rb` with the
 following content:
 
-{{< highlight ruby >}}
+```ruby
 module ControllerHelpers
 
   def stub_login
-    user = mock_model User, Factory.build(:user).attributes.stringify_keys
+  user = mock_model User, Factory.build(:user).attributes.stringify_keys
 
-    sorcery_attributes = {
-      last_login_at_attribute_name: :last_login,
-      last_activity_at_attribute_name: :last_activity_at,
-      username_attribute_names: [:username]
-    }
+        sorcery_attributes = {
+          last_login_at_attribute_name: :last_login,
+          last_activity_at_attribute_name: :last_activity_at,
+          username_attribute_names: [:username]
+        }
 
-    sorcery_config = double "sorcery_config", sorcery_attributes
+        sorcery_config = double "sorcery_config", sorcery_attributes
 
-    user.stub(:sorcery_config).and_return(sorcery_config)
-    user.stub(:update_attribute)
+        user.stub(:sorcery_config).and_return(sorcery_config)
+        user.stub(:update_attribute)
 
-    login_user user
+        login_user user
+
   end
 
 end
-{{< / highlight >}}
+```
 
 Actually my code is a bit fancier because I have a lot of situations where I
 need a particular type of user based on the STI pattern. So, your mileage may

@@ -1,6 +1,6 @@
 ---
-categories:
-- ruby
+tags:
+  - ruby
 date: "2011-03-08T00:00:00Z"
 description: Why you should spend some time configuring IRB.
 keywords: ruby, irb, console
@@ -35,7 +35,7 @@ experience, a personal toolbox is a good way to boost productivity.
 
 ## What you can’t miss
 
-Although I wouldn't recommend any particular configuration,  there are still
+Although I wouldn't recommend any particular configuration, there are still
 some things I think you should know about. As the history for example, you
 want it, don’t you? Well, you can get the irb history in various ways. I show
 the one I prefer below:
@@ -45,8 +45,11 @@ require ‘irb/completion’
 require 'irb/ext/save-history'
 
 # where history is saved
+
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+
 # how many lines to save
+
 IRB.conf[:SAVE_HISTORY] = 1000
 {{< / highlight >}}
 
@@ -67,14 +70,14 @@ go:
 
 {{< highlight ruby >}}
 ruby-1.9.2-p0 > User.all.map_by_email
-  User Load (0.1ms)  SELECT `users`.* FROM `users`
- => ["admin@admin.com", "test@example.com"]
+User Load (0.1ms) SELECT `users`._ FROM `users`
+=> ["admin@admin.com", "test@example.com"]
 ruby-1.9.2-p0 > User.all.map_by_email_and_roles
-  User Load (0.1ms)  SELECT `users`.* FROM `users`
- => [["admin@admin.com", ["admin", "moderatore"]], ["test@example.com", []]
+User Load (0.1ms) SELECT `users`._ FROM `users`
+=> [["admin@admin.com", ["admin", "moderatore"]], ["test@example.com", []]
 ruby-1.9.2-p0 > User.all.map_by_email_and_roles_and_login
-  User Load (0.2ms)  SELECT `users`.* FROM `users`
- => [["admin@admin.com", ["admin", "moderatore"], "admin"], ["test@example.com", [],"test"]
+User Load (0.2ms) SELECT `users`.\* FROM `users`
+=> [["admin@admin.com", ["admin", "moderatore"], "admin"], ["test@example.com", [],"test"]
 ruby-1.9.2-p0 > a=%w{foo bar foobar baz qux}
  => ["foo", "bar", "foobar", "baz", "qux"]
 ruby-1.9.2-p0 > a.map_by_reverse
@@ -99,24 +102,24 @@ more quickly than typing something like the following:
 
 {{< highlight ruby >}}
 ruby-1.9.2-p0 > a=[1,2,3,4,5,6,7,8,9,10]
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ruby-1.9.2-p0 > h={a: 1,b: 2,c: 3, d: 4,e: 5}
- => {:a=>1, :b=>2, :c=>3, :d=>4, :e=>5}
+=> {:a=>1, :b=>2, :c=>3, :d=>4, :e=>5}
 {{< / highlight >}}
 
 So after a bit of time I came up with the following:
 
 {{< highlight ruby >}}
 ruby-1.9.2-p0 > Array.toy
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ruby-1.9.2-p0 > Array.toy(42)
- => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]
-ruby-1.9.2-p0 > Array.toy(42) {|e| (e + 1) * 2}
- => [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]
+ruby-1.9.2-p0 > Array.toy(42) {|e| (e + 1) \* 2}
+=> [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84]
 ruby-1.9.2-p0 > Hash.toy
- => {1=>"a", 2=>"b", 3=>"c", 4=>"d", 5=>"e", 6=>"f", 7=>"g", 8=>"h", 9=>"i", 10=>"j"}
+=> {1=>"a", 2=>"b", 3=>"c", 4=>"d", 5=>"e", 6=>"f", 7=>"g", 8=>"h", 9=>"i", 10=>"j"}
 ruby-1.9.2-p0 > Hash.toy(26)
- => {1=>"a", 2=>"b", 3=>"c", 4=>"d", 5=>"e", 6=>"f", 7=>"g", 8=>"h", 9=>"i", 10=>"j", 11=>"k", 12=>"l", 13=>"m", 14=>"n", 15=>"o", 16=>"p", 17=>"q", 18=>"r", 19=>"s", 20=>"t", 21=>"u", 22=>"v", 23=>"w", 24=>"x", 25=>"y", 26=>"z"}
+=> {1=>"a", 2=>"b", 3=>"c", 4=>"d", 5=>"e", 6=>"f", 7=>"g", 8=>"h", 9=>"i", 10=>"j", 11=>"k", 12=>"l", 13=>"m", 14=>"n", 15=>"o", 16=>"p", 17=>"q", 18=>"r", 19=>"s", 20=>"t", 21=>"u", 22=>"v", 23=>"w", 24=>"x", 25=>"y", 26=>"z"}
 {{< / highlight >}}
 
 Well, that isn’t very magic Ruby but it is very useful and it represented for
@@ -129,7 +132,7 @@ following:
 
 {{< highlight ruby >}}
 ruby-1.9.2-p0 > Topic.approved.limit(1).to_sql
- => "SELECT  `topics`.* FROM `topics` WHERE (approved is true) ORDER BY created_at DESC LIMIT 1"
+=> "SELECT `topics`.\* FROM `topics` WHERE (approved is true) ORDER BY created_at DESC LIMIT 1"
 {{< / highlight >}}
 
 and solve your problem but I see another opportunity to dig into irb. The
@@ -139,41 +142,49 @@ environment is a very common problem, googling you can find many ways to solve
 it. I solved it in the following way:
 
 {{< highlight ruby >}}
+
 # detects a rails console, cares about version
-def rails?(*args)
-    version=args.first
-    v2 = ($0 == 'irb' && ENV['RAILS_ENV'])
-    v3 = ($0 == 'script/rails' && Rails.env)
-    version == 2 ? v2 : version == 3 ? v3 : v2 || v3
+
+def rails?(\*args)
+version=args.first
+v2 = ($0 == 'irb' && ENV['RAILS_ENV'])
+v3 = ($0 == 'script/rails' && Rails.env)
+version == 2 ? v2 : version == 3 ? v3 : v2 || v3
 end
 
 # loading rails configuration if it is running as a rails console
-load File.dirname(__FILE__) + '/.railsrc' if rails?
+
+load File.dirname(**FILE**) + '/.railsrc' if rails?
 {{< / highlight >}}
 
 I wrote the rails? method because I’ve planned to do other rails-related stuff in my "irbrc":https://github.com/lucapette/dotfiles/blob/master/irbrc. The file loaded contains the methods that deal with ActiveRecord logging:
 
 {{< highlight ruby >}}
+
 # activerecord logging methods
+
 # very useful for digging into
+
 # queries
+
 require 'logger'
 require 'activerecord' if rails?(2)
 
 def enable_logger
-    log_to(Logger.new(STDOUT))
+log_to(Logger.new(STDOUT))
 end
 
 def disable_logger
-    log_to(nil)
+log_to(nil)
 end
 
 def log_to(logger)
-    ActiveRecord::Base.logger = logger
-    ActiveRecord::Base.clear_active_connections!
+ActiveRecord::Base.logger = logger
+ActiveRecord::Base.clear_active_connections!
 end
 
 # logging into console by default
+
 enable_logger
 {{< / highlight >}}
 
@@ -181,12 +192,12 @@ I’ve chosen to enable logging by default because I really like the resulting b
 
 {{< highlight ruby >}}
 ruby-1.9.2-p0 > User.first
-  User Load (0.1ms)  SELECT `users`.* FROM `users` LIMIT 1
- => #<User id: 1, email: "admin@example.com", created_at: "2010-12-16 14:46:49", updated_at: "2011-03-01 18:06:31", username: "admin", agency_id: nil>
+User Load (0.1ms) SELECT `users`._ FROM `users` LIMIT 1
+=> #<User id: 1, email: "admin@example.com", created_at: "2010-12-16 14:46:49", updated_at: "2011-03-01 18:06:31", username: "admin", agency_id: nil>
 ruby-1.9.2-p0 > Contract.joins(:user=>:agency).where("agencies.id = ?",Agency.find(1))
-  Agency Load (0.4ms)  SELECT `agencies`.* FROM `agencies` WHERE (`agencies`.`id` = 1) LIMIT 1
-  Contract Load (0.2ms)  SELECT `contracts`.* FROM `contracts` INNER JOIN `users` ON `users`.`id` = `contracts`.`user_id` INNER JOIN `agencies` ON `agencies`.`id` = `users`.`agency_id` WHERE (agencies.id = 1)
- => []
+Agency Load (0.4ms) SELECT `agencies`._ FROM `agencies` WHERE (`agencies`.`id` = 1) LIMIT 1
+Contract Load (0.2ms) SELECT `contracts`.\* FROM `contracts` INNER JOIN `users` ON `users`.`id` = `contracts`.`user_id` INNER JOIN `agencies` ON `agencies`.`id` = `users`.`agency_id` WHERE (agencies.id = 1)
+=> []
 {{< / highlight >}}
 
 ## A simple conclusion

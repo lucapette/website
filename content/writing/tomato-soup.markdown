@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - recipes
 date: "2017-01-09T00:00:00Z"
 description: A good soup for the winter. Easy to prepare and really delicious

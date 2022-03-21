@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - terraform
 date: "2017-06-06T00:00:00Z"
 description: A short introduction to terraform

@@ -1,34 +1,33 @@
 ---
-categories:
+tags:
   - books
+  - ruby
 date: "2011-02-24T00:00:00Z"
 description: Published by The Pragmatic Bookshelf in 2010
 keywords: metaprogramming ruby, book, review, Paolo Perrotta
 title: A review of Metaprogramming Ruby
 ---
 
-I want to say it straight away: you should read this book if you haven’t done
-it yet. I’m reading a bunch of Ruby-related books and this is one of the best
-available on the market. So, in this review, I’ll try to give an overview of
-the book still I guess I won’t be good enough to explain how good this book
-is.
+I want to say it straight away: you should read this book. I'm reading a bunch
+of Ruby-related books and this is one of the best available on the market. So,
+in this review, I'll try to give an overview of the book still I guess I won’t
+be good enough to explain how good this book is.
 
 ## The book
 
 The aim of [Metaprogramming
-Ruby](http://pragprog.com/titles/ppmetr/metaprogramming-ruby) is very clear
-and simple. One of its goals is to cover all the aspects of metaprogramming
-related to Ruby. Furthermore it aims to cover some of the most interesting
-techniques that make Ruby so fascinating. The book starts with a nice
-introduction on the reasons why you should read it and then introduces your
-fellow Meta-programmer to you - Bob. I confess that when I met Bob for the
-first time I was a bit sceptical about the expedient. It seems a bit
-simplistic approach but I assure you that Paolo Perrotta has done a terrific
-job. All the examples related to Bob the meta-programmer are very intelligent
-and well-made. While reading the book you will occasionally run into
-interesting techniques that the author calls “spells”. I find it a very nice
-way to call them. This is a great idea, it helps you to understand better the
-entire Ruby meta-programming eco-system.
+Ruby](http://pragprog.com/titles/ppmetr/metaprogramming-ruby) is very clear and
+simple. One of its goals is to cover all the aspects of metaprogramming related
+to Ruby. Furthermore it aims to cover some of the most interesting techniques
+that make Ruby so fascinating. The book starts with a nice introduction on the
+reasons why you should read it and then introduces your fellow Meta-programmer
+to you - Bob. I confess that when I met Bob for the first time I was a bit
+sceptical about the expedient. It seems a bit simplistic approach but I assure
+you that Paolo Perrotta has done a terrific job. All the examples related to Bob
+the meta-programmer are very intelligent and well-made. While reading the book
+you will occasionally run into interesting techniques that the author calls
+“spells”. I find it a very nice way to call them. This is a great idea, it helps
+you to understand better the entire Ruby meta-programming eco-system.
 
 My considerations grouped by chapter:
 
@@ -37,8 +36,8 @@ My considerations grouped by chapter:
 This book is not intended for beginners, at least not for absolute ones, but
 this chapter is so clear, simple and enjoyable to read that I would recommend
 reading it to everyone. It is a very readable introduction to how modules,
-classes and objects are meant to be in Ruby. Furthermore, this chapter
-contains the best definition of the _private_ Ruby keyword I have ever read.
+classes and objects are meant to be in Ruby. Furthermore, this chapter contains
+the best definition of the _private_ Ruby keyword I have ever read.
 
 ### Tuesday: Methods
 
@@ -53,22 +52,20 @@ these issues.
 ### Wednesday: Blocks
 
 The chapter starts with a general introduction to blocks and goes on with
-various types of scope, procs and lambdas. It presents a very good DSL
-example, used to explain how _instance_eval_ works. Surely, the chapter is
-worth reading.
+various types of scope, procs and lambdas. It presents a very good DSL example,
+used to explain how _instance_eval_ works. Surely, the chapter is worth reading.
 
 ### Thursday: Class Definitions
 
-This is one of the most important chapters of the book, maybe it is actually
-the most important one. I’m still impressed by its clarity and I often reread
-chunks of it. In this chapter Paolo Perrotta uses very good definitions like
-the one of _“current class”_. I have to say that one of the most notable
-aspects of the book is the perfect choice of definitions for “wild” Ruby
-features. Furthermore you’ll find a very great explanation of the eigenclass.
-I have to warn you: if you aren’t an expert, this chapter will wear you out,
-but don’t worry, you will be satisfied when you finish it. This chapter
-contains a great number of topics, all of them well-covered. I think you
-should read it as I do: many times.
+This is one of the most important chapters of the book, maybe it is actually the
+most important one. I’m still impressed by its clarity and I often reread chunks
+of it. In this chapter Paolo Perrotta uses very good definitions like the one of
+_“current class”_. I have to say that one of the most notable aspects of the
+book is the perfect choice of definitions for “wild” Ruby features. Furthermore
+you’ll find a very great explanation of the eigenclass. I have to warn you: if
+you aren’t an expert, this chapter will wear you out, but don’t worry, you will
+be satisfied when you finish it. This chapter contains a great number of topics,
+all of them well-covered. I think you should read it as I do: many times.
 
 ### Friday: Code That Write Code
 
@@ -94,7 +91,7 @@ features work, you’ll get a good picture of them.
 ### Metaprogramming Safely
 
 This chapter will give you good advice on how to write metaprogramming code
-without going crazy. It covers aspects like tests and correct monkey patching.
+without losing it. It covers aspects like tests and correct monkey patching.
 
 At the end, the book contains 3 appendixes. They are all very readable and
 interesting, the appendix about Ruby common idioms is my favourite.
@@ -103,9 +100,9 @@ interesting, the appendix about Ruby common idioms is my favourite.
 
 Generally speaking, I prefer description oriented books rather than example
 oriented ones, but this book changed my mind about that. The author is so good
-at writing examples that I think you’ll love it as well. **If you are
-searching for a book to help you make a step further in your Ruby learning,
-stop it. You have just found it.**
+at writing examples that I think you’ll love it as well. **If you are searching
+for a book to help you make a step further in your Ruby learning, stop it. You
+have just found it.**
 
 ## What I disliked most
 

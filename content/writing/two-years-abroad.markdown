@@ -1,6 +1,6 @@
 ---
-categories:
-- writing
+tags:
+  - writing
 date: "2014-08-29T00:00:00Z"
 description: Just some thoughts on how it feels to live abroad
 keywords: lucapette, expat, abroad, germany, berlin
@@ -8,10 +8,10 @@ title: Two Years Abroad
 ---
 
 It's high time I wrote this post. I've been thinking about it for a long time.
-It was part of my first year *expat resolutions*. But of course I missed the
+It was part of my first year _expat resolutions_. But of course I missed the
 appointment with my first year. I was too busy enyoing my new life with
 [@olia_la](http://twitter.com/olia_la), loving my new city, working with the
-best team ever at SponsorPay.  Now, after another year, I feel ready to wrap
+best team ever at SponsorPay. Now, after another year, I feel ready to wrap
 my mind around this experience, I feel ready to rant about my country, I feel
 it's time to sum the whole thing up. Why would I want to do so? I don't know
 the reason, but who needs reasons?
@@ -30,7 +30,7 @@ goal of finding a good job for me. I applied for a few positions and I had a
 very diversified experience. I got very bad offers (in terms of money), I got
 very stupid interviews ("what's the result of `2^16`? what data structures do
 you know?" I even got "what Ruby version are you using?") and then I found
-this fantastic team at SponsorPay.  Smart people, nice numbers, interesting
+this fantastic team at SponsorPay. Smart people, nice numbers, interesting
 organizational challenges and vibe, a culture for shipping code that I've
 never seen anywhere else. It felt like living a dream.
 
@@ -52,10 +52,10 @@ This may sound surprising but the moment my new life started shaping matches
 the moment of my life I hated my country the most. It took me sometime to
 decode this feeling. I'm a slow person, expecially with feelings. And I
 needed my time. Then I got to a crucial point - the very reason why I felt
-so angry at my country.  While I projected myself in the process of moving
+so angry at my country. While I projected myself in the process of moving
 somewhere else, I was sure I was going to miss some things badly. Well, it
 didn't happen. I didn't happen at all. I missed the lack of missing things
-from my country.  It's not the feeling I was prepared to digest. It was pretty
+from my country. It's not the feeling I was prepared to digest. It was pretty
 hard to decode why I was so angry at Italy. But think about it. I missed
 nothing about Italy for a long time. Nothing at all. I'm not sure how to
 express this but it was a disturbing feeling. I was waiting for the day I
@@ -75,7 +75,7 @@ sentences:
 - I've left SponsorPay (now [Fyber)](http://fyber.com) after almost 2
   fantastic years. It was a love story basically. I liked the people more than
   I dislike advertising. And I really don't like
-  [advertising](https://www.youtube.com/watch?v=E_F5GxCwizc).  As in all love
+  [advertising](https://www.youtube.com/watch?v=E_F5GxCwizc). As in all love
   stories, the end is bitter, but I feel I'm a much better programmer now and
   I feel lucky I've been given this opportunity.
 
@@ -86,7 +86,7 @@ sentences:
   Italian-style years, this is a great feeling.
 
 - I feel hooked to Berlin. It feels like home, it even feels like a cage
-  sometimes.  It's such a good fit for me that I'm afraid I would't be able to
+  sometimes. It's such a good fit for me that I'm afraid I would't be able to
   live anywhere else. It feels like Ruby in this sense. I hardly choose
   anything else than Ruby unless I can't use Ruby. Same for Berlin.
 
@@ -95,7 +95,7 @@ bit. I don't have much to conclude here. I've thought of being an expat for
 years before becoming one. And it's very different from my expectations. This
 confused me to the point I don't really know what's the point. I know that
 these two years have been the best years ever. It may be not related to moving
-away from Italy. But I can hardly imagine to find a SponsorPay team there.  I
+away from Italy. But I can hardly imagine to find a SponsorPay team there. I
 have this constant feeling "it is Sunday morning" all the time. It's always
 quiet around. There are almost no cars in the centre (yeah, German friends you
 have no idea what a traffic jam really is), the public transportation is

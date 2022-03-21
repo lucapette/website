@@ -1,6 +1,7 @@
 ---
-categories:
+tags:
   - books
+  - rails
 date: "2011-10-07T00:00:00Z"
 description:
   A review of Crafting Rails Applications by José Valim. Published by The

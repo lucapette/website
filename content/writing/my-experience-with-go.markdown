@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - golang
 date: "2017-11-09T00:00:00Z"
 description:

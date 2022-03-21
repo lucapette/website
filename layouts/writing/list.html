@@ -14,12 +14,12 @@
       </div>
 
       <div class="column is-1">
-        {{ $categories := $.Site.Taxonomies.categories.ByCount }}
+        {{ $categories := $.Site.Taxonomies.tags.ByCount }}
         <div class="tags are-medium">
-          <h2>Categories:</h2>
+          <h2>Tags:</h2>
           {{ range $categories }}
             {{ if .Term }}
-              {{ $categoryURL := printf "categories/%s" .Term | relURL }}
+              {{ $categoryURL := printf "tags/%s" .Term | relURL }}
               <a href="{{ $categoryURL }}" class="tag is-link is-light"
                 >{{ .Term }} <span class="badge">({{ .Count }})</span></a
               >

@@ -1,6 +1,7 @@
 ---
-categories:
+tags:
   - books
+  - ruby
 date: "2011-02-11T00:00:00Z"
 description:
   A review of Ruby Best Practices by Gregory Brown. Published by O'Reilly

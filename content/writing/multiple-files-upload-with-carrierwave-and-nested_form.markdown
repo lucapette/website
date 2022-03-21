@@ -1,6 +1,6 @@
 ---
-categories:
-- rails
+tags:
+  - rails
 date: "2011-08-29T00:00:00Z"
 description: Multiple Attachments with carrierwave and nested_form
 keywords: rails, carrierwave, nested_form, attachments
@@ -13,7 +13,7 @@ multiple file attachments to a given object with only one form quickly, this
 example could help you.
 
 So let's create an example project (I used one of mine rails
-[templates](https://github.com/lucapette/rails-templates)_:
+[templates](https://github.com/lucapette/rails-templates)\_:
 
 {{< highlight sh >}}
 rails new carrierwave-nested_form -d mysql -m rails-templates/jquery.rb
@@ -67,11 +67,11 @@ and mount the uploader to the chosen field of the attachment model:
 
 {{< highlight ruby >}}
 class Attachment < ActiveRecord::Base
-   attr_accessible :description, :file
+attr_accessible :description, :file
 
-   belongs_to :attachable, :polymorphic => true
+belongs_to :attachable, :polymorphic => true
 
-   mount_uploader :file, FileUploader
+mount_uploader :file, FileUploader
 end
 {{< / highlight >}}
 
@@ -86,11 +86,11 @@ proceed in the following order:
 
 {{< highlight ruby >}}
 class Article < ActiveRecord::Base
-  attr_accessible :title, :description, :attachments_attributes
+attr_accessible :title, :description, :attachments_attributes
 
-  has_many :attachments, :as => :attachable
+has_many :attachments, :as => :attachable
 
-  accepts_nested_attributes_for :attachments
+accepts_nested_attributes_for :attachments
 end
 {{< / highlight >}}
 
@@ -100,7 +100,8 @@ eventually we modify the form in the following way:
 
 {{< highlight erb >}}
 <%= nested_form_for @article, :html=>{:multipart => true } do |f| %>
-  <%= f.error_messages %>
+<%= f.error_messages %>
+
   <p>
   <%= f.label :title %><br />
   <%= f.text_field :title %>

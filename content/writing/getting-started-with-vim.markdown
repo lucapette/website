@@ -1,6 +1,6 @@
 ---
-categories:
-- vim
+tags:
+  - vim
 date: "2017-02-19T00:00:00Z"
 description: Trying to make Vim's learning curve more gradual
 keywords: vim, learning, editor, drew neil, practical vim, tpope
@@ -11,7 +11,7 @@ A few days ago a friend asked me: "How do I get started with Vim?"
 [She](https://twitter.com/lady_jcb) explained to me she tried Vim out for a
 few days and enjoyed the idea of working inside the terminal, as well as the
 consistency of the experience across different servers. Good reasons, no
-doubt.  I collected some notes and some links for her which I decided to turn
+doubt. I collected some notes and some links for her which I decided to turn
 into the article you're reading.
 
 My goal is to suggest a path for starting out with Vim without the anxiety and
@@ -101,7 +101,6 @@ Links:
 - [Your problem with Vim is that you don't grok
   vi.](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118)
 
-
 ## Vim plugins
 
 Vim does not ship with all you need and finding your way around the ecosystem
@@ -158,7 +157,7 @@ Vim](https://pragprog.com/book/dnvim/practical-vim) and I recommend it every
 time I can. It's a perfect book for people that want to deepen their Vim
 knowledge. As soon as you get comfortable with using Vim on a daily basis, I
 suggest you read this book. It's a wonderful collection of tips and it will
-speed up your learning path. I can't imagine a better resource for Vim,  I think
+speed up your learning path. I can't imagine a better resource for Vim, I think
 there's a _before_ and _after_ reading "Practical Vim".
 
 Drew Neil published quite some screencasts at [vimcasts](http://vimcasts.org/)

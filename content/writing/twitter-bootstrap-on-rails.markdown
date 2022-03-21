@@ -1,8 +1,9 @@
 ---
-categories:
-- rails
+tags:
+  - rails
 date: "2011-11-22T00:00:00Z"
-description: How you can easily integrate the twitter bootstrap framework and Ruby
+description:
+  How you can easily integrate the twitter bootstrap framework and Ruby
   on Rails
 keywords: rails, twitter bootstrap, simple_form, show_for
 title: Twitter Bootstrap on Rails
@@ -29,6 +30,7 @@ from the site and modified the application layout of a fresh new rails 3.1.1
 app in the following way:
 
 {{< highlight erb >}}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -72,18 +74,21 @@ is interesting:
 
 {{< highlight erb >}}
 <% unless flash[:notice].blank? %>
+
   <div class="alert-message info">
     <%= content_tag :div, flash[:notice] %>
   </div>
 <% end %>
 
 <% unless flash[:error].blank? %>
+
   <div class="alert-message error">
     <%= content_tag :div, flash[:error] %>
   </div>
 <% end %>
 
 <% unless flash[:alert].blank? %>
+
   <div class="alert-message warning">
     <%= content_tag :div, flash[:alert] %>
   </div>
@@ -98,7 +103,7 @@ and show pages. I use two wonderful gems to simplify my work with this kind of
 stuff. And it turned out that they both play wonderfully with twitter
 bootstrap:
 
-- simple\_form
+- simple_form
 
   I don't think [simple_form](https://github.com/plataformatec/simple_form)
   needs a presentation. By the way take a look at the README to understand how
@@ -143,9 +148,9 @@ trying to save is not valid. Well, I wrote a little chunk of CoffeeScript
 
 {{< highlight javascript >}}
 $ ->
-  if $('.help-inline, .field_with_errors').length
+if $('.help-inline, .field_with_errors').length
     $id=$('.help-inline, .field_with_errors').first().closest('.tab-pane').attr('id')
-    $('.active').removeClass('active')
+$('.active').removeClass('active')
     $('a[href=#'+$id+']').click()
 {{< / highlight >}}
 

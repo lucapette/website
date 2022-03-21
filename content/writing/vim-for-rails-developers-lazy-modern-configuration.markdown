@@ -1,11 +1,12 @@
 ---
-categories:
-- vim
+tags:
+  - vim
 date: "2011-11-17T00:00:00Z"
 description: How I think you should deal with configuring Vim
 keywords: vim, rails, configuration, pathogen.vim
-title: 'Vim for Rails developers: Lazy modern configuration'
+title: "Vim for Rails developers: Lazy modern configuration"
 ---
+
 Vim is very customizable, it has thousands of plugins suitable for everyone's
 needs. Each of us uses some of them. Furthermore, it has a good number of
 files you can use to configure some aspects of the editor and it would be very
@@ -27,11 +28,10 @@ given by a plugin. The odds are you'll come up with three or four plugins at
 the moment and a number of mappings. So you could grab those plugins and start
 from there.
 
-After my little battle against distros, what does *lazy modern* configuration
+After my little battle against distros, what does _lazy modern_ configuration
 mean? Or, at least, what do I mean?
 
-Modern
-------
+## Modern
 
 Programmers are [lazy](http://c2.com/cgi/wiki?LazinessImpatienceHubris). And
 it's a good thing. Being lazy can help you become a better programmer. If
@@ -43,8 +43,7 @@ It's 2011 and we need a good way of managing all this stuff. As many of you
 already imagined, I deliberately steal the modern adjective from a good nice
 [article](http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen).
 
-Lazy
-----
+## Lazy
 
 Spend your time configuring something only and only when you really need it.
 Highly configurable tools could be a double-edged sword, and Vim is the most
@@ -56,7 +55,7 @@ working in Vim, it comes to my mind I could use that bookmarked stuff. Now
 you're thinking that I put that new wonderful thing into my configuration.
 Actually I don't, I do my best to resist. And I make this process happen many
 times. Only when I get really tired of desiring that particular thing in my
-workflow, I eventually go find it and put it into Vim.  I can assure you this
+workflow, I eventually go find it and put it into Vim. I can assure you this
 process will work very well for various reasons:
 
 - You really understand what your configuration lacks when you run into the
@@ -64,12 +63,11 @@ process will work very well for various reasons:
 - You don't make your configuration dirty.
 - You use only what you need.
 
-    *Perfection is attained, not when no more can be added, but when no more
-    can be removed.* said
-    [someone](http://en.wikiquote.org/wiki/Antoine_de_Saint-Exup%C3%A9ry).
+  _Perfection is attained, not when no more can be added, but when no more
+  can be removed._ said
+  [someone](http://en.wikiquote.org/wiki/Antoine_de_Saint-Exup%C3%A9ry).
 
-Taking care of plugins
-----------------------
+## Taking care of plugins
 
 Now, if you want to obtain a real lazy modern configuration you have to do at
 least the following things:
@@ -96,28 +94,28 @@ steps:
 - Create the .vim/bundle directory
 - Put pathogen.vim there
 - Put on the top of your .vimrc the following lines:
-{{< highlight vim >}}
-    runtime bundle/pathogen/autoload/pathogen.vim
-    call pathogen#infect()
-    call pathogen#helptags()
-{{< / highlight >}}
+  {{< highlight vim >}}
+  runtime bundle/pathogen/autoload/pathogen.vim
+  call pathogen#infect()
+  call pathogen#helptags()
+  {{< / highlight >}}
 
 Now, you could move all your plugins in the bundle directory. They should keep
 working fine. This is a good starting point to make your configuration modern
 and clean but it still lacks the lazy part. You can't update your plugins
-easily. And in my point of view, *easily* should mean maximum one command to
+easily. And in my point of view, _easily_ should mean maximum one command to
 update plugins. So, once again, you can achieve such a result in many ways,
 but you should go straight with git. Git is widely used in our (as a note: our
 means rails+vim users) world and the odds are you will find the plugin you
 want to add on github. Actually, there is even a
-[http://vim-scripts.org/](http://vim-scripts.org/) project. It's *sweet*.
+[http://vim-scripts.org/](http://vim-scripts.org/) project. It's _sweet_.
 Another great reason to adopt pathogen.vim is the natural integration with
 [git submodules](http://book.git-scm.com/5_submodules.html). With submodules
 and pathogen.vim you can get a lazy modern vim configuration. Now, I want to
 say just a couple of words about my way of using this stuff to make more clear
-what I mean with *easily*. I added to the pile of tools just another one. I'm
+what I mean with _easily_. I added to the pile of tools just another one. I'm
 a Rubyist, not a Ruby Hero but an ordinary Rubyist. So, for me, solving a
-boring task with files and the shell means *Use Rake*. So I used Rake but you
+boring task with files and the shell means _Use Rake_. So I used Rake but you
 could use a bash script or whatever else. The real point is focusing on the
 two above mentioned steps. When I want to update my vim configuration
 directory I type:
@@ -141,8 +139,7 @@ well. You'll learn a new language or give up using another one. So, you need a
 simple process to take care of this ever-changing status because you don't
 have to waste too much time configuring your editor.
 
-Runtime directories and files
------------------------------
+## Runtime directories and files
 
 We've just talked about a big part of the problem. But there is another thing
 to consider. Your own configuration consists basically of two things: the
@@ -199,23 +196,23 @@ things clean:
 
   All the files that you put here will be automatically loaded by Vim when you open it.
 
-Now you have some information to clean your vim directory and you can focus on *cleaning and removing* stuff. Let me tell you what helped me a lot:
+Now you have some information to clean your vim directory and you can focus on _cleaning and removing_ stuff. Let me tell you what helped me a lot:
 
 - Divide your mapping in two types
 
   - General mappings
 
-      Mappings you will use in all files.
+    Mappings you will use in all files.
 
   - Filetype mappings
 
-      Mappings you will use, for example, only with Ruby files or with Coffeescript files.
+    Mappings you will use, for example, only with Ruby files or with Coffeescript files.
 
 - Organize your general mappings
 
-    I've used a dir with some files in it, each file groups a number of
-    mappings according to its own name. It will help you to focus on what you
-    really need and what you currently have.
+  I've used a dir with some files in it, each file groups a number of
+  mappings according to its own name. It will help you to focus on what you
+  really need and what you currently have.
 
 - Put your filetype based files in the after/ftplugin directory and use the
   [buffer](http://vimdoc.sourceforge.net/htmldoc/map.html#:map-<buffer>)
@@ -225,20 +222,18 @@ Now you have some information to clean your vim directory and you can focus on *
 
 - Order personal settings and group your plugin settings in your vimrc
 
-    Use the criteria you find more logic for your setting. But keep them
-    ordered. When you change something, you'll know where to go. Grouping your
-    settings by plugin is a good idea too.
+  Use the criteria you find more logic for your setting. But keep them
+  ordered. When you change something, you'll know where to go. Grouping your
+  settings by plugin is a good idea too.
 
 - Comment your settings
 
-    I'm writing about it because I would force myself to do it too. It's
-    important even for obvious things. If you have your vim directory on a
-    public service like github or bitbucket, you're being kind to other
-    people.
+  I'm writing about it because I would force myself to do it too. It's
+  important even for obvious things. If you have your vim directory on a
+  public service like github or bitbucket, you're being kind to other
+  people.
 
-
-OK but why?
------------
+## OK but why?
 
 I know all this configuration stuff might seem a bit paranoid but I think I
 have a strong point to support my ideas: You won't stop learning about Vim. I

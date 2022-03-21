@@ -1,6 +1,7 @@
 ---
-categories:
+tags:
   - books
+  - rails
 date: "2011-05-06T00:00:00Z"
 description: Published by Addison Wesley in Dicember 2010
 keywords: the rails 3 way, book, review, Obie Fernandez

@@ -1,8 +1,9 @@
 ---
-categories:
-- music
+tags:
+  - music
 date: "2016-12-28T00:00:00Z"
-description: How I found my way into the beauty of classical music without any formal
+description:
+  How I found my way into the beauty of classical music without any formal
   education
 keywords: music, classical music, learning, guide
 title: An illiterate guide to classical music
@@ -15,8 +16,8 @@ ran into some of my favourite pieces. Those CDs were a new shiny media. I was
 always afraid of scratching their surface. I was an avid reader of their
 booklets. But there was something missing. I felt the music I was listening to
 was the kind of collective experience I was not fond of. I was looking for the
-introspective feeling you get out of more solitary activities.  Reading,
-writing. They have been nurturing my brain since I remember myself.  A couple
+introspective feeling you get out of more solitary activities. Reading,
+writing. They have been nurturing my brain since I remember myself. A couple
 of years later, I got into metal. And, to me, it was all about the presence of
 lead guitars. I started studying the guitar a bit and tried to learn how to
 read music. This process brought me closer to classical music again. I started
@@ -94,7 +95,7 @@ piano solo. This is a key learning as this works well for other instruments too:
 And so on. If you have a look at the wikipedia pages I have linked so far, you
 will notice something very useful. Pure gold! I wish I had a list of [noted
 piano sonatas] twenty years ago. I would have found out about [Sonata
-Pathétique](https://en.wikipedia.org/wiki/Piano_Sonata_No._8_(Beethoven)) by
+Pathétique](<https://en.wikipedia.org/wiki/Piano_Sonata_No._8_(Beethoven)>) by
 Beethoven a long time ago. It is the most beautiful composition I have run
 into and [this](https://www.youtube.com/watch?v=cg9KQ610biU) version leaves me
 speechless every single time I listen to it.
@@ -213,7 +214,6 @@ so much is:
 Chances are some kind of ensemble will fit your taste better and it is
 really worth figuring it out, so you can explore the
 ensemble by composer, performers, labels and so on.
-
 
 ## How can I help
 

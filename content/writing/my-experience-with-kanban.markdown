@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - "engineering management"
 date: "2015-07-06T00:00:00Z"
 description: How I think Kanban works and what I like about it

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
   - golang
 date: "2017-02-23T00:00:00Z"
 keywords: golang, grafana, influxdb, open source, productivity

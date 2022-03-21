@@ -6,6 +6,9 @@ enableGitInfo = true
 paginate = 5
 [build]
   writeStats = true
+[markup]
+  [markup.highlight]
+    style = 'nord'
 [menu]
   [[menu.main]]
     indentifier = "home"

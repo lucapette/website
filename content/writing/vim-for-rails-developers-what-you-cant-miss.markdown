@@ -1,11 +1,12 @@
 ---
-categories:
-- vim
+tags:
+  - vim
 date: "2011-02-16T00:00:00Z"
-description: my first article of the series "vim for rails developer". I will use
+description:
+  my first article of the series "vim for rails developer". I will use
   the article as an index for the series
 keywords: vim, rails,rails.vim, NERDTree, FuzzyFinderTextMate, codepath
-title: 'Vim for rails developers: what you can''t miss'
+title: "Vim for rails developers: what you can't miss"
 ---
 
 Vim is my editor of choice and Rails is my framework. I think many of us have
@@ -39,7 +40,7 @@ editing, navigate your file-system to find your next file and open it for
 editing, which could become a WTF work-flow very quickly. A first glance
 solution could be to open all the files you want to edit with the _-O/-o_ vim
 option but, come on, nobody knows how many files have to be edited before the
-work starts.  For example, consider the problem of editing a view, say an
+work starts. For example, consider the problem of editing a view, say an
 index, and the correspondent controller. You edit the controller to dig some
 records out, then you go to a browser and discover you need an extra field in
 your awesome HTML table. So you have to close the index file and open the
@@ -84,7 +85,7 @@ improvements of
 [FuzzyFileFinderTextMate](http://weblog.jamisbuck.org/2009/1/28/the-future-of-fuzzyfinder-textmate)
 by another true hero [Jamis Buck](http://weblog.jamisbuck.org/). I am also a
 Java Developer (don’t give me away) and the only thing I miss (I swear it’s
-the only one)  is the ctrl-shift-r that you can find either in Eclipse or in
+the only one) is the ctrl-shift-r that you can find either in Eclipse or in
 Netbeans. Practically, the Find-Resource is a very nice feature you can use
 when you want to find a file “project scoped”. This functionality is fairly
 famous in the Rails eco-system because of TextMate “cmd-T” feature, and the
@@ -99,7 +100,7 @@ You have at least two ways to solve this problem. The first one uses a
 function made available by rails.vim:
 
 {{< highlight vim >}}
-autocmd User Rails let  g:fuzzy_roots = [RailsRoot()]
+autocmd User Rails let g:fuzzy_roots = [RailsRoot()]
 {{< / highlight >}}
 
 Adding that line to your .vimrc solves the problem for you. In fact, when you
@@ -122,7 +123,6 @@ configuration you'll see something like that:
 ![/img/fuzzy_finder_not_configured.png](/img/fuzzy_finder_not_configured.png)
 
 _*With*_ the previous configuration you'll see something like that:
-
 
 ![/img/fuzzy_finder_configured.png!](/img/fuzzy_finder_configured.png)
 
