@@ -20,7 +20,7 @@
           {{ range $categories }}
             {{ if .Term }}
               {{ $categoryURL := printf "tags/%s" .Term | relURL }}
-              <a href="{{ $categoryURL }}" class="tag is-link is-light"
+              <a href="{{ $categoryURL }}" class="tag is-link"
                 >{{ .Term }} <span class="badge">({{ .Count }})</span></a
               >
             {{ end }}
