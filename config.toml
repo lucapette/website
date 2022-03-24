@@ -1,6 +1,6 @@
 baseURL = "https://lucapette.me"
 languageCode = "en-us"
-title = "Luca Pette"
+title = "Home"
 summaryLength = 30
 enableGitInfo = true
 paginate = 5
