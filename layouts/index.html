@@ -26,14 +26,43 @@
       </section>
       <section class="section">
         <div class="tile is-ancestor">
-          <div class="tile is-4 is-vertical is-parent">
-            <h2>Latest writing:</h2>
-
-            {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
-              <div class="tile is-child">
-                <div class="box">{{ partial "post" . }}</div>
+          <div class="tile is-4">
+            <div class="card">
+              <div class="card-header">
+                <p class="card-header-title">Latest writing</p>
               </div>
-            {{ end }}
+              <div class="card-content">
+                <ul>
+                  {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
+                    <li>
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                      <span class="has-text-grey-light is-size-7 is-italic"
+                        >{{ .Date | time.Format ":date_long" }}</span
+                      >
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tile is-4">
+            <div class="card">
+              <div class="card-header">
+                <p class="card-header-title">My favourite writing</p>
+              </div>
+              <div class="card-content">
+                <ul>
+                  {{ range (where .Site.Pages.ByPublishDate.Reverse "Params.favourite" true ) }}
+                    <li>
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                      <span class="has-text-grey-light is-size-7 is-italic"
+                        >{{ .Date | time.Format ":date_long" }}</span
+                      >
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

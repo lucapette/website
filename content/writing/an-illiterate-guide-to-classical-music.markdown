@@ -1,4 +1,5 @@
 ---
+favourite: true
 tags:
   - music
 date: "2016-12-28T00:00:00Z"
