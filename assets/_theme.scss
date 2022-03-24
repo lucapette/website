@@ -1,5 +1,13 @@
 @import "../node_modules/nord/src/sass/nord.scss";
-@import "colors.scss";
+
+$orange: $nord12;
+$yellow: $nord13;
+$green: $nord14;
+$turquoise: $nord8;
+$cyan: $nord9;
+$blue: $nord10;
+$purple: $nord15;
+$red: $nord11;
 
 // base colors
 $black: $nord0;
@@ -21,7 +29,7 @@ $yellow-invert: rgba($black, 0.7);
 $primary-invert: rgba($black, 0.7);
 
 $primary: $blue !default;
-$danger: $orange;
+$danger: $red;
 
 $subtitle-color: $grey;
 
@@ -58,6 +66,10 @@ h6 {
 }
 .section {
   padding: 3rem 1.5rem;
+}
+
+.box {
+  background-color: $white-ter;
 }
 
 .navbar {

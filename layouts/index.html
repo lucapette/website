@@ -31,8 +31,8 @@
             <h2>Recents writing:</h2>
 
             {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
-              <div class="tile is-child is-separated-bottom">
-                {{ partial "post" . }}
+              <div class="tile is-child">
+                <div class="box">{{ partial "post" . }}</div>
               </div>
             {{ end }}
           </div>
