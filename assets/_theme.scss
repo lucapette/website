@@ -34,6 +34,9 @@ $subtitle-color: $grey;
 
 $link: $nord9;
 
+$weight-normal: 450;
+$body-font-size: 1.1em;
+
 $family-heading: "Literata", "Lucida Grande", "Lucida Sans Unicode",
   "Lucida Sans", Geneva, Arial, sans-serif;
 $family-serif: "Raleway", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
@@ -44,7 +47,6 @@ $body-family: "Raleway", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
   Geneva, Arial, sans-serif;
 
 $box-shadow: 0 0 1px $grey-light;
-
 $navbar-item-active-background-color: $white-ter !default;
 
 @import "../node_modules/bulma/bulma.sass";
@@ -65,9 +67,6 @@ h6 {
   font-weight: 700;
   font-family: $family-heading;
 }
-.section {
-  padding: 3rem 1.5rem;
-}
 
 .card {
   $card-border-color: $grey-darker;
@@ -77,8 +76,4 @@ h6 {
     box-shadow: none;
     border-bottom: 1px solid $grey-lighter;
   }
-}
-
-.navbar {
-  background-color: $white-bis;
 }
