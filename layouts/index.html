@@ -48,9 +48,6 @@
                 {{ range (where .Site.Pages.ByLastmod.Reverse "Params.favourite" true ) }}
                   <li>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    <span class="has-text-grey-light is-size-7 is-italic"
-                      >{{ .Lastmod | time.Format ":date_long" }}</span
-                    >
                   </li>
                 {{ end }}
               </ul>
