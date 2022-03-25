@@ -1,10 +1,11 @@
+---
+tags:
+  - "product management"
 date: "2017-02-06T00:00:00Z"
-description:
-The first time you do something, you learn a lot. It's time to share
-that.
+description: "The first time you do something, you learn a lot. It's time to share
+that."
 keywords: product management, product teams, product development
 title: All I have done wrong running a product team
-
 ---
 
 Two years ago I had an opportunity to shift my career towards product

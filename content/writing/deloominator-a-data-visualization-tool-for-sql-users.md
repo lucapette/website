@@ -10,11 +10,11 @@ keywords: golang, react, data visualization, vega-lite, sql, databases
 title: "deloominator: a data visualization tool for SQL users"
 ---
 
-Today I'm open-sourcing `deloominator`: a data visualization tool for SQL
-users. You write SQL queries into a small web UI, you run your queries and
+Today I'm open-sourcing `deloominator`: a data visualization tool for SQL users.
+You write SQL queries into a small web UI, you run your queries and
 `deloominator` automatically renders a chart if it can detect an appropriate
-visualization. Soon enough, you will be able to save your visualizations,
-create dashboards and reports.
+visualization. Soon enough, you will be able to save your visualizations, create
+dashboards and reports.
 
 In this article, I cover why I'm building `deloominator`, what's the current
 status of the project and what's coming next.

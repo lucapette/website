@@ -3,8 +3,7 @@ tags:
   - "engineering management"
   - hiring
 date: "2016-07-18T00:00:00Z"
-description:
-  I literally hate the way our industry does the hiring. It's time to talk
+description: I hate the way our industry does the hiring. It's time to talk
   about it.
 keywords: hiring, development, juniors
 title: A few words about hiring
@@ -13,11 +12,11 @@ title: A few words about hiring
 I find myself in conversations about hiring all the time. The reason is pretty
 obvious: we need more people to help us reach the goals we want to reach. More
 talent. It takes a collective effort to ship 99% of things we build and that
-makes hiring a central problem when it comes about building, scaling, running
-a business. But do not get me wrong: the actual reason I am writing about
-hiring is not the fact that it is so central to the development of our teams
-and our businesses. The actual reason is that despite hiring is a core
-subject, most people approach it in a way that I barely understand.
+makes hiring a central problem when it comes about building, scaling, running a
+business. But do not get me wrong: the actual reason I am writing about hiring
+is not the fact that it is so central to the development of our teams and our
+businesses. The actual reason is that despite hiring is a core subject, most
+people approach it in a way that I barely understand.
 
 There are so many things I do not understand about how we interview people,
 how we write ads we post on job boards, how we treat candidates,
@@ -31,23 +30,23 @@ there:
 - You have to interview them
 - You have to either hire them or reject them
 
-I may be simplifying this, but at the end of the day every breakdown is a bit
-of a simplification of an actual process - and I can live with that.
+I may be simplifying this, but at the end of the day every breakdown is a bit of
+a simplification of an actual process - and I can live with that.
 
 ## Ads on a job board
 
-Are you a "jedi" JavaScript programmer? Or maybe a "warlord" backend
-developer? A "kickass" application developer? Maybe you are more like the classic
-type: rockstar or ninja.
+Are you a "jedi" JavaScript programmer? Or maybe a "warlord" backend developer?
+A "kickass" application developer? Maybe you are more like the classic type:
+rockstar or ninja.
 
-I am not sure why this happens. It is plain bullshit and it is stupid, sorry
-for being so harsh about it. I have a hard time understanding the reasons
-behind this culture and to be honest I do not want to find out. I learned
-to look at the bright side of this aspect of job ads: I avoid companies like
-that. It is a good side effect that I enjoy a lot.
+I am not sure why this happens. It is plain bullshit and it is stupid, sorry for
+being so harsh about it. I have a hard time understanding the reasons behind
+this culture and to be honest I do not want to find out. I learned to look at
+the bright side of this aspect of job ads: I avoid companies like that. It is a
+good side effect that I enjoy a lot.
 
-Now, let's move on to the actual content of the ad.
-There are a couple of content patterns I see all the time:
+Now, let's move on to the actual content of the ad. There are a couple of
+content patterns I see all the time:
 
 - Buzzword, business talk with no actual meaning
 - Very strict requirements to meet that are actually just nonsense

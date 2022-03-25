@@ -12,30 +12,29 @@ title: An illiterate guide to classical music
 
 Music has always been a big part of my life. I remember my first attempts to
 listen to music in the apartment of my mother's best friend. I was a confused
-boy, ten or eleven years old. And I have vivid memories of the first times I
-ran into some of my favourite pieces. Those CDs were a new shiny media. I was
-always afraid of scratching their surface. I was an avid reader of their
-booklets. But there was something missing. I felt the music I was listening to
-was the kind of collective experience I was not fond of. I was looking for the
-introspective feeling you get out of more solitary activities. Reading,
-writing. They have been nurturing my brain since I remember myself. A couple
-of years later, I got into metal. And, to me, it was all about the presence of
-lead guitars. I started studying the guitar a bit and tried to learn how to
-read music. This process brought me closer to classical music again. I started
-listening to some famous composers. Then, I realised what I missed in my
-previous experience with music. Classical music had something I had never felt
-with any other kind of music. I felt this was the **real** thing. And I
-started a long journey in the land of classical music that's been lasting ever
-since.
+boy, ten or eleven years old. And I have vivid memories of the first times I ran
+into some of my favourite pieces. Those CDs were a new shiny media. I was always
+afraid of scratching their surface. I was an avid reader of their booklets. But
+there was something missing. I felt the music I was listening to was the kind of
+collective experience I was not fond of. I was looking for the introspective
+feeling you get out of more solitary activities. Reading, writing. They have
+been nurturing my brain since I remember myself. A couple of years later, I got
+into metal. And, to me, it was all about the presence of lead guitars. I started
+studying the guitar a bit and tried to learn how to read music. This process
+brought me closer to classical music again. I started listening to some famous
+composers. Then, I realised what I missed in my previous experience with music.
+Classical music had something I had never felt with any other kind of music. I
+felt this was the **real** thing. And I started a long journey in the land of
+classical music that's been lasting ever since.
 
 I know how to read music even though I am a slow reader. I can play the guitar
 at amateur level, but I have no formal music education. I have no map for this
 fantastic land. I am a classical music illiterate. Despite that, I enjoy
 classical music more than any other kind of music. I am aiming at making
-classical music less intimidating. People often asked me how to get started
-with it or which composer is "easy". I aim to make it easier for you to jump
-on this train. If I have managed to do so formal without music education,
-without any help, everyone can do it!
+classical music less intimidating. People often asked me how to get started with
+it or which composer is "easy". I aim to make it easier for you to jump on this
+train. If I have managed to do so formal without music education, without any
+help, everyone can do it!
 
 The thing about classical music is that it looks intimidating. There's so much
 of it. All the tracks have those strange and super long names. There are a lot
@@ -48,9 +47,9 @@ classical music, I had a lot of questions:
 - What are all those numbers?
 - What's a symphony? A fugue? A quartet?
 
-And so on. The list is much longer but you get the idea. To help you
-find your way, I am going to share all the learnings I wish I knew about
-when I started this long journey.
+And so on. The list is much longer but you get the idea. To help you find your
+way, I am going to share all the learnings I wish I knew about when I started
+this long journey.
 
 ## Start easy
 
@@ -62,32 +61,32 @@ know what "easy" is and what it is not. There is, however, a way out:
 
 > What instrument attracts your ear the most?
 
-There are tons of compositions for one instrument out there and I consider
-those compositions a good start. By definition, there cannot be that much
-going on. Let's assume for the sake of discussion that the instrument that
-attracts you most is the piano.
+There are tons of compositions for one instrument out there and I consider those
+compositions a good start. By definition, there cannot be that much going on.
+Let's assume for the sake of discussion that the instrument that attracts you
+most is the piano.
 
 > OK, my favourite instrument is the piano. Now what?
 
-Well, you play it safe by betting on the most famous composers. They are
-famous for good reasons. Start with Mozart, Beethoven. YouTube is a good source.
-My first query got me [this](https://www.youtube.com/watch?v=8hgaxI3JRgg)
-result. It's a "piano concerto". There is something wrong though. There are a
-lot of instruments and the piano comes after a while. And that's because it is
-a [piano concerto](https://en.wikipedia.org/wiki/Piano_concerto). Those
-compositions do focus on the piano, however, they are almost always
-accompanied by a large ensemble, typically an entire orchestra.
+Well, you play it safe by betting on the most famous composers. They are famous
+for good reasons. Start with Mozart, Beethoven. YouTube is a good source. My
+first query got me [this](https://www.youtube.com/watch?v=8hgaxI3JRgg) result.
+It's a "piano concerto". There is something wrong though. There are a lot of
+instruments and the piano comes after a while. And that's because it is a [piano
+concerto](https://en.wikipedia.org/wiki/Piano_concerto). Those compositions do
+focus on the piano, however, they are almost always accompanied by a large
+ensemble, typically an entire orchestra.
 
-This is good. We have learned something. Classical music compositions
-with the word "concerto" in it are not easy stuff. You can skip them until you
-feel the urge the explore them. Whenever that happens. Let's try a different
-query: "mozart piano solo". The first result I have got is a [stunning
+This is good. We have learned something. Classical music compositions with the
+word "concerto" in it are not easy stuff. You can skip them until you feel the
+urge the explore them. Whenever that happens. Let's try a different query:
+"mozart piano solo". The first result I have got is a [stunning
 recording](https://www.youtube.com/watch?v=SmXn9rNWyu4) by [Claudio
 Arrau](https://en.wikipedia.org/wiki/Claudio_Arrau), an incredible Chilean
 pianist. We will talk about performers too but at the right time. We have
 learned something else too, we now know [piano
-sonatas](https://en.wikipedia.org/wiki/Piano_sonata) are compositions for
-piano solo. This is a key learning as this works well for other instruments too:
+sonatas](https://en.wikipedia.org/wiki/Piano_sonata) are compositions for piano
+solo. This is a key learning as this works well for other instruments too:
 
 - [Violin](https://en.wikipedia.org/wiki/Violin_sonata)
 - [Cello](https://en.wikipedia.org/wiki/Cello_sonata)
