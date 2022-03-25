@@ -34,7 +34,7 @@
                   <li>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                     <span class="has-text-grey-light is-size-7 is-italic"
-                      >{{ .Date | time.Format ":date_long" }}</span
+                      >{{ .Date.Format "Jan 2006" }}</span
                     >
                   </li>
                 {{ end }}
