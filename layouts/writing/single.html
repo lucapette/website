@@ -14,7 +14,11 @@
               {{ delimit $clean ", " }}
             {{ end }}
             on
-            {{ .Date.Format "02 Jan 2006" }}
+            {{ .Date.Format "Jan 2006" }}
+            {{ if ne .Date .Lastmod }}
+              last edited on
+              {{ .Lastmod.Format "Jan 2006" }}
+            {{ end }}
           </p>
         </div>
       </div>

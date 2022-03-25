@@ -8,3 +8,4 @@ My personal website
 - introduce hiring me page
 - Add hero picture on homepage
 - make theme dark/light mode
+- move go test cli to github actions

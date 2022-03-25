@@ -45,11 +45,11 @@
             <div>
               <h2>My favourite writing</h2>
               <ul>
-                {{ range (where .Site.Pages.ByPublishDate.Reverse "Params.favourite" true ) }}
+                {{ range (where .Site.Pages.ByLastmod.Reverse "Params.favourite" true ) }}
                   <li>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                     <span class="has-text-grey-light is-size-7 is-italic"
-                      >{{ .Date | time.Format ":date_long" }}</span
+                      >{{ .Lastmod | time.Format ":date_long" }}</span
                     >
                   </li>
                 {{ end }}
