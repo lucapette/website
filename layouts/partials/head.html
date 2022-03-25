@@ -1,7 +1,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title .Title }} - Luca Pette</title>
+  {{ if eq .Title "Home" }}
+    <title>Luca Pette</title>
+  {{ else }}
+    <title>{{ title .Title }} - Luca Pette</title>
+  {{ end }}
   <!-- https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/ -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
