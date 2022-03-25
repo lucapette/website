@@ -8,6 +8,10 @@ tags:
   - react
 ---
 
+{{< message class="is-warning">}}
+This project has been archived.
+{{</ message >}}
+
 `deloominator` is a data visualization application for SQL users I published a
 few weeks ago. You can read the announcement
 [here](/deloominator-a-data-visualization-tool-for-sql-users). This article is
