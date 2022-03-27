@@ -40,6 +40,23 @@ body {
   }
 }
 
+.about-me {
+  img {
+    max-width: 256px;
+    max-height: 256px;
+  }
+  .drop-cap::first-letter {
+    float: left;
+    font-size: 45px;
+    line-height: 1;
+    font-weight: bold;
+    margin-right: 9px;
+    color: $nord9;
+    font-family: $family-heading;
+    text-shadow: $nord8 0.05em 0.05em;
+  }
+}
+
 .smile {
   color: $nord14;
 }
