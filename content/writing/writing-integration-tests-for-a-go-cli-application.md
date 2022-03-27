@@ -152,7 +152,7 @@ and then check the golden file before running the tests again. Here is the
 output on my machine:
 
 ```sh
-go-cli-integration-tests master ➜ make test
+go-cli-integration-tests main ➜ make test
 go test ./...
 ?       github.com/lucapette/go-cli-integration-tests/cmd       [no test files]
 ok      github.com/lucapette/go-cli-integration-tests/integration       0.267s
@@ -161,8 +161,8 @@ ok      github.com/lucapette/go-cli-integration-tests/integration       0.267s
 While this is a trivial example, I think it's still pretty amazing that building
 the binary, running it four times, loading four files, and asserting the
 correctness of the problem takes as little time as `0.267s`. The integration
-tests run nicely on
-[travis](https://travis-ci.org/lucapette/go-cli-integration-tests) too.
+tests run nicely on [GitHub
+Actions](https://github.com/lucapette/go-cli-integration-tests/actions) as well.
 
 Thanks to TableDrivenTests, covering more use cases is simple. Say `echo-args`
 now accepts a `reverse` flag, we can test the new behaviourwith one more line:
@@ -190,5 +190,4 @@ That which is the **only** kind of testing I'm comfortable with. Just to
 highlight the point of this benefit even more: the binary doesn't even have to
 be a Go program :)
 
-I enjoy using this technique and hopefully it helps some of you too. Happy
-testing with Go!
+I enjoy using this technique, hopefully you will too. Happy testing with Go!
