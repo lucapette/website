@@ -6,6 +6,5 @@ My personal website
 
 - rewrite about page
 - introduce hiring me page
-- Add hero picture on homepage
 - make theme dark/light mode
 - move go test cli to github actions
