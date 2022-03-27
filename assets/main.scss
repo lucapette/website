@@ -28,3 +28,18 @@ body {
   stroke-linejoin: round;
   fill: none;
 }
+
+.me {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+
+  img {
+    max-width: 128px;
+    max-height: 128px;
+  }
+}
+
+.smile {
+  color: $nord14;
+}
