@@ -45,18 +45,41 @@ body {
     max-width: 256px;
     max-height: 256px;
   }
-  .drop-cap::first-letter {
-    float: left;
-    font-size: 45px;
-    line-height: 1;
-    font-weight: bold;
-    margin-right: 9px;
-    color: $nord9;
-    font-family: $family-heading;
-    text-shadow: $nord8 0.05em 0.05em;
-  }
 }
 
 .smile {
   color: $nord14;
+}
+
+.dropcap {
+  font-family: $family-heading;
+  color: $nord9;
+  text-shadow: $nord8 0.05em 0.05em;
+  float: left;
+  font-size: 6rem;
+  line-height: 1;
+  margin: 0.1em 0.1em 0.2em 0;
+  padding: 0.1em;
+}
+.dropcap:before,
+.dropcap:after {
+  content: "";
+  display: block;
+}
+.dropcap:before {
+  margin-top: -0.2em;
+}
+.dropcap:after {
+  margin-bottom: -0.15em;
+}
+
+/* https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
