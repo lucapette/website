@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bulma": "0.9.3",
+    "lucide": "^0.17.15",
     "nord": "^0.2.1"
   },
   "devDependencies": {

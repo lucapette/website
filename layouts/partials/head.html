@@ -29,10 +29,14 @@
   {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint | resources.PostProcess }}
   {{ end }}
-
-
   <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 
+  {{ $js := resources.Get "main.js" | js.Build }}
+  {{ if hugo.IsProduction }}
+    {{ $js = $js | minify | fingerprint }}
+  {{ end }}
+
+  <script src="{{ $js.RelPermalink }}" defer></script>
   {{ with .OutputFormats.Get "rss" -}}
     {{ printf `
       <link rel="%s" type="%s" href="%s" title="%s" />
