@@ -4,8 +4,6 @@ title = "Home"
 summaryLength = 30
 enableGitInfo = true
 paginate = 5
-[build]
-  writeStats = true
 [markup]
   [markup.highlight]
     style = 'nord'
