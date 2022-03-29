@@ -6,6 +6,6 @@ My personal website
 
 - rewrite about page
 - make theme dark/light mode
-- make postcss stuff happen only in production
 - Improve tags page (also where do we link it from?)
 - Use helpers for flex in the home page
+- do not use lucide sprite
