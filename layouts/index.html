@@ -10,8 +10,11 @@
 
       <section class="section">
         <div class="me">
-          <img src="/img/me.png" alt="a picture of Luca Pette" />
+          <figure class="image is-128x128">
+            <img src="/img/me.png" />
+          </figure>
         </div>
+
         <h1 class="title has-text-centered">
           Hi! You've just found Luca Pette's website
           <span class="smile">:)</span>
@@ -31,9 +34,6 @@
                 {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
                   <li>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    <span class="has-text-grey-light is-size-7 is-italic"
-                      >{{ .Date.Format "Jan 2006" }}</span
-                    >
                   </li>
                 {{ end }}
               </ul>
