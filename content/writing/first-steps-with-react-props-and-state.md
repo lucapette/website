@@ -7,11 +7,13 @@ keywords: react, webpack, passata, pomodoro technique
 title: First steps with React props and state
 ---
 
-This article is part of the series [my journey with React and its
-ecosystem](/react.html). If you are not familiar with it, I suggest you check
-that out first!
+{{< message class="is-warning">}}
+<a href="https://github.com/lucapette/passata"  target="_blank">Passata</a> is being rewritten at
+the moment so the information in this page is out of date. I'll be publishing a
+new article as soon as it's ready.
+{{</ message >}}
 
-## passata design and features
+## Passata design and features
 
 The [pomodoro technique](http://cirillocompany.de/pages/pomodoro-technique) is a
 time management technique. I used it in the past and I plan to use it in the
@@ -45,8 +47,8 @@ access my stats.
 
 #### Run screen
 
-The run screen is shown when a pomodoro is running. I can take notes and
-check the progress of the running pomodoro.
+The run screen is shown when a pomodoro is running. I can take notes and check
+the progress of the running pomodoro.
 
 ![run screen](/img/run.jpg)
 

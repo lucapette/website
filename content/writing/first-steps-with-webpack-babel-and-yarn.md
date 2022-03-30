@@ -9,7 +9,13 @@ redirect_from:
 title: First steps with webpack, babel, and yarn
 ---
 
-I have just started [my journey](/react.html) in the [React](https://facebook.github.io/react/)
+{{< message class="is-warning">}}
+<a href="https://github.com/lucapette/passata"  target="_blank">Passata</a> is being rewritten at
+the moment so the information in this page is out of date. I'll be publishing a
+new article as soon as it's ready.
+{{</ message >}}
+
+I have just started my journey in the [React](https://facebook.github.io/react/)
 ecosystem. I decided to take notes along the way so I could share my experience
 with you. Most of the resources I found focus on the _coding experience_: how to
 test, how to integrate React with X and so on. I, on the other hand, tend to
