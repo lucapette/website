@@ -1,5 +1,4 @@
 baseURL = "https://lucapette.me"
-languageCode = "en-us"
 title = "Home"
 summaryLength = 30
 enableGitInfo = true
