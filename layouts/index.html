@@ -11,7 +11,14 @@
       <section class="section">
         <div class="me">
           <figure class="image is-128x128">
-            <img src="/img/me.png" alt="Luca Pette" width="128" height="128" />
+            {{ $image := resources.Get "me.png" }}
+            {{ $image := $image.Resize "128x128 webp" }}
+            <img
+              src="{{ $image.RelPermalink }}"
+              alt="Luca Pette"
+              width="128"
+              height="128"
+            />
           </figure>
         </div>
 

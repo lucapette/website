@@ -1,0 +1,10 @@
+{{ $width  := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $image  := resources.Get (.Get "name") }}
+{{ $image  := $image.Resize (printf "%sx%s webp" $height $width) }}
+<img
+  src="{{ $image.RelPermalink }}"
+  alt="{{ .Get "alt" }}"
+  width="{{ $width }}"
+  height="{{ $height }}"
+/>
