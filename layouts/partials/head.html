@@ -35,17 +35,21 @@
   }}
   <meta
     name="keywords"
-    content="{{ delimit
-      .Keywords ", "
-    }}"
+    content="{{ if .Keywords }}
+      {{- delimit .Keywords "" }}
+    {{ else }}
+      {{ if .Params.tags }}
+        {{- delimit .Params.tags "," }}
+      {{ end }}
+    {{ end }}"
   />
 
   <meta
     name="description"
-    content="{{ if .IsHome }}
-      {{ $.Site.Params.description }}
-    {{ else }}
-      {{ .Description }}
+    content="{{- if .IsHome }}
+      {{- $.Site.Params.description }}
+    {{- else }}
+      {{- .Description }}
     {{ end }}"
   />
 </head>

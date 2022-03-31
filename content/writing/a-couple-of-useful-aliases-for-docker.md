@@ -7,21 +7,20 @@ keywords: docker, bash, zsh
 title: A couple of useful aliases for docker
 ---
 
-Writing [Dockerfiles](http://docs.docker.io/reference/builder/) is pretty
-funny experience. I like the idea of writing the minimum amount of
-instructions that will make it possible to run
+Writing [Dockerfiles](http://docs.docker.io/reference/builder/) is pretty funny
+experience. I like the idea of writing the minimum amount of instructions that
+will make it possible to run
 [kafka](http://wurstmeister.github.io/kafka-docker/),
 [redis](http://docs.docker.io/examples/running_redis_service/),
-[influxdb](https://index.docker.io/u/lucapette/influxdb/) or whatever thing is
-suitable for containers. While making my first steps in developing a
-Dockerfile I noticed there were a few commands I was typing all the time. And
-they were tedious to write. Since I'm a bit lazy I started looking into
-aliases other people were using to solve the same problem (being lazy also
-means you don't want to re-invent the wheel). I think I found something that
-really fits my needs and it is done the way I would do it. However, I
-couldn't find the reference anymore so I finished re-implementing the aliases
-on my own (that felt like re-inventing the wheel somehow) and I can't give
-credit to the person that originated this idea.
+[influxdb](https://index.docker.io/u/lucapette/influxdb/) or whatever. While
+taking my first steps in developing a Dockerfile I noticed I keep typing the
+same commands over and over. Since I'm a bit lazy I started looking into aliases
+other people were using to solve the same problem (being lazy also means you
+don't want to re-invent the wheel). I think I found something that really fits
+my needs and it is done the way I would do it. However, I couldn't find the
+reference anymore so I finished re-implementing the aliases on my own (that felt
+like re-inventing the wheel somehow) and I can't give credit to the person that
+originated this idea.
 
 The basic idea is adding aliases to docker in a way they feel like _native_
 commands. They look like:
@@ -73,6 +72,5 @@ docker run -i -t --entrypoint=/bin/bash $1 --
 
 Very helpful to look around in a container while building it.
 
-Now the only thing I miss is auto-completion for my custom commands but I may
-add it soon. I hope this helps to simply your workflows while building
-Dockerfiles.
+The only thing I miss is auto-completion for my custom commands but I may add it
+soon. I hope it helps you simplify your workflows while building Dockerfiles.
