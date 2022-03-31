@@ -16,12 +16,19 @@ This article assumes familiarity with Kafka, Kafka Streams, and Kubernetes.
 
 ## What are interactive queries
 
-As the [official
-documentation](https://kafka.apache.org/documentation/streams/developer-guide/interactive-queries.html)
-states:
+[Interactive
+queries](https://kafka.apache.org/documentation/streams/developer-guide/interactive-queries.html)
+enable Kafka Streams application to query their persistent local stores. The
+Kafka Streams API also provides a mechanics to query the state of remote
+application instances. The feature allows us to build, for example, HTTP
+endpoints with interesting properties.
 
-> Interactive queries allow you to leverage the state of your application from
-> outside your application.
+For the sake of the conversation, we'll imagine a purposely trivial application
+called WordStats. This application accepts words via a `/accept` (great naming
+uh?) endpoint and returns stats via the following endponts:
+
+- '/top' returns the top N most frequent words with their counts
+- '/stats' returns the longest and shortest words with their counts
 
 ## Trade-offs of interactive queries
 
