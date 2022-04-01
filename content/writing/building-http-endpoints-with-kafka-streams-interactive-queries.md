@@ -4,7 +4,7 @@ date: 2022-03-31T16:47:45+02:00
 draft: true
 tags:
   - kafka
-    - kafka streams
+  - kafka streams
   - kotlin
 keywords: kafka, kafka streams, kubernetes, kotlin
 ---
@@ -25,7 +25,7 @@ interesting properties:
 - As long as all the information we need is avalable in some Kafka topic, we can
   build HTTP endpoints that do not depend on other endpoints (by querying them
   via HTTP). We avoid the traditional pain of a micro-services architecture
-  where a service calls a service that calls a service...
+  where a service calls a service that calls a service and so on.
 - The local stores update really fast, so the endpoints we'll build respond to
   change quickly.
 - We avoid the usual headaches of a more traditional architecture where Kafka is
@@ -40,8 +40,8 @@ interesting properties:
   rely on interactive queries (as long as you're on JVM).
 
 As always, every architecture has a different set of trade-offs, we'll discuss
-them again (especially the negative sides of this approach) once we know what
-we're building. It's easier to explain them with a concrete example in mind.
+them again once we know what we're building. It's easier to explain them with a
+concrete example in mind.
 
 So what are we building here? For the sake of the discussion, we'll imagine a
 _purposely_ trivial application. The application collect words from a Kafka
@@ -54,17 +54,78 @@ Now that we have some basic requirements, here's the list the tools we'll use:
 
 - `Kotlin` I'm evaluating the language so it felt natural to use it for
   something a little more complicated that a "hello world" program.
-- Spring boot Mostly a matter of fluency for me. I have used it a lot in my past
-  job. It complements Kotlin nicely.
+- `Spring Boot` Mostly a matter of fluency for me. I have used it a lot in my
+  past job.
 
-I don't intent to make a point about any of these tools by using them in this
-article. There's nothing special about them in the context of Kafka Streams
-application. But it's worth mentioning that HTTP endpoints with interactive
-queries only make sense on JVM. Furthermore, the code presented is purposely
-simple so that it would not be a distraction from the main topic.
+I'm not trying to make some point about these tools by using them here. There's
+nothing special about them in the context of Kafka Streams applications. But
+it's worth mentioning that HTTP endpoints with interactive queries only make
+sense on JVM. Furthermore, the code presented is purposely simple so that Kotlin
+or Spring Boot won't be much of a distraction.
+
+Here's the code of our topology:
+
+```kotlin {linenos=table, hl_lines=[6]}
+private fun buildTopology(): Topology {
+    val builder = StreamsBuilder()
+
+    builder.stream<String, String>("words", Consumed.`as`("words_input_topic"))
+        .groupByKey(Grouped.`as`("group_by_word"))
+        .count(Materialized.`as`("words_count"))
+
+    val topology = builder.build()
+
+    log.info(topology.describe().toString())
+
+    return topology
+}
+```
+
+Even though this is a very simple topology, there's a few things to note:
+
+- Each node of the topology is named. It's good practice for production-ready
+  streaming applications and the [official
+  documentation](https://kafka.apache.org/documentation/streams/developer-guide/dsl-topology-naming.html)
+  does a great job explaning the reasons for this.
+- The log statement on line 10 is helpful especially in the early phases of
+  developing a new Kafka Streams application.
+- The highlighted line is the most important one for our conversation. We're
+  telling Kafka "hey I'm going to ask you about this store later by calling it
+  `words_count`. We cannot write the search method without it.
+
+Speaking of the search method, here's a first attempt:
+
+```kotlin
+@PostMapping("/search")
+  fun search(@RequestBody input: SearchRequest): SearchResponse {
+      val store = kafkaStreams.store(
+          StoreQueryParameters.fromNameAndType(
+              "words_count",
+              QueryableStoreTypes.keyValueStore<String, Long>()
+          )
+      )
+
+      return SearchResponse(input.query, store.get(input.query))
+  }
+
+//I like to put those at the end of the controller file (after the class)
+data class SearchRequest(val query: String)
+
+data class SearchResponse(val word: String, val count: Long)
+```
+
+TODO: "let's test this" -> "oh it works" -> "well no because multiple instances, demonstrate" then the following
+
+In order to achieve data parallelism, Kafka Streams relies on the same ideas
+(and implementation) of consumer groups. If we run a Kafka Streams application
+with multiple instances, the local state will contain only a some slices of the
+state. That is the core detail we need to care when building an HTTP endpoint on
+interactive queries. If we'd ignore the detail, we'd be returning partial
+results back (in our specific case, we'd return 404 for words that are not in
+the local state of the instance we hit).
+
+TODO new search code
 
 ## Trade-offs of interactive queries
 
 ## Leveraging the Kubernetes downward API
-
-## Deploy the demo app on Minikube to play with it
