@@ -97,34 +97,167 @@ Speaking of the search method, here's a first attempt:
 
 ```kotlin
 @PostMapping("/search")
-  fun search(@RequestBody input: SearchRequest): SearchResponse {
-      val store = kafkaStreams.store(
-          StoreQueryParameters.fromNameAndType(
-              "words_count",
-              QueryableStoreTypes.keyValueStore<String, Long>()
-          )
-      )
+fun search(@RequestBody input: SearchRequest): ResponseEntity<SearchResponse> {
+    val store = kafkaStreams.store(
+        StoreQueryParameters.fromNameAndType(
+            "words_count",
+            QueryableStoreTypes.keyValueStore<String, Long>()
+        )
+    )
 
-      return SearchResponse(input.query, store.get(input.query))
-  }
+    val count = store.get(input.query) ?: return ResponseEntity.notFound().build()
 
-//I like to put those at the end of the controller file (after the class)
+    return ResponseEntity.ok(SearchResponse(input.query, count))
+}
+
+//I like to put these classes at the end of the controller file (after the class) when they're so small.
 data class SearchRequest(val query: String)
 
 data class SearchResponse(val word: String, val count: Long)
 ```
 
-TODO: "let's test this" -> "oh it works" -> "well no because multiple instances, demonstrate" then the following
+Easy enough: we're telling Kafka Streams "hey remember that store I asked you to
+name for me? I'm going to need it now". And then `store.get(input.query)` gives
+us the count of the word we're looking for. The operator `?:` is called the
+[elvis operator](https://kotlinlang.org/docs/null-safety.html#elvis-operator)
+and is Kotlin idomatic way of saying "if X is not null then B otherwise do
+this". We're using it here to return `404` when queried for a word we do not
+know anything about.
+
+Let's test this, shall we?
+
+The first thing we need it to create the topic:
+
+```sh
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic words --replication-factor 1 --partitions 3
+Created topic words.
+```
+
+Before we move forward, an important warning:
+
+{{< message class="is-warning">}}
+Neither the code nor the settings presented in this article are recommended for
+production use as they'd complicate the content and reduce clarity. At the end
+of the article, I will provide a list of recommendations for production-ready
+Kafka Streams applications.
+{{< /message >}}
+
+With that out of the way, let's add some words to the topic and check out how
+our endpoint works:
+
+```sh
+# using https://github.com/httpie/httpie to send a POST request
+# to an endpoint that I added to our application (you'll find the code in IngestionController)
+http localhost:8080/accept word=kafka
+
+HTTP/1.1 200
+Connection: keep-alive
+Content-Length: 0
+Date: Sat, 02 Apr 2022 07:16:16 GMT
+Keep-Alive: timeout=60
+```
+
+So the endpoint workds and it looks like Kafka ingested our word. After playing around with the endpoint a little, consuming the topic from the beginning looked like this:
+
+```sh
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic words --from-beginning
+kafka
+kafka
+kafka
+kafka
+kafka
+kafka
+franz
+franz
+franz
+caste
+caste
+kafka
+kafka
+castel
+trail
+castle
+```
+
+Now we can check the interactive query:
+
+```sh
+http localhost:8080/search query=trail
+HTTP/1.1 200
+Connection: keep-alive
+Content-Type: application/json
+Date: Sat, 02 Apr 2022 07:19:26 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "count": 1,
+    "word": "trail"
+}
+
+http localhost:8080/search query=kafka
+HTTP/1.1 200
+Connection: keep-alive
+Content-Type: application/json
+Date: Sat, 02 Apr 2022 07:19:35 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "count": 8,
+    "word": "kafka"
+}
+```
+
+it works right? Well.. not quite. For these examples, I run one application
+instance so the local store contains _all_ of the state. Let's see what happens
+if we add one more instance. To keep it simple, we run both instances on the
+same machine so the INSTANCE_ID determines the name of the state directory:
+
+```sh
+SERVER_PORT=8081 INSTANCE_ID=1 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
+```
+
+The app will go into rebalancing state while the coordinator assigns partitions
+to the new instance. Once that's done, we hit the endpoint on both instances:
+
+```sh
+http localhost:8080/search query=kafka
+HTTP/1.1 404
+Connection: keep-alive
+Content-Length: 0
+Date: Sat, 02 Apr 2022 08:18:13 GMT
+Keep-Alive: timeout=60
+
+http localhost:8081/search query=kafka
+HTTP/1.1 200
+Connection: keep-alive
+Content-Type: application/json
+Date: Sat, 02 Apr 2022 08:18:18 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "count": 8,
+    "word": "kafka"
+}
+```
+
+So the endpoints doesn't really work. If we'd have a load balancer in front of
+our instances right now, we'd get a 404 for around half the requests. So what's
+going on?
 
 In order to achieve data parallelism, Kafka Streams relies on the same ideas
 (and implementation) of consumer groups. If we run a Kafka Streams application
-with multiple instances, the local state will contain only a some slices of the
-state. That is the core detail we need to care when building an HTTP endpoint on
-interactive queries. If we'd ignore the detail, we'd be returning partial
-results back (in our specific case, we'd return 404 for words that are not in
-the local state of the instance we hit).
+with multiple instances, the local state of each istance will contain only a
+some slices of the state (based on which partitions are assigned to the given
+instance). That is the core detail we need to care when building an HTTP
+endpoint on interactive queries. We need to rewrite the search endpoint using
+the [RPC
+mechanism](https://kafka.apache.org/documentation/streams/developer-guide/interactive-queries.html#adding-an-rpc-layer-to-your-application)
+Kafka Streams provide to solve this problem.
 
-TODO new search code
+The idea is that
 
 ## Trade-offs of interactive queries
 
