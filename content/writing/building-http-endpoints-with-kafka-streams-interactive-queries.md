@@ -89,9 +89,9 @@ Even though this is a very simple topology, there's a few things to note:
   does a great job explaning the reasons for this.
 - The log statement on line 10 is helpful especially in the early phases of
   developing a new Kafka Streams application.
-- The highlighted line is the most important one for our conversation. We're
-  telling Kafka "hey I'm going to ask you about this store later by calling it
-  `words_count`. We cannot write the search method without it.
+- The highlighted line is where we're telling Kafka "hey I'm going to ask you
+  about this store later by calling it `words_count`. We cannot write the search
+  method without it.
 
 Speaking of the search method, here's a first attempt:
 
@@ -133,17 +133,14 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic words --r
 Created topic words.
 ```
 
-Before we move forward, an important warning:
-
 {{< message class="is-warning">}}
-Neither the code nor the settings presented in this article are recommended for
+<b>Warning:</b> neither the code nor the settings presented in this article are recommended for
 production use as they'd complicate the content and reduce clarity. At the end
 of the article, I will provide a list of recommendations for production-ready
 Kafka Streams applications.
 {{< /message >}}
 
-With that out of the way, let's add some words to the topic and check out how
-our endpoint works:
+Now let's add some words to the topic:
 
 ```sh
 # using https://github.com/httpie/httpie to send a POST request
@@ -155,9 +152,11 @@ Connection: keep-alive
 Content-Length: 0
 Date: Sat, 02 Apr 2022 07:16:16 GMT
 Keep-Alive: timeout=60
+# more of this...
 ```
 
-So the endpoint workds and it looks like Kafka ingested our word. After playing around with the endpoint a little, consuming the topic from the beginning looked like this:
+So the endpoint words and it looks like Kafka ingested our word. After playing
+around with the endpoint a little, the topic looked like this:
 
 ```sh
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic words --from-beginning
@@ -209,17 +208,17 @@ Transfer-Encoding: chunked
 }
 ```
 
-it works right? Well.. not quite. For these examples, I run one application
+It works, right? Well.. not quite. For these examples, I run one application
 instance so the local store contains _all_ of the state. Let's see what happens
-if we add one more instance. To keep it simple, we run both instances on the
-same machine so the INSTANCE_ID determines the name of the state directory:
+if we add one more instance. To keep it simple, I run both instances on the same
+machine so the INSTANCE_ID determines the name of the state directory:
 
 ```sh
 SERVER_PORT=8081 INSTANCE_ID=1 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
 ```
 
-The app will go into rebalancing state while the coordinator assigns partitions
-to the new instance. Once that's done, we hit the endpoint on both instances:
+After a quick rebalancing process, both apps are in running state and we can
+test the endopint again:
 
 ```sh
 http localhost:8080/search query=kafka
@@ -243,22 +242,83 @@ Transfer-Encoding: chunked
 }
 ```
 
-So the endpoints doesn't really work. If we'd have a load balancer in front of
-our instances right now, we'd get a 404 for around half the requests. So what's
-going on?
+If we'd put a load balancer in front of our instances right now, we'd get a 404
+for around half the requests. Obviously the endpoint isn't really working. Why?
 
 In order to achieve data parallelism, Kafka Streams relies on the same ideas
 (and implementation) of consumer groups. If we run a Kafka Streams application
 with multiple instances, the local state of each istance will contain only a
 some slices of the state (based on which partitions are assigned to the given
-instance). That is the core detail we need to care when building an HTTP
-endpoint on interactive queries. We need to rewrite the search endpoint using
-the [RPC
+instance). This is the detail we need to care when building an HTTP endpoint on
+interactive queries. We need to rewrite the search endpoint using the [RPC
 mechanism](https://kafka.apache.org/documentation/streams/developer-guide/interactive-queries.html#adding-an-rpc-layer-to-your-application)
 Kafka Streams provide to solve this problem.
 
-The idea is that
+It's a two-step process. First we configure the RPC endpoint via
+`StreamsConfig.APPLICATION_SERVER_CONFIG` so that each instance tells the
+coordinator how other instances can reach them. Then we change the search
+endpoint to fetch the word count via the RPC endpoint when we detect the word
+requested is not avaiable in the local store. Here's the code:
 
-## Trade-offs of interactive queries
+```kotlin
+@PostMapping("/search")
+    fun search(@RequestBody input: SearchRequest): ResponseEntity<SearchResponse> {
+        val store = kafkaStreams.store(
+            StoreQueryParameters.fromNameAndType(
+                "words_count", QueryableStoreTypes.keyValueStore<String, Long>()
+            )
+        )
 
-## Leveraging the Kubernetes downward API
+        val keyQueryMetadata =
+            kafkaStreams.queryMetadataForKey("words_count", input.query, Serdes.String().serializer())
+
+        return when (val activeHost = keyQueryMetadata.activeHost()) {
+            HostInfo(config.rpcHost, config.rpcPort) -> {
+                val count = store.get(input.query) ?: return ResponseEntity.notFound().build()
+                ResponseEntity.ok(SearchResponse(input.query, count))
+            }
+            HostInfo.unavailable() -> ResponseEntity.notFound().build()
+            else -> fetchViaRPC(activeHost, input)
+        }
+    }
+```
+
+Our search endpoint is a little more complicated now because it knows about
+other instances but still a relatively small change for what it does. Let's see if it works:
+
+```sh
+# First we start two instances (logs not shown)
+SERVER_PORT=8080 INSTANCE_ID=0 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
+SERVER_PORT=8081 INSTANCE_ID=1 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
+# Once the apps are both in running state, we can test the endpoint
+http localhost:8080/search query=kafka
+HTTP/1.1 200
+Connection: keep-alive
+Content-Type: application/json
+Date: Sun, 03 Apr 2022 07:08:26 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "count": 8,
+    "word": "kafka"
+}
+http localhost:8081/search query=kafka
+HTTP/1.1 200
+Connection: keep-alive
+Content-Type: application/json
+Date: Sun, 03 Apr 2022 07:08:30 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "count": 8,
+    "word": "kafka"
+}
+```
+
+It works 🎉. Now we get data no matter which instance we ask for the word which
+means we could put a load balancer in front of them.
+
+Now that we know how an interactive query endpoint looks like, we can discuss
+its properties (therefore the trade-offs) of this approach.
