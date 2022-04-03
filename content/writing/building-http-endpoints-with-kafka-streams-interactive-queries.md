@@ -6,7 +6,7 @@ tags:
   - kafka
   - kafka streams
   - kotlin
-keywords: kafka, kafka streams, kubernetes, kotlin
+keywords: kafka, kafka streams, kotlin
 ---
 
 {{< message class="is-info">}}
@@ -317,8 +317,8 @@ Transfer-Encoding: chunked
 }
 ```
 
-It works 🎉. Now we get data no matter which instance we ask for the word which
-means we could put a load balancer in front of them.
+It works 🎉. Now we get data no matter which instance we hit so we could put a
+load balancer in front of them.
 
 Now that we know how an interactive query endpoint looks like, we can discuss
 its properties (therefore the trade-offs) of this approach.
