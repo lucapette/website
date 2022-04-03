@@ -284,7 +284,8 @@ requested is not avaiable in the local store. Here's the code:
 ```
 
 Our search endpoint is a little more complicated now because it knows about
-other instances but still a relatively small change for what it does. Let's see if it works:
+other instances but still a relatively small change for what it does. Let's see
+if it works:
 
 ```sh
 # First we start two instances (logs not shown)
@@ -321,4 +322,33 @@ It works 🎉. Now we get data no matter which instance we hit so we could put a
 load balancer in front of them.
 
 Now that we know how an interactive query endpoint looks like, we can discuss
-its properties (therefore the trade-offs) of this approach.
+the trade-offs of this approach. While it may sound obvious to say that an
+interactive query is first of all a Kafka Streams application, it's instead a
+good starting point for the discussion.
+
+## Deployment
+
+topology change vs code change
+
+no rolling restars because it conflicts with rebalancing
+
+## Ops
+
+consumer lag is king here as well but need to keep an eye on local disk space
+
+## When to use
+
+End points need extremely up to date _and_ at the same time computed data
+
+If most lookups are by key (or you can leverage range queries for rocksdb), speed is always reasonable. Probably need to improve the RPC layer
+
+Hard to image it's a good use case if you always need all the state (say top X
+words of all times) while you also need multiple instances.
+
+## What's missing for production usage
+
+this lis may change because I'll use the repo as a playground
+integration tests
+will say more in the readme of the repo(also issues)
+kafka streams configuration
+num of partitions is always a big deal
