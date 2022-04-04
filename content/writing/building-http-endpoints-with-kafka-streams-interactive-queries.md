@@ -22,17 +22,17 @@ Kafka Streams API also provides a mechanics to query the state of remote
 application instances. The feature enables us to build HTTP endpoints with
 interesting properties:
 
-- As long as all the information we need is avalable in some Kafka topic, we can
+- As long as all the information we need is available in some Kafka topic, we can
   build HTTP endpoints that do not depend on other endpoints (by querying them
   via HTTP). We avoid the traditional pain of a micro-services architecture
   where a service calls a service that calls a service and so on.
 - The local stores update really fast, so the endpoints we'll build respond to
   change quickly.
 - We avoid the usual headaches of a more traditional architecture where Kafka is
-  used, at best, as a ingestion and trasport layer and we move the data into a
+  used, at best, as a ingestion and transport layer and we move the data into a
   separate store (for example, Cassandra). Keeping the two stores in sync is a
   full time job. While it may not be too hard thanks to the Kafka Connect
-  framework, relying on interactive queries has a much ligther impact on our
+  framework, relying on interactive queries has a much lighter impact on our
   infrastructure. There's a lot less moving parts. Furthermore, Kafka Streams
   _already_ uses persistent local stores for caching (so that restarting a Kafka
   Stream app does not have to read the whole computed state from internal
@@ -44,7 +44,7 @@ them again once we know what we're building. It's easier to explain them with a
 concrete example in mind.
 
 So what are we building here? For the sake of the discussion, we'll imagine a
-_purposely_ trivial application. The application collect words from a Kafka
+_purposely_ trivial application. The application collects words from a Kafka
 topic and exposes a `/search` endpoint that takes a word and returns its count.
 This requirement gives us enough to discuss the underlining architecture of this
 approach. We'll then add a few more features so that we can discuss how to
@@ -86,7 +86,7 @@ Even though this is a very simple topology, there's a few things to note:
 - Each node of the topology is named. It's good practice for production-ready
   streaming applications and the [official
   documentation](https://kafka.apache.org/documentation/streams/developer-guide/dsl-topology-naming.html)
-  does a great job explaning the reasons for this.
+  does a great job explaining the reasons for this.
 - The log statement on line 10 is helpful especially in the early phases of
   developing a new Kafka Streams application.
 - The highlighted line is where we're telling Kafka "hey I'm going to ask you
@@ -120,7 +120,7 @@ Easy enough: we're telling Kafka Streams "hey remember that store I asked you to
 name for me? I'm going to need it now". And then `store.get(input.query)` gives
 us the count of the word we're looking for. The operator `?:` is called the
 [elvis operator](https://kotlinlang.org/docs/null-safety.html#elvis-operator)
-and is Kotlin idomatic way of saying "if X is not null then B otherwise do
+and is Kotlin idiomatic way of saying "if X is not null then B otherwise do
 this". We're using it here to return `404` when queried for a word we do not
 know anything about.
 
@@ -173,7 +173,6 @@ caste
 caste
 kafka
 kafka
-castel
 trail
 castle
 ```
@@ -220,7 +219,7 @@ SERVER_PORT=8081 INSTANCE_ID=1 java -jar build/libs/interactive-queries-0.0.1-SN
 ```
 
 After a quick rebalancing process, both apps are in running state and we can
-test the endopint again:
+test the endpoint again:
 
 ```sh
 http localhost:8080/search query=kafka
@@ -249,7 +248,7 @@ for around half the requests. Obviously the endpoint isn't really working. Why?
 
 In order to achieve data parallelism, Kafka Streams relies on the same ideas
 (and implementation) of consumer groups. If we run a Kafka Streams application
-with multiple instances, the local state of each istance will contain only a
+with multiple instances, the local state of each instance will contain only a
 some slices of the state (based on which partitions are assigned to the given
 instance). This is the detail we need to care when building an HTTP endpoint on
 interactive queries. We need to rewrite the search endpoint using the [RPC
@@ -260,7 +259,7 @@ It's a two-step process. First we configure the RPC endpoint via
 `StreamsConfig.APPLICATION_SERVER_CONFIG` so that each instance tells the
 coordinator how other instances can reach them. Then we change the search
 endpoint to fetch the word count via the RPC endpoint when we detect the word
-requested is not avaiable in the local store. Here's the code:
+requested is not available in the local store. Here's the code:
 
 ```kotlin
 @PostMapping("/search")
@@ -362,7 +361,7 @@ While such an "immutable" strategy may feel too complicated (well it indeed is),
 it enables interesting testing strategies. For example, I found myself writing
 scripts to compare the JSON response of two different versions of an endpoint.
 That gave me very high confidence that the new version did was working as
-expected. Another inteesting consequence of this strategy is that it often
+expected. Another interesting consequence of this strategy is that it often
 enables "wild" experimentation with new versions. Because the increased
 confidence often leads to leap changes in a topology, after all you can verify
 the new versions with great accuracy before promoting them to production..
@@ -371,7 +370,7 @@ Operating interactive queries endpoint is almost the same operating a regular
 Kafka Streams application:
 
 - You definitely want to be looking at lag. After all, the main argument for
-  having an interactive query endpont is its "freshness".
+  having an interactive query endpoint is its "freshness".
 - You want to keep an eye on the disk space of each instance. You'd be getting
   all kind of "interesting" failures if one of your interactive queries runs out
   of space.
@@ -393,10 +392,10 @@ here's a list of considerations that can help you orient yourself better:
 - If the endpoint does key lookups, you can keep response time always pretty
   low. Especially if you employ a fast RPC layer.
 
-The one use case where I think interactive queries endpoints are a strech is
+The one use case where I think interactive queries endpoints are a stretch is
 those situations in which your endpoint _always_ needs all of the state to
 compute the response. For example, imagine we'd like improve our `/search`
-endpont so that it doesn't only do key lookups but also needs to return things
+endpoint so that it doesn't only do key lookups but also needs to return things
 like "top X words by count" or "least recurrent words of the month". In such
 cases, you'd always need to query all the instances which may turn a little slow
 (or just make the response time of your endpoint unpredictable). Having said
@@ -409,7 +408,7 @@ queries](<https://kafka.apache.org/31/javadoc/org/apache/kafka/streams/state/Rea
 design. It may be helpful in this context).
 
 As I mentioned, the code and the settings I wrote for this article are not
-recommendated for production usage. So, as promised, here's a production
+recommended for production usage. So, as promised, here's a production
 checklist for interactive queries endpoints:
 
 - You want to setup your Kafka Streams application so that it's resilient to brokers outages:
@@ -429,7 +428,7 @@ props.put(StreamsConfig.consumerPrefix(
 - You want to do some [RocksDB
   tuning](https://github.com/facebook/rocksdb/wiki/RocksDB-Tuning-Guide).
 - Kafka Streams stateful topologies come with internal topics. Often, it's
-  helpful to do some manual tunig on them. The pointer here is "know that's an
+  helpful to do some manual tuning on them. The pointer here is "know that's an
   option to consider".
 - The RPC mechanism we implemented for this article may not be the best for
   production especially if your fetching a relatively large amount of data
@@ -440,5 +439,5 @@ props.put(StreamsConfig.consumerPrefix(
   in an interactive queries endpoint.
 
 I am using the code used in this article as a Kotlin playground so I will
-probably work on some of this points myself. If you're intested, go give it a
+probably work on some of this points myself. If you're interested, give it a
 star.
