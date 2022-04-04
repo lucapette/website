@@ -208,10 +208,12 @@ Transfer-Encoding: chunked
 }
 ```
 
-It works, right? Well.. not quite. For these examples, I run one application
-instance so the local store contains _all_ of the state. Let's see what happens
-if we add one more instance. To keep it simple, I run both instances on the same
-machine so the INSTANCE_ID determines the name of the state directory:
+It works, right?!? Well... not quite 😒
+
+In these examples, I run one application instance so the local store contained
+_all_ of the state. Let's see what happens if we add one more instance. To keep
+it simple, I run both instances on the same machine so the INSTANCE_ID
+determines the name of the state directory:
 
 ```sh
 SERVER_PORT=8081 INSTANCE_ID=1 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
@@ -288,10 +290,12 @@ other instances but still a relatively small change for what it does. Let's see
 if it works:
 
 ```sh
-# First we start two instances (logs not shown)
+# First we start two instances
 SERVER_PORT=8080 INSTANCE_ID=0 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
 SERVER_PORT=8081 INSTANCE_ID=1 java -jar build/libs/interactive-queries-0.0.1-SNAPSHOT.jar
-# Once the apps are both in running state, we can test the endpoint
+# logs not shown... there's a lot of it in Kafka Streams applications :)
+
+# Once the logs tell us both apps are in running state, we can test the endpoint
 http localhost:8080/search query=kafka
 HTTP/1.1 200
 Connection: keep-alive
@@ -318,29 +322,33 @@ Transfer-Encoding: chunked
 }
 ```
 
-It works 🎉. Now we get data no matter which instance we hit so we could put a
-load balancer in front of them.
+It works now 🎉🎉🎉
+
+We get a word count no matter which instance we hit so we could put a load
+balancer in front of them and clients could start querying for words.
 
 Now that we know how an interactive query endpoint looks like, we can discuss
-the trade-offs of this approach. While it may sound obvious to say that an
-interactive query is first of all a Kafka Streams application, it's instead a
-good starting point for the discussion.
+the trade-offs of this approach.
 
-Kafka Streams application have a pretty peculiar deployment strategy. First of
-all, there's no way to do rolling restarts which you may be used to for HTTP
-endpoints. This stragegy conflicts with how Kafka Streams applications does
-parallelism. You can't really start a new version of the app with updated code
-_and_ the same `StreamsConfig.APPLICATION_ID_CONFIG`, the app would immediately
-go into rebalancing mode to reassign some of the partitions. If your endpoint
-can afford a little downtime, you can just restart the application. Generally,
-restoration is really fast (thanks to those persistent stores we use for
-interactive queries). Of course, in some context, a little downtime might be
+While it may sound obvious to say that an interactive query is _first of all_ a
+Kafka Streams application, it's instead a good starting point for the
+discussion. These applications have a pretty peculiar deployment strategy.
+There's no way to do rolling restarts which is a pretty nice strategy for
+avoiding downtime. The problem is that rolling restarts conflict with how Kafka
+Streams applications do parallelism. You can't really start a new version of the
+app with updated code _and_ the same `StreamsConfig.APPLICATION_ID_CONFIG`, the
+app would immediately go into rebalancing mode to reassign some of the
+partitions. So what are your options?
+
+If your endpoint can afford a little downtime, you can just restart the
+application. Generally, restoration is really fast (thanks to those persistent
+stores we use for interactive queries). Often though a little downtime might be
 already problematic. In such cases, the easiest way out is to deploy a new
 version of the application all together (meaning with a new app id). While I
-don't really advocate for "immutable deployment" in general, that's definitely
-how this would look like. Also it's worth noticing you will have to do that
-_anyway_ in case of a topology change. Which leads to further considerations to
-make sure you know what you're getting yourself into:
+don't really advocate for "immutable deployment" in general, that's probably the
+simplest strategy here. Also it's worth noticing you must deploy an new
+application _anyway_ in case you change the topology of your app. That leads to
+further considerations:
 
 - How long a Kafka Streams application takes to recompute the state can be done
   rather precisely. You need to know your end to end throughput (how long it
