@@ -326,29 +326,111 @@ the trade-offs of this approach. While it may sound obvious to say that an
 interactive query is first of all a Kafka Streams application, it's instead a
 good starting point for the discussion.
 
-## Deployment
+Kafka Streams application have a pretty peculiar deployment strategy. First of
+all, there's no way to do rolling restarts which you may be used to for HTTP
+endpoints. This stragegy conflicts with how Kafka Streams applications does
+parallelism. You can't really start a new version of the app with updated code
+_and_ the same `StreamsConfig.APPLICATION_ID_CONFIG`, the app would immediately
+go into rebalancing mode to reassign some of the partitions. If your endpoint
+can afford a little downtime, you can just restart the application. Generally,
+restoration is really fast (thanks to those persistent stores we use for
+interactive queries). Of course, in some context, a little downtime might be
+already problematic. In such cases, the easiest way out is to deploy a new
+version of the application all together (meaning with a new app id). While I
+don't really advocate for "immutable deployment" in general, that's definitely
+how this would look like. Also it's worth noticing you will have to do that
+_anyway_ in case of a topology change. Which leads to further considerations to
+make sure you know what you're getting yourself into:
 
-topology change vs code change
+- How long a Kafka Streams application takes to recompute the state can be done
+  rather precisely. You need to know your end to end throughput (how long it
+  takes to process a record from input nodes till the terminal nodes of your
+  topology) and how many records you have in your input topics.
+- How often do you expect the computation (aka the topology you wrote) to
+  change? This is relevant because changing the topology always comes with a
+  "new version".
 
-no rolling restars because it conflicts with rebalancing
+While such an "immutable" strategy may feel too complicated (well it indeed is),
+it enables interesting testing strategies. For example, I found myself writing
+scripts to compare the JSON response of two different versions of an endpoint.
+That gave me very high confidence that the new version did was working as
+expected. Another inteesting consequence of this strategy is that it often
+enables "wild" experimentation with new versions. Because the increased
+confidence often leads to leap changes in a topology, after all you can verify
+the new versions with great accuracy before promoting them to production..
 
-## Ops
+Operating interactive queries endpoint is almost the same operating a regular
+Kafka Streams application:
 
-consumer lag is king here as well but need to keep an eye on local disk space
+- You definitely want to be looking at lag. After all, the main argument for
+  having an interactive query endpont is its "freshness".
+- You want to keep an eye on the disk space of each instance. You'd be getting
+  all kind of "interesting" failures if one of your interactive queries runs out
+  of space.
+- Because of the peculiar deployment strategy, you want to continuously collect
+  throughput metrics about your application. Sometimes, the nature of a topology
+  (especially when there's a lot of grouping going on) is such that the app will
+  "naturally" slow down its throughput over time.
 
-## When to use
+If you made it this far in the article, I would not be surprised if you're not
+sure there's any good use cases for interactive queries HTTP endpoints. So
+here's a list of considerations that can help you orient yourself better:
 
-End points need extremely up to date _and_ at the same time computed data
+- Despite the funny deployment strategy, a Kafka Streams application is still
+  _just_ a bunch of Kafka consumers/producers. Meaning you can compute and serve
+  pretty complex data, at "Kafka speed", while _not_ needing to operate any
+  other store.
+- Up to your number of partitions, you could just add more instances to improve
+  parallel processing of your data.
+- If the endpoint does key lookups, you can keep response time always pretty
+  low. Especially if you employ a fast RPC layer.
 
-If most lookups are by key (or you can leverage range queries for rocksdb), speed is always reasonable. Probably need to improve the RPC layer
+The one use case where I think interactive queries endpoints are a strech is
+those situations in which your endpoint _always_ needs all of the state to
+compute the response. For example, imagine we'd like improve our `/search`
+endpont so that it doesn't only do key lookups but also needs to return things
+like "top X words by count" or "least recurrent words of the month". In such
+cases, you'd always need to query all the instances which may turn a little slow
+(or just make the response time of your endpoint unpredictable). Having said
+that, I would consider an interactive query for such a use case if the system
+can afford to run the query on a single instance. Sometimes, it's also worth
+spending a little more effort into designing the topology so that we can rely on
+[range
+queries](<https://kafka.apache.org/31/javadoc/org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html#range(K,K)>)
+(check out [https://github.com/ulid/spec](https://github.com/ulid/spec) for keys
+design. It may be helpful in this context).
 
-Hard to image it's a good use case if you always need all the state (say top X
-words of all times) while you also need multiple instances.
+As I mentioned, the code and the settings I wrote for this article are not
+recommendated for production usage. So, as promised, here's a production
+checklist for interactive queries endpoints:
 
-## What's missing for production usage
+- You want to setup your Kafka Streams application so that it's resilient to brokers outages:
 
-this lis may change because I'll use the repo as a playground
-integration tests
-will say more in the readme of the repo(also issues)
-kafka streams configuration
-num of partitions is always a big deal
+```java
+// from kafka streams in action. Great book!
+Properties props = new Properties();
+props.put(StreamsConfig.producerPrefix(
+ ProducerConfig.RETRIES_CONFIG), Integer.MAX_VALUE);
+props.put(StreamsConfig.producerPrefix(
+ ProducerConfig.MAX_BLOCK_MS_CONFIG), Integer.MAX_VALUE);
+props.put(StreamsConfig.REQUEST_TIMEOUT_MS_CONFIG, 305000);
+props.put(StreamsConfig.consumerPrefix(
+ ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG), Integer.MAX_VALUE);
+```
+
+- You want to do some [RocksDB
+  tuning](https://github.com/facebook/rocksdb/wiki/RocksDB-Tuning-Guide).
+- Kafka Streams stateful topologies come with internal topics. Often, it's
+  helpful to do some manual tunig on them. The pointer here is "know that's an
+  option to consider".
+- The RPC mechanism we implemented for this article may not be the best for
+  production especially if your fetching a relatively large amount of data
+  (there's a lot of serialization overhead with a JSON via HTTP endpoint as
+  RPC).
+- You want integration tests.
+- The number of partitions of the input topics is always relevant, especially so
+  in an interactive queries endpoint.
+
+I am using the code used in this article as a Kotlin playground so I will
+probably work on some of this points myself. If you're intested, go give it a
+star.
