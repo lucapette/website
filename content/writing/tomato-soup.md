@@ -26,7 +26,7 @@ _Serves four_
 - 2 medium onions
 - 4-5 large red tomatoes
 - A spoonful of tomato paste
-- 1 liter of vegetable broth
+- 1 litre of vegetable broth
 - A spoonful of Ras el hanout
 - 1 small chili pepper
 - Salt to taste

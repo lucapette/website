@@ -13,7 +13,7 @@ I've recently open sourced a small Go CLI application for random data
 generation. I'm working on an application for which I continuously need testing
 data, so I did some research on the subject. As I couldn't find exactly what I
 was looking for, I decided to write a small Go CLI application to solve this
-problem. CLI applications are one of my favorite use cases for Go, and I knew
+problem. CLI applications are one of my favourite use cases for Go, and I knew
 I'd enjoy writing it. A few weeks after I released
 [fakedata](https://github.com/lucapette/fakedata), [Kevin
 Gimbel](https://twitter.com/_kevinatari) found a
@@ -27,7 +27,7 @@ wanted to do something like:
 
 - create a binary of the CLI app
 - run the binary with some specific argument
-- assert correct behavior
+- assert correct behaviour
 
 I managed to get it done [here](https://github.com/lucapette/fakedata/pull/14)
 and decided to share the key ingredients that made this a simple and effective
@@ -165,7 +165,7 @@ tests run nicely on [GitHub
 Actions](https://github.com/lucapette/go-cli-integration-tests/actions) as well.
 
 Thanks to TableDrivenTests, covering more use cases is simple. Say `echo-args`
-now accepts a `reverse` flag, we can test the new behaviourwith one more line:
+now accepts a `reverse` flag, we can test the new behaviour with one more line:
 
 ```go
 tests := []struct {
@@ -178,13 +178,13 @@ tests := []struct {
 	}
 ```
 
-I **really** like it takes so little to test a relatively complex behavior.
+I **really** like it takes so little to test a relatively complex behaviour.
 
 The tests make only two assumptions: how to build the binary (running `make` in
 a specific directory) and the name of the binary. If you would change the
 internals of the program completely, the tests would still be untouched:
 
-> The tests need to change only if the behavior of the program changes
+> The tests need to change only if the behaviour of the program changes
 
 That which is the **only** kind of testing I'm comfortable with. Just to
 highlight the point of this benefit even more: the binary doesn't even have to

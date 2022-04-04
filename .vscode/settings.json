@@ -8,5 +8,11 @@
         "plaintext",
         "toml",
         "jsonc"
+    ],
+    "cSpell.words": [
+        "Kaizen",
+        "Kanban",
+        "lucapette",
+        "standups"
     ]
 }

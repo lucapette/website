@@ -118,15 +118,15 @@ with one instrument so let's try something else.
 Let's move away from the solo composition.
 [Here](https://en.wikipedia.org/wiki/List_of_musical_forms_by_era) is a list of
 all musical forms, grouped by era. Of course, there are way too many forms. My
-suggestion is to try with just "a fesw instruments":
+suggestion is to try with just "a few instruments":
 
 - [Piano trio](https://en.wikipedia.org/wiki/Piano_trio)
 - [String quartets](https://en.wikipedia.org/wiki/String_quartet)
 
 You can apply the same technique we used in the previous section. Searching for
-"string quartet" on youtube gave me
+"string quartet" on YouTube gave me
 ["Razumovsky"](https://www.youtube.com/watch?v=oXLKu-HglnM), a beautiful string
-quartet by Beethoven. Relying on youtube suggestions may be a good idea too.
+quartet by Beethoven. Relying on YouTube suggestions may be a good idea too.
 
 So far we explored only one dimension: the musical form. That's probably enough
 to get you started. If you really like what you are listening to, chances are
@@ -177,7 +177,7 @@ version](https://www.youtube.com/watch?v=qdm8IfInaJg) directed by [Claudio
 Abbado](https://en.wikipedia.org/wiki/Claudio_Abbado). Now it's my favourite overture!
 
 An important thing to note: when it comes to orchestras, conductors act as
-performers in a solo composition. Whichi is the reason why being a conductor is
+performers in a solo composition. Which is the reason why being a conductor is
 such a big deal.
 
 ### Record labels

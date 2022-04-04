@@ -15,10 +15,10 @@ We try things out and see what works and what does not. Most of the time this
 process is too slow as we do not share as much as we could with the people
 trying to solve similar problems. Or, even more dangerously, we do things by the
 book since we believe there is one true way. I believe there is no such thing as
-"the true way" when it comes to putting more than one brain together to
-build something. Not to mention the fact that most books tend to generalise a
-lot as they want to reach a broader audience and in many cases the result is an
-unusable, unapplicable set of rules. I do not think what I am saying is
+"the true way" when it comes to putting more than one brain together to build
+something. Not to mention the fact that most books tend to generalise a lot as
+they want to reach a broader audience and in many cases the result is an
+unusable, inapplicable set of rules. I do not think what I am saying is
 controversial either. Quite the opposite: I give for granted we have to adapt
 whatever process to the team we are working with.
 
@@ -76,7 +76,7 @@ simple but strict:
 > you cannot start working on anything new unless something else you did not
 > write the code for can be moved further in the process
 
-Whatver that's test, review, deploy code (whatever: it does not really matter).
+Whatever that's test, review, deploy code (whatever: it does not really matter).
 This rule forces people to think about the process itself. Starting to work on
 something new is exciting but it has no impact until it is released. And that is
 what matters for the focus. I will admit it is not always easy to work this way.
@@ -90,13 +90,13 @@ This aspect is particularly tricky as it needs help from outside. Generally,
 product managers must see the benefits of forgetting to plan in batches. No
 batching means no recurrent meetings about what we are going to work on the next
 week (two weeks or whatever). Batching is typical of Scrum (at least in my
-experience) and it coomes with two things I do not like:
+experience) and it comes with two things I do not like:
 
 - It lets your managers relax as it is easier for them to manage teams in
   strict cycles so they end up not helping to improve processes for the people
   that are actually working.
 - It slows down reaction time. You cannot easily start working on a feature that
-  was completely unplanned two days ago and it is now high prio because your
+  was completely unplanned two days ago and it is now high priority because your
   business demands it. And if you work for a startup you really want to be able
   to respond to whatever kind of request comes from the rest of your company.
 
@@ -147,7 +147,7 @@ approach.
 
 This is the hardest part in my experience. Making work in progress obvious to
 all people involved and helping them understand why we want to limit the work in
-progress has been always the most challenging aspect of implementing a heathly
+progress has been always the most challenging aspect of implementing a healthy
 process for me. Of course, it may be my own limitation, I do not exclude that. I
 think there are a lot of different ways you can make sure you know what is
 really being worked on. Here tooling can make a difference. I like very
