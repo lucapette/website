@@ -13,10 +13,11 @@
         {{ template "partials/pagination.html" . }}
       </div>
 
-      <div class="column is-1">
+      <div class="column">
+        <h2>Tags</h2>
+
         {{ $tags := $.Site.Taxonomies.tags.ByCount }}
         <div class="tags are-medium">
-          <h2>Tags:</h2>
           {{ range $tags }}
             {{ if .Term }}
               {{ $tagURL := printf "tags/%s" .Term | relURL }}
