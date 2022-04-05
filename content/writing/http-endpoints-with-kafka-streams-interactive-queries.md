@@ -1,7 +1,7 @@
 ---
 title: "HTTP endpoints with Kafka Streams Interactive Queries"
-date: 2022-03-31T16:47:45+02:00
-draft: true
+description: "How to build HTTP endpoints with Kafka Streams Interactive Queries"
+date: "2022-04-03T00:00:00Z"
 tags:
   - kafka
   - kafka streams
