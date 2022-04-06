@@ -21,7 +21,7 @@ enable Kafka Streams application to query their persistent local stores. The
 Kafka Streams API also provides a mechanics to query the state of remote
 application instances. The feature enables us to build HTTP endpoints with
 interesting properties. But as any architecture has its trade-offs, we'll
-discuss them again once we build a simple interactive query endpoint. It's
+discuss them again once we've build a simple interactive query endpoint. It's
 easier to go over pros and cons of this approach with a concrete example in
 mind. So what are we building here? For the sake of the discussion, we'll
 imagine a _purposely_ trivial application: we collects words from a Kafka topic
