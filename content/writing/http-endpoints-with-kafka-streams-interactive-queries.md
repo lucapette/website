@@ -20,31 +20,13 @@ queries](https://kafka.apache.org/documentation/streams/developer-guide/interact
 enable Kafka Streams application to query their persistent local stores. The
 Kafka Streams API also provides a mechanics to query the state of remote
 application instances. The feature enables us to build HTTP endpoints with
-interesting properties:
-
-- As long as all the information we need is available in some Kafka topic, we can
-  build HTTP endpoints that do not depend on other endpoints (by querying them
-  via HTTP). We avoid the traditional pain of a micro-services architecture
-  where a service calls a service that calls a service and so on.
-- The local stores update really fast, so the endpoints we'll build respond to
-  change quickly.
-- We avoid the usual headaches of a more traditional architecture where Kafka is
-  used, at best, as a ingestion and transport layer and we move the data into a
-  separate store (for example, Cassandra). Keeping the two stores in sync is a
-  full time job. While it may not be too hard thanks to the Kafka Connect
-  framework, relying on interactive queries has a much lighter impact on our
-  infrastructure. There are fewer moving parts so less things will break.
-- Kafka Streams uses persistent local stores _anyway_ for caching (so that
-  restarting a Kafka Stream app does not have to read the whole computed state
-  from internal topics). If you're building Kafka Streams applications, you can
-  immediately rely on interactive queries (as long as you're on JVM).
-
-Any architecture has its trade-offs, we'll discuss them again once we know what
-we're building. It's easier to explain them with a concrete example in mind. So
-what are we building here? For the sake of the discussion, we'll imagine a
-_purposely_ trivial application: we collects words from a Kafka topic and then
-expose a `/search` endpoint that takes a word and returns its count. This
-requirement gives us enough to discuss the underlining architecture of this
+interesting properties. But as any architecture has its trade-offs, we'll
+discuss them again once we build a simple interactive query endpoint. It's
+easier to go over pros and cons of this approach with a concrete example in
+mind. So what are we building here? For the sake of the discussion, we'll
+imagine a _purposely_ trivial application: we collects words from a Kafka topic
+and then expose a `/search` endpoint that takes a word and returns its count.
+This requirement gives us enough to discuss the underlining architecture of this
 approach.
 
 To build this application, we'll use [Kotlin](https://kotlinlang.org/) and
@@ -383,8 +365,9 @@ considerations that can help you orient yourself better:
   _just_ one store.
 - Up to your number of partitions, you can just add more instances to improve
   parallel processing of your data.
-- If the endpoint does key lookups, you can keep response time always pretty
-  low. Especially if you employ a fast RPC layer.
+- The local stores update really fast, so the endpoints we'll build respond to
+  change quickly. If the endpoint does key lookups, you can keep response time
+  always pretty low. Especially if you employ a fast RPC layer.
 - Your applications are self-sufficient in terms of state. If you'd put all of
   your data in Kafka then you could stretch this idea quite a bit. You would end
   up with services that build their own state locally and do not need to talk to
@@ -392,6 +375,20 @@ considerations that can help you orient yourself better:
   (Kafka), one local store (RocksDB): both handled kind of automatically by the
   fluent API Kafka Streams provides. To be fair, this last point deserves to be
   its own article. Nudge me if you're interested, it'll speed me up :)
+- As long as all the information we need is available in some Kafka topic, we can
+  build HTTP endpoints that do not depend on other endpoints (by querying them
+  via HTTP). We avoid the traditional pain of a micro-services architecture
+  where a service calls a service that calls a service and so on.
+- We also avoid the usual headaches of a more traditional architecture where
+  Kafka is used, at best, as a ingestion and transport layer where we move the
+  data into a separate store (for example, Cassandra). Keeping the two stores in
+  sync is a full time job. Relying on interactive queries has a much lighter
+  impact on the infrastructure. There are fewer moving parts so less things will
+  break.
+- Kafka Streams uses persistent local stores _anyway_ for caching (so that
+  restarting a Kafka Stream app does not have to read the whole computed state
+  from internal topics). If you're building Kafka Streams applications, you can
+  immediately rely on interactive queries (as long as you're on JVM).
 
 The one use case where I think interactive queries endpoints are actually a bit
 of a stretch is those situations in which your endpoint _always_ needs all of
