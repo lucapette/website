@@ -74,3 +74,55 @@ a {
   white-space: nowrap;
   width: 1px;
 }
+
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(0.8) contrast(1.2);
+  }
+
+  .title {
+    color: $nord6;
+  }
+
+  html,
+  body {
+    background-color: $nord0;
+    color: $nord6;
+  }
+
+  a,
+  .has-text-black,
+  .navbar-item,
+  .has-text-grey-darker,
+  .pagination-link,
+  .pagination-next,
+  .pagination-previous,
+  .box {
+    color: $nord4;
+  }
+
+  .pagination-previous[disabled],
+  .pagination-next[disabled] {
+    background-color: $nord0;
+    color: $nord4;
+  }
+
+  .has-text-black,
+  .has-text-grey-darker {
+    color: $nord5 !important;
+  }
+
+  a.navbar-item.active {
+    color: $nord0 !important;
+  }
+
+  .navbar,
+  .footer,
+  .box {
+    background-color: $nord3;
+  }
+
+  .dropcap {
+    text-shadow: $nord4 0.05em 0.05em;
+  }
+}

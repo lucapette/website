@@ -29,7 +29,7 @@ $primary-invert: rgba($black, 0.7);
 
 $danger: $red;
 
-$subtitle-color: $grey;
+$subtitle-color: $grey-dark;
 
 $link: #466695;
 $link-hover: $orange;
@@ -47,6 +47,8 @@ $body-family: "Raleway", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
   Geneva, Arial, sans-serif;
 
 $box-shadow: 0 0 1px $grey-light;
+
+$navbar-background-color: $white-bis !default;
 $navbar-item-active-background-color: $white-ter !default;
 $navbar-item-hover-background-color: $white-ter !default;
 $navbar-item-hover-color: $orange !default;

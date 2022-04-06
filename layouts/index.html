@@ -22,10 +22,10 @@
           </figure>
         </div>
 
-        <h1 class="title has-text-centered">
+        <h1 class="is-size-1 is-size-3-mobile title has-text-centered">
           Hi! You've just found Luca Pette's website
         </h1>
-        <p class="has-text-centered is-size-5">
+        <p class="is-size-4 is-size-5-mobile has-text-centered">
           I use this website to share my
           <a href="/writing">writing</a>. If you're looking for more information
           about me, check out the <a href="/about">about me</a> page.
@@ -35,11 +35,13 @@
         <div class="tile is-ancestor">
           <div class="tile is-4">
             <div>
-              <h2>Latest writing</h2>
-              <ul>
+              <h2 class="is-size-4 has-text-centered-mobile">Latest writing</h2>
+              <ul class="has-text-centered-mobile">
                 {{ range first 5 (where site.RegularPages "Type" "in" "writing") }}
                   <li>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="is-size-4" href="{{ .Permalink }}"
+                      >{{ .Title }}</a
+                    >
                   </li>
                 {{ end }}
               </ul>
@@ -47,11 +49,15 @@
           </div>
           <div class="tile is-4">
             <div>
-              <h2>My favourite writing</h2>
-              <ul>
+              <h2 class="is-size-4 has-text-centered-mobile">
+                My favourite writing
+              </h2>
+              <ul class="has-text-centered-mobile">
                 {{ range (where .Site.Pages.ByLastmod.Reverse "Params.favourite" true ) }}
                   <li>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="is-size-4" href="{{ .Permalink }}"
+                      >{{ .Title }}</a
+                    >
                   </li>
                 {{ end }}
               </ul>
