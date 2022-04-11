@@ -6,6 +6,8 @@ date: "2017-02-19T00:00:00Z"
 description: Trying to make Vim's learning curve more gradual
 keywords: vim, learning, editor, drew neil, practical vim, tpope
 title: Getting started with Vim
+aliases:
+  - /getting-started-with-vim
 ---
 
 A few days ago a friend asked me: "How do I get started with Vim?"

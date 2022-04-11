@@ -1,23 +1,25 @@
 ---
-catagories:
+tags:
   - tmux
 date: "2017-03-26T00:00:00Z"
 description: Why and how I use tmux in 2017
 keywords: tmux, productivity, programming
 title: Tmux and I in 2017
+aliases:
+  - /tmux-and-i-in-2017
 ---
 
-Writing [Getting started with Vim](/getting-started-with-vim) taught me an
-interesting lesson. I had some notes about the topic and I spent more time
+Writing [Getting started with Vim](/writing/getting-started-with-vim) taught me
+an interesting lesson. I had some notes on the subject and I spent more time
 trying to decide if it was worth turning them into an article than actually
 doing so. I did publish it and the response was great, many people read the
-article and I got good feedback. It made me happy because it was unexpected.
-My takeaway is that I should not try to guess if people would care or not
-about what I write. I'm not good at it and, after all, I enjoy writing so much
-I can afford not to care about the success of my articles. The joy of writing
-justifies the effort. A few weeks ago I had a look at my tmux configuration
-and workflow after a long time and took some notes along the way. This article
-is an expanded version of those notes.
+article and I got good feedback. It made me happy because it was unexpected. My
+takeaway is that I should not try to guess if people would care or not about
+what I write. I'm not good at it and, after all, I enjoy writing so much I can
+afford not to care about the success of my writing. The joy of writing makes it
+all worth it. A few weeks ago I had a look at my tmux configuration and workflow
+after a long time and took some notes along the way. This article is an expanded
+version of those notes.
 
 ## What's tmux?
 
@@ -176,10 +178,8 @@ lines=("${(@f)$(projects | xargs -n1 basename)}")
 _arguments "1: :($lines)"
 ```
 
-I don't remember how this works anymore, as I wrote it a while ago. It does work
+I don't remember how this works , as I wrote it a while ago. It does work
 so I thought it was good enough to share. My
 [dotfiles](https://github.com/lucapette/dotfiles) repository contains all my tmux
 configuration if you're curious. The `projects` function, the `t` script and the
 `CDPATH` feature give me the comfort I need to jump around projects.
-
-Thank you for reading me and stay tuned for the next article!

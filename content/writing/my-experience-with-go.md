@@ -5,8 +5,10 @@ date: "2017-11-09T00:00:00Z"
 description:
   I have been using Go for a project long enough to form opinions around
   it
-keywords: golang, deloominator
+keywords: golang, go, programming language
 title: My experience with Go
+aliases:
+  - /my-experience-with-go
 ---
 
 In a previous article about
@@ -104,7 +106,7 @@ I experience a direct correlation between languages and the kind of testing I
 can write. That's why I call it "testing experience"; writing tests is more than
 just tooling.
 
-Writing tests is possibly my favorite Go activity because:
+Writing tests is possibly my favourite Go activity because:
 
 - I can go far enough without external libraries
 
@@ -207,7 +209,7 @@ parts. The workflow experience with Go makes bootstrapping easier on average.
 But there's more: the compiler is super annoying (in a
 good way), and I have to check all the errors _before_ I can even run the
 program once. The frustration of writing `if err != nil` all over the place is at
-the core of one of my favorite features: the distinction between errors and
+the core of one of my favourite features: the distinction between errors and
 exceptions. It forces me to think about things I can choose to ignore while
 bootstrapping a project in other languages: the file may not be there, the
 network connection may fail, and so on. Unfortunately, it is indeed annoying
@@ -241,9 +243,9 @@ are a few things I enjoy about the standard library:
 
 - [net/httptest](https://golang.org/pkg/net/httptest/)
 
-  `httptest` provides a response recorder that makes testing HTTP handlers
-  easy and fun. It gives me great confidence, because I can assert behavior over
-  the actual response output; I do not mock anything.
+  `httptest` provides a response recorder that makes testing HTTP handlers easy
+  and fun. It gives me great confidence, because I can assert behaviour over the
+  actual response output; I do not mock anything.
 
 - [database/sql](https://golang.org/pkg/database/sql)
 
@@ -295,7 +297,7 @@ Here is a list of libraries I have been using in `deloominator`:
 
 They all have one thing in common: they are rock-solid and well-documented. It
 sums up nicely how I feel about the entire ecosystem. I've rarely run into
-libraries with missing documentation or strange behavior.
+libraries with missing documentation or strange behaviour.
 
 ## The community
 

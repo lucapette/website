@@ -7,6 +7,8 @@ date: "2017-05-18T00:00:00Z"
 description: One way of doing end to end testing of Go CLI applications
 keywords: golang, testing, integration tests, end to end tests
 title: Writing integration tests for a Go CLI application
+aliases:
+  - /writing-integration-tests-for-a-go-cli-application
 ---
 
 I've recently open sourced a small Go CLI application for random data
@@ -128,7 +130,7 @@ func TestCliArgs(t *testing.T) {
 }
 ```
 
-The tests use two of my favorite Go testing practices:
+The tests use two of my favourite Go testing practices:
 
 - Golden files
 - [TableDrivenTests](https://github.com/golang/go/wiki/TableDrivenTests)
@@ -142,7 +144,7 @@ golden files. The basic idea is to:
   corresponding golden file.
 
 It's a good practice to use a command line flag to automatically update the
-golden file when the specified behavior changes:
+golden file when the specified behaviour changes:
 
 ```sh
 go test integration/cli_test.go -update

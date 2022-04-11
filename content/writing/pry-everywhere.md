@@ -8,9 +8,11 @@ description:
   everywhere
 keywords: pry, rails, irb, ruby
 title: Pry Everywhere
+aliases:
+  - /pry-everywhere
 ---
 
-I have to confess that I'm generally skeptical about alternatives for tools
+I have to confess that I'm generally sceptical about alternatives for tools
 that work so fine like IRB. And I really like IRB. So why Pry? And why
 everywhere? Because _Pry features blew my mind_. When I wrote [about IRB
 customization](/why-you-should-spend-some-time-configuring-irb), I was
@@ -21,7 +23,7 @@ were exactly what I really would like to have in IRB. For example, sometimes
 you would like to explore a class or an object quickly. The way you can do it
 with Pry feels just natural. It just seems the right way too do it:
 
-{{< highlight ruby >}}
+```ruby
 1.9.2 (main):0 > cd Array
 1.9.2 (Array):1 > ls -m
 [:[], :allocate, :new, :superclass, :toy, :try_convert, :yaml_tag]
@@ -33,9 +35,9 @@ From: /home/lucapette/.pryrc @ line 15:
 Number of lines: 3
 
 def self.toy(n=10, &block)
-block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
+  block_given? ? Array.new(n,&block) : Array.new(n) { |i| i+1 }
 end
-{{< / highlight >}}
+```
 
 Toy is a little method I have in my
 [.pryrc](https://github.com/lucapette/dotfiles/blob/master/pryrc) (and
@@ -52,34 +54,34 @@ after taking a look at [these](https://github.com/pry/pry/wiki)
 [wonderful](http://vimeo.com/26391171)
 [resources](http://railscasts.com/episodes/280-pry-with-rails).
 
-So the title of this post is "Pry everywhere" and now I'm going to show you
-quickly what I've done to migrate to Pry. There are a lot of solutions about
-this topic but all of them involve something I don't like especially about
-rails integration. My requirements were fairly simple:
+So the title of this post is "Pry everywhere" and now I'm going to show you what
+I've done to migrate to Pry. There are a lot of solutions about this topic but
+all of them involve something I don't like especially about rails integration.
+My requirements were fairly simple:
 
 - I don't want to lose the customizations I've done with IRB
 - The same for rails console
 - I don't want to add any gem (although
-  [this](https://github.com/rweng/pry-rails is very nicely done)) to my Gemfile
+  [this](https://github.com/rweng/pry-rails) is very nicely done) to my Gemfile
   in rails projects.
 
-After a bit of researching, I came up with the following solution:
+After some researching, I came up with the following solution:
 
 My current .irbrc:
 
-{{< highlight ruby >}}
+```ruby
 
 # https://github.com/carlhuda/bundler/issues/183#issuecomment-1149953
 
 if defined?(::Bundler)
-global*gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
-if global*gemset
-all_global_gem_paths = Dir.glob("#{global_gemset}/gems/*")
-all_global_gem_paths.each do |p|
-gem_path = "#{p}/lib"
-$LOAD_PATH << gem_path
-end
-end
+  global*gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
+  if global*gemset
+    all_global_gem_paths = Dir.glob("#{global_gemset}/gems/*")
+      all_global_gem_paths.each do |p|
+        gem_path = "#{p}/lib"
+        $LOAD_PATH << gem_path
+      end
+   end
 end
 
 # Use Pry everywhere
@@ -88,15 +90,15 @@ require "rubygems"
 require 'pry'
 Pry.start
 exit
-{{< / highlight >}}
+```
 
-Pratically, everytime I start IRB I will start a Pry session. It feels like a
+Practically, every time I start IRB I will start a Pry session. It feels like a
 dirty solutions and I have to confess I don't know if it has any issues. For
-now, it's working just fine with my requirements. The bundler code is
-necessary to require pry and other gems from rvm global gemset in a rails
-console without declaring them in the Gemfile. Then, in the .pryrc I have:
+now, it's working just fine with my requirements. The bundler code is necessary
+to require pry and other gems from rvm global gemset in a rails console without
+declaring them in the Gemfile. Then, in the .pryrc I have:
 
-{{< highlight ruby >}}
+```ruby
 
 # vim FTW
 
@@ -114,24 +116,25 @@ Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} >
 
 # Toys methods
 
-# Stealed from https://gist.github.com/807492
-
+# Stole from https://gist.github.com/807492
 class Array
-def self.toy(n=10, &block)
-block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
-end
+  def self.toy(n=10, &block)
+    block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
+  end
 end
 
 class Hash
-def self.toy(n=10)
-Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
+  def self.toy(n=10)
+    Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
+  end
 end
-end
+```
 
 # loading rails configuration if it is running as a rails console
 
 load File.dirname(**FILE**) + '/.railsrc' if defined?(Rails) && Rails.env
-{{< / highlight >}}
+
+````
 
 If you compare this file with my previous
 [.irbrc](https://github.com/lucapette/dotfiles/blob/80eade149f8d6b93b5446efd03606690b4e74ca6/irbrc)
@@ -141,8 +144,8 @@ commands](https://github.com/pry/pry/wiki/History). My .railsrc is very
 similar to the previous one but it has a different that could interest you if
 you are an hirb user:
 
-{{< highlight ruby >}}
 
+```ruby
 # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
 
 Pry.config.print = proc do |output, value|
@@ -150,9 +153,9 @@ Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
 end
 
 Hirb.enable
-{{< / highlight >}}
+````
 
-This way, [Hirb](https://github.com/cldwalker/hirb) is working flawlessly.
-And the combination of Rails and Pry is just fantastic. Give it a try. I have
-been able to migrate to Pry with a fair effort, hoping this kind of
-configuration can help you too!
+This way, [Hirb](https://github.com/cldwalker/hirb) works flawlessly. And the
+combination of Rails and Pry is just fantastic. Give it a try. I have been able
+to migrate to Pry with a fair effort, hoping this kind of configuration can help
+you too!

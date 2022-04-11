@@ -5,6 +5,8 @@ date: "2011-11-17T00:00:00Z"
 description: How I think you should deal with configuring Vim
 keywords: vim, rails, configuration, pathogen.vim
 title: "Vim for Rails developers: Lazy modern configuration"
+aliases:
+  - /vim-for-rails-developers-lazy-modern-configuration
 ---
 
 Vim is very customizable, it has thousands of plugins suitable for everyone's

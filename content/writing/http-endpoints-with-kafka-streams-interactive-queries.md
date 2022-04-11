@@ -38,7 +38,7 @@ feature of the official Kafka Streams library.
 
 Here's the code of our topology:
 
-```kotlin {linenos=table, hl_lines=[6]}
+```kotlin {linenos=true, hl_lines=[6]}
 private fun buildTopology(): Topology {
     val builder = StreamsBuilder()
 

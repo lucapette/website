@@ -84,6 +84,21 @@ a {
     color: $nord6;
   }
 
+  .content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $nord6;
+    }
+
+    blockquote {
+      background-color: $nord3;
+    }
+  }
+
   html,
   body {
     background-color: $nord0;
