@@ -3,8 +3,7 @@ tags:
   - ruby
   - pry
 date: "2011-09-05T00:00:00Z"
-description:
-  Pry is an IRB alternative. I'll show here a quick way to replace pry
+description: Pry is an IRB alternative. I'll show you a quick way to use pry
   everywhere
 keywords: pry, rails, irb, ruby
 title: Pry Everywhere
@@ -128,13 +127,12 @@ class Hash
     Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
   end
 end
-```
 
 # loading rails configuration if it is running as a rails console
 
 load File.dirname(**FILE**) + '/.railsrc' if defined?(Rails) && Rails.env
 
-````
+```
 
 If you compare this file with my previous
 [.irbrc](https://github.com/lucapette/dotfiles/blob/80eade149f8d6b93b5446efd03606690b4e74ca6/irbrc)
@@ -144,16 +142,15 @@ commands](https://github.com/pry/pry/wiki/History). My .railsrc is very
 similar to the previous one but it has a different that could interest you if
 you are an hirb user:
 
-
 ```ruby
 # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
 
 Pry.config.print = proc do |output, value|
-Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
+  Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
 end
 
 Hirb.enable
-````
+```
 
 This way, [Hirb](https://github.com/cldwalker/hirb) works flawlessly. And the
 combination of Rails and Pry is just fantastic. Give it a try. I have been able
