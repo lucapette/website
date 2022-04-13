@@ -8,3 +8,7 @@ createIcons({
     Github,
   },
 });
+
+console.info(
+  "Hi 👋👋👋. Luca here 🙂. Grab the code here: https://github.com/lucapette/website"
+);
