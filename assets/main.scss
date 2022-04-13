@@ -1,4 +1,5 @@
 @import "_theme";
+@import "../node_modules/include-media/dist/include-media.scss";
 
 html,
 body {
@@ -33,7 +34,7 @@ body {
   fill: none;
 }
 
-.hero {
+.hello {
   display: grid;
   grid-template-columns: 20% 30% 30% 20%;
   .title {
@@ -42,6 +43,7 @@ body {
   }
 
   .image {
+    grid-column-start: 3;
     justify-self: center;
   }
 
@@ -49,6 +51,25 @@ body {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;
+  }
+}
+
+@include media(">=tablet", "<desktop") {
+  .hello {
+    grid-template-columns: 20% 20%;
+    .subtitle {
+      grid-column-end: 4;
+    }
+  }
+}
+
+@include media("<tablet") {
+  .hello {
+    grid-template-columns: 30% 20%;
+
+    .subtitle {
+      grid-column-end: 4;
+    }
   }
 }
 
