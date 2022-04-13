@@ -57,6 +57,9 @@ body {
 @include media(">=tablet", "<desktop") {
   .hello {
     grid-template-columns: 20% 20%;
+    .image {
+      justify-self: right;
+    }
     .subtitle {
       grid-column-end: 4;
     }
