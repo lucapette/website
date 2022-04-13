@@ -33,15 +33,33 @@ body {
   fill: none;
 }
 
-.me {
-  display: flex;
-  justify-content: center;
+.hero {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  .title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .image {
+    justify-self: center;
+  }
+
+  .subtitle {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+  }
+}
+
+.accent,
+.dropcap {
+  font-family: $family-heading;
+  color: darken($nord15, 10%);
+  text-shadow: $nord4 0.05em 0.05em;
 }
 
 .dropcap {
-  font-family: $family-heading;
-  color: $nord9;
-  text-shadow: $nord8 0.05em 0.05em;
   float: left;
   font-size: 6rem;
   line-height: 1;
@@ -80,7 +98,12 @@ a {
     filter: brightness(0.8) contrast(1.2);
   }
 
-  .title {
+  figure.me img {
+    transform: scaleX(-1);
+  }
+
+  .title,
+  .subtitle {
     color: $nord6;
   }
 

@@ -9,10 +9,15 @@
 
 
       <section class="section">
-        <div class="me">
-          <figure class="image is-128x128">
+        <div class="hero">
+          <h1 class="is-size-1 is-size-3-mobile title">
+            <span class="accent">Hi!</span>
+            You've just found Luca Pette's website
+            <span class="accent">:)</span>
+          </h1>
+          <figure class="me image is-128x128">
             {{ $image := resources.Get "me.png" }}
-            {{ $image := $image.Resize "128x128 webp" }}
+            {{ $image := $image.Resize "128x128 webp q90" }}
             <img
               src="{{ $image.RelPermalink }}"
               alt="Luca Pette"
@@ -20,16 +25,14 @@
               height="128"
             />
           </figure>
-        </div>
 
-        <h1 class="is-size-1 is-size-3-mobile title has-text-centered">
-          Hi! You've just found Luca Pette's website
-        </h1>
-        <p class="is-size-4 is-size-5-mobile has-text-centered">
-          I use this website to share my
-          <a href="/writing">writing</a>. If you're looking for more information
-          about me, check out the <a href="/about">about me</a> page.
-        </p>
+          <p class="is-size-4 is-size-5-mobile subtitle">
+            I use this website to share my
+            <a href="/writing">writing</a>. If you're looking for more
+            information about me, check out the
+            <a href="/about">about me</a> page.
+          </p>
+        </div>
       </section>
       <section class="section">
         <div class="tile is-ancestor">

@@ -1,7 +1,7 @@
 {{ define "main" }}
   <section class="section">
     <h1 class="title is-1">{{ .Title }}</h1>
-    <p class="subtitle">{{ .Description }}</p>
+    <h2 class="subtitle">{{ .Description }}</h2>
   </section>
   <section class="section">
     <div class="columns">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="column">
-        <h2>Tags</h2>
+        <h3>Tags</h3>
 
         {{ $tags := $.Site.Taxonomies.tags.ByCount }}
         <div class="tags are-medium">
