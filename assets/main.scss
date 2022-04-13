@@ -188,3 +188,7 @@ a {
     text-shadow: $nord4 0.05em 0.05em;
   }
 }
+
+.me:hover {
+  transform: scaleX(-1);
+}

@@ -1,9 +1,12 @@
 {{ $width  := .Get "width" }}
 {{ $height := .Get "height" }}
 {{ $image  := resources.Get (.Get "name") }}
-{{ $image  := $image.Resize (printf "%sx%s webp" $height $width) }}
+{{ $small  := $image.Resize "128x128 webp q90" }}
+{{ $medium  := $image.Resize "256x256 webp q90" }}
 <img
-  src="{{ $image.RelPermalink }}"
+  src="{{ $small.RelPermalink }}"
+  srcset="{{ $small.RelPermalink }} 128w, {{ $medium.RelPermalink }} 256w"
+  sizes="(max-width: 600px) 128px, 800px"
   alt="{{ .Get "alt" }}"
   width="{{ $width }}"
   height="{{ $height }}"

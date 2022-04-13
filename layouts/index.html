@@ -17,9 +17,15 @@
           </h1>
           <figure class="me image is-128x128">
             {{ $image := resources.Get "me.png" }}
-            {{ $image := $image.Resize "128x128 webp q90" }}
+            {{ $small := $image.Resize "128x128 webp q90" }}
+            {{ $medium := $image.Resize "256x256 webp q90" }}
             <img
-              src="{{ $image.RelPermalink }}"
+              src="{{ $small.RelPermalink }}"
+              srcset="
+                {{ $small.RelPermalink }} 128w,
+                {{ $medium.RelPermalink }} 256w
+              "
+              sizes="(max-width: 600px) 128px, 800px"
               alt="Luca Pette"
               width="128"
               height="128"
