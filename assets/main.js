@@ -10,5 +10,5 @@ createIcons({
 });
 
 console.info(
-  "Hi 👋👋👋. Luca here 🙂. Grab the code here: https://github.com/lucapette/website"
+  "Hi 👋👋👋. Grab the code here: https://github.com/lucapette/website"
 );
