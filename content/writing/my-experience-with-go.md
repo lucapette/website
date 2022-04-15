@@ -2,9 +2,7 @@
 tags:
   - golang
 date: "2017-11-09T00:00:00Z"
-description:
-  I have been using Go for a project long enough to form opinions around
-  it
+description: I have been using Go for a project long enough to form opinions around it
 keywords: golang, go, programming language
 title: My experience with Go
 aliases:
