@@ -10,18 +10,17 @@
   {{ partial "fonts" . }}
 
   {{ $css := resources.Get "main.scss" | resources.ToCSS }}
-  {{ $css = $css | resources.PostCSS }}
-  {{ if hugo.IsProduction }}
-    {{ $css = $css | minify | fingerprint | resources.PostProcess }}
-  {{ end }}
-  <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
-
   {{ $js := resources.Get "main.js" | js.Build }}
   {{ if hugo.IsProduction }}
+    {{ $css = $css | resources.PostCSS }}
+    {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+
     {{ $js = $js | minify | fingerprint }}
   {{ end }}
 
   <script src="{{ $js.RelPermalink }}" defer></script>
+  <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
+
   {{ with .OutputFormats.Get "rss" -}}
     {{ printf `
       <link rel="%s" type="%s" href="%s" title="%s" />
@@ -39,6 +38,10 @@
     title="Luca Pette"
     type="application/atom+xml"
   />
+
+  {{ if hugo.IsProduction }}
+    <script defer data-domain="lucapette.me" src="/js/script.js"></script>
+  {{ end }}
   <meta
     name="keywords"
     content="{{ if .Keywords }}
