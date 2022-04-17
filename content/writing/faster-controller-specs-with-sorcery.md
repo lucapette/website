@@ -50,7 +50,7 @@ like:
 ```ruby
 user = mock_model(User, email: ‘email@example.com')
 
-thirdy_part_code(user)
+third_part_code(user)
 ```
 
 You'll probably get an error like:
@@ -59,7 +59,7 @@ You'll probably get an error like:
 Mock "User_1001" received unexpected message :foo_method with (:baz, Sun, 22 Jan 2012 19:26:03 UTC +00:00)
 ```
 
-And it's nice because this error is telling you how the thirdy_part_code method
+And it's nice because this error is telling you how the third_part_code method
 intends to use your object. So, that's exactly what I did. I passed in a mocked
 user to the login_user method provided by sorcery and I found out very quickly
 what I needed to mock in order to make it working.
@@ -93,8 +93,7 @@ end
 
 Actually my code is a bit fancier because I have a lot of situations where I
 need a particular type of user based on the STI pattern. So, your mileage may
-vary but I'm pretty sure it's very simple to adapt the code to other
-situations.
+vary but it should be easy enough to adapt the code to other situations.
 
 In any case, do not forget to add the helper to your RSpec configuration with:
 
