@@ -13,54 +13,99 @@ Grischuk, an elite chess Grandmaster, answered quickly with profound wisdom:
 
 > I've been preparing my whole life
 
-The beauty of this answer is that you can apply to _any_ job. Whatever decisions
-you make today, _all_ your past experiences will contribute to whatever you
-decide. Since I watched that interview with Grandmaster Grischuk, I have been
-slowly collecting guidelines, ideas, and principles that stick with me over the
-years. Writing about it is the natural consequence of my desire to learn more
-about myself because I find the process very introspective. Bonus point: I get
-to share my thoughts with you.
+The beauty of his answer is that you can apply it to _any_ job. _All_ your past
+experiences will contribute to whatever decision you make today. Since I watched
+that interview with Grandmaster Grischuk, I have been subconsciously collecting
+guidelines, ideas, and principles that stick with me over the years. The
+parallel with programming was obvious in my head and writing about it now is the
+natural consequence of my desire to learn more about it (and myself). I confess
+that I find the title of the article a little pretentious but I decided to go
+with it because it fits well the ideas expressed here.
 
-I want to say I decided to group my principles into three big categories but I
-would be somewhat lying. It happened pretty naturally, here they are:
-
-- approaching an existing codebase that is new to me. Fairly common scenario but
-  I can't say I read too much about it.
-- approaching greenfield projects. Since it's a little less common, I feel
-  privileged (or unlucky, depends on the day) having experienced "build this X
-  years long project from scratch. Also, there's no team yet so you need hire a
-  bunch of people to do it" multiple times. So I accumulated a lot of specific
-  ideas.
-- principles I always try to keep in mind, no matter the context.
-
-Let's dive straight into the first category, shall we?
+It felt natural to group principles into categories: existing codebases and
+greenfield projects. That in itself is a principle (a meta-principle?): I
+believe in approaching coding sessions differently depending on the context.
+While this may sound a tad obvious, I encountered enough examples of
+over-engineered or under-engineered (why isn't that a term btw? It's almost as
+common!) solutions in my career. More often than not, these solutions were
+merely a reflection of approaching an existing codebase like a greenfield
+project or, maybe worse, the other way around.
 
 ## How I approach an existing codebase
 
-- change as little as possible
-- always have a feedback loop
-- test in production
-- read whole features. While you read, take notes. Note down questions, idioms
-- assumptions are bad for:
-  - debugging (gather facts about behaviour)
-  - perf improvement (measure, don’t guess)
+When I think about the following principles, I think of codebases that are large
+enough you can't possibly keep an accurate representation of it in your head.
+How large is probably too personal so I won't even try to give an example. Most
+of what I'm about to share is somewhat even more relevant if the codebase is
+completely new to you (fairly common scenario when changing jobs for example).
+
+> Change as little as possible
+
+OK I can hear you say "this is obvious". But I actually really mean it. It works really
+
+> Always have a feedback loop
+
+this means bla bla and blu bla
+
+> Test in production
+
+I can hear @misstipsy say "fuck yeah"
+
+> Read features end to end
+
+While you read, take notes. Note down questions, idioms
+
+> Assumptions are bad
+
+- debugging (gather facts about behaviour)
+- perf improvement (measure, don’t guess)
 
 ## Starting from scratch
 
-- make it work, make it good, make it fast
-- write to throw away. design is a struggle between attention to details and high level ideas. To make this a positive tension:
-  - write a little prototype
-  - write a chunk of the design doc
-  - throw away a little code, make a change. Start from point one again
-- while you do, take lots of notes
-- let the design emerge from the code
-- when you don’t know how the api should look like, write the code you’d like to use
+Since it's a little less common, I feel privileged (or unlucky? It depends on
+the day) having experienced the scenario "hey you're responsible for building
+this X years long project from scratch. Also, there's no team yet so you need
+hire a bunch of people to do it" multiple times. So I accumulated a lot of ideas
+I would call specific (and others may call peculiar?).
+
+> Make it work, make it good, make it fast
+
+> Throw away first
+
+design is a struggle between attention to details and high level ideas. To make this a positive tension:
+
+- write a little prototype
+- write a chunk of the design doc
+- throw away a little code, make a change. Start from point one again
+
+> Take lots of notes
+
+Using your brain as storage is a waste. "The shorter pencil is longer than the
+longest memory".
+
+> Let the design emerge from the code
+
+This is mostly an exercise in patience. The more experienced you are the worse
+you have it because you know too well the little code you just wrote to "make it
+work" isn't anywhere close to production quality. But that's the point of
+guidelines, they guide _against_ your own primitive instincts.
+
+> When you don't know how the api should look like, write the code you'd like to
+> use
 
 ## General principles
 
-- name things what they do
-  - if you get stuck, most descriptive even if long is fine
-  - if you’re really stuck. Go for a walk, there’s a chance the problem is not naming but design
+Is it really programming if there isn't at least some util functions? 😃
+
+Jokes aside,
+
+Principles I always try to keep in mind, no matter the context.
+
+> name things what they do
+
+- if you get stuck, most descriptive even if long is fine
+- if you’re really stuck. Go for a walk, there’s a chance the problem is not naming but design
+
 - forget about easy to change, make code easy to delete
 - write actual tests
 - less dependencies is better
