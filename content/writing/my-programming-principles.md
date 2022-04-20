@@ -33,14 +33,23 @@ greenfield project or, maybe worse, the other way around.
 ## How I approach an existing codebase
 
 When I think about the following principles, I think of codebases that are large
-enough you can't possibly keep an accurate representation of it in your head.
-How large is probably too personal so I won't even try to give an example. Most
-of what I'm about to share is somewhat even more relevant if the codebase is
-completely new to you (fairly common scenario when changing jobs for example).
+enough you can't possibly keep an accurate representation in your head. How
+large is probably too personal so I won't even try to give an example. Most
+principles here are somewhat _even_ more relevant when the codebase is
+completely new to you (fairly common scenario when changing jobs for example)
+and you're trying to make sense of it.
 
 ### Change as little as possible
 
-OK I can hear you say "this is obvious". But I actually really mean it. It works really
+OK I can hear you say "this is obvious". But when I say as little as possible, I
+literally mean the smallest possible change. I've been in a lot of pair
+programming sessions where my partners were surprised to see how obsessed I'm
+with this. I go as far as changing one line _or less_ before I seek feedback
+(more about that in the next paragraph).
+
+It's a matter of alignment between what you think the code does and what it
+actually does. When you do know a codebase, that alignment is tight and you have
+the confidence to make larger changes.
 
 ### Always have a feedback loop
 
@@ -71,7 +80,8 @@ I would call specific (and others may call peculiar?).
 
 ### Throw away first
 
-design is a struggle between attention to details and high level ideas. To make this a positive tension:
+design is a struggle between attention to details and high level ideas. To make
+this a positive tension:
 
 - write a little prototype
 - write a chunk of the design doc
@@ -95,18 +105,36 @@ guidelines, they guide _against_ your own primitive instincts.
 
 Is it really programming if there isn't at least some util functions? 😃
 
-Jokes aside,
+Jokes aside, there is an handful of principles that I apply to any context.
+These are my "tru north" so to speak.
 
-Principles I always try to keep in mind, no matter the context.
-
-### name things what they do
+### Name things what they do
 
 - if you get stuck, most descriptive even if long is fine
-- if you’re really stuck. Go for a walk, there’s a chance the problem is not naming but design
+- if you’re really stuck. Go for a walk, there’s a chance the problem is not
+  naming but design
 
 ### Forget about easy to change, make code easy to delete
 
-### write actual tests
+### Write actual tests
+
+Before I explain what I mean with "actual" in this context, I have to make a
+little premise. When I say "tests", I mean the automated verification process
+that your systems (kind of) work. I do not mean TDD. I have nothing against TDD
+but it's a development methodology. My opinion about programming methodologies
+is that none of them always work and they are great in specific contexts. Which
+means I don't have much to say about them in general and TDD in particular. So
+back to tests as a verification process.
+
+Let's clarify what I mean with "actual". Here's my definition of "actual test":
+
+> A test must change only if the behaviour it verifies changed
+
+No other reason is good enough for a test to change. But, maybe also because of
+TDD, I've seem test testing language features, missing language features
+(looking at you dynamically typed languages), framework features. These tests
+change all the time. And they're just baggage. My advice is to delete them.
+There, I said it.
 
 ### Less dependencies is better
 
