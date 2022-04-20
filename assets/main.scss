@@ -76,10 +76,16 @@ body {
   }
 }
 
+$accent-color: darken($nord15, 10%);
+
+em {
+  color: $accent-color;
+}
+
 .accent,
 .dropcap {
   font-family: $family-heading;
-  color: darken($nord15, 10%);
+  color: $accent-color;
   text-shadow: $nord4 0.05em 0.05em;
 }
 
