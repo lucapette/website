@@ -25,8 +25,8 @@ with it because it fits well the ideas expressed here.
 It felt natural to group principles into categories: existing codebases and
 greenfield projects. I believe in approaching coding sessions differently
 depending on the context. While this may sound a tad obvious, I encountered
-enough examples of over-engineered or under-engineered (why isn't that a term
-btw? It's almost as common!) solutions in my career. More often than not, these
+enough examples of over-engineered or under-engineered (why isn't that a thing?
+It's almost as common!) solutions in my career. More often than not, these
 solutions were merely a reflection of approaching an existing codebase like a
 greenfield project or, maybe worse, the other way around.
 
@@ -34,10 +34,10 @@ greenfield project or, maybe worse, the other way around.
 
 When I think about the following principles, I think of codebases that are large
 enough you can't possibly keep an accurate representation in your head. How
-large is probably too personal so I won't even try to give an example. Most
-principles here are somewhat _even_ more relevant when the codebase is
+large is probably too personal so I won't even try to give an example. Most of
+these principles are somewhat _even_ more relevant when the codebase is
 completely new to you (fairly common scenario when changing jobs for example)
-and you're trying to make sense of it.
+and you're trying to make sense of it and change it at the same time.
 
 ### Change as little as possible
 
@@ -53,11 +53,28 @@ the confidence to make larger changes.
 
 ### Always have a feedback loop
 
-this means bla bla and blu bla
+You might have heard of the "Boyd's Law of Iteration" which states that the
+speed of iteration beats the quality of iteration. I find this applies really
+well to learning new things well outside of programming. But surely it works
+well while dealing with code. I can still remember pretty vividly the time I
+discovered Ruby had IRB. It made the experience of learning the language much
+more satisfying. I was learning really fast because I could try many things and
+get instant feedback.
+
+How does this play with approaching a new codebase? Well, the idea is that you
+setup your own "REPL experience". The actual tool you use for this doesn't
+really matter (I have my own favourite, it's called
+[production](#test-in-production)), the core idea is that you have this REPL set
+up _before_ you start changing anything. That way, you can [change as little as
+possible](#change-as-little-as-possible) with a much higher confidence.
 
 ### Test in production
 
 I can hear @misstipsy say "fuck yeah"
+
+### Be a gardner
+
+### Delete aggressively
 
 ### Read features end to end
 
@@ -99,7 +116,7 @@ you have it because you know too well the little code you just wrote to "make it
 work" isn't anywhere close to production quality. But that's the point of
 guidelines, they guide _against_ your own primitive instincts.
 
-### When you don't know how the api should look like, write the code you'd like to use
+### Write the code you'd like to use
 
 ## General principles
 
