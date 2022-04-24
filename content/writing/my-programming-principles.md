@@ -114,12 +114,14 @@ changes. I used to like the idea of gardening _while_ writing new features. But
 I grew out of it. Because smaller changes are always preferable. So I have a
 small workflow that aids my gardening activities. I take notes of the gardening
 I want to do. A small todo list. Sometimes, I share it with my team (it really
-depends on the team and the context of the team) to help other people form the
+depends on the team and the context they're in) to help other people form the
 habit of code gardening.
 
-I use this todo list as a personal tiny reward during my day. I get done the
-things I need to and then I treat myself by improving that test that still uses
-produces those annoying warnings.
+I use this todo list as a personal reward system. I get done the things I need
+to and then I treat myself by improving that test that still uses produces those
+annoying warnings. I have seen this dynamic at play with other programmers as
+well once the code gardening habit is established. The reward system is simple
+and allows people to make small improvements _all the time_.
 
 ### Delete aggressively
 
@@ -135,10 +137,11 @@ While you read, take notes. Note down questions, idioms
 ## Starting from scratch
 
 Since it's a little less common, I feel privileged (or unlucky? It depends on
-the day) having experienced the scenario "hey you're responsible for building
-this X years long project from scratch. Also, there's no team yet so you need
-hire a bunch of people to do it" multiple times. So I accumulated a lot of ideas
-I would call specific (and others may call peculiar?).
+the day honestly) having experienced multiple times the scenario "hey you're
+responsible for building this X years long project from scratch. Also, there's
+no team yet so you need hire a bunch of people to do it". When you start a new
+project, it can feel a little overwhelming because, of course, there's nothing
+done yet :)
 
 ### Make it work, make it good, make it fast
 
