@@ -159,6 +159,18 @@ you'll want to be a gardener.
 
 ### Read features end to end
 
+The principles I shares so far are aimed at approaching a change in a large
+codebase. They help also when said codebase is new to us. There's something
+though I do _before_ making any change to a code base. It's often called code
+safari but I'm no big fan of the metaphor. I like "read features end to end"
+more. When you approach a new codebase, it can get a little overwhelming.
+Sometimes you don't even know where to start, which part of the system maps to
+which part of the codebase. To help orient yourself, you can read a whole
+feature end to end. Let's consider a large web application where the "innocent"
+click on a button stars a batch process which ultimately results in the customer
+getting an email report of some sort. I'm sure you have seen some variation of
+this.
+
 While you read, take notes. Note down questions, idioms
 
 ### Facts > Assumptions
@@ -178,14 +190,16 @@ done yet :)
 ### Make it work, make it good, make it fast
 
 This is the corresponding principle of the "small changes, fast feedback loop"
-one for existing codebase. It's almost the same idea but the dynamics are a
-little difference as there's obviously more freedom of movement if you're
-writing a new system. That freedom is often detrimental to making small changes.
-Often you can't change a few lines, you need to write a whole bunch of code
-across multiple files to even see your little prototype work. It's the nature of
-the business of writing code from scratch. That's why I love this principle by
-Kent Beck. It's a mental model and a workflow to help you stay focused and be
-productive. Here's the idea:
+one for existing codebase. A variation of
+[principle](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast) often
+attributed to [Kent Beck](https://twitter.com/KentBeck). It's almost the same
+idea but the dynamics are a little different: there's obviously more freedom of
+movement if you're writing a new system. That freedom is often detrimental to
+making small changes. Often you can't change a few lines, you need to write a
+whole bunch of code across multiple files to even see your little prototype
+work. It's the nature of the business of writing code from scratch. It's a
+mental model and a workflow to help you stay focused and be productive. Here's
+the idea:
 
 - Make it work: you REPL your way through code to figure out if what you put
   together works. You don't overthink it. It doesn't matter the naming isn't
@@ -220,12 +234,11 @@ working exclusively with statically typed languages, probably enough to write
 its own article (interested? Please, let me know!) but this principle plays a
 surprisingly big part in this. The ergonomics of statically typed languages
 allow me a much more relaxed approach to the make it work phase. I genuinely
-don't need to care how the code is organised or their naming. Modern IDEs like
-intellij are so good at refactoring code that I can do a big chunk of the make
-it good part in seconds. It's somewhat paradoxical: I often chose languages like
-Ruby because of the supposed productivity gains only to realise I got stuck in
-early stages of a new project because of the fear of needing too much time to
-make naming good..
+don't need to care how the code is organised or their naming. Modern IDEs are so
+good at refactoring code that I can do a big chunk of the make it good part in
+seconds. It's somewhat paradoxical: I often chose languages like Ruby because of
+the supposed productivity gains only to realise I got stuck in early stages of a
+new project because of the fear of needing too much time to make naming good..
 
 ### Throw away first
 
@@ -282,15 +295,23 @@ is that none of them always work and they are great in specific contexts. Which
 means I don't have much to say about them in general and TDD in particular. So
 back to tests as a verification process.
 
-Let's clarify what I mean with "actual". Here's my definition of "actual test":
+Let's clarify what I mean with "actual test". Here's my definition:
 
 > A test must change only if the behaviour it verifies changed
 
-No other reason is good enough for a test to change. But, maybe also because of
-TDD, I've seem test testing language features, missing language features
-(looking at you dynamically typed languages), framework features. These tests
-change all the time. And they're just baggage. My advice is to delete them.
-There, I said it.
+No other reason is good enough for a test to change. I've seen tests testing
+language features, or testing missing language features (looking at you
+dynamically typed languages), or even testing framework features. These tests
+have two things in common: they change all the time and they're just baggage. My
+advice is to delete them. There, I said it.
+
+When I bring this up, people often understand it as my advice is either to not
+write tests or to only have integrations tests. Obviously, no point in debating
+the first one. I'm not arguing if you should have tests or not, I'm arguing the
+effectiveness of most tests suites. I don't know, there's a chance I've been
+very unlucky in my career and I run into too many bad test suites. As for the
+second point, it's that integration tests are more likely to suit my definition
+of "actual test".
 
 ### Less dependencies is better
 

@@ -199,3 +199,13 @@ a {
 .me:hover {
   transform: scaleX(-1);
 }
+
+.anchor a {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.anchor:hover a {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
