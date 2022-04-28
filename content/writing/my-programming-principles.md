@@ -160,16 +160,30 @@ you'll want to be a gardener.
 ### Read features end to end
 
 The principles I shares so far are aimed at approaching a change in a large
-codebase. They help also when said codebase is new to us. There's something
-though I do _before_ making any change to a code base. It's often called code
-safari but I'm no big fan of the metaphor. I like "read features end to end"
-more. When you approach a new codebase, it can get a little overwhelming.
-Sometimes you don't even know where to start, which part of the system maps to
-which part of the codebase. To help orient yourself, you can read a whole
-feature end to end. Let's consider a large web application where the "innocent"
-click on a button stars a batch process which ultimately results in the customer
-getting an email report of some sort. I'm sure you have seen some variation of
-this.
+codebase. They help also when said codebase is new to us. But there's something
+I always do _before_ making any change to a new code base. It's often called
+code safari but I'm no fan of the metaphor, I like "read features end to end"
+more.
+
+When you approach a new codebase, it can get a little overwhelming. Sometimes
+you don't even know where to start, which part of the system maps to which part
+of the codebase. To help orient yourself, you can read a whole feature end to
+end. Let's consider a large web application where the "innocent" click on a
+button stars a batch process which ultimately results in the customer getting an
+email report of some sort. I'm sure you have seen some variation of this. The
+idea of this principle is that you go on a hunt. You start searching for the
+code of the button. It sounds trivial but you will discover a lot of things:
+how/if you do i18n, what kind of frontend framework you're using. Most
+importantly, you will notice things, you will have questions. Open a notebook,
+write everything down. Then go down one layer and do it again. Repeat until
+you've gone all the way to the email service.
+
+Once you've done this once, you'll have a list of things. But it's going to be a
+mixed bag. To reap the benefits of this principle, the hard work starts here. Rework this document and group things into:
+
+- Questions for yourself. A sort of todo list of things you know you need to dig into yourself.
+- Questions for those who know the codebase better than you.
+- Idioms. Every codebase has its ways of doing things.
 
 While you read, take notes. Note down questions, idioms
 
