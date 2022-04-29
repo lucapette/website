@@ -301,10 +301,23 @@ guidelines, they guide _against_ your own primitive instincts.
 
 Is it really programming if there isn't at least some util functions? 😃
 
-Jokes aside, there is an handful of principles that I apply to any context.
-These are my "tru north" so to speak.
+Jokes aside, there is an handful of principles that I apply in any context.
+These are my "true north" guidelines so to speak.
 
 ## Prose not poetry
+
+It's somewhat ironic that this principle has such a terse title. Writing code
+is, well, writing. It's an intriguing form of writing because it always comes
+with two different audiences. To complicated things, they couldn't be any
+different. Of course the primary audience is the machine. I have heard the
+argument "more than anything you're writing for the next programmer that reads
+your code". I'm sympathetic with that argument because I see where it comes
+from. But let's be honest, you can't ship code that doesn't compile. So I'm
+going to say you write the code so that the machine can run it. After all, the
+goal is shipping code that works. But you can't discount the fact the code will
+need to be modified at some point in the future so other people can will read
+it. People couldn't be more different from machines. TODO "machines only do what
+they're told to" etc etc TODO
 
 two reasons:
 
