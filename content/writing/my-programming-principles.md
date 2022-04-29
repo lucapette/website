@@ -55,10 +55,9 @@ other way around.
   - [Name things what they do](#name-things-what-they-do)
   - [Write the code you'd like to use](#write-the-code-youd-like-to-use)
   - [Forget about easy to change, make code easy to delete](#forget-about-easy-to-change-make-code-easy-to-delete)
-  - [Write actual tests](#write-actual-tests)
-  - [Less dependencies is better](#less-dependencies-is-better)
-  - [Confidence is a struggle](#confidence-is-a-struggle)
   - [Let the design emerge from the code](#let-the-design-emerge-from-the-code)
+  - [Write actual tests](#write-actual-tests)
+  - [Confidence is a struggle](#confidence-is-a-struggle)
 
 ## How I approach an existing codebase
 
@@ -333,7 +332,7 @@ These are my "true north" guidelines so to speak.
 
 Writing code is, well, writing. It's an intriguing form of writing because
 you're always writing for the machine first and then for the next programmer.
-Two audiences that couldn't be any more different. 
+Two audiences that couldn't be any more different.
 
 The primary audience is the machine even though we often lie to ourselves and
 say things like "more than anything you're writing for the next programmer that
@@ -344,7 +343,7 @@ it won't work if you got a syntax error. You have to write code that the machine
 can run. But, on the other hand, you can't discount the fact the code will need
 to be modified at some point in the future so other people can will read it.
 It's a tough game and this principle has been guiding me since I first realized
-that writing code is still writing. 
+that writing code is still writing.
 
 What's the most fitting writing form for code? It's prose. You want your code to
 have chapters, your chapters to have paragraphs, your paragraphs to have
@@ -365,7 +364,24 @@ programmer.
 
 ### Name things what they do
 
-Naming _is_ hard. Let's get that out of the way.
+Naming _is_ hard. Having said that, I think we often make it harder than it
+should be for us because we treat writing code as poetry. So we're looking for
+elegant, apt, short names for everything. I know the struggle because I've been
+there a lot early in my career. I grew out of it because I realized a few
+things:
+
+- It's unlikely I'll get naming right the first time I sit down to write the
+  code for a non trivial problem. Naming is the most significant "short-term"
+  design tool at a programmer's disposal. Sometimes I don't understand that on a
+  conscious level while writing. Calling something, say, `JobScheduler` will
+  constraint the design of whatever interact with it to treat it like a job
+  scheduler right? Right, it sounds obvious. But that's kind of the
+  point/problem. Way too often I want to get the naming right too early. The way
+  I look at it is this: the delta between the mental model I created for the
+  solution I have in mind and the actual code I will produce is going to
+  decrease as I write it. In a way, I'm bound to get some names wrong the first
+  time around. But it's effect of the problem. The cause is that I don't
+  understand the problem yet.
 
 - if you get stuck, most descriptive even if long is fine
 - if you’re really stuck. Go for a walk, there’s a chance the problem is not
@@ -381,9 +397,16 @@ so on. It can get so overwhelming you just get stuck. That's where you take a
 deep breath and ask yourself: so how do I want to use this code? Move away from
 the empty file back to to the caller site. Write the code like the problem
 you're solving is already solved the best way possible. No constraints, jot down
-a few lines of the code you want to use.
+a few lines of the code you want to use. It makes wonders.
 
 ### Forget about easy to change, make code easy to delete
+
+### Let the design emerge from the code
+
+This is mostly an exercise in patience. The more experienced you are the worse
+you have it because you know too well the few lines of code you just wrote to
+"make it work" aren't anywhere close to production quality. But that's the point
+of guidelines, they guide _against_ your own primitive instincts.
 
 ### Write actual tests
 
@@ -413,16 +436,11 @@ very unlucky in my career and I run into too many bad test suites. As for the
 second point, it's that integration tests are more likely to suit my definition
 of "actual test".
 
-### Less dependencies is better
+
 
 ### Confidence is a struggle
 
 - it’s good because it gives you the ability to break down any problem. The more experience you have, the less you fear a problem
 - it’s bad because it feeds on ego. And ego makes you do dumb things. You want to stay humble so you can be smart
 
-### Let the design emerge from the code
 
-This is mostly an exercise in patience. The more experienced you are the worse
-you have it because you know too well the few lines of code you just wrote to
-"make it work" aren't anywhere close to production quality. But that's the point
-of guidelines, they guide _against_ your own primitive instincts.
