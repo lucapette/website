@@ -8,6 +8,12 @@ keywords:
   - principles
 ---
 
+{{< message class="is-info">}} This is a _long_ read. Right after the
+introduction there's a table of content in case you don't want to read all of
+it.
+
+ {{</ message >}}
+
 One day, when asked how he had prepared for a game he had just played, Alexander
 Grischuk, an elite chess Grandmaster, answered quickly with profound wisdom:
 
@@ -22,23 +28,48 @@ about it now is the natural consequence of my desire to learn more about it (and
 myself). I find the title of the article a little pretentious but I decided to
 go with it because it fits well the ideas expressed here.
 
-It felt natural to group principles into categories: existing codebases and
-greenfield projects. I believe in approaching coding sessions differently
-depending on the context. While this may sound a tad obvious, I encountered
-enough examples of over-engineered or under-engineered (why isn't that a thing?
-It's almost as common!) solutions in my career. More often than not, these
-solutions were merely a reflection of approaching an existing codebase like a
-greenfield project or, maybe worse, the other way around. Let's get started!
+It felt natural to group principles into categories: existing codebases,
+greenfield projects, and general principles. I believe in approaching coding
+sessions differently depending on the context. While this may sound a tad
+obvious, I encountered enough examples of over-engineered or under-engineered
+(why isn't that a thing? It's almost as common!) solutions in my career. More
+often than not, these wrongly sized solutions were merely a reflection of
+approaching an existing codebase like a greenfield project or, maybe worse, the
+other way around.
+
+
+## Table of content <!-- omit from toc -->
+- [Table of content](#table-of-content)
+- [How I approach an existing codebase](#how-i-approach-an-existing-codebase)
+  - [Small changes, fast feedback loops](#small-changes-fast-feedback-loops)
+  - [Test in production](#test-in-production)
+  - [Be a gardner](#be-a-gardner)
+  - [Read features end to end](#read-features-end-to-end)
+  - [Facts > Assumptions](#facts--assumptions)
+- [Starting from scratch](#starting-from-scratch)
+  - [Make it work, make it good, make it fast](#make-it-work-make-it-good-make-it-fast)
+  - [Throw it away first](#throw-it-away-first)
+  - [Docs driven development](#docs-driven-development)
+- [General principles](#general-principles)
+  - [Prose not poetry](#prose-not-poetry)
+  - [Name things what they do](#name-things-what-they-do)
+  - [Write the code you'd like to use](#write-the-code-youd-like-to-use)
+  - [Forget about easy to change, make code easy to delete](#forget-about-easy-to-change-make-code-easy-to-delete)
+  - [Write actual tests](#write-actual-tests)
+  - [Less dependencies is better](#less-dependencies-is-better)
+  - [Confidence is a struggle](#confidence-is-a-struggle)
+  - [Let the design emerge from the code](#let-the-design-emerge-from-the-code)
 
 ## How I approach an existing codebase
 
-When I think about these principles, I think of codebases that are large enough
-you can't possibly keep an accurate representation of all its parts in your
-head. You may know some parts very well but there are enough unknowns you can't
-make a non-trivial change without some planning. What's exactly large enough is
-probably too personal so I won't even try to give an example. Most of these
-principles are somewhat _even_ more relevant when the codebase is completely new
-to you and you're trying to make sense of it and change it at the same time.
+When I think about the following principles, I think of codebases that are large
+enough you can't possibly keep an accurate representation of all its parts in
+your head. You may know some parts very well but there are enough unknowns you
+can't make a non-trivial change without some planning. What's exactly large
+enough is probably too personal so I won't even try to give an example. Most of
+these principles are somewhat _even_ more relevant when the codebase is
+completely new to you and you're trying to make sense of it and change it at the
+same time.
 
 ### Small changes, fast feedback loops
 
@@ -192,8 +223,8 @@ starts. Reorganize your notes:
   to speed faster.
 - Idioms. Every codebase has its ways of doing things.
 
-You created a basic map, now you can take any path and repeat this process to
-improve your understanding of the codebase you're tackling.
+You now have a basic map you can use to choose a new path and repeat this
+process to improve your understanding of the codebase you're tackling.
 
 ### Facts > Assumptions
 
@@ -286,16 +317,10 @@ of the problem.
 
 My favourite programming sessions always happen after I've throw away a first
 version of whatever I'm trying to solve. These sessions feel really fast and
-they are. I'm kind of just typing out the solution at this point.
+they are. I'm kind of just typing out a satisfying solution at this point.
 
-### Let the design emerge from the code
 
-This is mostly an exercise in patience. The more experienced you are the worse
-you have it because you know too well the little code you just wrote to "make it
-work" isn't anywhere close to production quality. But that's the point of
-guidelines, they guide _against_ your own primitive instincts.
-
-### Write the code you'd like to use
+### Docs driven development
 
 ## General principles
 
@@ -304,31 +329,59 @@ Is it really programming if there isn't at least some util functions? 😃
 Jokes aside, there is an handful of principles that I apply in any context.
 These are my "true north" guidelines so to speak.
 
-## Prose not poetry
+### Prose not poetry
 
-It's somewhat ironic that this principle has such a terse title. Writing code
-is, well, writing. It's an intriguing form of writing because it always comes
-with two different audiences. To complicated things, they couldn't be any
-different. Of course the primary audience is the machine. I have heard the
-argument "more than anything you're writing for the next programmer that reads
-your code". I'm sympathetic with that argument because I see where it comes
-from. But let's be honest, you can't ship code that doesn't compile. So I'm
-going to say you write the code so that the machine can run it. After all, the
-goal is shipping code that works. But you can't discount the fact the code will
-need to be modified at some point in the future so other people can will read
-it. People couldn't be more different from machines. TODO "machines only do what
-they're told to" etc etc TODO
+Writing code is, well, writing. It's an intriguing form of writing because
+you're always writing for the machine first and then for the next programmer.
+Two audiences that couldn't be any more different. 
 
-two reasons:
+The primary audience is the machine even though we often lie to ourselves and
+say things like "more than anything you're writing for the next programmer that
+reads your code". I'm sympathetic with the argument because I see where it comes
+from but, let's be honest about it, you can't ship code that doesn't compile. It
+doesn't matter how readable and understandable the code you wrote is for humans,
+it won't work if you got a syntax error. You have to write code that the machine
+can run. But, on the other hand, you can't discount the fact the code will need
+to be modified at some point in the future so other people can will read it.
+It's a tough game and this principle has been guiding me since I first realized
+that writing code is still writing. 
 
-- prose as a metaphor for "write code at the same level of abstraction"
-- clarity > brevity
+What's the most fitting writing form for code? It's prose. You want your code to
+have chapters, your chapters to have paragraphs, your paragraphs to have
+sentences. The key is that you want _homogeneous levels of abstraction_.
+Sentences are just a few instructions, paragraphs are little algorithms,
+chapters are modules, a book is a system. That's why I say that good code
+resembles prose. Good code has a boring rhythm, you don't want to jump from
+shifting bits to call an external service in two consecutive lines. You're
+structuring your code this way for _both_ the machine and the next programmer.
+
+When I bring up this prose vs poetry metaphor, I often get the argument that
+poetry may fit as well. After all there's very structured poetry out there. The
+thing with poetry though is that it's very good when it says a lot with just a
+few words. Poetry can be really terse and that's my point. When in doubt, always
+_prefer clarity to brevity_. Since itt's all the same for the machine as long as
+it works, there's no point in making code terse or clever for the next
+programmer.
 
 ### Name things what they do
+
+Naming _is_ hard. Let's get that out of the way.
 
 - if you get stuck, most descriptive even if long is fine
 - if you’re really stuck. Go for a walk, there’s a chance the problem is not
   naming but design
+
+### Write the code you'd like to use
+
+I can't find the original reference but I'm relatively sure this principle too
+was inspired by Kent Beck. This works well when you get stuck because you have
+no code to start from. So you have all kind of questions about how the API of
+this new module should look like, how should the data structures look like, and
+so on. It can get so overwhelming you just get stuck. That's where you take a
+deep breath and ask yourself: so how do I want to use this code? Move away from
+the empty file back to to the caller site. Write the code like the problem
+you're solving is already solved the best way possible. No constraints, jot down
+a few lines of the code you want to use.
 
 ### Forget about easy to change, make code easy to delete
 
@@ -362,9 +415,14 @@ of "actual test".
 
 ### Less dependencies is better
 
-### Write more docs
-
 ### Confidence is a struggle
 
 - it’s good because it gives you the ability to break down any problem. The more experience you have, the less you fear a problem
 - it’s bad because it feeds on ego. And ego makes you do dumb things. You want to stay humble so you can be smart
+
+### Let the design emerge from the code
+
+This is mostly an exercise in patience. The more experienced you are the worse
+you have it because you know too well the few lines of code you just wrote to
+"make it work" aren't anywhere close to production quality. But that's the point
+of guidelines, they guide _against_ your own primitive instincts.
