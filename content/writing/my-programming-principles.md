@@ -268,7 +268,7 @@ Designing a system is a struggle between tiny details and high level ideas. It's
 the reason why the quote "in theory, there's no difference between theory and
 practice. In practice, there is" is so apt for programming. The harder is the
 problem you're trying to solve, the stronger is this tension. You want to make
-sure it's a positive tension. Here's how I apply this principle:
+sure it's a positive tension. Here's what I do:
 
 - I write a small prototype
 - I write a chunk of the design doc
@@ -286,8 +286,7 @@ of the problem.
 
 My favourite programming sessions always happen after I've throw away a first
 version of whatever I'm trying to solve. These sessions feel really fast and
-they are. Because I'm kind of typing out the solution that is now clear in my
-head.
+they are. I'm kind of just typing out the solution at this point.
 
 ### Let the design emerge from the code
 
