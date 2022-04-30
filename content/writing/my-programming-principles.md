@@ -47,9 +47,9 @@ other way around.
   - [Read features end to end](#read-features-end-to-end)
   - [Facts > Assumptions](#facts--assumptions)
 - [Starting from scratch](#starting-from-scratch)
-  - [Make it work, make it good, make it fast](#make-it-work-make-it-good-make-it-fast)
-  - [Throw it away first](#throw-it-away-first)
   - [Docs driven development](#docs-driven-development)
+  - [Throw it away first](#throw-it-away-first)
+  - [Make it work, make it good, make it fast](#make-it-work-make-it-good-make-it-fast)
 - [General principles](#general-principles)
   - [Prose not poetry](#prose-not-poetry)
   - [Name things what they do](#name-things-what-they-do)
@@ -57,7 +57,7 @@ other way around.
   - [Forget about easy to change, make code easy to delete](#forget-about-easy-to-change-make-code-easy-to-delete)
   - [Let the design emerge from the code](#let-the-design-emerge-from-the-code)
   - [Write actual tests](#write-actual-tests)
-  - [Confidence is a struggle](#confidence-is-a-struggle)
+  - [Balance your confidence](#balance-your-confidence)
 
 ## How I approach an existing codebase
 
@@ -79,7 +79,7 @@ before I seek feedback. The point is that very rarely the whole change we have
 to make to a system is a couple of lines. It's always a little more than that,
 possibly touching a few files here and there. In these situations, my workflow is:
 
-- Change very little. A few lines or less.
+- Change very little. A few lines _or less_.
 - Seek feedback
 - If it works _so far_, repeat
 
@@ -237,7 +237,36 @@ the day honestly) having experienced multiple times the scenario "hey you're
 responsible for building this X years long project from scratch. Also, there's
 no team yet so you need hire a bunch of people to do it". When you start a new
 project, it can feel a little overwhelming because, of course, there's nothing
-done yet :)
+done yet 😃
+
+### Docs driven development
+
+### Throw it away first
+
+Designing a system is a struggle between tiny details and high level ideas. It's
+the reason why the quote "in theory, there's no difference between theory and
+practice. In practice, there is" is so apt for programming. The harder is the
+problem you're trying to solve, the stronger is this tension. You want to make
+sure it's a positive tension. Here's what I do:
+
+- I write a small prototype
+- I write a chunk of the design doc
+- I throw away the first prototype
+- I improve the design doc
+- I write a new prototype
+
+Sometimes, if the problem is really hard, I repeat this process a couple of
+times. Others it's too easy and there's no need to throw it away. The point is
+be ready to do so when you're not happy with how you understand the problem.
+That's the core of this principle: you write a first draft knowing you'll
+probably throw it away so you'll experiment. You'll digress a little, you'll
+come back. The idea is that you use code and words to improve your understanding
+of the problem.
+
+My favourite programming sessions always happen after I've throw away a first
+version of whatever I'm trying to solve. These sessions feel really fast and
+they are. I'm kind of just typing out a satisfying solution at this point.
+
 
 ### Make it work, make it good, make it fast
 
@@ -291,35 +320,6 @@ good at refactoring code that I can do a big chunk of the make it good part in
 seconds. It's somewhat paradoxical: I often chose languages like Ruby because of
 the supposed productivity gains only to realise I got stuck in early stages of a
 new project because of the fear of needing too much time to refactor things.
-
-### Throw it away first
-
-Designing a system is a struggle between tiny details and high level ideas. It's
-the reason why the quote "in theory, there's no difference between theory and
-practice. In practice, there is" is so apt for programming. The harder is the
-problem you're trying to solve, the stronger is this tension. You want to make
-sure it's a positive tension. Here's what I do:
-
-- I write a small prototype
-- I write a chunk of the design doc
-- I throw away the first prototype
-- I improve the design doc
-- I write a new prototype
-
-Sometimes, if the problem is really hard, I repeat this process a couple of
-times. Others it's too easy and there's no need to throw it away. The point is
-be ready to do so when you're not happy with how you understand the problem.
-That's the core of this principle: you write a first draft knowing you'll
-probably throw it away so you'll experiment. You'll digress a little, you'll
-come back. The idea is that you use code and words to improve your understanding
-of the problem.
-
-My favourite programming sessions always happen after I've throw away a first
-version of whatever I'm trying to solve. These sessions feel really fast and
-they are. I'm kind of just typing out a satisfying solution at this point.
-
-
-### Docs driven development
 
 ## General principles
 
@@ -397,7 +397,7 @@ so on. It can get so overwhelming you just get stuck. That's where you take a
 deep breath and ask yourself: so how do I want to use this code? Move away from
 the empty file back to to the caller site. Write the code like the problem
 you're solving is already solved the best way possible. No constraints, jot down
-a few lines of the code you want to use. It makes wonders.
+a few lines of the code you want to use.
 
 ### Forget about easy to change, make code easy to delete
 
@@ -430,15 +430,13 @@ advice is to delete them. There, I said it.
 
 When I bring this up, people often understand it as my advice is either to not
 write tests or to only have integrations tests. Obviously, no point in debating
-the first one. I'm not arguing if you should have tests or not, I'm arguing the
-effectiveness of most tests suites. I don't know, there's a chance I've been
-very unlucky in my career and I run into too many bad test suites. As for the
-second point, it's that integration tests are more likely to suit my definition
-of "actual test".
+the first one. Of course you should write tests. I'm not arguing if you should
+have tests or not, I'm arguing the effectiveness of tests suites. As for the
+second point, it's true that integration tests are more likely to suit my
+definition of "actual test" so I understand where people are coming from with
+this. 
 
-
-
-### Confidence is a struggle
+### Balance your confidence
 
 - it’s good because it gives you the ability to break down any problem. The more experience you have, the less you fear a problem
 - it’s bad because it feeds on ego. And ego makes you do dumb things. You want to stay humble so you can be smart
