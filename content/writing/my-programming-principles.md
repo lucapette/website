@@ -267,7 +267,6 @@ My favourite programming sessions always happen after I've throw away a first
 version of whatever I'm trying to solve. These sessions feel really fast and
 they are. I'm kind of just typing out a satisfying solution at this point.
 
-
 ### Make it work, make it good, make it fast
 
 This is the corresponding principle of the "small changes, fast feedback loop"
@@ -356,36 +355,51 @@ structuring your code this way for _both_ the machine and the next programmer.
 
 When I bring up this prose vs poetry metaphor, I often get the argument that
 poetry may fit as well. After all there's very structured poetry out there. The
-thing with poetry though is that it's very good when it says a lot with just a
-few words. Poetry can be really terse and that's my point. When in doubt, always
-_prefer clarity to brevity_. Since itt's all the same for the machine as long as
-it works, there's no point in making code terse or clever for the next
+thing with poetry though is that it's often good when it says a lot with just a
+few words. Poetry can be really terse and that's why I say prose not poetry.
+When in doubt, always _prefer clarity to brevity_. Since it's all the same for
+the machine, there's no point in making code terse or clever for the next
 programmer.
 
 ### Name things what they do
 
-Naming _is_ hard. Having said that, I think we often make it harder than it
-should be for us because we treat writing code as poetry. So we're looking for
-elegant, apt, short names for everything. I know the struggle because I've been
-there a lot early in my career. I grew out of it because I realized a few
-things:
+Naming _is_ hard.
 
-- It's unlikely I'll get naming right the first time I sit down to write the
-  code for a non trivial problem. Naming is the most significant "short-term"
-  design tool at a programmer's disposal. Sometimes I don't understand that on a
+Having said that, I think we often make it harder for ourselves than it should
+be because there's a certain social pressure to treat code like poetry. It has
+to be pretty so we're looking for elegant, apt, short names for everything. I
+struggled early in my career with this but I grew out of it because I realized a
+few things:
+
+- Unless it's a trivial problem, I won't likely get naming right while I'm
+  drafting a first version.
+- Naming is the most significant design tool at my disposal white I'm writing.
+  Due the focused nature of such tasks, sometimes I lose sight of that on a
   conscious level while writing. Calling something, say, `JobScheduler` will
   constraint the design of whatever interact with it to treat it like a job
-  scheduler right? Right, it sounds obvious. But that's kind of the
-  point/problem. Way too often I want to get the naming right too early. The way
-  I look at it is this: the delta between the mental model I created for the
-  solution I have in mind and the actual code I will produce is going to
-  decrease as I write it. In a way, I'm bound to get some names wrong the first
-  time around. But it's effect of the problem. The cause is that I don't
-  understand the problem yet.
+  scheduler right? Right, it sounds obvious.
+- Way too often I want to get the naming right too early. The delta between the
+  mental model I created for the problem I want to solve and the actual code I
+  will end up writing decreases as I write it.
 
-- if you get stuck, most descriptive even if long is fine
-- if you’re really stuck. Go for a walk, there’s a chance the problem is not
-  naming but design
+All these considerations lead me to what I call "relaxed naming" (ah the irony
+of not liking this naming 🙃). In a way, I'm bound to get some names wrong the
+first time around. But it's effect of the problem. The cause is that I don't
+understand the problem yet well enough to be satisfied with the naming. "Relaxed
+naming" is my process now and it looks like this:
+
+- Call things what they do _right now_. The more descriptive the name, the
+  better. Bonus points if it feels a little boring.
+
+Yep, there's no step two.
+
+It's a little cheeky I'll give you that. But all things considered, after 20
+years I'm finally happy with my naming process. I look at it the same way I look
+at jotting down a first version of a new system. It's obvious maybe but spelling
+it out helps: the thing you're naming is _always new_. You're naming it now
+because it's not there yet. So the principle [make it work, make it good, make
+it fast](#make-it-work-make-it-good-make-it-fast) works pretty well here except
+there's no step three.
 
 ### Write the code you'd like to use
 
@@ -393,20 +407,42 @@ I can't find the original reference but I'm relatively sure this principle too
 was inspired by Kent Beck. This works well when you get stuck because you have
 no code to start from. So you have all kind of questions about how the API of
 this new module should look like, how should the data structures look like, and
-so on. It can get so overwhelming you just get stuck. That's where you take a
-deep breath and ask yourself: so how do I want to use this code? Move away from
-the empty file back to to the caller site. Write the code like the problem
-you're solving is already solved the best way possible. No constraints, jot down
-a few lines of the code you want to use.
+so on. It can get so overwhelming you can get stuck.
+
+That's where you take a deep breath and ask yourself: how do I want to use this
+code? Here's how this principle works in practice:
+
+- Close that empty file you just created.
+- Open up one file in which you need to call the code you don't have yet.
+- Write the code like the problem you're solving is _already solved_ the best
+way possible.
+
+The third step is hard because you have to fake you don't know the code isn't
+there. This only works if you genuinely jot down a solution without trying to
+also picture all the code you need to write to make it all work. Sometimes, I go
+as far as using pen and paper and pseudo-code something as a first step so I can
+let go of weight of all the sub-tasks each line I'm "faking" is generating.
 
 ### Forget about easy to change, make code easy to delete
 
 ### Let the design emerge from the code
 
-This is mostly an exercise in patience. The more experienced you are the worse
-you have it because you know too well the few lines of code you just wrote to
-"make it work" aren't anywhere close to production quality. But that's the point
-of guidelines, they guide _against_ your own primitive instincts.
+When I started as head of engineering at [Marley
+Spoon](https://marleyspoon.com/), I hang on the walls of our office a few A4
+pages with one or two sentences of them. The idea was to remind myself and my
+team of our foundational core values. Two of them are relevant to this
+conversation:
+
+> Less is more
+
+What I'm trying to say with it in the context of design and code is that good
+design is first of all an exercise in patience. Also, I hate to tell you this,
+the more experienced you become the worse it gets. You know too well the few
+lines of code you just wrote to "make it work" aren't anywhere close to
+production quality.
+
+> don't remember the other one!
+
 
 ### Write actual tests
 
@@ -434,7 +470,7 @@ the first one. Of course you should write tests. I'm not arguing if you should
 have tests or not, I'm arguing the effectiveness of tests suites. As for the
 second point, it's true that integration tests are more likely to suit my
 definition of "actual test" so I understand where people are coming from with
-this. 
+this.
 
 ### Balance your confidence
 
