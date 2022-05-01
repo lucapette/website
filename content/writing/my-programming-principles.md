@@ -54,7 +54,6 @@ other way around.
   - [Prose not poetry](#prose-not-poetry)
   - [Name things what they do](#name-things-what-they-do)
   - [Write the code you'd like to use](#write-the-code-youd-like-to-use)
-  - [Forget about easy to change, make code easy to delete](#forget-about-easy-to-change-make-code-easy-to-delete)
   - [Let the design emerge from the code](#let-the-design-emerge-from-the-code)
   - [Write actual tests](#write-actual-tests)
   - [Balance your confidence](#balance-your-confidence)
@@ -241,6 +240,12 @@ done yet 😃
 
 ### Docs driven development
 
+Writing the docs before writing a single line of code helps with:
+
+- scope
+- organization
+- prioritization
+
 ### Throw it away first
 
 Designing a system is a struggle between tiny details and high level ideas. It's
@@ -423,26 +428,21 @@ also picture all the code you need to write to make it all work. Sometimes, I go
 as far as using pen and paper and pseudo-code something as a first step so I can
 let go of weight of all the sub-tasks each line I'm "faking" is generating.
 
-### Forget about easy to change, make code easy to delete
-
 ### Let the design emerge from the code
 
 When I started as head of engineering at [Marley
 Spoon](https://marleyspoon.com/), I hang on the walls of our office a few A4
 pages with one or two sentences of them. The idea was to remind myself and my
-team of our foundational core values. Two of them are relevant to this
+team of our foundational core values. My favourite is relevant to this
 conversation:
 
 > Less is more
 
 What I'm trying to say with it in the context of design and code is that good
 design is first of all an exercise in patience. Also, I hate to tell you this,
-the more experienced you become the worse it gets. You know too well the few
+the more experienced you become the harder it gets. You know too well the few
 lines of code you just wrote to "make it work" aren't anywhere close to
 production quality.
-
-> don't remember the other one!
-
 
 ### Write actual tests
 
