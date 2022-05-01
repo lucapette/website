@@ -9,33 +9,35 @@ keywords:
 ---
 
 {{< message class="is-info">}} This is a _long_ read. Right after the
-introduction there's a table of content in case you don't want to read all of
-it.
-
+introduction there's a table of content in case you don't want to read it all.
  {{</ message >}}
 
 One day, when asked how he had prepared for a game he had just played, Alexander
-Grischuk, an elite chess Grandmaster, answered quickly with profound wisdom:
+Grischuk, an elite chess Grandmaster, answered quickly:
 
 > "I've been preparing my whole life". GM Grischuk, Alexander
 
 The beauty of his answer is that you can apply it to _any_ job. _All_ your past
-experiences will contribute to some extend to whatever decision you make today.
-Since I watched that interview with Grandmaster Grischuk, I have been
-subconsciously collecting guidelines, ideas, and principles that stick with me
-over the years. The parallel with programming was obvious in my head and writing
-about it now is the natural consequence of my desire to learn more about it (and
-myself). I find the title of the article a little pretentious but I decided to
-go with it because it fits well the ideas expressed here.
+experiences contribute to some extend to _any_ decision you make today. 
 
-It felt natural to group principles into categories: existing codebases,
-greenfield projects, and general principles. I believe in approaching coding
-sessions differently depending on the context. While this may sound a tad
-obvious, I encountered enough examples of over-engineered or under-engineered
-(why isn't that a thing? It's almost as common!) solutions in my career. More
-often than not, these wrongly sized solutions were merely a reflection of
-approaching an existing codebase like a greenfield project or, maybe worse, the
-other way around.
+The parallel with programming felt obvious to me and , since I watched that
+interview with Grandmaster Grischuk, I have been subconsciously collecting
+guidelines, ideas, and principles that stick with me over the years. Writing
+about it now is the natural consequence of my desire to learn more about these
+principles (and myself). 
+
+I have to share I find the title of the article a little pretentious but I
+decided to go with it because it fits well the ideas expressed here.
+
+As for the actual principles, It felt natural to group them into these
+categories: existing codebases, greenfield projects, and general principles. 
+
+I believe in approaching coding sessions differently depending on the context.
+While this may sound a tad obvious, I encountered enough examples of
+over-engineered or under-engineered (why isn't that a thing? It's almost as
+common!) solutions in my career. More often than not, these wrongly sized
+solutions were merely a reflection of approaching an existing codebase like a
+greenfield project or, maybe worse, the other way around.
 
 
 ## Table of content <!-- omit from toc -->
@@ -60,101 +62,112 @@ other way around.
 
 ## How I approach an existing codebase
 
-When I think about the following principles, I think of codebases that are large
-enough you can't possibly keep an accurate representation of all its parts in
-your head. You may know some parts very well but there are enough unknowns you
-can't make a non-trivial change without some planning. What's exactly large
-enough is probably too personal so I won't even try to give an example. Most of
-these principles are somewhat _even_ more relevant when the codebase is
-completely new to you and you're trying to make sense of it and change it at the
-same time.
+Here I'm thinking of codebases that are large enough you can't possibly keep an
+accurate representation of all its parts in your head. You may know some parts
+very well but there are enough unknowns you wont't be able make a non-trivial
+change without some careful planning. 
+
+What's the definition of large enough is probably too personal so I won't even
+try to give an example. We'll go with "large enough for you, the reader". Let's
+dive into it.
 
 ### Small changes, fast feedback loops
 
-Change a few lines _or less_ before seeking feedback. I mean _literally_ the
-smallest possible change you can think of. I've been in a lot of pair
-programming sessions where my partners were surprised to see how little I change
-before I seek feedback. The point is that very rarely the whole change we have
-to make to a system is a couple of lines. It's always a little more than that,
-possibly touching a few files here and there. In these situations, my workflow is:
+You might have heard of the "Boyd's Law of Iteration" which states that the
+speed of iteration beats the quality of iteration. I find that you can apply
+this law to many aspects of writing code. This principle in particular is an
+embodiment of the idea that speed beats quality often enough.
 
-- Change very little. A few lines _or less_.
+In short: change a few lines _or less_ before seeking feedback. I mean
+_literally_ the smallest possible change you can think of. I've been in many
+pair programming sessions where my partners were surprised to see how little I
+would change before I sought feedback. 
+
+In practice, it doesn't happen very often the whole change we have to make to a
+system is a just couple of lines. It's often a little more than that, the change
+will possibly cover a few files. In these situations, I stick with my "small
+changes, fast feedback loops" workflow:
+
+- Change very little. A few lines _or less_
 - Seek feedback
 - If it works _so far_, repeat
 
-The key of this workflow is that "so far". This approach creates mental
-checkpoints where I can assume all the code I wrote so far works. As soon as
-what I'm seeing in my feedback loop is not what I expect, I need to go back "one
-checkpoint" only. You may be asking yourself: "hey, isn't this just TDD?" and
-the answer is "yes and no". TDD is _one_ way to achieve this workflow. You might
-have heard of the "Boyd's Law of Iteration" which states that the speed of
-iteration beats the quality of iteration. I find that it applies really well to
-learning. It works well while dealing with code. I can still remember pretty
-vividly the time I discovered Ruby had IRB. It made the experience of learning
-the language much more satisfying. I was learning really fast because I could
-try many things and get instant feedback.
+The key is that _so far_. I create checkpoints where I can assume all the code I
+wrote so far works. As soon as what my feedback loop is telling is not what I
+expect, I go back "one checkpoint". Often, I'm pretty radical about it. I just
+delete the last change and start over.
 
-How does this play with approaching an existing codebase? The idea is that you
-setup your own "REPL experience". The actual tool you use for this doesn't
-really matter, it can be TDD but it doesn't have to be. The core of this
-principle is that you have your own "REPL experience" set up _before_ you change
-any code. That way, you can change very little and immediately get feedback from
-the system.
+You may be asking yourself: "hey, isn't this just TDD?" and the answer is "yes
+and no". TDD is _one_ way to achieve what I call the "REPL experience". 
 
-The context of this principle is focused programming sessions but you can apply
-it also to end result of good programming sessions: deployable artifacts.
-There's [good evidence](https://www.goodreads.com/book/show/35747076-accelerate)
-now that smaller changes lead to higher productivity. They're safer to deploy
-and rollback if needed. They're also easier to review and more likely to move
-fast to production.
+I remember pretty vividly discovering IRB, the interactive Ruby shell. It made
+the experience of learning the language quicker and much more satisfying. I was
+learning really fast because trying things out and check the answer was so much
+faster than trying to work out in my head if Ruby could do that.
 
-We can derive at least two different conclusions from this principle:
+How does this play with approaching an existing codebase?  The core of this
+principle is that I  set up my own "REPL experience" _before_ I change any code.
+The actual tool doesn't really matter, it can be TDD, it can be print statements
+(yep, I just said that), whatever. Once that experience is possible, I can start
+changing things, a few lines _or less_ per time.
+
+The most common scenario I'm thinking of for this principle is focused
+programming sessions but you can apply it also to end result of good programming
+sessions: deployable artifacts. There's [good
+evidence](https://www.goodreads.com/book/show/35747076-accelerate) now that
+smaller changes lead to higher productivity. They're safer to deploy and
+rollback if needed. They're also easier to review and more likely to move fast
+to production.
+
+Before I move on to the next principle, I feel like I should expand on why I'm
+not saying "just do TDD". Here we go:
+
+- TDD feels great as a workflow. It perfectly resembles what I call the "REPL
+  experience". But I always had problems with the design constraints it brings
+  to the table. I want the first draft of a solution to reflect the mental model
+  of my understanding of the problem I'm trying to solve. TDD always forces me
+  to shift my mental model a bit to make the code more testable _upfront_. While
+  there's nothing wrong with making code more testable, my problem is doing that
+  when I'm discovering by writing code how well my mental model translates into
+  actual code. The friction between what I want to write and what TDD needs me
+  to write always has a negative effect on my ability to design a change
+  effectively. In practice, I use TDD only to fix bugs.
+- TDD is primarily a development technique. Its artifact is code. We ship
+  features though, code is just a means to an end. So the code we write, even if
+  perfectly tested, doesn't work unless it works in production. I want more than
+  TDD from my "REPL experience", I want to [test in
+  production](#test-in-production).
+
+Practical considerations:
 
 - Fixing a few bugs one after the other, possibly in different part of the
   system, is a great way to approach a codebase that's new to you.
 - Breaking down any change into smaller changes with their own feedback loop is
   a great way to approach changing a large codebase you're familiar with.
 
-The reason why I'm not saying "just do TDD" is two-fold:
-
-- TDD feels great as a workflow. It perfectly resembles what I call the "REPL
-  experience". But I always had problems with the design constraints it brings
-  to the table. I want the first draft of the code I'm writing to reflect the
-  mental model of my understanding of the problem I'm trying to solve. TDD
-  always forces me to shift my mental model a bit to make the code more testable
-  _upfront_. There's nothing wrong with making code more testable. My problem is
-  doing that upfront, when I'm discovering by writing code how well my mental
-  model translates into actual code. The friction between what I want to write
-  and what TDD needs me to write always has a negative effect on my ability to
-  design a change effectively. In practise, I use TDD only to fix bugs.
-- TDD is primarily a development technique. Its artifact is code. We ship
-  features though, code is just a means to an end. So the code we write, even if
-  perfectly tested, doesn't work unless it works in production. I want more than
-  TDD from my "REPL experience". Hence the next principle.
-
 ### Test in production
 
 I can hear [@mipsytipsy](https://twitter.com/mipsytipsy) in my head say "fuck
-yeah!" every time I mention this principle. The way I like to put it is that you
-want to expand the boundaries of your "REPL experience" far enough so to include
-your production systems. Again, it's all about the speed of iteration. It's not
-enough to have a tight feedback loop while writing the smallest possible change
-if you don't ship it to production in _minutes_. You can put a lot of effort
-writing "correct" code but unless it works in production, it doesn't work yet.
+yeah!" every time I mention this principle. The way I like to put it is that I
+want to expand the boundaries of my "REPL experience" far enough so to include
+production systems. Again, it's all about the speed of iteration. I'm not
+satisfied with a tight feedback loop while writing the smallest possible change.
+I want to ship it to production in _minutes_. What's the point of putting a lot
+of effort writing "correct" code if we don't know if it works in production?
 
 The urgency of shipping code to production helped me create an healthy
-development culture in many teams. You want your "REPL experience" to include
-production? You're going to need fast CI and CD pipelines. You're going to need
+development culture in many teams. We want your "REPL experience" to include
+production? We're going to need fast CI and CD pipelines. We're going to need
 ways to observe the impact of changes on your production systems. Rollback has
-to be cheap. You may want to use feature flags. All of it contributes to your
-actual speed of iteration. We _all_ test in production when we ship code anyway
-so you want to do it consciously to create a safer, faster environment for
-feature development.
+to be cheap. We may want to use feature flags. All of it contributes to the
+actual speed of iteration. We _all_ test in production when we first ship the
+code _anyway_ so it makes much more sense to do it consciously to create a
+safer, faster environment for feature development.
 
-Testing in production and small changes are principles that feed on each other.
-The faster your lead time, the more likely you'll ship smaller changes. The
-smaller the change you ship, the safer your deployments. The safer your
-deployments... it's a circle.
+Testing in production and small changes feed on each other. The faster your lead
+time, the more likely you'll ship smaller changes. The smaller the change you
+ship, the safer your deployments. The safer your deployments... you get it, it's
+a circle!
 
 ### Be a gardner
 
@@ -163,23 +176,22 @@ little. You improve an error message, you use a more idiomatic way to write
 those three lines, you align that test with your internal conventions. The
 codebase is living organism: it's a garden and you take care of it every day.
 You prevent bad habits from forming, you heal that spot that is a bit sick, you
-give more water to the plants that are more exposed to the sun. My first
-encounter with this analogy is a
+give more water to the plants that need it the most. My first encounter with
+this analogy is a
 [commit](https://github.com/rails/rails/commit/fb6b80562041e8d2378cad1b51f8c234fe76fd5e)
 made by [@fxn](https://twitter.com/fxn). It stuck with me ever since.
 
-I like the analogy a lot and the way I apply is connected to small changes. I
-used to do gardening _while_ writing new features. I grew out of it because
-smaller changes are always better. You could say that's a more important
-principle. So now I have a small workflow that helps my gardening activities. I
-take notes of the gardening I want to do while whenever I can. Sometimes, I
-share it with my team (it really depends on the team and the context they're in)
-to help other people form the habit of code gardening. I then use this todo list
-as a personal reward system. I get done what I need to and then I treat myself
-by improving that test that produces those annoying warnings. I have seen this
-dynamic at play with other programmers as well once the habit forms for them.
-The reward system is simple and effective, it allows people to make small
-improvements _all the time_ and just feel good about it.
+I used to do gardening _while_ writing new features. I grew out of it because
+smaller changes are always better. You could say that small changes is more
+important principle. Now I have a small workflow that structures my gardening
+activities. I take notes of the gardening I want to do while whenever I can.
+Sometimes, I share it with my team (it really depends on the team and the
+context they're in) to help other people form the habit of code gardening. I
+then use this todo list as a personal reward system. I get done what I need to
+and then I treat myself by improving that test that produces those annoying
+warnings. I have seen this dynamic at play with other programmers as well once
+the habit is formed. The reward system is simple and effective, it allows people
+to make small improvements _all the time_ and just feel good about it.
 
 Being a gardner is easier if you're _already_ making very small changes _and_
 you're _already_ testing in production. The joy of improving your codebase is
@@ -190,39 +202,41 @@ The higher the cost of a deployment the less likely you'll be a good gardener.
 
 There's something I do _before_ making a change to a large code base that is new
 to me. It's often called code safari but I'm no fan of the metaphor, I like to
-call things what they do so the principles goes by "read features end to end".
+call things what they do so the principle goes by "read features end to end".
+Yeah, it's boring. I like it that way.
 
-Approaching a new codebase can get a little overwhelming. Sometimes you don't
-even know where to start, which part of the system maps to which part of the
-codebase. To help orient yourself, you can read a whole feature end to end.
-Let's consider a large web application where an "innocent" click on a button
-stars a series of processes which ultimately result in the customer getting an
-some report via email. I'm sure you have seen a variation of this.
+Approaching a new codebase can get a little overwhelming. Sometimes I don't even
+know where to start, which part of the system maps to which part of the
+codebase. To help orient myself, I read a whole feature end to end. Let's
+consider a large web application composed of multiple services where an
+"innocent" click on a button stars a series of processes which ultimately result
+in the customer getting an some report via email. I'm sure you have seen a
+variation of this. 
 
-The idea of this principle is that you go on a hunt. You start searching for the
-code of the button. It sounds trivial but you will discover things: how/if you
-do i18n, what kind of frontend framework you're using. Most importantly, you
-will notice things (oh we have our own css framework. I wonder why), you will
-have questions (what are all the data attributes? I haven't seen any of that
-when I was checking out the website from home). Open a notebook and write
-everything down. Using your brain as storage is a waste: ["the shorter pencil is
-longer than the longest
-memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s). Then when you know
-what backend system reacts to the click, go down one layer and do the same
-again. Repeat until you've gone all the way to the email service and came back
-to your inbox.
+The idea of this principle is that I go on a hunt. I start searching for the
+code of the button. It sounds trivial but I know I will discover things: how/if
+we do i18n, what kind of frontend framework we're using. Most importantly, I
+will notice things (oh we have our own css framework? Why?), I will have
+questions (what's up with all data attributes? I haven't seen any of that when I
+was checking out the website from home. We're stripping them down?). I open a
+notebook and write everything down. I know that using my brain as storage is a
+waste: ["the shorter pencil is longer than the longest
+memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s). Then when I know
+which service reacts to the click, I go down one layer and do the same again. I
+will repeat the process until I've gone all the way to the email service that
+sent out that test email right into my inbox.
 
-Once you've done this, you'll have a mixed bag. That's where the hard work
-starts. Reorganize your notes:
+Once I'm done, I'll have a mixed bag. That's where the hard work starts. I
+reorganize notes:
 
-- Questions for yourself. A sort of todo list of things you know you want to dig
-  in personally.
-- Questions for those who know the codebase better than you and can get you up
+- Questions for myself. A sort of todo list of things I know I want to dig in
+  personally.
+- Questions for those who know the codebase better than I do and can get me up
   to speed faster.
 - Idioms. Every codebase has its ways of doing things.
 
-You now have a basic map you can use to choose a new path and repeat this
-process to improve your understanding of the codebase you're tackling.
+You now have a basic map I can use to choose a new path and repeat this process
+to improve my understanding of the codebase I just started working on.
 
 ### Facts > Assumptions
 
@@ -279,51 +293,49 @@ one for existing codebase. A variation of
 [principle](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast) often
 attributed to [Kent Beck](https://twitter.com/KentBeck). It's almost the same
 idea but the dynamics are a little different: there's obviously more freedom of
-movement if you're writing a new system. That freedom is often detrimental to
-making small changes. Often you can't change a few lines, you need to write a
-whole bunch of code across multiple files to even see your little prototype
-work. It's the nature of the business of writing code from scratch. It's a
-mental model and a workflow to help you stay focused and be productive. Here's
-the idea:
+movement when writing a new system. That freedom is often detrimental to making
+small changes. Often I can't change a few lines, you need to write a whole lot
+of code across multiple files to even see my little prototype work. It's the
+nature of the business of writing code from scratch. So here's the idea:
 
-- Make it work: you REPL your way through code to figure out if what you put
-  together works. You don't overthink it. It doesn't matter the naming isn't
-  good yet. It's OK you know the code isn't production ready. You can get away
-  without dealing with corner cases, failure modes, error codes from that third
-  party API. You notes things down, leave TODOs for tomorrow's you. That's a
-  deliberate choice. Your goal is to get your code together so that it works.
-  You don't have to make it good. You don't have to ship it to production in a
-  minute.
-- Make it good: you go through the notes and comments you left for yourself when
-  you made it work. One by one you tick things off. You step back a little,
-  evaluate the design of a new system. You're making it good. You want to get
-  down to the little details, you need to be happy with the design of the
-  system. The way the code is organized. You care about everything but speed.
-  You're not trying to write slow code by design (that wouldn't help) but you're
-  also not trying to squeeze every millisecond off your code.
-- Make it fast: it's time to put your code to benchmark. Now, to be fair, this
-  isn't always a required step. Often enough, code that works and you don't hate
-  is quite good already. On the other side of the spectrum, the are situations
-  in which code needs to be really fast. In a way, all I said in the previous
-  two points still applies in this scenario. What changes is your definition of
-  working. You incorporate speed into it and design your "REPL experience" to
-  always tell you about how your code is performing. Either way, when you're at
-  this step the process is simpler than most people want to make it. The most
-  basic workflow goes really far: profile your code, find the slowest bit, make
-  it faster, repeat until you're happy.
+- Make it work: I REPL my way through code to figure out if what I put together
+  works. I don't overthink it. It doesn't matter the naming isn't good yet. It's
+  OK, I know the code isn't production ready. Right now, I can get away without
+  dealing with corner cases, failure modes, error codes from that third party
+  API. I note things down, leave TODOs for tomorrow's Luca. It's a deliberate
+  choice: my goal is to get the code together so that it works. I don't have to
+  make it good. I don't have to ship it to production in a minute. I don't have
+  a production system yet.
+- Make it good: I go through the notes and comments I left for yourself when I
+  made it work. One by one I tick things off. I step back a little, evaluate the
+  design of a new system. Now Iam making it good: I want to get down to the
+  little details, I need to be happy with the overall design. The way the code
+  is organized has to make sense. I care just about everything but speed. I am
+  not trying to write slow code by design (that wouldn't help and is probably
+  harder than it sounds) but I am also not trying to squeeze every millisecond
+  off of it.
+- Make it fast: it's time benchmark the cod. Now, to be fair, this isn't always
+  a required step. Often enough, code that works and I don't completely hate is
+  quite good already. On the other side of the spectrum, the are situations in
+  which code needs to be really fast. In a way, all I said in the previous two
+  points still applies. What changes is the definition of working. I incorporate
+  speed into it and design my "REPL experience" to always tell me about how fast
+  the code is. Either way, when I am at this step the most basic workflow goes
+  really far: profile the code, find the slowest bit, make it faster, repeat
+  until Iam happy.
 
-I have lived by this principle all my career as I have been lucky enough to run
-into it very early. Over the years, this principle was one of the driving force
-guiding me to my next programming language. Nowadays, I have a number of reasons
+Over the years, this principle has been a major factor guiding me to my next
+programming languages. A concrete example:  nowadays, I have a number of reasons
 to enjoy working exclusively with statically typed languages, probably enough
-reasons to write an article about it (interested? Please, let me know!). One
-critical reason is this principle. The ergonomics of statically typed languages
-allow me a much more relaxed approach to the make it work phase. I don't need to
-care too much about how the code is organised or its naming. Modern IDEs are so
-good at refactoring code that I can do a big chunk of the make it good part in
-seconds. It's somewhat paradoxical: I often chose languages like Ruby because of
-the supposed productivity gains only to realise I got stuck in early stages of a
-new project because of the fear of needing too much time to refactor things.
+reasons to write an article about it (interested? Please, let me know!). The
+ergonomics of statically typed languages allow me a much more relaxed approach
+to the make it work phase. I really don't need to care too much about how the
+code is organised or its naming. Modern IDEs are so good at refactoring code
+that I can do a big chunk of the make it good part literally in seconds. Looking
+back on this, it feels somewhat paradoxical: I often chose languages like Ruby
+because of the supposed productivity gains only to realise I got stuck in early
+stages of a new project because of the fear of needing too much time to refactor
+things.
 
 ## General principles
 
