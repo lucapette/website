@@ -18,19 +18,19 @@ Grischuk, an elite chess Grandmaster, answered quickly:
 > "I've been preparing my whole life". GM Grischuk, Alexander
 
 The beauty of his answer is that you can apply it to _any_ job. _All_ your past
-experiences contribute to some extend to _any_ decision you make today. 
+experiences contribute to some extend to _any_ decision you make today.
 
 The parallel with programming felt obvious to me and , since I watched that
 interview with Grandmaster Grischuk, I have been subconsciously collecting
 guidelines, ideas, and principles that stick with me over the years. Writing
 about it now is the natural consequence of my desire to learn more about these
-principles (and myself). 
+principles (and myself).
 
 I have to share I find the title of the article a little pretentious but I
 decided to go with it because it fits well the ideas expressed here.
 
 As for the actual principles, It felt natural to group them into these
-categories: existing codebases, greenfield projects, and general principles. 
+categories: existing codebases, greenfield projects, and general principles.
 
 I believe in approaching coding sessions differently depending on the context.
 While this may sound a tad obvious, I encountered enough examples of
@@ -65,7 +65,7 @@ greenfield project or, maybe worse, the other way around.
 Here I'm thinking of codebases that are large enough you can't possibly keep an
 accurate representation of all its parts in your head. You may know some parts
 very well but there are enough unknowns you wont't be able make a non-trivial
-change without some careful planning. 
+change without some careful planning.
 
 What's the definition of large enough is probably too personal so I won't even
 try to give an example. We'll go with "large enough for you, the reader". Let's
@@ -81,7 +81,7 @@ embodiment of the idea that speed beats quality often enough.
 In short: change a few lines _or less_ before seeking feedback. I mean
 _literally_ the smallest possible change you can think of. I've been in many
 pair programming sessions where my partners were surprised to see how little I
-would change before I sought feedback. 
+would change before I sought feedback.
 
 In practice, it doesn't happen very often the whole change we have to make to a
 system is a just couple of lines. It's often a little more than that, the change
@@ -98,7 +98,7 @@ expect, I go back "one checkpoint". Often, I'm pretty radical about it. I just
 delete the last change and start over.
 
 You may be asking yourself: "hey, isn't this just TDD?" and the answer is "yes
-and no". TDD is _one_ way to achieve what I call the "REPL experience". 
+and no". TDD is _one_ way to achieve what I call the "REPL experience".
 
 I remember pretty vividly discovering IRB, the interactive Ruby shell. It made
 the experience of learning the language quicker and much more satisfying. I was
@@ -200,34 +200,38 @@ The higher the cost of a deployment the less likely you'll be a good gardener.
 
 ### Read features end to end
 
-There's something I do _before_ making a change to a large code base that is new
-to me. It's often called code safari but I'm no fan of the metaphor, I like to
-call things what they do so the principle goes by "read features end to end".
+When I'm new to a large codebase, I read features end to end _before_ making any
+change. People often called code safari but I'm no fan of the metaphor, I like
+to call things what they do so the principle goes by "read features end to end".
 Yeah, it's boring. I like it that way.
 
 Approaching a new codebase can get a little overwhelming. Sometimes I don't even
 know where to start, which part of the system maps to which part of the
-codebase. To help orient myself, I read a whole feature end to end. Let's
-consider a large web application composed of multiple services where an
-"innocent" click on a button stars a series of processes which ultimately result
-in the customer getting an some report via email. I'm sure you have seen a
-variation of this. 
+codebase. To help orient myself, I read a whole feature end to end, it doesn't
+even have to be connected to a change I need to make.
 
-The idea of this principle is that I go on a hunt. I start searching for the
-code of the button. It sounds trivial but I know I will discover things: how/if
-we do i18n, what kind of frontend framework we're using. Most importantly, I
-will notice things (oh we have our own css framework? Why?), I will have
-questions (what's up with all data attributes? I haven't seen any of that when I
-was checking out the website from home. We're stripping them down?). I open a
-notebook and write everything down. I know that using my brain as storage is a
-waste: ["the shorter pencil is longer than the longest
-memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s). Then when I know
-which service reacts to the click, I go down one layer and do the same again. I
-will repeat the process until I've gone all the way to the email service that
-sent out that test email right into my inbox.
+For the sake of discussion, let's consider a web application composed of
+multiple services. There's an "innocent" button that, once clicked, stars a
+sequence of processes which ultimately result in getting some PDF report via
+email. I'm sure you have seen a variation of this.
 
-Once I'm done, I'll have a mixed bag. That's where the hard work starts. I
-reorganize notes:
+The idea is that I go on a hunt. I start searching for the code of the button.
+It sounds trivial but I know I will discover things: how/if we do i18n, what
+kind of frontend framework we're using. Most importantly, I will notice things like:
+
+- "oh we have our own css framework? Why?"
+- "what's up with all data attributes? I haven't seen any of that when I was
+checking out the website from home. We're stripping them down?"
+
+Before I forget any of this, I open a notebook and write everything down. Using
+my brain as storage is a waste: ["the shorter pencil is longer than the longest
+memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s). When I figured out
+which service reacts to the click, I go down one layer and keep reading. I
+repeat the process until I've gone all the way to the email service that sent
+out that test email right into my inbox.
+
+Once I'm done, I have a mixed bag of notes: that's where the hard work starts. I
+reorganize them:
 
 - Questions for myself. A sort of todo list of things I know I want to dig in
   personally.
@@ -235,8 +239,8 @@ reorganize notes:
   to speed faster.
 - Idioms. Every codebase has its ways of doing things.
 
-You now have a basic map I can use to choose a new path and repeat this process
-to improve my understanding of the codebase I just started working on.
+I now have a basic map I can use to orient myself. I often repeat the process a
+few times before I start making any change.
 
 ### Facts > Assumptions
 
@@ -248,9 +252,7 @@ to improve my understanding of the codebase I just started working on.
 Since it's a little less common, I feel privileged (or unlucky? It depends on
 the day honestly) having experienced multiple times the scenario "hey you're
 responsible for building this X years long project from scratch. Also, there's
-no team yet so you need hire a bunch of people to do it". When you start a new
-project, it can feel a little overwhelming because, of course, there's nothing
-done yet 😃
+no team yet so you need hire a bunch of people to do it".
 
 ### Docs driven development
 
