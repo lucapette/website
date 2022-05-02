@@ -193,10 +193,11 @@ warnings. I have seen this dynamic at play with other programmers as well once
 the habit is formed. The reward system is simple and effective, it allows people
 to make small improvements _all the time_ and just feel good about it.
 
-Being a gardner is easier if you're _already_ making very small changes _and_
-you're _already_ testing in production. The joy of improving your codebase is
-often limited by the cost of bringing these tiny little changes to production.
-The higher the cost of a deployment the less likely you'll be a good gardener.
+Being a gardner is easier if you're already making _small changes_ and you're
+already _testing in production_. The joy of improving a codebase is often
+limited by the cost of bringing these tiny changes to production. The higher the
+cost of a deployment the less likely I can be a good gardener. It's all
+connected.
 
 ### Read features end to end
 
@@ -252,99 +253,154 @@ few times before I start making any change.
 Since it's a little less common, I feel privileged (or unlucky? It depends on
 the day honestly) having experienced multiple times the scenario "hey you're
 responsible for building this X years long project from scratch. Also, there's
-no team yet so you need hire a bunch of people to do it".
+no team yet so you need hire a bunch of people to do it". The freedom to do
+"whatever you want" because there's no existing system to constraint your
+choices is a double-edged sword. The following principles help me navigate
+uncharted territories with confidence.
 
 ### Docs driven development
 
-Writing the docs before writing a single line of code helps with:
+More than a decade ago, I run into [readme driven
+development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
+I was happy to see I could give a name to something I had started doing a couple
+of years before. Since then, I tweaked the name of the principle to a more
+generic "docs driven development" because it's a little more general and
+flexible. The idea is to write documentation as you already had finished the
+system. It is the system design equivalent of writing [the code you'd like to
+use](#write-the-code-youd-like-to-use).
 
-- scope
-- organization
-- prioritization
+Writing the docs before writing a single line of code is a great way to shade
+some light on the problem you're trying to solve. The beauty, and the irony, of
+this process is that I write the docs first so I can create some constraints for
+myself. Good, consciously chosen constraints are the foundation of any design.
+
+What kind of document, how long or how detailed it should be is too
+project-dependent so it's hard to provide concrete examples. There are some
+things though I always want to cover:
+
+- __Scope__
+  : I write down what the goals of the project are. When it's done,
+  what will this system do? Even more interesting sometimes, what won't?
+  Answering these questions draws some boundaries so it becomes a little easier
+  to stay on track and not to get lost.
+- __Organization__
+  : A few diagrams go a long way. I draw some to get a sense of how to split
+  responsibilities between among the different parts. What the highest level
+  building block of the system should be.
+- __Prioritization__
+  : I write down the order in which I imagine it makes most
+  sense to build things. Depending on how the system is organized, I write down
+  what can be parallelised.
+
+
+If I'm working in a team, this document also functions as a hub for async
+collaboration. I want to make sure we're on the same page before we move from
+writing for humans to writing for machines.
 
 ### Throw it away first
 
-Designing a system is a struggle between tiny details and high level ideas. It's
-the reason why the quote "in theory, there's no difference between theory and
-practice. In practice, there is" is so apt for programming. The harder is the
-problem you're trying to solve, the stronger is this tension. You want to make
-sure it's a positive tension. Here's what I do:
+When I think about prototyping phase, one of my favourite quotes always comes to
+mind:
 
-- I write a small prototype
+> In theory, there's no difference between theory and practice. In practice,
+> there is.
+
+It is so apt for programming! It doesn't matter how carefully you study a
+problem, how good the solution you came up with seems to me. Doing is always
+different. Designing a system is a struggle between tiny details and high level
+ideas. The harder is the problem you're trying to solve, the stronger is this
+tension. You want to make sure it's a positive tension. Here's what I do:
+
 - I write a chunk of the design doc
-- I throw away the first prototype
+- I write a prototype
+- I throw it away
 - I improve the design doc
 - I write a new prototype
 
-Sometimes, if the problem is really hard, I repeat this process a couple of
-times. Others it's too easy and there's no need to throw it away. The point is
-be ready to do so when you're not happy with how you understand the problem.
-That's the core of this principle: you write a first draft knowing you'll
-probably throw it away so you'll experiment. You'll digress a little, you'll
-come back. The idea is that you use code and words to improve your understanding
-of the problem.
+If the problem is really hard, I may repeat this process a number of times of
+times. If the problem is trivial, I may get away without throwing it away. The
+point is I'm ready to do so when I'm unhappy with my understanding of the
+problem. Please note: I didn't say anything about what I think of the code. My
+harsh truth is that the best case scenario is that I don't hate it today and I
+may still not totally hate it in a few months.
 
-My favourite programming sessions always happen after I've throw away a first
-version of whatever I'm trying to solve. These sessions feel really fast and
-they are. I'm kind of just typing out a satisfying solution at this point.
+The key of this principle is this: I write a first draft knowing I will probably
+throw it away. With that in mind, I experiment, I digress a little, then I go
+back a little and try again. I write code for the machine and words for humans
+to improve my understanding of the problem.
+
+My favourite programming sessions always happen after I've throw away at list
+one version of whatever I'm trying to solve. These sessions are really fast: I'm
+kind of just typing out a satisfying solution.
 
 ### Make it work, make it good, make it fast
 
-This is the corresponding principle of the "small changes, fast feedback loop"
-one for existing codebase. A variation of
+This principle is a variation of the theme of the
 [principle](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast) often
-attributed to [Kent Beck](https://twitter.com/KentBeck). It's almost the same
-idea but the dynamics are a little different: there's obviously more freedom of
-movement when writing a new system. That freedom is often detrimental to making
-small changes. Often I can't change a few lines, you need to write a whole lot
-of code across multiple files to even see my little prototype work. It's the
-nature of the business of writing code from scratch. So here's the idea:
+attributed to [Kent Beck](https://twitter.com/KentBeck). Clearly I'm so
+pretentious about it, I like my version better.
 
-- Make it work: I REPL my way through code to figure out if what I put together
+I consider this the corresponding starting from scratch principle of [small
+changes, fast feedback loops](#small-changes-fast-feedback-loops) It's almost
+the same idea but the dynamics are a little different: there's obviously more
+freedom of movement when writing a new system. That freedom is often detrimental
+to making small changes. Often I can't change a few lines even if I wanted to: I
+need to write a whole lot of code across multiple files to even see my little
+prototype do some basic things. It's the nature of writing code from scratch. So
+here's the idea:
+
+- __Make it work__
+  : I REPL my way through code to figure out if what I put together
   works. I don't overthink it. It doesn't matter the naming isn't good yet. It's
   OK, I know the code isn't production ready. Right now, I can get away without
   dealing with corner cases, failure modes, error codes from that third party
   API. I note things down, leave TODOs for tomorrow's Luca. It's a deliberate
   choice: my goal is to get the code together so that it works. I don't have to
-  make it good. I don't have to ship it to production in a minute. I don't have
-  a production system yet.
-- Make it good: I go through the notes and comments I left for yourself when I
-  made it work. One by one I tick things off. I step back a little, evaluate the
-  design of a new system. Now Iam making it good: I want to get down to the
-  little details, I need to be happy with the overall design. The way the code
-  is organized has to make sense. I care just about everything but speed. I am
-  not trying to write slow code by design (that wouldn't help and is probably
-  harder than it sounds) but I am also not trying to squeeze every millisecond
-  off of it.
-- Make it fast: it's time benchmark the cod. Now, to be fair, this isn't always
-  a required step. Often enough, code that works and I don't completely hate is
-  quite good already. On the other side of the spectrum, the are situations in
-  which code needs to be really fast. In a way, all I said in the previous two
-  points still applies. What changes is the definition of working. I incorporate
-  speed into it and design my "REPL experience" to always tell me about how fast
-  the code is. Either way, when I am at this step the most basic workflow goes
-  really far: profile the code, find the slowest bit, make it faster, repeat
-  until Iam happy.
+  make it good yet. I don't have to ship it to production in a minute. Well I
+  don't even have a production system yet.
+- __Make it good__
+  : I go through the notes and comments I left for myself. One by
+  one I tick things off. Every two or three items I get off the list, I step
+  back a little. I evaluate the design. Now I am making it good: I want to get
+  down to the little details, I need to be happy with the overall design. The
+  way the code is organized has to make sense. I care just about everything. I
+  only leave out speed. I am not trying to write slow code by design (that
+  wouldn't help and is probably harder to do than it sounds?) but I am also not
+  trying to squeeze every millisecond off every function.
+- __Make it fast__
+  : it's time to measure things. To be fair, this isn't always a
+  required step. Often enough, code that works and I don't completely hate is
+  quite good already for whoever is paying for it. On the other side of the
+  spectrum though, the are situations in which code needs to be really fast by
+  design. In a way, the previous two steps of this process still apply. What
+  changes is the definition of working. I incorporate speed into my definition
+  and design my "REPL experience" to always tell me about how fast the code is.
+  When performance is critical, I check in with the rest of the codebase the
+  scripts I write for my "REPL experience" so that they can be part of the CI
+  pipeline. Either way, when I am at this step the most basic workflow goes
+  a long way: profile the code, find the slowest bit, make it faster, repeat
+  until happy.
 
-Over the years, this principle has been a major factor guiding me to my next
-programming languages. A concrete example:  nowadays, I have a number of reasons
-to enjoy working exclusively with statically typed languages, probably enough
-reasons to write an article about it (interested? Please, let me know!). The
-ergonomics of statically typed languages allow me a much more relaxed approach
-to the make it work phase. I really don't need to care too much about how the
-code is organised or its naming. Modern IDEs are so good at refactoring code
-that I can do a big chunk of the make it good part literally in seconds. Looking
-back on this, it feels somewhat paradoxical: I often chose languages like Ruby
-because of the supposed productivity gains only to realise I got stuck in early
-stages of a new project because of the fear of needing too much time to refactor
-things.
+Over the years, I realized that following this principle has had an interesting
+side-effect. It has been a major factor into the way I choose the next
+programming language. A concrete example: nowadays, I enjoy working exclusively
+with statically typed languages (probably enough reasons to write an article
+about it... interested? Please, let me know!). The ergonomics of statically
+typed languages allow me a much more relaxed approach to the make it work phase.
+I really don't need to care too much about how the code is organised or its
+naming. Modern IDEs are so good at refactoring code that I can do a big chunk of
+the make it good part literally in seconds. Looking back on this, it feels
+somewhat paradoxical: I often chose dynamically typed languages (my favourite
+being Ruby) because of the supposed productivity gains only to realise I got
+stuck in early stages of a new project because of the fear of needing too much
+time to refactor things.
 
 ## General principles
 
-Is it really programming if there isn't at least some util functions? 😃
+Is it really programming if I don't have at least some util functions? 😃
 
-Jokes aside, there is an handful of principles that I apply in any context.
-These are my "true north" guidelines so to speak.
+Jokes aside, there is an handful of principles I apply in any context. These are
+my "true north" guidelines so to speak.
 
 ### Prose not poetry
 
@@ -356,29 +412,34 @@ The primary audience is the machine even though we often lie to ourselves and
 say things like "more than anything you're writing for the next programmer that
 reads your code". I'm sympathetic with the argument because I see where it comes
 from but, let's be honest about it, you can't ship code that doesn't compile. It
-doesn't matter how readable and understandable the code you wrote is for humans,
-it won't work if you got a syntax error. You have to write code that the machine
-can run. But, on the other hand, you can't discount the fact the code will need
+doesn't matter how readable and understandable the code you wrote is, it won't
+work if you got a syntax error. You have to write code so that the machine can
+run it. But, on the other hand, you can't discount the fact the code will need
 to be modified at some point in the future so other people can will read it.
 It's a tough game and this principle has been guiding me since I first realized
-that writing code is still writing.
+that writing code is "just" writing.
 
-What's the most fitting writing form for code? It's prose. You want your code to
-have chapters, your chapters to have paragraphs, your paragraphs to have
-sentences. The key is that you want _homogeneous levels of abstraction_.
-Sentences are just a few instructions, paragraphs are little algorithms,
-chapters are modules, a book is a system. That's why I say that good code
-resembles prose. Good code has a boring rhythm, you don't want to jump from
-shifting bits to call an external service in two consecutive lines. You're
-structuring your code this way for _both_ the machine and the next programmer.
+I think prose fits better with good production quality code. I want my code to
+have chapters, my chapters to have paragraphs, my paragraphs to have sentences.
+I want _homogeneous abstraction at each level_. Sentences are a few
+instructions, paragraphs are little algorithms, chapters are modules, a book is
+a system. The parallel doesn't need to be this exact, the point is that I don't
+want to jump from shifting bits to call an external service in two consecutive
+lines. That's why I say that good code resembles prose. Good code has a boring
+rhythm. I am structuring your code this way for _both_ the machine and the next
+programmer.
+
+The one notable exception to writing prose is performance. Often making code
+faster also makes it messier and uglier because you'll see that the abstraction
+isn't homogeneous any longer.
 
 When I bring up this prose vs poetry metaphor, I often get the argument that
-poetry may fit as well. After all there's very structured poetry out there. The
-thing with poetry though is that it's often good when it says a lot with just a
-few words. Poetry can be really terse and that's why I say prose not poetry.
-When in doubt, always _prefer clarity to brevity_. Since it's all the same for
-the machine, there's no point in making code terse or clever for the next
-programmer.
+poetry fits as well. After all there's very structured poetry out there and it's
+often as cryptic as code can be. The thing with poetry though is that it's good
+when it says a lot with just a few words. Poetry can be really terse and that's
+why I say prose not poetry. When in doubt, always I _prefer clarity to brevity_.
+Since it's all the same for the machine, there's no point in making code terse
+or clever for the next programmer.
 
 ### Name things what they do
 
@@ -386,36 +447,36 @@ Naming _is_ hard.
 
 Having said that, I think we often make it harder for ourselves than it should
 be because there's a certain social pressure to treat code like poetry. It has
-to be pretty so we're looking for elegant, apt, short names for everything. I
-struggled early in my career with this but I grew out of it because I realized a
+to be pretty so we're looking for elegant, apt, and short names for everything.
+I struggled early in my career with this but I grew out of it when I realized a
 few things:
 
-- Unless it's a trivial problem, I won't likely get naming right while I'm
-  drafting a first version.
-- Naming is the most significant design tool at my disposal white I'm writing.
-  Due the focused nature of such tasks, sometimes I lose sight of that on a
-  conscious level while writing. Calling something, say, `JobScheduler` will
-  constraint the design of whatever interact with it to treat it like a job
-  scheduler right? Right, it sounds obvious.
+- Unless it's a trivial problem, I will not get naming right while I'm drafting
+  a first version.
+- Naming is the most significant design tool at my disposal while I'm writing.
+  Due the focus required to write code, sometimes I lose sight of that on a
+  conscious level. Calling something, say, `JobScheduler` will constraint the
+  design of whatever interact with it to treat it like a job scheduler and maybe
+  it's not.
 - Way too often I want to get the naming right too early. The delta between the
   mental model I created for the problem I want to solve and the actual code I
-  will end up writing decreases as I write it.
+  will end up writing only decreases as I write it.
 
 All these considerations lead me to what I call "relaxed naming" (ah the irony
-of not liking this naming 🙃). In a way, I'm bound to get some names wrong the
-first time around. But it's effect of the problem. The cause is that I don't
-understand the problem yet well enough to be satisfied with the naming. "Relaxed
-naming" is my process now and it looks like this:
+of not liking this naming 🙃).I'm bound to get some names wrong the first time
+around. That's an effect of the problem. The cause is that I don't understand
+the problem yet well enough to be satisfied with the naming. "Relaxed naming"
+looks like this:
 
 - Call things what they do _right now_. The more descriptive the name, the
   better. Bonus points if it feels a little boring.
 
 Yep, there's no step two.
 
-It's a little cheeky I'll give you that. But all things considered, after 20
-years I'm finally happy with my naming process. I look at it the same way I look
-at jotting down a first version of a new system. It's obvious maybe but spelling
-it out helps: the thing you're naming is _always new_. You're naming it now
+It's a little cheeky I'll give you that. But all things considered, it only took
+me 20 years to be happy with my naming process. I look at it the same way I look
+at jotting down a first version of a new system.  Spelling out obvious things
+sometimes helps: the thing I'm trying to name is _new_. I am naming it now
 because it's not there yet. So the principle [make it work, make it good, make
 it fast](#make-it-work-make-it-good-make-it-fast) works pretty well here except
 there's no step three.
@@ -423,24 +484,27 @@ there's no step three.
 ### Write the code you'd like to use
 
 I can't find the original reference but I'm relatively sure this principle too
-was inspired by Kent Beck. This works well when you get stuck because you have
-no code to start from. So you have all kind of questions about how the API of
-this new module should look like, how should the data structures look like, and
-so on. It can get so overwhelming you can get stuck.
+was inspired by Kent Beck. It works well when I get stuck because I have no code
+to start from. It's the proverbial blank page I'm looking at. So I have all kind
+of questions about how the API of the new module should look like, which data
+structures I should rely on, what types should I expose, and so on. It can get
+so overwhelming I just get stuck.
 
-That's where you take a deep breath and ask yourself: how do I want to use this
-code? Here's how this principle works in practice:
+That's where I take a deep breath and ask myself: how do I want to use this
+code? Here's what I do:
 
-- Close that empty file you just created.
-- Open up one file in which you need to call the code you don't have yet.
-- Write the code like the problem you're solving is _already solved_ the best
-way possible.
+- I close that empty file I was staring at.
+- I open up one file in which I need to call the code I can't get myself to
+  write.
+- I write the code like the problem is _already solved_ the best way I can
+  possibly imagine.
 
-The third step is hard because you have to fake you don't know the code isn't
-there. This only works if you genuinely jot down a solution without trying to
-also picture all the code you need to write to make it all work. Sometimes, I go
-as far as using pen and paper and pseudo-code something as a first step so I can
-let go of weight of all the sub-tasks each line I'm "faking" is generating.
+The third step is hard because I have to lie to myself, I know the code isn't
+there. This only works if I genuinely jot down a solution without trying to also
+picture in my head all the code I need to write to make it all work. Sometimes,
+I go as far as using pen and paper and pseudo-code something as a first step so
+I can let go of weight of all the sub-tasks each line I'm "faking" is
+generating.
 
 ### Let the design emerge from the code
 
@@ -453,10 +517,12 @@ conversation:
 > Less is more
 
 What I'm trying to say with it in the context of design and code is that good
-design is first of all an exercise in patience. Also, I hate to tell you this,
-the more experienced you become the harder it gets. You know too well the few
-lines of code you just wrote to "make it work" aren't anywhere close to
+design is first of all an exercise in patience. Also, I hope it's not the same
+for you, the more experienced I become the harder it's getting. I know too well
+the few lines of code I just wrote to "make it work" aren't anywhere close to
 production quality.
+
+same concept as "small changes, make it good" but for design
 
 ### Write actual tests
 
@@ -480,11 +546,21 @@ advice is to delete them. There, I said it.
 
 When I bring this up, people often understand it as my advice is either to not
 write tests or to only have integrations tests. Obviously, no point in debating
-the first one. Of course you should write tests. I'm not arguing if you should
-have tests or not, I'm arguing the effectiveness of tests suites. As for the
-second point, it's true that integration tests are more likely to suit my
-definition of "actual test" so I understand where people are coming from with
-this.
+the first one. Of course you should write tests. I'm not arguing you should have
+tests or not, I'm arguing the effectiveness of tests suites. As for the second
+point, it's true that integration tests are more likely to suit my definition of
+"actual test" so I understand where people are coming from with this. My
+definition of "actual test" though doesn't say anything at which level of
+abstraction the tests should operate. I can write unit tests that fit perfectly
+with my definition. The point is rather simple: test your behaviour, forget the
+implementation.
+
+From a practical standpoint, I do have a strong preference for integration
+tests. It's obvious, I will give you that. After all, with the help of [Moore's
+law](https://en.wikipedia.org/wiki/Moore's_law) integrations tests are so much
+faster than 20 years ago the biggest pain points are not so painful any longer.
+Nowadays, integration tests and statically typed production code make me feel
+pretty comfortable.
 
 ### Balance your confidence
 
