@@ -9,7 +9,7 @@ keywords:
 ---
 
 {{< message class="is-info">}} This is a _long_ read. Right after the
-introduction there's a table of content in case you don't want to read it all.
+introduction I provided a table of content to help you navigate the article.
  {{</ message >}}
 
 One day, when asked how he had prepared for a game he had just played, Alexander
@@ -37,7 +37,7 @@ While this may sound a tad obvious, I encountered enough examples of
 over-engineered or under-engineered (why isn't that a thing? It's almost as
 common!) solutions in my career. More often than not, these wrongly sized
 solutions were merely a reflection of approaching an existing codebase like a
-greenfield project or, maybe worse, the other way around.
+greenfield project or, worse, the other way around.
 
 
 ## Table of content <!-- omit from toc -->
@@ -47,7 +47,7 @@ greenfield project or, maybe worse, the other way around.
   - [Test in production](#test-in-production)
   - [Be a gardner](#be-a-gardner)
   - [Read features end to end](#read-features-end-to-end)
-  - [Facts > Assumptions](#facts--assumptions)
+  - [Facts > Assumptions TODO](#facts--assumptions-todo)
 - [Starting from scratch](#starting-from-scratch)
   - [Docs driven development](#docs-driven-development)
   - [Throw it away first](#throw-it-away-first)
@@ -56,9 +56,9 @@ greenfield project or, maybe worse, the other way around.
   - [Prose not poetry](#prose-not-poetry)
   - [Name things what they do](#name-things-what-they-do)
   - [Write the code you'd like to use](#write-the-code-youd-like-to-use)
-  - [Let the design emerge from the code](#let-the-design-emerge-from-the-code)
+  - [Let the design emerge from the code FINISH](#let-the-design-emerge-from-the-code-finish)
   - [Write actual tests](#write-actual-tests)
-  - [Balance your confidence](#balance-your-confidence)
+  - [Balance your confidence TODO](#balance-your-confidence-todo)
 
 ## How I approach an existing codebase
 
@@ -80,17 +80,17 @@ embodiment of the idea that speed beats quality often enough.
 
 In short: change a few lines _or less_ before seeking feedback. I mean
 _literally_ the smallest possible change you can think of. I've been in many
-pair programming sessions where my partners were surprised to see how little I
-would change before I sought feedback.
+pair programming sessions where I surprised my partners because of how little I
+would change before seeking feedback.
 
 In practice, it doesn't happen very often the whole change we have to make to a
 system is a just couple of lines. It's often a little more than that, the change
 will possibly cover a few files. In these situations, I stick with my "small
 changes, fast feedback loops" workflow:
 
-- Change very little. A few lines _or less_
-- Seek feedback
-- If it works _so far_, repeat
+- Change very little. A few lines _or less_.
+- Seek feedback.
+- If it works _so far_, repeat.
 
 The key is that _so far_. I create checkpoints where I can assume all the code I
 wrote so far works. As soon as what my feedback loop is telling is not what I
@@ -111,16 +111,16 @@ The actual tool doesn't really matter, it can be TDD, it can be print statements
 (yep, I just said that), whatever. Once that experience is possible, I can start
 changing things, a few lines _or less_ per time.
 
-The most common scenario I'm thinking of for this principle is focused
-programming sessions but you can apply it also to end result of good programming
-sessions: deployable artifacts. There's [good
+The scenario I'm thinking of for this principle is focused programming sessions
+but you can apply it also to end result of good programming sessions: deployable
+artifacts. There's [good
 evidence](https://www.goodreads.com/book/show/35747076-accelerate) now that
 smaller changes lead to higher productivity. They're safer to deploy and
 rollback if needed. They're also easier to review and more likely to move fast
 to production.
 
-Before I move on to the next principle, I feel like I should expand on why I'm
-not saying "just do TDD". Here we go:
+Before I move on to the next principle, I feel compelled to expand on why I'm
+not saying "just do TDD":
 
 - TDD feels great as a workflow. It perfectly resembles what I call the "REPL
   experience". But I always had problems with the design constraints it brings
@@ -137,13 +137,6 @@ not saying "just do TDD". Here we go:
   perfectly tested, doesn't work unless it works in production. I want more than
   TDD from my "REPL experience", I want to [test in
   production](#test-in-production).
-
-Practical considerations:
-
-- Fixing a few bugs one after the other, possibly in different part of the
-  system, is a great way to approach a codebase that's new to you.
-- Breaking down any change into smaller changes with their own feedback loop is
-  a great way to approach changing a large codebase you're familiar with.
 
 ### Test in production
 
@@ -194,9 +187,9 @@ the habit is formed. The reward system is simple and effective, it allows people
 to make small improvements _all the time_ and just feel good about it.
 
 Being a gardner is easier if you're already making _small changes_ and you're
-already _testing in production_. The joy of improving a codebase is often
-limited by the cost of bringing these tiny changes to production. The higher the
-cost of a deployment the less likely I can be a good gardener. It's all
+already _testing in production_. The ability to improve a codebase is often
+limited by the cost of deploying these tiny changes to production. The higher
+the cost of a deployment the less likely one can be a good gardener. It's all
 connected.
 
 ### Read features end to end
@@ -243,20 +236,19 @@ reorganize them:
 I now have a basic map I can use to orient myself. I often repeat the process a
 few times before I start making any change.
 
-### Facts > Assumptions
+### Facts > Assumptions TODO
 
 - debugging (gather facts about behaviour)
 - perf improvement (measure, don’t guess)
 
 ## Starting from scratch
 
-Since it's a little less common, I feel privileged (or unlucky? It depends on
-the day honestly) having experienced multiple times the scenario "hey you're
-responsible for building this X years long project from scratch. Also, there's
-no team yet so you need hire a bunch of people to do it". The freedom to do
-"whatever you want" because there's no existing system to constraint your
-choices is a double-edged sword. The following principles help me navigate
-uncharted territories with confidence.
+Since it's less common, I feel privileged (or unlucky. It depends on the day
+honestly) I have been in change of brand new, years long, projects multiple
+times in the past 15 years or so. While these experiences were all different
+because they involved each time a different team and a different company, I had
+to start from scratch in all of them. So I have had the opportunity what worked
+for me and what didn't. The following principles are a summary of what worked.
 
 ### Docs driven development
 
@@ -292,7 +284,6 @@ things though I always want to cover:
   sense to build things. Depending on how the system is organized, I write down
   what can be parallelised.
 
-
 If I'm working in a team, this document also functions as a hub for async
 collaboration. I want to make sure we're on the same page before we move from
 writing for humans to writing for machines.
@@ -317,19 +308,19 @@ tension. You want to make sure it's a positive tension. Here's what I do:
 - I improve the design doc
 - I write a new prototype
 
-If the problem is really hard, I may repeat this process a number of times of
-times. If the problem is trivial, I may get away without throwing it away. The
-point is I'm ready to do so when I'm unhappy with my understanding of the
-problem. Please note: I didn't say anything about what I think of the code. My
-harsh truth is that the best case scenario is that I don't hate it today and I
-may still not totally hate it in a few months.
+If the problem is really hard, I may repeat this process a few times. If the
+problem is trivial, I may get away without ever throwing code away. The point is
+I'm ready to do so when I'm unhappy with my understanding of the problem. Please
+note: I didn't say anything about what I think of the code. My harsh truth is
+that the best case scenario is that I don't hate it today and I may still not
+totally hate it in a few months.
 
 The key of this principle is this: I write a first draft knowing I will probably
 throw it away. With that in mind, I experiment, I digress a little, then I go
 back a little and try again. I write code for the machine and words for humans
 to improve my understanding of the problem.
 
-My favourite programming sessions always happen after I've throw away at list
+My favourite programming sessions always happen after I've thrown away at least
 one version of whatever I'm trying to solve. These sessions are really fast: I'm
 kind of just typing out a satisfying solution.
 
@@ -358,15 +349,15 @@ here's the idea:
   choice: my goal is to get the code together so that it works. I don't have to
   make it good yet. I don't have to ship it to production in a minute. Well I
   don't even have a production system yet.
-- __Make it good__
-  : I go through the notes and comments I left for myself. One by
-  one I tick things off. Every two or three items I get off the list, I step
+- __Make it good__ 
+  : I go through the notes and comments I left for myself. One
+  by one I tick things off. Every two or three items I get off the list, I step
   back a little. I evaluate the design. Now I am making it good: I want to get
-  down to the little details, I need to be happy with the overall design. The
-  way the code is organized has to make sense. I care just about everything. I
-  only leave out speed. I am not trying to write slow code by design (that
-  wouldn't help and is probably harder to do than it sounds?) but I am also not
-  trying to squeeze every millisecond off every function.
+  down to the little details, I need to be happy with the design. The way the
+  code is organized has to make sense. I care just about everything. I only
+  leave out speed. I am not trying to write slow code by design (that wouldn't
+  help and is probably harder to do than it sounds?) but I am also not trying to
+  squeeze every millisecond off every function.
 - __Make it fast__
   : it's time to measure things. To be fair, this isn't always a
   required step. Often enough, code that works and I don't completely hate is
@@ -421,17 +412,16 @@ that writing code is "just" writing.
 
 I think prose fits better with good production quality code. I want my code to
 have chapters, my chapters to have paragraphs, my paragraphs to have sentences.
-I want _homogeneous abstraction at each level_. Sentences are a few
-instructions, paragraphs are little algorithms, chapters are modules, a book is
-a system. The parallel doesn't need to be this exact, the point is that I don't
-want to jump from shifting bits to call an external service in two consecutive
-lines. That's why I say that good code resembles prose. Good code has a boring
-rhythm. I am structuring your code this way for _both_ the machine and the next
-programmer.
+Sentences are a few instructions, paragraphs are little algorithms, chapters are
+modules, a book is a system. The parallel doesn't need to be exact, the point is
+that I don't want to jump from shifting bits to call an external service in two
+consecutive lines. I want _homogeneous abstraction within a layer and
+heterogeneous abstraction between layers_. 
 
 The one notable exception to writing prose is performance. Often making code
 faster also makes it messier and uglier because you'll see that the abstraction
-isn't homogeneous any longer.
+isn't homogeneous any longer. This is one situation in which I like writing
+comments explaining _why_ the code looks the way it looks.
 
 When I bring up this prose vs poetry metaphor, I often get the argument that
 poetry fits as well. After all there's very structured poetry out there and it's
@@ -446,10 +436,10 @@ or clever for the next programmer.
 Naming _is_ hard.
 
 Having said that, I think we often make it harder for ourselves than it should
-be because there's a certain social pressure to treat code like poetry. It has
-to be pretty so we're looking for elegant, apt, and short names for everything.
-I struggled early in my career with this but I grew out of it when I realized a
-few things:
+be because there's a certain social pressure to treat code like poetry. The code
+has to be pretty so we're looking for elegant, apt, and short names for
+everything. I struggled early in my career with this but I grew out of it when I
+realized a few things:
 
 - Unless it's a trivial problem, I will not get naming right while I'm drafting
   a first version.
@@ -463,23 +453,36 @@ few things:
   will end up writing only decreases as I write it.
 
 All these considerations lead me to what I call "relaxed naming" (ah the irony
-of not liking this naming 🙃).I'm bound to get some names wrong the first time
-around. That's an effect of the problem. The cause is that I don't understand
-the problem yet well enough to be satisfied with the naming. "Relaxed naming"
-looks like this:
+of not liking this naming 🙃). I know I'm bound to get some names wrong the
+first time around but that's an effect of the problem. The cause is that I don't
+understand the problem well enough yet and the suboptimal naming reflects that.
+"Relaxed naming" comes to rescue me and it looks like this:
 
 - Call things what they do _right now_. The more descriptive the name, the
   better. Bonus points if it feels a little boring.
 
 Yep, there's no step two.
 
-It's a little cheeky I'll give you that. But all things considered, it only took
-me 20 years to be happy with my naming process. I look at it the same way I look
-at jotting down a first version of a new system.  Spelling out obvious things
-sometimes helps: the thing I'm trying to name is _new_. I am naming it now
+It's a little cheeky I'll give you that. But all things considered, after a
+little less than 20 years I'm finally happy with my naming process. I look at it
+the same way I look at jotting down a first version of a new system. Let me
+spell out the obvious: the thing I'm trying to name is _new_. I am naming it now
 because it's not there yet. So the principle [make it work, make it good, make
 it fast](#make-it-work-make-it-good-make-it-fast) works pretty well here except
 there's no step three.
+
+Name things what they do also means I prefer dull, descriptive, and long names
+to short and clever ones. I also despise acronyms. There are exceptions (of
+course HTTP is a fine acronym for example) but in general the less acronyms the
+better. Extend this principle to the naming of all things in your systems,
+including your services, your machines. Prefer boring name schemes to fancy or
+funny ones. One trivial example:
+
+- DO: kafka1, kafka2, kafka3
+- DONT: orion, antares, pluto
+
+I don't have to ask what kind of server kafka1 is because I called it what it
+does.
 
 ### Write the code you'd like to use
 
@@ -499,20 +502,19 @@ code? Here's what I do:
 - I write the code like the problem is _already solved_ the best way I can
   possibly imagine.
 
-The third step is hard because I have to lie to myself, I know the code isn't
-there. This only works if I genuinely jot down a solution without trying to also
-picture in my head all the code I need to write to make it all work. Sometimes,
-I go as far as using pen and paper and pseudo-code something as a first step so
-I can let go of weight of all the sub-tasks each line I'm "faking" is
-generating.
+The third step is hard because I have to lie to myself, I do know the code isn't
+there. It only works for me if I jot down a solution without trying to picture
+in my head all the code I actually need to write to make it all work. Sometimes,
+I go as far as using pen, paper, and pseudo-code something as a first step so I
+can let go of weight of all the sub-tasks each line I'm "faking" is generating.
 
-### Let the design emerge from the code
+### Let the design emerge from the code FINISH
 
 When I started as head of engineering at [Marley
 Spoon](https://marleyspoon.com/), I hang on the walls of our office a few A4
 pages with one or two sentences of them. The idea was to remind myself and my
-team of our foundational core values. My favourite is relevant to this
-conversation:
+team of our foundational core values. My two favourites are relevant to this
+conversation. First up is:
 
 > Less is more
 
@@ -522,7 +524,11 @@ for you, the more experienced I become the harder it's getting. I know too well
 the few lines of code I just wrote to "make it work" aren't anywhere close to
 production quality.
 
-same concept as "small changes, make it good" but for design
+My other favourite is:
+
+> Simple ain't easy
+
+TODO same concept as "small changes, make it good" but for design
 
 ### Write actual tests
 
@@ -534,7 +540,7 @@ is that none of them always work and they are great in specific contexts. Which
 means I don't have much to say about them in general and TDD in particular. So
 back to tests as a verification process.
 
-Let's clarify what I mean with "actual test". Here's my definition:
+Let's clarify what I mean with "actual test":
 
 > A test must change only if the behaviour it verifies changed
 
@@ -562,9 +568,7 @@ faster than 20 years ago the biggest pain points are not so painful any longer.
 Nowadays, integration tests and statically typed production code make me feel
 pretty comfortable.
 
-### Balance your confidence
+### Balance your confidence TODO
 
 - it’s good because it gives you the ability to break down any problem. The more experience you have, the less you fear a problem
 - it’s bad because it feeds on ego. And ego makes you do dumb things. You want to stay humble so you can be smart
-
-
