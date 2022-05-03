@@ -349,7 +349,7 @@ here's the idea:
   choice: my goal is to get the code together so that it works. I don't have to
   make it good yet. I don't have to ship it to production in a minute. Well I
   don't even have a production system yet.
-- __Make it good__ 
+- __Make it good__
   : I go through the notes and comments I left for myself. One
   by one I tick things off. Every two or three items I get off the list, I step
   back a little. I evaluate the design. Now I am making it good: I want to get
@@ -416,7 +416,7 @@ Sentences are a few instructions, paragraphs are little algorithms, chapters are
 modules, a book is a system. The parallel doesn't need to be exact, the point is
 that I don't want to jump from shifting bits to call an external service in two
 consecutive lines. I want _homogeneous abstraction within a layer and
-heterogeneous abstraction between layers_. 
+heterogeneous abstraction between layers_.
 
 The one notable exception to writing prose is performance. Often making code
 faster also makes it messier and uglier because you'll see that the abstraction
@@ -510,25 +510,37 @@ can let go of weight of all the sub-tasks each line I'm "faking" is generating.
 
 ### Let the design emerge from the code FINISH
 
-When I started as head of engineering at [Marley
-Spoon](https://marleyspoon.com/), I hang on the walls of our office a few A4
-pages with one or two sentences of them. The idea was to remind myself and my
-team of our foundational core values. My two favourites are relevant to this
-conversation. First up is:
+Good design is an exercise patience.
+
+It's hard to do when I have a clear idea of the different parts of the system.
+It's half the excitement of working on a new problem and half the impatience of
+not being done with it. I want to do it all fast and perfect and, of course, I
+learned that _never_ works well in practice. You can't rush good design. To make
+things harder, systems are living organisms, their only constant is change. They
+change because of business needs, scaling needs, or whatever. The list is too
+long. The point is they change all the time. That's the part of our craft I've
+seen most people struggle with. To be fair, evolving systems is hard. Over the
+years, I collected a few one-sentence ideas that guide me through designing a
+system.
+
+The first one I got it from [Rob
+Pike](https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html)
 
 > Less is more
 
-What I'm trying to say with it in the context of design and code is that good
-design is first of all an exercise in patience. Also, I hope it's not the same
-for you, the more experienced I become the harder it's getting. I know too well
-the few lines of code I just wrote to "make it work" aren't anywhere close to
-production quality.
-
-My other favourite is:
+I often think about code as bi-directional form of communication. I'm trying to
+tell the machine what to do but the code talks back to me. If I'm always talking
+though, I won't be able to listen to what the code is trying to tell me. The way
+the code looks, the way some parts need to change every time some other parts
+need to change, the naming being a little off, so many little details that are
+trying to tell me something. If I want it to be a dialogue then, I need to change
+as little as possible.
 
 > Simple ain't easy
 
 TODO same concept as "small changes, make it good" but for design
+
+> Duplication is better than the wrong abstraction
 
 ### Write actual tests
 
