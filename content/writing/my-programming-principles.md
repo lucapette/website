@@ -47,7 +47,7 @@ greenfield project or, worse, the other way around.
   - [Test in production](#test-in-production)
   - [Be a gardner](#be-a-gardner)
   - [Read features end to end](#read-features-end-to-end)
-  - [Facts > Assumptions TODO](#facts--assumptions-todo)
+  - [Facts > Assumptions](#facts--assumptions)
 - [Starting from scratch](#starting-from-scratch)
   - [Docs driven development](#docs-driven-development)
   - [Throw it away first](#throw-it-away-first)
@@ -236,19 +236,41 @@ reorganize them:
 I now have a basic map I can use to orient myself. I often repeat the process a
 few times before I start making any change.
 
-### Facts > Assumptions TODO
+### Facts > Assumptions
 
 This principle reminds of me of something I like to say:
 
 > Common sense is not so common
 
-I mean, it is just common sense that facts are much more relevant that
-assumptions. That's true in general, it's not even a programming thing. Still,
-I've been bitten by the wrong assumption (sometimes, I probably deserved it,
-more than one) many times.
+It is just common sense that facts are much more relevant that assumptions,
+isn't it? Well, I've been bitten by the wrong assumption (sometimes, I probably
+deserved it, more than one) many many times. Most of the bugs I fixed in my life
+were children of miscommunication. That's nothing more than two parties assuming
+what something means without fact-checking they agree. Fixing a bug is aligning
+the code with the facts. It's not a coincidence I'm mentioning bugs right now.
+This principle is my guide when debugging code. The process is this:
+I read the code. I know there's a bug there. If I can't find it by just reading
+it, this principle comes to rescue: somewhere in the list of facts I know about
+this piece of code there's at least one item I'm calling fact but it's an
+assumption instead. I move one abstraction layer so to speak. I start debugging
+my facts which can have two outcomes:
 
-- debugging (gather facts about behaviour)
-- perf improvement (measure, don’t guess)
+- I find the fake fact. That oftens means I also found the bug. Especially when
+  I was the author of the code I'm reading. It's kind of obvious in a way. The
+  bug was there precisely because I thought the code I wrote did X while in
+  reality it did Y.
+- All the facts are true. I have to expand the search. The bug is a little
+  outside of the current scope of my search.
+
+I apply this principle to performance improvement as well. Early in my career, I
+had the tendency to guess which part of, say, an endpoint was slow. Sometimes I
+even changed some code without measuring anything. When I think about it now, it
+makes me smile "oh how young I was back then!". The guessing game was
+stimulating but I had to abandon it because the facts (ah!) were showing me it
+was a waste of time. I was wrong pretty often but not only that, I also often
+found the results of my benchmarks so counter-intuitive I could only conclude
+that the best approach is to measure everything. I don't even ask myself any
+more which part may be slow now. After all, measuring is all about the facts.
 
 ## Starting from scratch
 
@@ -488,10 +510,9 @@ including your services, your machines. Prefer boring name schemes to fancy or
 funny ones. One trivial example:
 
 - DO: kafka1, kafka2, kafka3
-- DONT: orion, antares, pluto
+- DON'T: orion, antares, pluto
 
-I don't have to ask what kind of server kafka1 is because I called it what it
-does.
+I don't have to ask what kafka1 is because I called it what it does.
 
 ### Write the code you'd like to use
 
