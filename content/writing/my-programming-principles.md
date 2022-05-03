@@ -56,7 +56,7 @@ greenfield project or, worse, the other way around.
   - [Prose not poetry](#prose-not-poetry)
   - [Name things what they do](#name-things-what-they-do)
   - [Write the code you'd like to use](#write-the-code-youd-like-to-use)
-  - [Let the design emerge from the code FINISH](#let-the-design-emerge-from-the-code-finish)
+  - [Let the design emerge from the code](#let-the-design-emerge-from-the-code)
   - [Write actual tests](#write-actual-tests)
   - [Balance your confidence TODO](#balance-your-confidence-todo)
 
@@ -237,6 +237,15 @@ I now have a basic map I can use to orient myself. I often repeat the process a
 few times before I start making any change.
 
 ### Facts > Assumptions TODO
+
+This principle reminds of me of something I like to say:
+
+> Common sense is not so common
+
+I mean, it is just common sense that facts are much more relevant that
+assumptions. That's true in general, it's not even a programming thing. Still,
+I've been bitten by the wrong assumption (sometimes, I probably deserved it,
+more than one) many times.
 
 - debugging (gather facts about behaviour)
 - perf improvement (measure, don’t guess)
@@ -508,7 +517,7 @@ in my head all the code I actually need to write to make it all work. Sometimes,
 I go as far as using pen, paper, and pseudo-code something as a first step so I
 can let go of weight of all the sub-tasks each line I'm "faking" is generating.
 
-### Let the design emerge from the code FINISH
+### Let the design emerge from the code
 
 Good design is an exercise patience.
 
@@ -529,18 +538,37 @@ Pike](https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html
 > Less is more
 
 I often think about code as bi-directional form of communication. I'm trying to
-tell the machine what to do but the code talks back to me. If I'm always talking
-though, I won't be able to listen to what the code is trying to tell me. The way
-the code looks, the way some parts need to change every time some other parts
-need to change, the naming being a little off, so many little details that are
-trying to tell me something. If I want it to be a dialogue then, I need to change
-as little as possible.
+tell the machine what to do and the code talks back to me. The way the code
+looks, the way some parts need to change every time some other parts need to
+change, the naming being a little off, so many little details that are trying to
+tell me something. If I'm always talking though, I won't be able to listen to
+what the code is trying to tell me. If I want it to be a dialogue then, I need
+to slow down and pay attention to what the code is telling me.
 
 > Simple ain't easy
 
-TODO same concept as "small changes, make it good" but for design
+Good design looks obvious. It's so simple it has just about enough to solve the
+problem. But simple doesn't mean easy. Reaching a simple design takes the time
+it takes. This is a good reminder.
 
-> Duplication is better than the wrong abstraction
+> Prefer duplication over the wrong abstraction
+
+I got this from [Sandi
+Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction). She does a
+wonderful job of explaining it so I won't repeat what she meant here. What I can
+add on top of it s that it's been very beneficial for me to expose my teams to
+this idea over the past years. It's, again, an exercise in patience. I
+trivialise it a little for the sake of making a point and often say: if you
+duplicate once, leave it be. If you have the same piece of code in three places
+at least then you've got a good chance for the correct abstraction.
+
+These three "code proverbs" (I feel I should collect these) all contribute to
+the idea that waiting for the design to emerge from the code is better than
+trying to rush into the code our current idea of good design. The point is
+really that waiting helps. Since the system changes all the time, waiting often
+results in a better understanding of the problem. The code itself will show what
+parts of its current design are problematic. You have to be there to listen to
+it.
 
 ### Write actual tests
 
@@ -548,9 +576,8 @@ Before I explain what I mean with "actual" in this context, I have to make a
 little premise. When I say "tests", I mean the automated verification process
 that your systems (kind of) work. I do not mean TDD. I have nothing against TDD
 but it's a development methodology. My opinion about programming methodologies
-is that none of them always work and they are great in specific contexts. Which
-means I don't have much to say about them in general and TDD in particular. So
-back to tests as a verification process.
+is that none of them always work and that most  are great in specific contexts.
+Back to tests as a verification process.
 
 Let's clarify what I mean with "actual test":
 
