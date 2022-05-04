@@ -644,61 +644,63 @@ Confidence is good because it can make you fearless, you know you're going to
 solve anything that comes your way. Let me tell you a story that illustrates
 what I mean from my first job.
 
-In the summer of 2006, I joined a company in Roma that run a system that
-processed hundreds of million of events per day from games boxes for poker (TODO
-look for a better name here?). The legislation in Italy states these machines
-had to return 75% of their bets so our system collected _any_ event these
-machines produced. We run monitoring and fraud detection algorithm and the whole
-system was written used PL/SQL. It was a giant Microsoft SQL server installation
-and the system was a large collection of stored procedure (don't judge me for
-this architecture yeah? I had nothing to do with this). I think it was roughly
-200 stored procedures calling each other. These stored procedure parsed the
-events, stored the processed data in various tables, and run a bunch of
-algorithm to figure out if the machines were playing a fair game. It was very
-complicated for a first job. My first big task was to make use of a reserved
-part of the input string (events where large blobs of text. I think they came in
-vai upd? I'm not sure). In practice this meant I had to figure out the impact of
-this change over the whole system, aka 200 plus stored procedures.
+In the summer of 2006, I joined a company in Roma that processed hundreds of
+million of events per day for poker machines. The legislation in Italy states
+these machines had to return 75% of money bet so our system collected _any_
+event these machines produced. The company run monitoring and fraud detection
+algorithms. The whole system was a large collection of stored procedures (don't
+judge me for this architecture OK? I didn't design it) on the top of a giant
+Microsoft SQL Server installation. These stored procedure parsed the events,
+stored the processed data in various tables, and run a bunch of algorithms to
+figure out if the machines were playing a fair game. It was complicated for a
+first job.
 
-There was no chance I had the skill to get this done. In fact, it took almost a
-week of despair for me to mouster the courage to tell my boss I had no idea what
-to do. When I talked to Mario (it was in... Italy so ¯\_(ツ)_/¯), his answer
-shocked me with anger first. He said something like "let's do this together,
-it'll take two hours". Two hours? I got lost for almost a week into this how
-were we going to solve this problem in two hours? Well, he showed me and it was
-one of the most profound learning experience of my career. We got into a meeting
-room and put the code in a room. Then Mario did the most obvious thing: he broke
-down the problem in small steps. We put the code on a screen and took notes with
-post-it at every step. Fast-forward two hours and we had a big whiteboard full
-of post-it marking every single stored procedure we needed to change and why. I
-was amazed.
+My first big task was to make use of a reserved part of the input string (events
+where large blobs of text. I think they came in vai upd? I'm not sure). In
+practice this meant I had to figure out the impact of this change over the whole
+system, aka 200 plus stored procedures. I knew I couldn't do this alone. In
+fact, it took almost a week of despair for me to find the courage and tell my
+boss I had no idea what to do. When I talked to Mario (it was in... Italy so
+¯\_(ツ)_/¯), his answer filled me with anger first. He said something like
+"let's do this together, it'll take two hours". Two hours?!? I lost almost a
+week trying to make sense of this, how were we going solve this in two hours?
+Well, he showed me and it was one of the most profound learning experience of my
+career so far.
 
-Mario had the confidence to solve the problem. Because he knew he could do it,
-there was no fear to cloud his thinking. He sat down with me and provided a
-simple (simple ain't easy eh?) process to break down a large problem into much
-smaller parts. It took four more weeks of work to complete the change and it was
-my first successful large deployment of my career.
+We got into a meeting room and Mario did the most obvious thing: he broke down
+the problem in small steps, one stored procedure after the other. We put the
+code on a screen and took notes at every step. Fast-forward two hours and we had
+a whiteboard full of sticky notes marking every single stored procedure we
+needed to change and the reason why we had to change it. I was amazed.
+
+Mario had the confidence to solve the problem. He knew he could do it so there
+was no fear to cloud his thinking. He sat down with me and executed a simple
+(simple ain't easy eh?) process laying down the foundation of four weeks of
+work. With his help, this was the first successful large deployment of my
+career.
 
 I imagine at this point you may be asking: if confidence has such a amazing
-effect on my ability to solve difficult problems, what would you want to balance
-it with? Well the answer is confidence feeds on ego. That's a problem.
+effect on your ability to solve difficult problems, what would you want to
+balance it with? Well the answer is confidence feeds on ego. That's a problem.
 
-While confidence makes me stronger, ego makes me do dumb things. Unfortunately
-it's tricky to distinguish between the two, they're so closely correlated. What
-makes a big difference is the perspective from which you look at the world. A
-confident person knows what they can do, they value help, they give credit where
-it's due. An egoist thinks only they can do it, they don't seek for help, they
-take credit from other people. OK ego is bad, makes me do dumb things but why is
-it detrimental to my ability to solve a problem? The answer is again
-perspective. I am looking at a problem from a piedistal and I'm going to
-underestimate it. I'm not going to plan enough because "hey I'm great! of
-course I will solve this".
+While confidence makes me stronger, ego makes me dumb. At times, I had troubles
+telling them apart, after all they're closely correlated. The big difference is
+the perspective from which you look at things. A confident person knows what
+they can do, they value help, they give credit where it's due. An egoist thinks
+only they can do it, they don't seek for help, they take credit from other
+people. This distinction makes a big difference in how I approach a problem.
+When I'm confident, I take my time to break a problem down in small parts, I
+research the subject, I ask for help, I plan accurately. When I'm high on ego I
+look at a problem from a pedestal, I underestimate it. I plan badly because "hey
+I'm great! of course I will solve this on the go, planning is for losers".
 
-What I want is to stay humble so I can use my confidence to solve a problem
-without underestimating anything. The way I make sure I can balance my
-confidence is by putting to practice the idea "we're all junior at most things".
-So I learn new things. When it comes to programming, it means I try to solve
-problems in areas I have no idea about. Try some problem that seems really hard.
-Like a compiler. You're going to find out that, it's really hard yes but it's
-also a program like any other program you already wrote. You will learn things
-and stay humble.
+That's why I seek ways to balance my confidence. You need enough confidence to
+fear no problem but not too much to get high on Ego. The way I do this is by
+putting to practice the idea "we're all junior at most things". So I learn new
+things. Just in the past few years, I tried drawing, rubik cubes, Chess, you
+name it. When it comes to programming, I try to solve problems in areas I have
+no idea about. I try some problem that seem really scary. Like writing a
+programming language. While I only toyed with programming languages so far, I
+wrote enough code to find out that yes it's indeed hard but it's also "just" a
+program like. The journey is humbling and the reward is two-fold: a balanced
+confidence and expanded knowledge.
