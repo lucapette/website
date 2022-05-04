@@ -11,32 +11,36 @@ keywords:
 {{< message class="is-info">}} This is a _long_ read. You will find a table of
  contents right after the introduction. {{</ message >}}
 
-One day, when asked how he had prepared for a game he had just played, Alexander
-Grischuk, an elite chess Grandmaster, answered quickly:
+One day, during a post-game interview, elite chess Grandmaster Alexander
+Grischuk was asked the routine question "how long have you been preparing for
+this game?". With his famous wit, he answered:
 
-> "I've been preparing my whole life". GM Grischuk, Alexander
+> I've been preparing my whole life
 
-The beauty of his answer is that you can apply it to _any_ job. _All_ your past
-experiences contribute to some extend to _any_ decision you make today.
+A beautiful answer. It applies to _any_ job: _all_ your past experiences
+contribute to some extend to the decisions you make today. So I've been thinking
+about how this idea applies to me. I was immediately presented with an
+intriguing writing challenge. While intuitively, I knew I follow some principles
+I collected over the years when I'm writing code, I couldn't immediately
+structure these principles. They felt very connected to each other. 
 
-The parallel with programming felt obvious to me and , since I watched that
-interview with Grandmaster Grischuk, I have been subconsciously collecting
-guidelines, ideas, and principles that stick with me over the years. Writing
-about it now is the natural consequence of my desire to learn more about these
-principles (and myself).
+The article you're reading is a (very long) answer to the question: how have you
+been preparing for the code you have to write today? My desire to learn more
+about these principles (and myself) was too strong, the challenged too
+interesting. I couldn't pass on it.
 
-I have to share I find the title of the article a little pretentious but I
-decided to go with it because it fits well the ideas expressed here.
-
-As for the actual principles, It felt natural to group them into these
-categories: existing codebases, greenfield projects, and general principles.
+Before I move on to the principles themselves, I feel compelled to share I find
+the title of the article a little pretentious. I decided to go with it anyway
+because it fits better than anything I tried.
 
 I believe in approaching coding sessions differently depending on the context.
 While this may sound a tad obvious, I encountered enough examples of
 over-engineered or under-engineered (why isn't that a thing? It's almost as
 common!) solutions in my career. More often than not, these wrongly sized
 solutions were merely a reflection of approaching an existing codebase like a
-greenfield project or, worse, the other way around.
+greenfield project or, worse, the other way around. So it made sense to me to
+group these principles into categories: existing codebases, greenfield
+projects, and general ideas.
 
 
 ## Table of content <!-- omit from toc -->
@@ -61,21 +65,15 @@ greenfield project or, worse, the other way around.
 
 ## How I approach an existing codebase
 
-Here I'm thinking of codebases that are large enough you can't possibly keep an
+I'm thinking of codebases that are large enough you can't possibly keep an
 accurate representation of all its parts in your head. You may know some parts
-very well but there are enough unknowns you wont't be able make a non-trivial
-change without some careful planning.
+very well but there are enough unknowns you can't make a significant change
+without careful planning.
 
-What's the definition of large enough is probably too personal so I won't even
-try to give an example. We'll go with "large enough for you, the reader". Let's
-dive into it.
+I won't give an example of what's a "large enough" codebase because I believe
+that's very personal. Let's go with "large enough for me, the reader".
 
 ### Small changes, fast feedback loops
-
-You might have heard of the "Boyd's Law of Iteration" which states that the
-speed of iteration beats the quality of iteration. I find that you can apply
-this law to many aspects of writing code. This principle in particular is an
-embodiment of the idea that speed beats quality often enough.
 
 In short: change a few lines _or less_ before seeking feedback. I mean
 _literally_ the smallest possible change you can think of. I've been in many
@@ -91,70 +89,66 @@ changes, fast feedback loops" workflow:
 - Seek feedback.
 - If it works _so far_, repeat.
 
-The key is that _so far_. I create checkpoints where I can assume all the code I
-wrote so far works. As soon as what my feedback loop is telling is not what I
-expect, I go back "one checkpoint". Often, I'm pretty radical about it. I just
-delete the last change and start over.
+The key of this principle is _so far_. I create checkpoints where I know the
+code I wrote so far works. As soon as my feedback loop shows me something
+unexpected, I go "back one checkpoint". I can pretty radical about it: I often
+just delete the last change and start over.
 
-You may be asking yourself: "hey, isn't this just TDD?" and the answer is "yes
-and no". TDD is _one_ way to achieve what I call the "REPL experience".
+Here's what I do: I set up a custom, project-specific REPL _before_ I change any
+code. The tooling doesn't really matter, it can be TDD, it can be print
+statements (yep, I just said that), whatever. The point is that it has to feel
+exactly like read-eval-print loops. They're really fast. Once that experience is
+in place, I can start changing things, a few lines _or less_ per time and apply
+the checkpoints process I just described.
 
-I remember pretty vividly discovering IRB, the interactive Ruby shell. It made
-the experience of learning the language quicker and much more satisfying. I was
-learning really fast because trying things out and check the answer was so much
-faster than trying to work out in my head if Ruby could do that.
-
-How does this play with approaching an existing codebase?  The core of this
-principle is that I  set up my own "REPL experience" _before_ I change any code.
-The actual tool doesn't really matter, it can be TDD, it can be print statements
-(yep, I just said that), whatever. Once that experience is possible, I can start
-changing things, a few lines _or less_ per time.
-
-The scenario I'm thinking of for this principle is focused programming sessions
-but you can apply it also to end result of good programming sessions: deployable
-artifacts. There's [good
+Focused, short, productive programming sessions are the typical scenario for
+this principle but you can apply it also to end result of good programming
+sessions: deployable artifacts. There's [good
 evidence](https://www.goodreads.com/book/show/35747076-accelerate) now that
 smaller changes lead to higher productivity. They're safer to deploy and
 rollback if needed. They're also easier to review and more likely to move fast
 to production.
 
-Before I move on to the next principle, I feel compelled to expand on why I'm
-not saying "just do TDD":
+I know this principle has a striking resemblance to TDD, it's the most frequent
+feedback I get when I talk about it with other programmers. Why am I'm not
+saying "I do TDD all the time"? Well the answer is that I almost never practice
+TDD. Let me explain: 
 
-- TDD feels great as a workflow. It perfectly resembles what I call the "REPL
-  experience". But I always had problems with the design constraints it brings
-  to the table. I want the first draft of a solution to reflect the mental model
-  of my understanding of the problem I'm trying to solve. TDD always forces me
-  to shift my mental model a bit to make the code more testable _upfront_. While
-  there's nothing wrong with making code more testable, my problem is doing that
-  when I'm discovering by writing code how well my mental model translates into
-  actual code. The friction between what I want to write and what TDD needs me
-  to write always has a negative effect on my ability to design a change
-  effectively. In practice, I use TDD only to fix bugs.
-- TDD is primarily a development technique. Its artifact is code. We ship
-  features though, code is just a means to an end. So the code we write, even if
-  perfectly tested, doesn't work unless it works in production. I want more than
-  TDD from my "REPL experience", I want to [test in
-  production](#test-in-production).
+- TDD feels great as a workflow. It does resembles the "REPL experience". The
+  thing is I always had problems with the design constraints TDD brings to the
+  table. When I'm writing code, I'm mostly just typing out the solution I
+  modelled in my mind. TDD always forces me to shift my mental model a bit so
+  that the code is testable _upfront_. While there's nothing wrong with making
+  code more testable, my problem is doing it while I'm discovering how well what
+  I modelled in my head translates into actual code. The friction between what I
+  want to write and what TDD wants me to write has always had a negative effect
+  on my ability to program effectively. In practice, I use TDD only to fix bugs.
+- TDD is primarily a development technique. Its artifact is unshipped code.
+  Unfortunately we can't say the code we write works, even if it's perfectly
+  unless it works in production. That's why I want more than TDD from my "REPL
+  experience", I want to [test in production](#test-in-production).
 
 ### Test in production
 
 I can hear [@mipsytipsy](https://twitter.com/mipsytipsy) in my head say "fuck
-yeah!" every time I mention this principle. The way I like to put it is that I
-want to expand the boundaries of my "REPL experience" far enough so to include
-production systems. Again, it's all about the speed of iteration. I'm not
+yeah!" every time I mention this principle.
+
+Here's what this principle means to me: I want to expand the boundaries of my
+"REPL experience" far enough so that it includes my production systems. I'm not
 satisfied with a tight feedback loop while writing the smallest possible change.
-I want to ship it to production in _minutes_. What's the point of putting a lot
-of effort writing "correct" code if we don't know if it works in production?
+I want to ship it to production in _minutes_ and find out if it works there.
+What's the point of putting a lot of effort in writing "correct" code if we
+don't know if it works in production?
 
 The urgency of shipping code to production helped me create an healthy
 development culture in many teams. We want your "REPL experience" to include
 production? We're going to need fast CI and CD pipelines. We're going to need
 ways to observe the impact of changes on your production systems. Rollback has
-to be cheap. We may want to use feature flags. All of it contributes to the
-actual speed of iteration. We _all_ test in production when we first ship the
-code _anyway_ so it makes much more sense to do it consciously to create a
-safer, faster environment for feature development.
+to be cheap. We may want to use feature flags. We may _not_ need a staging
+environment. All of it contributes to the speed of iteration (from "Boyd's Law
+of Iteration"). We _all_ test in production when we first ship the code _anyway_
+so it makes sense to do it consciously. It creates a safer, more efficient
+environment for feature development.
 
 Testing in production and small changes feed on each other. The faster your lead
 time, the more likely you'll ship smaller changes. The smaller the change you
@@ -168,8 +162,7 @@ little. You improve an error message, you use a more idiomatic way to write
 those three lines, you align that test with your internal conventions. The
 codebase is living organism: it's a garden and you take care of it every day.
 You prevent bad habits from forming, you heal that spot that is a bit sick, you
-give more water to the plants that need it the most. My first encounter with
-this analogy is a
+don't forget to water the plants. My first encounter with this analogy is a
 [commit](https://github.com/rails/rails/commit/fb6b80562041e8d2378cad1b51f8c234fe76fd5e)
 made by [@fxn](https://twitter.com/fxn). It stuck with me ever since.
 
@@ -182,7 +175,7 @@ context they're in) to help other people form the habit of code gardening. I
 then use this todo list as a personal reward system. I get done what I need to
 and then I treat myself by improving that test that produces those annoying
 warnings. I have seen this dynamic at play with other programmers as well once
-the habit is formed. The reward system is simple and effective, it allows people
+they form the habit. The reward system is simple and effective: it allows people
 to make small improvements _all the time_ and just feel good about it.
 
 Being a gardner is easier if you're already making _small changes_ and you're
@@ -194,34 +187,35 @@ connected.
 ### Read features end to end
 
 When I'm new to a large codebase, I read features end to end _before_ making any
-change. People often called code safari but I'm no fan of the metaphor, I like
+change. People often called code safari but I'm not fan of the metaphor, I like
 to call things what they do so the principle goes by "read features end to end".
-Yeah, it's boring. I like it that way.
+Yeah, I get it. It's boring. I like it that way.
 
 Approaching a new codebase can get a little overwhelming. Sometimes I don't even
-know where to start, which part of the system maps to which part of the
-codebase. To help orient myself, I read a whole feature end to end, it doesn't
-even have to be connected to a change I need to make.
+know where to start, which system maps to which part of the codebase. To help
+orient myself, I read a whole feature end to end, it doesn't even have to be
+connected to a change I need to make.
 
 For the sake of discussion, let's consider a web application composed of
-multiple services. There's an "innocent" button that, once clicked, stars a
-sequence of processes which ultimately result in getting some PDF report via
-email. I'm sure you have seen a variation of this.
+multiple services. Once page in the web app has an "innocent" button that stars
+a sequence of processes which ultimately result in getting some PDF report via
+email. I'm sure you have seen some variation of this.
 
-The idea is that I go on a hunt. I start searching for the code of the button.
-It sounds trivial but I know I will discover things: how/if we do i18n, what
-kind of frontend framework we're using. Most importantly, I will notice things like:
+The idea is that I go on a hunt. I start searching for the code that renders the
+button. It sounds trivial but I know I will discover things: how/if we do i18n,
+what kind of frontend framework we're using. Most importantly, I will notice
+things like:
 
 - "oh we have our own css framework? Why?"
-- "what's up with all data attributes? I haven't seen any of that when I was
-checking out the website from home. We're stripping them down?"
+- "what's up with all these data attributes? I haven't seen any of that when I
+was checking out the website from home. We stripping them down?"
 
 Before I forget any of this, I open a notebook and write everything down. Using
 my brain as storage is a waste: ["the shorter pencil is longer than the longest
-memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s). When I figured out
-which service reacts to the click, I go down one layer and keep reading. I
-repeat the process until I've gone all the way to the email service that sent
-out that test email right into my inbox.
+memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s). When I know which
+service handles to the click on the report button, I go down one layer and keep
+reading. I repeat the process until I've gone all the way to the email service
+that sent out a test email right into my inbox.
 
 Once I'm done, I have a mixed bag of notes: that's where the hard work starts. I
 reorganize them:
@@ -232,12 +226,12 @@ reorganize them:
   to speed faster.
 - Idioms. Every codebase has its ways of doing things.
 
-I now have a basic map I can use to orient myself. I often repeat the process a
-few times before I start making any change.
+I now have a basic map I can use to look around the codebase. I often repeat the
+process a few times before I start making any change.
 
 ### Facts > Assumptions
 
-This principle reminds of me of something I like to say:
+This principle reminds of me of something I say pretty often:
 
 > Common sense is not so common
 
