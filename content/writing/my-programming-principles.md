@@ -8,9 +8,8 @@ keywords:
   - principles
 ---
 
-{{< message class="is-info">}} This is a _long_ read. Right after the
-introduction I provided a table of content to help you navigate the article.
- {{</ message >}}
+{{< message class="is-info">}} This is a _long_ read. You will find a table of
+ contents right after the introduction. {{</ message >}}
 
 One day, when asked how he had prepared for a game he had just played, Alexander
 Grischuk, an elite chess Grandmaster, answered quickly:
