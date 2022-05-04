@@ -2,7 +2,6 @@
 title: "My Programming Principles"
 description: "What guides me after 20 years of writing code for a living"
 date: 2022-04-17T14:12:13+02:00
-draft: true
 keywords:
   - programming
   - principles
