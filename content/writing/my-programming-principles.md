@@ -423,93 +423,88 @@ in these languages.
 
 Is it really programming if I don't have at least some util functions? 😃
 
-Jokes aside, there is an handful of principles I apply in any context. These are
-my "true north" guidelines so to speak.
+Jokes aside, there is an handful of principles I apply to any context. These
+principles are my "true north" guidelines.
 
 ### Prose not poetry
 
-Writing code is, well, writing. It's an intriguing form of writing because
-you're always writing for the machine first and then for the next programmer.
-Two audiences that couldn't be any more different.
+Writing code is, well, writing. It's an intriguing form of writing because you
+have two audiences: the machine first and the next programmer. They couldn't be
+more different.
 
-The primary audience is the machine even though we often lie to ourselves and
-say things like "more than anything you're writing for the next programmer that
-reads your code". I'm sympathetic with the argument because I see where it comes
-from but, let's be honest about it, you can't ship code that doesn't compile. It
-doesn't matter how readable and understandable the code you wrote is, it won't
-work if you got a syntax error. You have to write code so that the machine can
-run it. But, on the other hand, you can't discount the fact the code will need
-to be modified at some point in the future so other people can will read it.
-It's a tough game and this principle has been guiding me since I first realized
-that writing code is "just" writing.
+The primary audience is the machine. We often lie to ourselves and say things
+like "more than anything you're writing for the next programmer that reads your
+code". I'm sympathetic with the argument because I understand where it comes
+from but, let's be honest, you can't ship code that doesn't compile. It doesn't
+matter how readable and understandable the code you wrote is, it won't work if
+you got a syntax error.
 
-I think prose fits better with good production quality code. I want my code to
-have chapters, my chapters to have paragraphs, my paragraphs to have sentences.
-Sentences are a few instructions, paragraphs are little algorithms, chapters are
-modules, a book is a system. The parallel doesn't need to be exact, the point is
-that I don't want to jump from shifting bits to call an external service in two
-consecutive lines. I want _homogeneous abstraction within a layer and
-heterogeneous abstraction between layers_.
+You have to write code so that the machine can run it. On the other hand, you
+must keep in mind the code will need to change at some point in the future so
+other people can will read it. It's a tough game and realising that writing code
+is "just" writing has been of great help.
 
-The one notable exception to writing prose is performance. Often making code
-faster also makes it messier and uglier because you'll see that the abstraction
-isn't homogeneous any longer. This is one situation in which I like writing
-comments explaining _why_ the code looks the way it looks.
+The idea is to think of code as it was book. A book has chapters, the chapters
+to have paragraphs, the paragraphs to have sentences. Now, from the perspective
+of a codebase, one way to look at it: sentences are a few instructions,
+paragraphs are little algorithms, chapters are modules, a book is a system. The
+parallel doesn't need to be exact. I want _homogeneous abstraction within a
+layer and heterogeneous abstraction between layers_. I don't want to jump from
+shifting bits in a line to call an external service via HTTP in the next one.
 
-When I bring up this prose vs poetry metaphor, I often get the argument that
-poetry fits as well. After all there's very structured poetry out there and it's
-often as cryptic as code can be. The thing with poetry though is that it's good
-when it says a lot with just a few words. Poetry can be really terse and that's
-why I say prose not poetry. When in doubt, always I _prefer clarity to brevity_.
-Since it's all the same for the machine, there's no point in making code terse
-or clever for the next programmer.
+A notable exception is performance. Often making code faster also makes it
+messier, uglier because the abstraction isn't homogeneous. You're jumping levels
+often because some code it's on the hot path and is written differently from the
+rest. In this scenario, I like writing comments explaining _why_ the code looks
+the way it looks.
+
+When I bring up this prose vs poetry metaphor, I often get the feedback that
+poetry fits as well. After all, there's very structured poetry out there. The
+thing with poetry though is that it's good when it says a lot with just a few
+words. Poetry is terse, especially compared to prose. When in doubt, always
+_prefer clarity to brevity_.
 
 ### Name things what they do
 
 Naming _is_ hard.
 
-Having said that, I think we often make it harder for ourselves than it should
-be because there's a certain social pressure to treat code like poetry. The code
-has to be pretty so we're looking for elegant, apt, and short names for
-everything. I struggled early in my career with this but I grew out of it when I
+Having said that, we often make it harder for ourselves than it should be
+because we bring aesthetics to the table. Code must be pretty so we're looking
+for elegant, apt, short names for everything.
+
+Early in my career, I struggled with naming much more than I do now that I
 realized a few things:
 
-- Unless it's a trivial problem, I will not get naming right while I'm drafting
-  a first version.
-- Naming is the most significant design tool at my disposal while I'm writing.
-  Due the focus required to write code, sometimes I lose sight of that on a
-  conscious level. Calling something, say, `JobScheduler` will constraint the
-  design of whatever interact with it to treat it like a job scheduler and maybe
-  it's not.
-- Way too often I want to get the naming right too early. The delta between the
-  mental model I created for the problem I want to solve and the actual code I
-  will end up writing only decreases as I write it.
+- Unless it's a trivial problem, I will name things right while I sketching a
+  first solution.
+- Due the intense concentration I require to write code, sometimes I don't
+  realise the names I'm choosing are part of the design. Calling something, say,
+  `JobScheduler` will constraint the design of whatever interact with it to
+  treat it like a job scheduler and maybe it's not.
+- My understanding of a non-trivial problem increases as I write code trying to
+  solve it.
 
-All these considerations lead me to what I call "relaxed naming" (ah the irony
-of not liking this naming 🙃). I know I'm bound to get some names wrong the
-first time around but that's an effect of the problem. The cause is that I don't
-understand the problem well enough yet and the suboptimal naming reflects that.
-"Relaxed naming" comes to rescue me and it looks like this:
+All these considerations lead me to "relaxed naming" (ah the irony of not liking
+this naming 🙃):
 
 - Call things what they do _right now_. The more descriptive the name, the
-  better. Bonus points if it feels a little boring.
+  better. Bonus points if it verbose and boring.
 
 Yep, there's no step two.
 
-It's a little cheeky I'll give you that. But all things considered, after a
-little less than 20 years I'm finally happy with my naming process. I look at it
-the same way I look at jotting down a first version of a new system. Let me
-spell out the obvious: the thing I'm trying to name is _new_. I am naming it now
-because it's not there yet. So the principle [make it work, make it good, make
-it fast](#make-it-work-make-it-good-make-it-fast) works pretty well here except
+It's a little cheeky I'll give you that. But all in all, after a little less
+than 20 years I'm finally happy with my naming process. I basically look at it
+the same way I look at prototyping. Let me spell out the obvious: the thing I'm
+trying to name is _new_, I am naming it now because it's not there yet. So the
+principle [make it work, make it good, make it
+fast](#make-it-work-make-it-good-make-it-fast) works pretty well here except
 there's no step three.
 
-Name things what they do also means I prefer dull, descriptive, and long names
-to short and clever ones. I also despise acronyms. There are exceptions (of
-course HTTP is a fine acronym for example) but in general the less acronyms the
-better. Extend this principle to the naming of all things in your systems,
-including your services, your machines. Prefer boring name schemes to fancy or
-funny ones. One trivial example:
+Name things what they do means I prefer dull, descriptive, long names to short,
+fancy, clever ones. I also despise acronyms. There are exceptions (of course
+HTTP is a fine acronym) but in general acronyms and I are enemies. I like to
+extend this principle to everything, including your services, your machines.
+Prefer boring name schemes to fancy or funny ones. A trivial example:
 
 - DO: kafka1, kafka2, kafka3
 - DON'T: orion, antares, pluto
@@ -518,12 +513,13 @@ I don't have to ask what kafka1 is because I called it what it does.
 
 ### Write the code you'd like to use
 
-I can't find the original reference but I'm relatively sure this principle too
-was inspired by Kent Beck. It works well when I get stuck because I have no code
-to start from. It's the proverbial blank page I'm looking at. So I have all kind
-of questions about how the API of the new module should look like, which data
-structures I should rely on, what types should I expose, and so on. It can get
-so overwhelming I just get stuck.
+I can't find the original reference but I'm pretty sure this principle too was
+inspired by Kent Beck.
+
+This idea works well for me when I get stuck on blank pages. I have so many
+questions about the API of the new module I'm writing, which data structures I
+should rely on internally, what types should I expose, and so on. It can get so
+overwhelming I just get stuck.
 
 That's where I take a deep breath and ask myself: how do I want to use this
 code? Here's what I do:
@@ -535,174 +531,163 @@ code? Here's what I do:
   possibly imagine.
 
 The third step is hard because I have to lie to myself, I do know the code isn't
-there. It only works for me if I jot down a solution without trying to picture
-in my head all the code I actually need to write to make it all work. Sometimes,
-I go as far as using pen, paper, and pseudo-code something as a first step so I
-can let go of weight of all the sub-tasks each line I'm "faking" is generating.
+there. So this process only works if I jot down a solution without trying to
+think of all the code I need to write to make it all work.
 
 ### Let the design emerge from the code
 
 Good design is an exercise patience.
 
-It's hard to do when I have a clear idea of the different parts of the system.
-It's half the excitement of working on a new problem and half the impatience of
-not being done with it. I want to do it all fast and perfect and, of course, I
-learned that _never_ works well in practice. You can't rush good design. To make
-things harder, systems are living organisms, their only constant is change. They
-change because of business needs, scaling needs, or whatever. The list is too
-long. The point is they change all the time. That's the part of our craft I've
-seen most people struggle with. To be fair, evolving systems is hard. Over the
-years, I collected a few one-sentence ideas that guide me through designing a
-system.
+It's hard to be patient when I think I have a clear idea of the different parts
+of the system. It's half the excitement of working on a new problem and half the
+impatience of not being done with it. I want to do it all fast and perfect and,
+of course, I learned that _never_ works well in practice. I can't rush good
+design. To make things harder, systems are living organisms, their only constant
+is change. They change because of business needs, scaling needs, or whatever.
+The list is too long. The point is they change all the time. That's the part of
+our craft I've seen most people struggle with. To be fair, evolving systems in a
+sustainable manner is hard. Over the years, I collected a few maxims that guide
+me through designing a system.
 
-The first one I got it from [Rob
-Pike](https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html)
+I got this one from [Rob
+Pike](https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html):
 
 > Less is more
+
+I want to add as little as possible to the system so I can listen to what the
+code is trying to tell me. Let me explain.
 
 I often think about code as bi-directional form of communication. I'm trying to
 tell the machine what to do and the code talks back to me. The way the code
 looks, the way some parts need to change every time some other parts need to
-change, the naming being a little off, so many little details that are trying to
-tell me something. If I'm always talking though, I won't be able to listen to
-what the code is trying to tell me. If I want it to be a dialogue then, I need
-to slow down and pay attention to what the code is telling me.
+change, the non-obvious ways two parts depend on each other, the naming being a
+little off. So many little details, it's the code trying to talk to me. If I'm
+always talking over it though, I won't be able to listen to the code is saying.
+If I want it to be a dialogue then, I need to slow down and pay attention to
+what the code is telling me. I have to write less. Less is more.
 
 > Simple ain't easy
 
 Good design looks obvious. It's so simple it has just about enough to solve the
 problem. But simple doesn't mean easy. Reaching a simple design takes the time
-it takes. This is a good reminder.
+it takes. This is a good reminder I can't rush good design. It's also the way I
+judge my solutions to problems. I'm only happy when the code is so simple that I
+feel there's nothing to remove from it any more.
 
 > Prefer duplication over the wrong abstraction
 
-I got this from [Sandi
+I got this one from [Sandi
 Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction). She does a
-wonderful job of explaining it so I won't repeat what she meant here. What I can
-add on top of it s that it's been very beneficial for me to expose my teams to
-this idea over the past years. It's, again, an exercise in patience. I
-trivialise it a little for the sake of making a point and often say: if you
-duplicate once, leave it be. If you have the same piece of code in three places
-at least then you've got a good chance for the correct abstraction.
+wonderful job of explaining it so I won't repeat what she meant here. Read her
+article. Exposing my teams to this idea over the past few years has been
+beneficial. I often trivialised it a little for the sake of making a point while
+sharing the idea with my team: if you have duplication once, leave it be. If you
+have the same piece of code in three places at least then you've got a good
+chance for the correct abstraction. If your abstraction feels simple (ah!)
+enough, go for it.
 
-These three "code proverbs" (I should collect these right?) all contribute to
-the idea that waiting for the design to emerge from the code is better than
-trying to rush into the code our current idea of good design. The point is
-really that waiting helps. Since the system changes all the time, waiting often
-results in a better understanding of the problem. The code itself will show what
-parts of its current design are problematic. You have to be there to listen to
-it.
+These maxims all contribute to the idea that waiting for the design to emerge
+from the code is better than trying to rush into the code our current idea of
+good design. The point is really that waiting helps.
 
 ### Write actual tests
 
-Before I explain what I mean with "actual" in this context, I have to make a
-little premise. When I say "tests", I mean the automated verification process
-that your systems (kind of) work. I do not mean TDD. I have nothing against TDD
-but it's a development methodology. My opinion about programming methodologies
-is that none of them always work and that most  are great in specific contexts.
-Back to tests as a verification process.
-
-Let's clarify what I mean with "actual test":
+Let me clarify what I mean with "actual test":
 
 > A test must change only if the behaviour it verifies changed
 
-No other reason is good enough for a test to change. I've seen tests testing
-language features, or testing missing language features (looking at you
-dynamically typed languages), or even testing framework features. These tests
-have two things in common: they change all the time and they're just baggage. My
-advice is to delete them. There, I said it.
+No other reason is good enough for a test to change. Which, in turn, means
+"actual tests" only test product behaviour. I've seen tests testing language
+features, or missing language features (looking at you dynamically typed
+languages), or framework features. These tests have a very annoying property in
+common: they change every time production code changes. My advice is to delete
+them. There, I said it.
 
-When I bring this up, people often understand it as my advice is either to not
-write tests or to only have integrations tests. Obviously, no point in debating
-the first one. Of course you should write tests. I'm not arguing you should have
-tests or not, I'm arguing the effectiveness of tests suites. As for the second
-point, it's true that integration tests are more likely to suit my definition of
-"actual test" so I understand where people are coming from with this. My
-definition of "actual test" though doesn't say anything at which level of
-abstraction the tests should operate. I can write unit tests that fit perfectly
-with my definition. The point is rather simple: test your behaviour, forget the
-implementation.
+When I bring this up, the feedback I get means people understood my advice as
+either to not write tests at all or to have only integrations tests. Obviously,
+no point in debating the first one. Of course you should write tests to verify
+your systems. I'm not arguing that, I'm arguing the effectiveness of tests
+suites. As for the second point, it's true that integration tests are more
+likely to suit my definition of "actual test". I understand where people are
+coming from with this. My definition of "actual test" though doesn't say
+anything about which level of abstraction the tests should operate. I'm not
+arguing _how_ to write tests, I'm arguing _what_ to test. I'm saying: test
+behaviour, forget the implementation.
 
-From a practical standpoint, I do have a strong preference for integration
-tests. It's obvious, I will give you that. After all, with the help of [Moore's
-law](https://en.wikipedia.org/wiki/Moore's_law) integrations tests are so much
-faster than 20 years ago the biggest pain points are not so painful any longer.
-Nowadays, integration tests and statically typed production code make me feel
-pretty comfortable.
+From a practical standpoint, I prefer integration tests. After all, with the
+help of [Moore's law](https://en.wikipedia.org/wiki/Moore's_law) integrations
+tests are fast enough for the trade-off of, you know, actually test something.
 
 ### Balance your confidence
 
-If I had to name the number one difference between being a young developer and
-now, I would go for confidence. The more experienced I felt, the more convinced
-I was I could solve any problem.
+If I had to name only one thing that changed a lot since I started programming,
+I would go for confidence. The more experienced I feel, the more convinced I am
+I can solve any problem.
 
-It is somewhat obvious that experience makes you confident. You gain experience
-through trail and error. Rinse and repeat. You learn what works and what not by
-trying things out, often the hard way. The more time you spend doing something,
-the more you know about what works and what not. So yes experience makes you
-confident. Sounds good no? Yes and no. You need a balance.
+It is somewhat obvious that experience made me more confident. I gained
+experience through trail and error. Rinse and repeat. I learned what works and
+what not by trying things out, often the hard way. So yes experience makes me
+confident. Sounds good no? Yes and no. I need balance.
 
-Confidence is good because it can make you fearless, you know you're going to
-solve anything that comes your way. Let me tell you a story that illustrates
-what I mean from my first job.
+Confidence is good because it can make me fearless, I know you can throw any
+problem at me, I will find a way to solve it. Let me tell you a story that
+illustrates what I mean from my first job.
 
 In the summer of 2006, I joined a company in Roma that processed hundreds of
-million of events per day for poker machines. The legislation in Italy states
-these machines had to return 75% of money bet so our system collected _any_
-event these machines produced. The company run monitoring and fraud detection
-algorithms. The whole system was a large collection of stored procedures (don't
-judge me for this architecture OK? I didn't design it) on the top of a giant
-Microsoft SQL Server installation. These stored procedure parsed the events,
-stored the processed data in various tables, and run a bunch of algorithms to
-figure out if the machines were playing a fair game. It was complicated for a
-first job.
+million of events per day from poker machines. At the time, the legislation in
+Italy stated these machines had to return 75% of winning so our system collected
+_any_ event these machines produced. The company run monitoring and fraud
+detection algorithms. The whole system was a large collection of stored
+procedures (don't judge me for this architecture OK? I didn't design it) on the
+top of a giant Microsoft SQL Server installation. These stored procedure parsed
+the events (large blob of text we parsed with SQL. Yup, you read that right),
+stored the processed data in various tables, and run a bunch of algorithms on
+the data. It was complicated for a someone that fresh out of University.
 
-My first big task was to make use of a reserved part of the input string (events
-where large blobs of text. I think they came in vai upd? I'm not sure). In
-practice this meant I had to figure out the impact of this change over the whole
-system, aka 200 plus stored procedures. I knew I couldn't do this alone. In
-fact, it took almost a week of despair for me to find the courage and tell my
-boss I had no idea what to do. When I talked to Mario (it was in... Italy so
-¯\_(ツ)_/¯), his answer filled me with anger first. He said something like
-"let's do this together, it'll take two hours". Two hours?!? I lost almost a
-week trying to make sense of this, how were we going solve this in two hours?
-Well, he showed me and it was one of the most profound learning experience of my
-career so far.
+My first big task was to make use of a reserved part of the events (they had a
+structure similar to message pack). In practice this meant I had to figure out
+the impact of this change over the whole system, aka 200 plus stored procedures.
+I knew I couldn't do this but I tried anyway. It took me almost a week of
+despair to find the courage and tell my boss I had no idea what to do. When I
+talked to Mario (it was in... Italy so ¯\_(ツ)_/¯), his answer filled me with
+anger first. He said something like "let's do this together, it'll take two
+hours to plan everything then I leave you alone". Two hours?!? I had lost almost
+a week trying to make sense of the problem and came up with nothing, how were we
+going solve this in two hours? Well, he showed me and it was a profound learning
+experience.
 
 We got into a meeting room and Mario did the most obvious thing: he broke down
 the problem in small steps, one stored procedure after the other. We put the
-code on a screen and took notes at every step. Fast-forward two hours and we had
-a whiteboard full of sticky notes marking every single stored procedure we
-needed to change and the reason why we had to change it. I was amazed.
+code on a screen and took notes for everything. Fast-forward two hours and we
+had a whiteboard full of sticky notes of every single stored procedure we needed
+to change and the reason why it needed to change. I was amazed.
 
 Mario had the confidence to solve the problem. He knew he could do it so there
 was no fear to cloud his thinking. He sat down with me and executed a simple
-(simple ain't easy eh?) process laying down the foundation of four weeks of
-work. With his help, this was the first successful large deployment of my
-career.
+process (simple ain't easy eh?) laying down the foundation for four weeks of
+work. With his help, this was the first successful complex change of my career.
 
 I imagine at this point you may be asking: if confidence has such a amazing
 effect on your ability to solve difficult problems, what would you want to
-balance it with? Well the answer is confidence feeds on ego. That's a problem.
+balance it with? Well the answer is my confidence feeds on ego. And that's a
+problem.
 
-While confidence makes me stronger, ego makes me dumb. At times, I had troubles
-telling them apart, after all they're closely correlated. The big difference is
-the perspective from which you look at things. A confident person knows what
-they can do, they value help, they give credit where it's due. An egoist thinks
-only they can do it, they don't seek for help, they take credit from other
-people. This distinction makes a big difference in how I approach a problem.
-When I'm confident, I take my time to break a problem down in small parts, I
-research the subject, I ask for help, I plan accurately. When I'm high on ego I
-look at a problem from a pedestal, I underestimate it. I plan badly because "hey
-I'm great! of course I will solve this on the go, planning is for losers".
+While confidence makes me stronger, ego makes me dumb. At times, I have troubles
+telling them apart, after all they're close. The difference is only the way I
+look at thing. When I'm confident, I take my time to break a problem down in
+small parts, I research the subject, I ask for help, I plan accurately. When I'm
+high on ego I look at a problem from a pedestal, I underestimate it. I plan
+badly because "hey I'm great! of course I will solve this on the go, planning is
+for losers".
 
-That's why I seek ways to balance my confidence. You need enough confidence to
-fear no problem but not too much to get high on Ego. The way I do this is by
-putting to practice the idea "we're all junior at most things". So I learn new
-things. Just in the past few years, I tried drawing, rubik cubes, Chess, you
-name it. When it comes to programming, I try to solve problems in areas I have
-no idea about. I try some problem that seem really scary. Like writing a
-programming language. While I only toyed with programming languages so far, I
-wrote enough code to find out that yes it's indeed hard but it's also "just" a
+That's why I seek ways to balance my confidence. I need enough confidence to
+eliminate any fear but not too much that I get high on Ego. The way I balance
+confidence and ego this is by putting to practice the idea "we're all junior at
+most things": I learn new things. Just in the past few years, I tried drawing,
+rubik cubes, Chess, you name it. It's the one programming principle I brought in
+my every day life. When it comes to programming, I try to solve problems in
+areas I have no idea about. I try some problem that look really scary. Like
+writing a programming language. While I only toyed with programming languages so
+far, I wrote enough code to find out that yes it's hard but it's also "just" a
 program like. The journey is humbling and the reward is two-fold: a balanced
 confidence and expanded knowledge.
