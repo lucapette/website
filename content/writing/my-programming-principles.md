@@ -323,17 +323,17 @@ writing for humans to writing for machines.
 
 ### Throw it away first
 
-When I think about prototyping phase, one of my favourite quotes always comes to
-mind:
+When I think about prototyping, this quote always comes to mind:
 
 > In theory, there's no difference between theory and practice. In practice,
 > there is.
 
-It is so apt for programming! It doesn't matter how carefully you study a
-problem, how good the solution you came up with seems to me. Doing is always
-different. Designing a system is a struggle between tiny details and high level
-ideas. The harder is the problem you're trying to solve, the stronger is this
-tension. You want to make sure it's a positive tension. Here's what I do:
+It is so apt for programming! It doesn't matter how carefully I study a problem,
+how good the solution I came up with seems. Doing is always different.
+
+Designing a system is a struggle between tiny details and high level ideas. The
+harder the problem I'm trying to solve, the stronger the tension between the
+two. I want to make sure it's a positive tension:
 
 - I write a chunk of the design doc
 - I write a prototype
@@ -341,28 +341,29 @@ tension. You want to make sure it's a positive tension. Here's what I do:
 - I improve the design doc
 - I write a new prototype
 
-If the problem is really hard, I may repeat this process a few times. If the
-problem is trivial, I may get away without ever throwing code away. The point is
-I'm ready to do so when I'm unhappy with my understanding of the problem. Please
-note: I didn't say anything about what I think of the code. My harsh truth is
-that the best case scenario is that I don't hate it today and I may still not
-totally hate it in a few months.
+If the problem is complex, I may repeat this process a few times. If the problem
+is trivial, I may get away without ever throwing code away. The point is I'm
+ready to do so when I'm unhappy with my understanding of the problem. Please
+note: I didn't say anything about what I think of the code. My  best case
+scenario is that I don't hate it today and I may still not totally hate it in a
+few months. So what I think about the code isn't so relevant. Furthermore, it
+will change a lot anyway when I'm going to make it production ready.
 
-The key of this principle is this: I write a first draft knowing I will probably
-throw it away. With that in mind, I experiment, I digress a little, then I go
-back a little and try again. I write code for the machine and words for humans
-to improve my understanding of the problem.
+This is the key idea: I write a first draft knowing I will probably throw it
+away. With that in mind, I experiment, I digress a little, then I go back a
+little and try again. I write code for the machine and words for humans to
+improve my understanding of the problem.
 
 My favourite programming sessions always happen after I've thrown away at least
-one version of whatever I'm trying to solve. These sessions are really fast: I'm
-kind of just typing out a satisfying solution.
+one prototype. These sessions are really fast: I'm kind of just typing out a
+satisfying solution.
 
 ### Make it work, make it good, make it fast
 
 This principle is a variation of the theme of the
 [principle](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast) often
-attributed to [Kent Beck](https://twitter.com/KentBeck). Clearly I'm so
-pretentious about it, I like my version better.
+attributed to [Kent Beck](https://twitter.com/KentBeck). I'm so pretentious
+about it, I like my naming better.
 
 I consider this the corresponding starting from scratch principle of [small
 changes, fast feedback loops](#small-changes-fast-feedback-loops) It's almost
@@ -374,50 +375,49 @@ prototype do some basic things. It's the nature of writing code from scratch. So
 here's the idea:
 
 - __Make it work__
-  : I REPL my way through code to figure out if what I put together
-  works. I don't overthink it. It doesn't matter the naming isn't good yet. It's
-  OK, I know the code isn't production ready. Right now, I can get away without
+  : I REPL my way through code to figure out if what I put
+  together works. I don't overthink it. It doesn't matter the naming isn't good
+  yet. It's OK, I know the code isn't production ready: I can get away without
   dealing with corner cases, failure modes, error codes from that third party
   API. I note things down, leave TODOs for tomorrow's Luca. It's a deliberate
-  choice: my goal is to get the code together so that it works. I don't have to
-  make it good yet. I don't have to ship it to production in a minute. Well I
-  don't even have a production system yet.
+  choice: my goal is to get the code together. I don't have to make it good yet.
+  I don't have to ship it to production in a minute. Well I don't even have a
+  production system yet.
 - __Make it good__
   : I go through the notes and comments I left for myself. One
   by one I tick things off. Every two or three items I get off the list, I step
   back a little. I evaluate the design. Now I am making it good: I want to get
-  down to the little details, I need to be happy with the design. The way the
-  code is organized has to make sense. I care just about everything. I only
+  down to the little details, I have to be happy with the design. The way the
+  code is organized has to make sense. I care just about everything: I only
   leave out speed. I am not trying to write slow code by design (that wouldn't
   help and is probably harder to do than it sounds?) but I am also not trying to
-  squeeze every millisecond off every function.
+  squeeze milliseconds off of every function.
 - __Make it fast__
-  : it's time to measure things. To be fair, this isn't always a
-  required step. Often enough, code that works and I don't completely hate is
+  : it's time to measure things. To be fair, this isn't always
+  a required step. Often enough, code that works and I don't completely hate is
   quite good already for whoever is paying for it. On the other side of the
-  spectrum though, the are situations in which code needs to be really fast by
-  design. In a way, the previous two steps of this process still apply. What
-  changes is the definition of working. I incorporate speed into my definition
-  and design my "REPL experience" to always tell me about how fast the code is.
-  When performance is critical, I check in with the rest of the codebase the
-  scripts I write for my "REPL experience" so that they can be part of the CI
-  pipeline. Either way, when I am at this step the most basic workflow goes
-  a long way: profile the code, find the slowest bit, make it faster, repeat
-  until happy.
+  spectrum though, the are situations in which speed is a requirement. The first
+  two steps of this process still apply. What changes is the definition of
+  working code. I incorporate speed into the definition and design my "REPL
+  experience" to always tell me about how fast the code is. When performance is
+  so critical, I check in with the rest of the codebase the performance scripts
+  I wrote for my "REPL experience" so that they can be part of the CI pipeline.
+  Either way, when I am at this step the most basic workflow goes a long way:
+  profile the code, find the slowest bit, make it faster, repeat until happy.
 
-Over the years, I realized that following this principle has had an interesting
-side-effect. It has been a major factor into the way I choose the next
-programming language. A concrete example: nowadays, I enjoy working exclusively
-with statically typed languages (probably enough reasons to write an article
-about it... interested? Please, let me know!). The ergonomics of statically
-typed languages allow me a much more relaxed approach to the make it work phase.
-I really don't need to care too much about how the code is organised or its
-naming. Modern IDEs are so good at refactoring code that I can do a big chunk of
-the make it good part literally in seconds. Looking back on this, it feels
-somewhat paradoxical: I often chose dynamically typed languages (my favourite
-being Ruby) because of the supposed productivity gains only to realise I got
-stuck in early stages of a new project because of the fear of needing too much
-time to refactor things.
+Over the years, I realized this principle has an interesting side-effect on my
+choices. It has been a major factor into the way I choose programming languages.
+A concrete example: nowadays, I work exclusively with statically typed languages
+(I have probably enough reasons to write an article about it... interested?
+Please, let me know!). The ergonomics of statically typed languages allow me a
+much more relaxed approach to the make it work phase. I really don't need to
+care too much about how the code is organised or its naming. Modern IDEs are so
+good at refactoring statically typed code that I can do a big chunk of the make
+it good part literally in seconds. Looking back on this, it feels paradoxical: I
+chose dynamically typed languages (my favourite being Ruby) because of the
+supposed productivity gains only to realise I often got stuck in early stages of
+a new project because of how hard I knew it was going to be to reorganize code
+in these languages.
 
 ## General principles
 
