@@ -5,6 +5,8 @@ date: "2017-06-06T00:00:00Z"
 description: A short introduction to terraform
 keywords: terraform, operations, github
 title: terraform and GitHub labels
+redirect_from:
+  - /terraform-and-github-labels
 ---
 
 `terraform` is a fantastic tool to _"[Write, Plan, and Create infrastructure as
@@ -27,15 +29,15 @@ with different APIs (things like AWS, DNSimple, CloudFlare and so on). You
 describe your infrastructure by describing your resources.
 
 In the past few weeks, something silly started bugging me: I have multiple
-GitHub projects that share the same naming for labels. As I created those
-labels manually over time, different projects have the same labels with
-different colors. It's a small thing, but it hurts my visual memory and I
-don't want to manually sync them. Fortunately, `terraform` has a
+GitHub projects that share the same labels. As I created those labels manually
+over time, different projects have the same labels with different colors. It's a
+small thing, but it hurts my visual memory and I don't want to manually sync
+them. Fortunately, `terraform` has a
 [GitHub](https://www.terraform.io/docs/providers/github/index.html) provider
 that exposes a
 [github_issue_label](https://www.terraform.io/docs/providers/github/r/issue_label.html)
-resource. A few days ago, I decided to try syncing labels using `terraform`.
-It took literally two minutes to implement a first working configuration.
+resource. A few days ago, I decided to try syncing labels using `terraform`. It
+took literally two minutes to implement a first working configuration.
 
 I created a `config.tf` that looks like this:
 
@@ -101,7 +103,7 @@ resource "github_issue_label" "bug-label" {
   color      = "ee0701"
 }
 
-// more resources like those
+// more resources like these
 ```
 
 I ran `terraform apply` once more and I had all the labels synced within
@@ -119,11 +121,11 @@ GitHub labels.
 [Here](https://gist.github.com/lucapette/962d0cafe7edfceb9c2ba97bf7b6948f) is
 the entire file if you're curious.
 
-Of course, this was so trivial one could do it with a shell script, but I
-believe it shows the huge potential of this wonderful tool. I suggest you have
-a look at the providers and the syntax, because there's much more than this
-simple use case I just showed you here. One great feature is [terraform
-import](https://www.terraform.io/docs/import/index.html), which can help a
-great deal with adoption.
+Of course, this was so trivial you could do it with a shell script, but I
+believe it shows the huge potential of this wonderful tool. I suggest you have a
+look at the providers and the syntax, there's much more than this simple use
+case I just showed you here. One great feature is [terraform
+import](https://www.terraform.io/docs/import/index.html), which can help a with
+adoption.
 
 Happy terraforming!
