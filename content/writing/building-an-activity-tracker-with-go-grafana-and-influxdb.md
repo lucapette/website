@@ -1,6 +1,8 @@
 ---
 tags:
   - golang
+  - influxdb
+  - grafana
 date: "2017-02-23T00:00:00Z"
 keywords: golang, grafana, influxdb, open source, productivity
 title: Building an activity tracker with Go, Grafana, and InfluxDB
@@ -104,10 +106,13 @@ database in memory. This way the database became easier to extend.
 
 ## Grafana dashboard
 
-Finally, I could build a dashboard. Grafana has all the characteristics of a
-good product: you don't need to read the documentation to use its interface and
-if you try things out they often just work. The documentation is very good
-anyway, I needed help with the
+Finally, I built a dashboard and it looked like this:
+
+![tracker screenshot](/img/tracker.png)
+
+Grafana has all the characteristics of a good product: you don't need to read
+the documentation to use its interface and if you try things out they often just
+work. The documentation is very good anyway, I needed help with the
 [table](http://docs.grafana.org/features/panels/table_panel/) panel and the
 official documentation was my only source of information.
 
