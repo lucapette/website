@@ -104,15 +104,15 @@ this principle but you can (and with can I mean should) apply it also to end
 result of good programming sessions: deployable artifacts. There's
 [evidence](https://www.goodreads.com/book/show/35747076-accelerate) smaller
 changes lead to higher productivity. They're safer to deploy and rollback if
-needed. They're also easier to review and more faster through the production
-pipeline.
+needed. They're easier to review and therefore move faster through the
+production pipeline.
 
 I know this principle has a striking resemblance to TDD because it's the most
 frequent feedback I get when I talk about it with other programmers. Why am I'm
 not saying "I do TDD all the time"? Well the answer is that I almost never
 practice TDD. Let me explain:
 
-- TDD feels great as a workflow. It does resembles the "REPL experience" I so
+- TDD feels great as a workflow. It does resembles the "REPL experience" I'm so
   fond of. TDD quietly brings a design constraint to the table. When I'm writing
   code, I'm mostly just typing out the solution I modelled in my mind. TDD
   always forces me to shift my mental model a bit so that the code is testable
@@ -243,11 +243,10 @@ I often say:
 > Common sense is not so common
 
 It is common sense facts are much more relevant that assumptions, isn't it?
-Well, I've been bitten by the wrong assumption (sometimes, I probably deserved
-it, more than one) many many times. For example, most of the bugs I fixed were
-an effect of miscommunication which is nothing more than two parties assuming
-what something means without fact-checking they agree. Fixing a bug is aligning
-the code with the facts.
+Well, I've been bitten by the wrong assumption many many times. For example,
+most of the bugs I fixed were an effect of miscommunication which is nothing
+more than two parties assuming what something means without fact-checking they
+agree. Fixing a bug is aligning the code with the facts.
 
 It's not a coincidence I'm mentioning bugs right now. This principle guides my
 debugging sessions. It goes like this: I read the code, I know there's a bug
@@ -309,9 +308,9 @@ things though I have in any document:
   these questions gives me some boundaries so I can stay on track and focus on
   the essential.
 - __Organization__
-  : A few diagrams go a long way. I sketch a few to get a sense
-  of how to split responsibilities between among the different parts. What the
-  highest level building block of the system should be.
+  : A few diagrams go a long way. I sketch a few to get a sense of how to split
+  responsibilities among the different parts. What the highest level building
+  block of the system should be.
 - __Prioritization__
   : I write down the order in which it makes most sense to
   build things. Depending on how the system is organized, I write down what can
@@ -440,9 +439,9 @@ matter how readable and understandable the code you wrote is, it won't work if
 you got a syntax error.
 
 You have to write code so that the machine can run it. On the other hand, you
-must keep in mind the code will need to change at some point in the future so
-other people can will read it. It's a tough game and realising that writing code
-is "just" writing has been of great help.
+must keep in mind people will need to read it when they have to change it. It's
+a tough game and realising that writing code is "just" writing has been of great
+help.
 
 The idea is to think of code as it was book. A book has chapters, the chapters
 to have paragraphs, the paragraphs to have sentences. Now, from the perspective
@@ -454,9 +453,9 @@ shifting bits in a line to call an external service via HTTP in the next one.
 
 A notable exception is performance. Often making code faster also makes it
 messier, uglier because the abstraction isn't homogeneous. You're jumping levels
-often because some code it's on the hot path and is written differently from the
-rest. In this scenario, I like writing comments explaining _why_ the code looks
-the way it looks.
+often because the code on the hot path is written differently from the rest. In
+this scenario, I like writing comments explaining _why_ the code looks the way
+it looks.
 
 When I bring up this prose vs poetry metaphor, I often get the feedback that
 poetry fits as well. After all, there's very structured poetry out there. The
@@ -562,9 +561,8 @@ tell the machine what to do and the code talks back to me. The way the code
 looks, the way some parts need to change every time some other parts need to
 change, the non-obvious ways two parts depend on each other, the naming being a
 little off. So many little details, it's the code trying to talk to me. If I'm
-always talking over it though, I won't be able to listen to the code is saying.
-If I want it to be a dialogue then, I need to slow down and pay attention to
-what the code is telling me. I have to write less. Less is more.
+always talking over it though, I won't be able to listen to what the code is
+saying. I have to write less. Less is more.
 
 > Simple ain't easy
 
@@ -587,8 +585,8 @@ chance for the correct abstraction. If your abstraction feels simple (ah!)
 enough, go for it.
 
 These maxims all contribute to the idea that waiting for the design to emerge
-from the code is better than trying to rush into the code our current idea of
-good design. The point is really that waiting helps.
+from the code is better than trying to rush into coding our current idea of good
+design. The point is really that waiting helps.
 
 ### Write actual tests
 
@@ -625,7 +623,7 @@ I would go for confidence. The more experienced I feel, the more convinced I am
 I can solve any problem.
 
 It is somewhat obvious that experience made me more confident. I gained
-experience through trail and error. Rinse and repeat. I learned what works and
+experience through trial and error. Rinse and repeat. I learned what works and
 what not by trying things out, often the hard way. So yes experience makes me
 confident. Sounds good no? Yes and no. I need balance.
 
@@ -674,7 +672,7 @@ problem.
 
 While confidence makes me stronger, ego makes me dumb. At times, I have troubles
 telling them apart, after all they're close. The difference is only the way I
-look at thing. When I'm confident, I take my time to break a problem down in
+look at things. When I'm confident, I take my time to break a problem down in
 small parts, I research the subject, I ask for help, I plan accurately. When I'm
 high on ego I look at a problem from a pedestal, I underestimate it. I plan
 badly because "hey I'm great! of course I will solve this on the go, planning is
@@ -682,12 +680,12 @@ for losers".
 
 That's why I seek ways to balance my confidence. I need enough confidence to
 eliminate any fear but not too much that I get high on Ego. The way I balance
-confidence and ego this is by putting to practice the idea "we're all junior at
-most things": I learn new things. Just in the past few years, I tried drawing,
-rubik cubes, Chess, you name it. It's the one programming principle I brought in
-my every day life. When it comes to programming, I try to solve problems in
-areas I have no idea about. I try some problem that look really scary. Like
-writing a programming language. While I only toyed with programming languages so
-far, I wrote enough code to find out that yes it's hard but it's also "just" a
-program like. The journey is humbling and the reward is two-fold: a balanced
-confidence and expanded knowledge.
+confidence and ego is by putting to practice the idea "we're all junior at most
+things": I learn new things. Just in the past few years, I tried drawing, rubik
+cubes, Chess, you name it. It's the one programming principle I brought in my
+every day life. When it comes to programming, I try to solve problems in areas I
+have no idea about. I try some problem that look really scary. Like writing a
+programming language. While I only toyed with programming languages so far, I
+wrote enough code to find out that yes it's hard but it's also "just" a program
+like. The journey is humbling and the reward is two-fold: a balanced confidence
+and expanded knowledge.
