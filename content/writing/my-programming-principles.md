@@ -12,21 +12,21 @@ keywords:
  contents right after the introduction. {{</ message >}}
 
 One day, during a post-game interview, elite chess Grandmaster Alexander
-Grischuk was asked the routine question "how long have you been preparing for
+Grischuk was asked the routine question: "How long have you been preparing for
 this game?". With his famous wit, he answered:
 
-> I've been preparing my whole life
+> I've been preparing my whole life.
 
 A beautiful answer. It applies to _any_ job: _all_ your past experiences
-contribute to some extend to the decisions you make today. So I've been thinking
-about how this idea applies to my career and was presented with an intriguing
+contribute to some extent to the decisions you make today. So I've been thinking
+about how this idea applies to my career. It turned out to be an intriguing
 writing challenge. While intuitively I know I follow some principles when I'm
 writing code, I couldn't immediately structure or name them.
 
 The article you're reading is a (very long) answer to the question: How have I
-been preparing for the code I'm about to write? My desire to learn more about
-these principles (and myself) was too strong, the challenged too interesting. I
-couldn't pass on it so here we go.
+been preparing for the code I'm about to write? My desire to define these principles –
+and learn more about myself in the process – was too strong, the challenge too interesting. 
+I couldn't pass on it so here we go.
 
 I grouped the principles into categories: existing codebases, greenfield
 projects, and general ideas. While it sounds a tad obvious you want to approach
@@ -36,13 +36,13 @@ solutions in my career. More often than not, approaching an existing codebase
 like a greenfield project or, worse, the other way around was the reason why
 their solutions were incorrectly sized.
 
-Before I move on to the principles themselves, I want to mention I find the
+Before I move on to the principles themselves, I want to mention that I find the
 title of the article a little pretentious. I went with it anyway because it fits
 the topics covered better than anything else I could think of.
 
 
-## Table of content <!-- omit from toc -->
-- [Table of content](#table-of-content)
+## Table of contents <!-- omit from toc -->
+- [Table of contents](#table-of-contents)
 - [How I approach an existing codebase](#how-i-approach-an-existing-codebase)
   - [Small changes, fast feedback loops](#small-changes-fast-feedback-loops)
   - [Test in production](#test-in-production)
@@ -63,9 +63,9 @@ the topics covered better than anything else I could think of.
 
 ## How I approach an existing codebase
 
-The codebases I have in mind are large enough you can't keep an accurate
-representation of all its parts in your head. You may know some parts very well
-but there are enough unknowns you can't make a significant change without
+The codebases I have in mind are so large that you can't keep an accurate
+representation of all their parts in your head. You may know some parts very well,
+but there are enough unknowns and you can't make a significant change without
 careful planning.
 
 I don't think I can provide a good example of what's a "large enough" codebase
@@ -87,7 +87,7 @@ workflow looks like this:
 
 The key is _so far_. I have mental checkpoints marking the progress. "I changed
 this line, stuff still works". Yes, it's that trivial. As soon as my feedback
-loop shows me something unexpected, I go back one checkpoint because "it worked
+loop shows something unexpected, I go back one checkpoint because "it worked
 before I changed that". I can be radical with my reaction to unexpected
 feedback: I often just delete the last change and start over.
 
@@ -98,52 +98,52 @@ is that it has to feel exactly like read-eval-print loops. They're really fast.
 Once that experience is in place, I can start changing a few lines _or less_ per
 time and apply the checkpoints process I just described.
 
-You can (and with that I mean you should) apply this principle also to end
+You can (and with that I mean you should) apply this principle also to the end
 result of good programming sessions: deployable artifacts. There's
-[evidence](https://www.goodreads.com/book/show/35747076-accelerate) smaller
-changes lead to higher productivity. They're safer to deploy and rollback if
+[evidence](https://www.goodreads.com/book/show/35747076-accelerate) that smaller
+changes lead to higher productivity. They're safer to deploy and roll back if
 needed. They're easier to review and therefore move faster through the
 production pipeline.
 
 I know this principle has a striking resemblance to TDD because it's the most
-frequent feedback I get when I talk about it with other programmers. The
-question is some variation of "why don't you just do TDD all the time"? The
-answer is that I almost never practice TDD. Let me explain:
+frequent feedback I get when I talk about it with other programmers. "Why don't 
+you just do TDD all the time?" – they wonder. The answer is that I almost never 
+practice TDD. Let me explain:
 
 - TDD feels great as a workflow. It resembles the "REPL experience" I'm so fond
   of. But TDD quietly brings a design constraint to the table. When I'm writing
-  code, I'm mostly typing out the solution I modelled in my mind. It's a
+  code, I'm mostly typing out the solution I modelled in my head. It's a
   transcription exercise for me and TDD always forces me to shift my mental
   model a bit so that the code is more testable _upfront_. While there's nothing
   wrong with making code more testable, doing it while I'm discovering how well
-  what I modelled in my head translates into actual code doesn't work for me.
+  the model in my head translates into actual code doesn't work for me.
   The friction between what I want to write and what TDD wants me to write
-  always had a negative effect on my ability to program effectively. In
+  has always had a negative impact on my ability to program effectively. In
   practice, I only TDD small bug fixes.
 - TDD is primarily a development technique. Its artifact is unshipped code.
-  Unfortunately we can't say the code we write works, even if it's perfectly
-  tested, unless it works in production. That's why I want more than TDD from my
+  Unfortunately, we can't say that the code we write works – even if it's perfectly
+  tested – unless it works in production. That's why I want more than TDD from my
   "REPL experience", I want to [test in production](#test-in-production).
 
 ### Test in production
 
-I can hear [@mipsytipsy](https://twitter.com/mipsytipsy) in my head say "fuck
+I can hear [@mipsytipsy](https://twitter.com/mipsytipsy) in my head saying "fuck
 yeah!" every time I mention this principle.
 
 Here's what it means to me: I want to expand the boundaries of my "REPL
 experience" enough to include my production systems in the loop. I'm not
 satisfied with a tight feedback loop while writing the smallest possible change.
 I want to ship it to production in _minutes_ and find out if it works there.
-What's the point of putting a lot of effort in writing "correct" code if I don't
-know if it works in production?
+What's the point of putting a lot of effort in writing the "correct" code if I 
+don't know if it works in production?
 
 The urgency of shipping code to production has a positive effect on the culture
-of a product development team. I have seen it first hand many times: we want the
+of a product development team. I have seen it first-hand many times: we want the
 "REPL experience" to include production? We're going to need fast CI and CD
 pipelines. We're going to need ways to observe the impact of changes on our
-production systems. Rollback has to be cheap. We may want to use feature flags
-so the deployments are safer. We may _not_ want a staging environment so the
-pipeline to production is shorter. All of it contributes to the speed of
+production systems. Rollbacks have to be cheap. We may want to use feature flags
+so that the deployments are safer. We may _not_ want a staging environment so that 
+the pipeline to production is shorter. All of it contributes to the speed of
 iteration (from "Boyd's Law of Iteration").
 
 The cultural pushback I get when I say "test in production" is fascinating
@@ -162,20 +162,20 @@ Code gardening is the act of changing code to improve it just a little. You make
 an error message more understandable, you use a more idiomatic way to write
 those three lines, you align that test with your internal conventions. The
 codebase is a living organism: it's a garden and you take care of it every day.
-You prevent bad habits from forming, you heal that spot that is a bit sick, you
+You prevent bad habits from forming, you heal that one spot that is a bit sick, you
 don't forget to water the plants. My first encounter with this analogy is a
 [commit](https://github.com/rails/rails/commit/fb6b80562041e8d2378cad1b51f8c234fe76fd5e)
-made by [@fxn](https://twitter.com/fxn). It stuck with me ever since.
+made by [@fxn](https://twitter.com/fxn). It has stuck with me ever since.
 
 The way I do gardening evolved over time. I used to add some gardening to
 existing tasks. I grew out of it because it polluted code reviews with unrelated
 things and increased the size of a change. I value small changes more than
-gardening. Nowadays I have a small workflow to structure my gardening
+gardening. Nowadays, I have a small workflow to structure my gardening
 activities. I take notes of the little things I want to do while I'm doing other
 tasks. Sometimes, I share these notes with my teams (it really depends on the
 team and the context they're in) to help other people form the habit of code
-gardening. Then I use this todo list as a personal reward system. I get done
-what I need to and then I treat myself by improving that test that produces
+gardening. Then I use this to-do list as a personal reward system. I get done
+what I need to and then I treat myself to improving that test that produces
 those annoying warnings. I have seen it at play with other programmers as well
 once they form the habit. The reward system is simple and effective: it allows
 people to make small improvements _all the time_. Gardening shows care for the
@@ -184,14 +184,14 @@ time.
 
 Being a gardner is easier if you're already making _small changes_ and you're
 already _testing in production_. The ability to improve a codebase is often
-limited by the cost of deployment: the higher the cost of a deployment the less
+limited by the cost of deployment: the higher the cost of a deployment, the less
 likely one can be a good gardener. It's all connected.
 
 ### Read features end to end
 
 When I'm new to a large codebase, I read features end to end _before_ making any
-change. People often call it code safari but I'm not a fan of the metaphor, I
-like to call things what they do so the principle goes by "read features end to
+change. People often call it code safari but I'm not a fan of the metaphor. I
+like to call things by what they do so the principle goes by "read features end to
 end". Yeah, I get it. It's boring. I like it that way.
 
 Approaching a new codebase can get a little overwhelming. Sometimes I don't know
@@ -200,31 +200,31 @@ myself, I read a whole feature end to end.
 
 For the sake of discussion, let's consider a web application composed of
 multiple services. One page in the app has an "innocent" button that stars a
-sequence of processes which ultimately result in sending some PDF report via
+sequence of processes that ultimately result in sending a PDF report via
 email. You might have seen some variation of this.
 
 The idea is that I go on a hunt. I start searching for the code that renders the
-button. Trivial but I know I will discover things: how/if we do i18n, what kind
+button. Trivial – but I know I will discover things: how/if we do i18n, what kind
 of frontend framework we're using. Most importantly, I ask myself questions
 like:
 
-- oh we have our own css framework? Why?
-- what's up with all these data attributes? I haven't seen any of that when I
-was checking out the website from home. We stripping them down?
-- why are we stuck on such an old version of X?
+- Oh, we have our own css framework. Why?
+- What's up with all these data attributes? I haven't seen any of that when I
+was checking the website from home. We stripping them down?
+- Why are we stuck on such an old version of X?
 
-Using my brain as storage is a waste. The saying goes ["the shorter pencil is
+Using my brain as storage is a waste. The saying goes ["the shortest pencil is
 longer than the longest
 memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s) so I write
 everything down. 
 
 When I know which service handles the click on the report button, I go down one
-layer and keep reading. I keep going until I find my way to email service.
+layer and keep reading. I keep going until I find my way to the email service.
 
 Once I'm done, I have many questions in my notes. That's when the hard work
 starts. I reorganize them:
 
-- Questions for myself. A sort of todo list of things I know I want to dig in
+- Questions for myself. A sort of a to-do list of things I know I want to dig in
   personally.
 - Questions for those who know the codebase better than I do and can get me up
   to speed faster.
@@ -232,57 +232,57 @@ starts. I reorganize them:
 
 I'll get some answers to these questions so that I can draw a basic map to look
 around the codebase. I often repeat the process a few times before I start
-making any change.
+making any changes.
 
 What I like the most about this principle is how trivial it sounds when I
-describe it and how helpful it is when I use it.
+describe it, and how helpful it is when I use it.
 
 ### Facts > Assumptions
 
 I often say:
 
-> Common sense is not so common
+> Common sense is not so common.
 
-It is common sense facts are much more relevant that assumptions, isn't it?
+It is common sense that facts are much more relevant than assumptions, isn't it?
 Well, I've been bitten by the wrong assumption many many times. 
 
-For example, most of the bugs I have ever fixed were an effect of
-miscommunication which is nothing more than two parties assuming what something
-means without fact-checking they agree. Fixing a bug is aligning the code with
+For example, most of the bugs I've ever fixed were the result of
+miscommunication where two parties assumed what something
+meant without checking if they agreed. Fixing a bug is aligning the code with
 the facts.
 
 It's not a coincidence I'm mentioning bugs right now. This principle guides my
 debugging sessions. It goes like this: I read a piece of code, I know there's a
-bug there. If I can't find the bug just by looking, the principle comes to
-rescue: somewhere in the list of facts I know about this piece code there's at
-least one thing I'm considering fact but it's actually an assumption. Then I
-move up one abstraction layer, I start debugging my facts which can have any of
+bug in there. If I can't find the bug just by looking, this principle comes to
+rescue: somewhere in this piece of code there's at
+least one thing I'm considering a fact – but it's actually an assumption. So I
+move up one abstraction layer, I start debugging my facts, which can have any of
 these outcomes:
 
-- I find the "fake fact". Often I immediately find the bug too. Especially when
+- I find the "fake fact". Often I immediately find the bug, too. Especially when
   I was the author of the code I'm reading. It's kind of obvious in a way. The
   bug was there precisely because I thought the code I wrote did X while in
   reality it did Y.
 - All the facts are true. It means I have to go down one layer again, expand the
-  search, collect more facts, then up to start debugging the facts again.
+  search, collect more facts, then go back up to start debugging the facts again.
 
-I apply this principle to performance improvement as well. Early in my career, I
-had the tendency to guess what made, say, an endpoint slow. Sometimes I even
+I apply this principle to performance improvements as well. Early in my career, I
+had a tendency to guess what made, say, an endpoint slow. Sometimes I even
 changed something without measuring. When I think about it now, it makes me
-smile and go "oh how young I was back then!". The guessing game was stimulating
-but I had to abandon it because the facts (ah!) were showing me it was a waste
-of time. I was wrong pretty often and, not only that, I also often found the
-results of my benchmarks so counter-intuitive I could only conclude that the
+smile and go "Oh, how young I was back then!". The guessing game was stimulating,
+but I had to abandon it because the facts (ah!) were showing me that it was a waste
+of time. I was wrong pretty often. Moreover, I often found the
+results of my benchmarks so counter-intuitive that I could only conclude that the
 best approach is to measure everything. Now I don't even ask myself what makes
-some code slow. I measure everything, I want the facts.
+a piece of code slow. I measure everything, I want the facts.
 
 ## Starting from scratch
 
-Since it's less common, I feel privileged (or unlucky. It depends on the day
-honestly) I have been in charge of brand new, multi-year, projects many times in
-my career. These projects were all different, they involved each time a
-different team and a different company. But the fact I had to start from scratch
-in all of them has given me the opportunity to try things out and see what
+Since it's less common, I feel privileged (or unlucky, it depends on the day
+honestly) that I've been in charge of brand new, multi-year, projects many times in
+my career. These projects were all different, they involved a different team 
+and a different company every time. But the fact that I had to start from scratch
+in all of them gave me an opportunity to try things out and see what
 worked and what didn't. The following principles are my favourite parts of what
 worked.
 
