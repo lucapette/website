@@ -286,39 +286,39 @@ in all of them gave me an opportunity to try things out and see what
 worked and what didn't. The following principles are my favourite parts of what
 worked.
 
-### Docs driven development
+### Docs-driven development
 
-More than a decade ago, I run into [readme driven
+More than a decade ago, I ran into [readme driven
 development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
-I was happy I could give a name to something I had been already doing for a few
-years. Since then, I tweaked the name of the principle to "docs driven
+I was happy I could give a name to something I had already been doing for a few
+years. Since then, I tweaked the name of the principle to "docs-driven
 development" because it's a tad more general and flexible. 
 
-The idea is to write documentation for a system as the system was already done,
-it's my favourite system design technique. The beauty, and the irony, of this
+The idea is to write documentation for a system as if the system were already done.
+It's my favourite system design technique. The beauty and the irony of this
 approach is that I write the docs first so I can put some constraints in place.
-I can then reflect on their consequences with a low effort (compared to building
-the system). Consciously chosen constraints are the foundation of good design.
+I can then reflect on their consequences with a lower effort (compared to building
+the system). Consciously chosen constraints are the foundation of a good design.
 
-What kind of document, how long or how detailed it should be is too
-project-dependent so it's hard to provide concrete examples. There are some
-things though I have in any document:
+The type of document, its length or the number of details in it are all
+project-dependent parametres, so it's hard to provide concrete examples. There are some
+things I have in any document, though:
 
 - __Scope__
   : I write down what the goals of the project are. When it's done,
-  what will this system do? Even more interesting, what won't it do? Answering
+  what will the system do? Even more interesting, what will it not do? Answering
   these questions gives me some boundaries so I can stay on track and focus on
-  the essential.
+  the essentials.
 - __Organization__
   : A few diagrams go a long way. I sketch a few to get a sense
   of how to split responsibilities among the different parts. It also helps me
   understand what the highest level building blocks of the system should be.
 - __Prioritization__
-  : I write down the order in which it makes most sense to
-  build things. Depending on how the system is organized, I write down what can
-  be parallelised.
+  : I write down the order in which it makes most sense to start
+  building things. Depending on how the system is organized, I write down the parts 
+  that can be parallelized.
 
-If I'm working in a team, this document also functions as a hub for async
+If I work in a team, this document also functions as a hub for async
 collaboration. I want to make sure we're on the same page before we move from
 writing for humans to writing for machines.
 
@@ -329,7 +329,7 @@ When I think about prototyping, this quote always comes to mind:
 > In theory, there's no difference between theory and practice. In practice,
 > there is.
 
-It is so apt for programming! It doesn't matter how carefully I study a problem,
+It is so apt for programming! It doesn't matter how carefully I study a problem or
 how good the solution I came up with seems. Doing is always different.
 
 Building a system is a struggle between tiny details and high level ideas. It's
@@ -344,12 +344,12 @@ tension:
 - I write a new prototype
 
 If the problem is complex, I may repeat this process a few times. If the problem
-is trivial, I may get away without ever throwing code away. I'm ready to do so
+is trivial, I may get away with not throwing code away. I'm ready to do so
 when I'm unhappy with my understanding of the problem. Please note: I didn't say
-anything about what I think of the code. My best case scenario is that I don't
-hate it the day I write and I may still not totally hate it after a few months.
+anything about what I think of the code. My best-case scenario is that I don't
+hate it the day I write it and I may still not totally hate it after a few months.
 So what I think about the code isn't so relevant. Furthermore, it will change a
-lot anyway when I'm going to make it production ready.
+lot anyway when I make it production ready.
 
 This is the key idea: I write a first draft knowing I will probably throw it
 away. With that in mind, I experiment, I digress a little, then I try again.
@@ -365,7 +365,7 @@ This principle is a variation of the theme of the
 attributed to [Kent Beck](https://twitter.com/KentBeck). I'm so pretentious
 about it, I like my naming better.
 
-I consider this the corresponding starting from scratch principle of [small
+I consider it to be the corresponding starting-from-scratch principle of [small
 changes, fast feedback loops](#small-changes-fast-feedback-loops). It's almost
 the same idea but the dynamics are a little different: there's obviously more
 freedom of movement when writing a new system. That freedom is often detrimental
@@ -376,65 +376,65 @@ here's the idea:
 
 - __Make it work__
   : I REPL my way through code to figure out if what I put together in my head
-  works in practice. I don't overthink it. It doesn't matter the naming isn't
+  works in practice. I don't overthink it. It doesn't matter that the naming isn't
   good yet. It's OK, I know the code isn't production ready: I can get away
-  without dealing with corner cases, failure modes, error codes from that third
-  party API. I note things down, leave TODOs for tomorrow's Luca. It's a
+  with not dealing with corner cases, failure modes, error codes from that third-party API. 
+  I note things down, leave to-dos for tomorrow's Luca. It's a
   deliberate choice: my goal is to get the code together. I don't have to make
   it good yet. I don't have to ship it to production in a minute. I don't even
   have a production system yet.
 - __Make it good__
-  : I go through my notes and the TODOs I left for myself. One by one I tick
-  items off the list. Every two or three items I get off the list, I step back a
-  little to evaluate the design. Now I am making it good so I want to get down
+  : I go through my notes and the to-dos I left for myself. One by one I tick
+  items off the list. With every two or three items I get off the list, I step back 
+  a little to evaluate the design. Now I'm making it good so I want to get down
   to details. The way the code is organized has to make sense. I care just about
   everything: I only leave out speed. I am not trying to write slow code by
-  design (that wouldn't help and is probably harder to do than it sounds?) but I
-  am also not trying to squeeze milliseconds off of every function.
+  design (that wouldn't help and it's probably harder to do than it sounds?) but 
+  I'm also not trying to squeeze milliseconds off of every function.
 - __Make it fast__
   : It's time to measure things. To be fair, this isn't always a required step.
   Often enough, code that works in production is quite good already for whoever
-  is paying for it. On the other side of the spectrum though, the are situations
+  is paying for it. On the other side of the spectrum though, there are situations
   in which speed is a requirement. The first two steps still apply. What changes
   is the definition of working code. I incorporate speed into the definition and
-  design my "REPL experience" to always tell me about how fast the code is. When
+  design my "REPL experience" to always tell me how fast the code is. When
   performance is so critical, I make the performance scripts I wrote for my
   "REPL experience" a step of the CI pipeline. As for the actual effort to
   improve performance, the most basic workflow goes a long way: I profile the
   code, find the slowest bit, make it faster, and repeat until it's fast enough.
 
-Over the years, I realized this principle has an interesting side-effect on how
+Over the years, I realized that this principle has an interesting side effect on how
 I choose programming languages. A concrete example: nowadays, I work exclusively
 with statically typed languages (I have probably enough reasons to write an
 article about it... interested? Please, let me know!). The ergonomics of
-statically typed languages allow me a much more relaxed approach to the make it
-work phase. I really don't need to care too much about how the code is organised
+statically typed languages allow for a much more relaxed approach to the make-it-work 
+phase. I really don't need to care too much about how the code is organized
 or its naming. Modern IDEs are so good at refactoring statically typed code that
-I can do a big chunk of the make it good part literally in seconds. Looking back
-on this, it feels paradoxical: I chose dynamically typed languages (my favourite
-being Ruby) because of the supposed productivity gains only to realise I had to
-be much more careful (therefore slow) in early stages of a new project because
-of how hard I knew it would to be reorganizing code.
+I can do a big chunk of the make-it-good part literally in seconds. Looking back
+on this, it feels paradoxical. I chose dynamically typed languages (my favourite
+being Ruby) because of the supposed productivity gains only to realize that I had to
+be much more careful (therefore slow) in the early stages of a new project because
+of how hard it would to be to reorganize code.
 
 ## General principles
 
 Is it really programming if I don't have at least some util functions? 😃
 
-Jokes aside, there is an handful of principles I apply to any context. These
+Jokes aside, there is a handful of principles I apply to any context. These
 principles are my "true north" guidelines.
 
 ### Prose not poetry
 
 Writing code is... writing. It's an intriguing form because you have two
-audiences: the machine first and the next programmer. To spice things up, they
+audiences: the machine first and the programmer next. To spice things up, they
 couldn't be more different.
 
 The primary audience is the machine. We often lie to ourselves and say things
-like "more than anything you're writing for the next programmer that reads your
-code". I'm sympathetic with the argument but, let's be honest, you can't ship
+like "more than anything, you're writing for the next programmer that reads your
+code". I'm sympathetic with the argument, but let's be honest: you can't ship
 code that doesn't compile. It doesn't matter how readable and understandable the
-code you wrote is, it won't work if you got a syntax error. The machine
-understanding what your wrote is a prerequisite of working code, readable code
+code you wrote is, it doesn't work if you have a syntax error. The machine
+understanding what you wrote is a prerequisite of working code; readable code
 isn't.
 
 Then there's the next programmer. Humans are complicated. They have preferences
@@ -443,23 +443,23 @@ readability of code and programmers often won't agree on which ones are more
 relevant. So we end up contextualising the way we write code to the project it
 belongs. There isn't one way of doing things.
 
-Pleasing both audiences is a tough game and realising that writing code is
+Pleasing both audiences is a tough game and realizing that writing code is
 "just" writing has been of great help.
 
-The idea is that I  think of code as it was book. A book has chapters, the
-chapters to have paragraphs, the paragraphs to have sentences. From the
-perspective of a codebase one way to look at it is: sentences are a few
-instructions, paragraphs are little algorithms, chapters are modules, a book is
+The idea is that I think of code as if it were book. A book has chapters, the
+chapters have paragraphs, the paragraphs have sentences. From the
+perspective of a codebase, one way to look at it is: sentences are
+instructions, paragraphs are algorithms, chapters are modules, and a book is
 a system. I don't need the parallel to hold up in every situation, it's about
 abstraction. I want _homogeneous abstraction within a layer and heterogeneous
-abstraction between layers_. I don't want to jump from shifting bits in a line
+abstraction between layers_. I don't want to jump from shifting bits in one line
 to call an external service via HTTP in the next one.
 
-A notable exception is performance. Often making code faster also makes it
+A notable exception is performance. Making code faster often makes it
 messier, uglier because the abstraction isn't homogeneous. You're jumping levels
 often because the code on the hot path is written differently from the rest. In
 this scenario, I write comments explaining _why_ the code looks the way it
-looks.
+does.
 
 When I bring up this prose vs poetry metaphor, I often get the feedback that
 poetry fits as well. After all, there's very structured poetry out there. The
@@ -467,7 +467,7 @@ thing with poetry though is that it's good when it says a lot with just a few
 words. Poetry is terse, especially compared to prose. When in doubt, always
 _prefer clarity to brevity_.
 
-### Name things what they do
+### Name things by what they do
 
 Naming _is_ hard.
 
@@ -476,36 +476,36 @@ because we bring aesthetics to the table. Code must be pretty so we're looking
 for elegant, apt, short names for everything.
 
 Early in my career, I struggled with naming much more than I do now because I
-realized a few things:
+didn't realize a few things:
 
-- Unless it's a trivial problem, I will not name things right while I am
+- Unless it's a trivial problem, I don't have to name things right while I am
   sketching a solution.
-- Due the intense concentration I need to write code, sometimes I just don't
-  realise the names I'm choosing are a design choice. Calling something, say,
-  `JobScheduler` will constraint its design and the design of whatever interacts
-  with it. I called it so therefore I will treat it so. But maybe it's not
+- Due to the intense concentration I need to write code, sometimes I don't
+  realize that the names I choose are a design choice. Calling something, say,
+  `JobScheduler` constrains its design and the design of whatever interacts
+  with it. I called it so, therefore I will treat it so. But maybe it's not
   really a job scheduler and my design starts to drift off rails.
 - My understanding of a non-trivial problem increases as I write the code trying
   to solve it.
 
-All these considerations lead me to "relaxed naming" (ah the irony of not liking
+All these considerations led me to "relaxed naming" (ah the irony of not liking
 this naming 🙃):
 
 - I call things what they do _right now_. I use _most specialised_ name possible
   (in fact, `JobScheduler` is a bad short-term name. It's too general). The more
-  _descriptive_, the better. Bonus points if it is _verbose_ and _boring_.
+  _descriptive_, the better. Bonus points if it's _verbose_ and _boring_.
 
 Yep, there's no step two.
 
-It's a little cheeky I'll give you that. But all in all, after a little less
+It's a little cheeky, I'll give you that. But all in all, after a little less
 than 20 years I'm finally happy with my naming process. I basically look at it
 the same way I look at prototyping. Let me spell out the obvious: the thing I'm
 trying to name is _new_, I am naming it now because it's not there yet. So the
 principle [make it work, make it good, make it
-fast](#make-it-work-make-it-good-make-it-fast) works pretty well here except
+fast](#make-it-work-make-it-good-make-it-fast) works pretty well here – except
 there's no step three.
 
-"Name things what they do" also means I prefer dull, descriptive, long names to
+"Name things by what they do" also means that I prefer dull, descriptive, long names to
 short, fancy, clever ones. I also despise acronyms. 
 
 I like to extend this principle to everything, including your services, your
@@ -515,40 +515,40 @@ example:
 - DO: kafka1, kafka2, kafka3
 - DON'T: orion, antares, pluto
 
-I don't have to ask what kafka1 is because I called it what it does.
+I don't have to ask what kafka1 is because I called it by what it does.
 
 ### Write the code you'd like to use
 
-I can't find the original reference but I'm pretty sure this principle too was
+I can't find the original reference, but I'm pretty sure this principle too was
 inspired by Kent Beck.
 
 This idea works well when I get stuck on an empty file. The proverbial blank
 page. I have so many questions about the API of the new module I'm about to
-write, which data structures I should rely on internally, what types should I
-expose, and so on. It can get so overwhelming I just get stuck.
+write, the data structures I should rely on internally, the types I should
+expose, and so on. It can get so overwhelming that I just get stuck.
 
 That's where I take a deep breath and ask myself: how do I want to use this
 code? Here's what I do:
 
 - I close that empty file I was staring at.
-- I open up one file that would use the code I can't get myself to write.
+- I open one file that would use the code I can't get myself to write.
 - I write code like the problem is _already solved_ the best way I can possibly
   imagine.
 
-The third step is hard because I have to l.e to myself, I do know the code isn't
+The third step is hard because I have to lie to myself; I do know the code isn't
 there yet. So this process only works if I jot down a solution without trying to
 think of all the code I need to write to make it all work.
 
 ### Let the design emerge from the code
 
-Good design is an exercise patience.
+Good design is an exercise in patience.
 
 It's hard to be patient when I think I have a clear idea in mind. It's half the
 excitement of working on a new problem and half the impatience of not being done
-with it. I want to do it all fast and perfect. I learned that _never_ works in
-practice for me. I can't rush good design. To complicate things, systems are
+with it. I want to do it all fast and perfect. I learned that this _never_ works in
+practice for me. I can't rush a good design. To complicate things, systems are
 living organisms, their only constant is change. They change because of business
-needs, scaling needs, or whatever. The list is too long. The point is they
+needs, scaling needs, or whatever. The list is too long. The point is that they
 change all the time. Evolving systems in a sustainable manner is hard. It's what
 I've seen most people struggle with. Over the years, I collected a few maxims
 that guide me through designing a system. Their goal is to slow me down, so I
@@ -562,20 +562,20 @@ Pike](https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html
 I want to add as little as possible to the system so I can listen to what the
 code is trying to tell me. Let me explain.
 
-I often think about code as bi-directional form of communication. I'm trying to
+I often think about code as a bi-directional form of communication. I'm trying to
 tell the machine what to do and the code tells me what to change. 
 
 The way the code looks, the way some parts need to change every time some other
 parts need to change, the non-obvious ways two parts depend on each other, the
-naming being a little off. So many little details! It's the code trying to talk
+naming being a little off... So many little details! It's the code trying to talk
 to me. If I'm always talking over it though, I won't be able to listen to what
 the code is saying. I have to write less. Less is more.
 
 > Simple ain't easy
 
-Good design looks obvious. It's so simple it has just about enough to solve the
+Good design looks obvious. It's so simple that it has just about enough to solve the
 problem. But simple doesn't mean easy. Reaching a simple design takes the time
-it takes. It's a reminder I can't rush good design. It's also the way I judge my
+it takes. It's a reminder I can't rush a good design. It's also the way I judge my
 solutions: I'm only happy when the code is so simple that I feel there's nothing
 to remove from it any more.
 
@@ -583,14 +583,14 @@ to remove from it any more.
 
 I got this one from [Sandi
 Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction). She does a
-wonderful job of explaining it so I won't repeat what she means here. You should
+wonderful job of explaining it so I won't repeat what she means. You should
 read her article, she's a wonderful writer. 
 
 Exposing my teams to this idea over the past few years has been beneficial. I
 often trivialised it a little for the sake of making a point while sharing the
 idea with my team: if you have duplication once, leave it be. If you have the
-same piece of code in three places at least then you've got a good chance for
-the correct abstraction. If your abstraction feels simple (ah!) enough, go for
+same piece of code in at least three different places, then you've got a good chance 
+for a correct abstraction. If your abstraction feels simple (ah!) enough, go for
 it.
 
 These maxims all contribute to the idea that waiting for the design to emerge
@@ -601,61 +601,61 @@ design.
 
 > A test must change only if the behaviour it verifies changed
 
-No other reason is good enough for a test to change. Which, in turn, means
+No other reason is good enough for a test to be changed. Which, in turn, means
 "actual tests" only test behaviour. I've seen tests testing language features,
 or missing language features (looking at you dynamically typed languages), or
 framework features. These tests have a very annoying property in common: they
 change every time production code changes. My advice is to delete them. There, I
 said it.
 
-When I bring this up, the feedback I get means people understood my advice as
-either to not write tests at all or to only have integrations tests. Obviously,
+When I bring this up, people usually understand my advice as
+either not to write tests at all or write only integration tests. Obviously,
 no point in debating the first one. Of course you should write tests to verify
-your systems. I'm not arguing that, I'm arguing the effectiveness of tests
+your system. I'm not arguing that. I'm arguing the effectiveness of tests
 suites. As for the second point, it's true that integration tests are more
-likely to suit my definition of "actual test". I understand where people are
-coming from with this. My definition though doesn't say anything about what
+likely to suit my definition of an "actual test". I understand where people are
+coming from with this. My definition though doesn't say anything about the
 level of abstraction the tests should operate at. I'm not arguing _how_ to write
 tests, I'm arguing _what_ to test. Test behaviour, forget the implementation.
 
 From a practical standpoint, I do prefer integration tests. After all, with the
-help of [Moore's law](https://en.wikipedia.org/wiki/Moore's_law) integrations
+help of [Moore's law](https://en.wikipedia.org/wiki/Moore's_law), integration
 tests are fast enough for the trade-off of, you know, actually test something.
 
 ### Balance your confidence
 
-If I had to name only one significant change I experienced since I started
+If I had to name only one significant change I've experienced since I started
 programming, I would go for confidence. The more experienced I feel, the more
 convinced I am I can solve any problem.
 
 It is somewhat obvious that experience made me more confident. I gained
 experience through trial and error. Rinse and repeat. I learned what works and
-what not by trying things out, often the hard way. So yes experience makes me
+what doesn't by trying things out, often the hard way. So yes, experience makes me
 confident. Sounds good, right? Yes and no. I need balance.
 
-Confidence is good because it can make me fearless, I know you can throw any
+Confidence is good because it can make me fearless. I know you can throw any
 problem at me, I will find a way to solve it. Let me tell you a story about my
 first job that illustrates what I mean.
 
-In the summer of 2006, I joined a company in Roma that processed hundreds of
-million of events per day from poker machines. At the time, the legislation in
-Italy stated these machines had to return 75% of winning. So our systems
-collected _any_ event these machines produced. The company run monitoring and
+In the summer of 2006, I joined a company in Rome that processed hundreds of
+millions of events per day from poker machines. At the time, the legislation in
+Italy prescribed that these machines had to return 75% of winning. So our systems
+collected _any_ event these machines produced. The company ran monitoring and
 fraud detection algorithms. The whole system was a large collection of stored
-procedures on the top of a giant Microsoft SQL Server installation (don't judge
-me for this architecture OK? I didn't design it). These stored procedure parsed
-the events (large blob of text that we parsed with SQL. Yep, you read that
-right), stored the processed data in various tables, and run a bunch of
+procedures on top of a giant Microsoft SQL Server installation (don't judge
+me for this architecture OK? I didn't design it). These stored procedures parsed
+the events (a large blob of text that we parsed with SQL. Yep, you read that
+right), stored the processed data in various tables, and ran a bunch of
 algorithms on the data. It was complicated for a young man fresh out of
-University.
+university.
 
-My first big task was to make use of a reserved part of the events. In practice
-this meant I had to figure out the impact of this change over the whole system,
-aka 200 plus stored procedures. I knew I couldn't do it alone but I tried
+My first big task was to make use of a reserved part of the events. In practice,
+this meant that I had to figure out the impact this change had on the whole system,
+aka 200+ stored procedures. I knew I couldn't do it alone, but I tried
 anyway. It took me almost a week of despair to find the courage and tell my boss
 I had no idea what to do. When I talked to Mario (it was in... Italy so
-¯\_(ツ)_/¯), his answer filled me with anger first. He said something like
-"let's do this together, it'll take two hours to plan everything then I leave
+¯\_(ツ)_/¯)_, his answer filled me with anger first. He said something like
+"let's do this together, it'll take two hours to plan everything, then I leave
 you alone". Two hours?!? I had lost almost a week trying to make sense of the
 problem and came up with nothing, how were we going solve this in two hours?
 Well, he showed me and it was a profound learning experience.
@@ -664,35 +664,31 @@ We got into a meeting room and Mario did the most obvious thing: he broke down
 the problem in small steps, one stored procedure after the other. We put the
 code on a big screen and took notes. Fast-forward two hours and we had a
 whiteboard full of sticky notes for every single stored procedure we needed to
-change and the reason why each needed to change. I was amazed.
+change and the reason why each of them needed to change. I was amazed.
 
 Mario had the confidence to solve the problem. He knew he could do it so there
 was no fear to cloud his thinking. He sat down with me and executed a simple
-process (simple ain't easy eh?) laying down the foundation of a month of work in
-just two hours. With his help, this was the first successful complex change of
+process (simple ain't easy eh?) of laying down the foundation of a month of work in
+just two hours. With his help, I had the first successful complex "growth spurt" in
 my career.
 
-I imagine at this point you may be asking: if confidence has such a amazing
-effect on your ability to solve difficult problems, what would you want to
-balance it with? Well the answer is my confidence feeds on ego. And that's a
-problem.
-
-While confidence makes me stronger, ego makes me dumb. At times, I have troubles
-telling them apart, after all they're close. The difference is only the way I
-look at things. When I'm confident, I take my time to break down a problem in
-smaller parts, I research the subject, I ask for help, I plan accurately. When
-I'm high on ego I look at problems from a pedestal, I underestimate them. I plan
-badly because "hey I'm great! of course I will solve this on the go, planning is
-for losers".
+Confidence affects my ability to solve difficult problems in an amazing way, 
+but it also feeds on ego. And that's a problem. While confidence makes me stronger, 
+ego makes me dumb. At times, I have troubles telling them apart, after all they're close. 
+The difference is only in the way I look at things. When I'm confident, 
+I take my time to break down a problem into smaller parts, I research the subject, 
+I ask for help, I plan accurately. When I'm high on ego, I look down on problems, 
+I underestimate them. I plan badly because "Hey, I'm great! Of course I will 
+solve this on the go, planning is for losers".
 
 That's why I seek ways to balance my confidence. I need enough confidence to
-eliminate any fear but not too much that I get high on Ego. The way I find my
+eliminate any fear but not too much that I get high on ego. The way I find my
 balance is by putting to practice the idea "we're all junior at most things": I
 learn new things. Just in the past few years I tried drawing, rubik cubes,
-Chess, you name it. When it comes to programming, I try to solve problems in
-areas I have no idea about or some problem that look really hard. For example,
-writing a programming language sounds hard so I toyed with it enough to find out
-that it's indeed hard but it's also "just" a program
+chess, you name it. When it comes to programming, I try to solve problems in
+areas I have no idea about or some problem that looks really hard. For example,
+writing a programming language sounds hard, so I toyed with it to find out
+that it's indeed hard but it's also "just" a program.
 
 The journey is humbling and the reward is two-fold: a balanced confidence and
 expanded knowledge.
