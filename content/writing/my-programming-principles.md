@@ -2,7 +2,6 @@
 title: "My Programming Principles"
 description: "What guides me after 20 years of writing code for a living"
 date: 2022-05-12T10:12:13+02:00
-draft: true
 keywords:
   - programming
   - principles
@@ -79,7 +78,7 @@ end". Yeah, I get it. It's boring. I like it that way.
 
 Approaching a new codebase can get a little overwhelming. Sometimes I don't know
 where to start, which system maps to which part of the codebase. To orient
-myself, I read a whole feature end to end. 
+myself, I read a whole feature end to end.
 
 For the sake of discussion, let's consider a web application composed of
 multiple services. One page in the app has an "innocent" button that stars a
@@ -99,7 +98,7 @@ was checking the website from home. We stripping them down?
 Using my brain as storage is a waste. The saying goes ["the shortest pencil is
 longer than the longest
 memory"](https://www.youtube.com/watch?v=vIW72VXMPHo&t=344s) so I write
-everything down. 
+everything down.
 
 When I know which service handles the click on the report button, I go down one
 layer and keep reading. I keep going until I find my way to the email service.
@@ -155,8 +154,8 @@ needed. They're easier to review and therefore move faster through the
 production pipeline.
 
 I know this principle has a striking resemblance to TDD because it's the most
-frequent feedback I get when I talk about it with other programmers. "Why don't 
-you just do TDD all the time?" – they wonder. The answer is that I almost never 
+frequent feedback I get when I talk about it with other programmers. "Why don't
+you just do TDD all the time?" – they wonder. The answer is that I almost never
 practice TDD. Let me explain:
 
 - TDD feels great as a workflow. It resembles the "REPL experience" I'm so fond
@@ -183,7 +182,7 @@ Here's what it means to me: I want to expand the boundaries of my "REPL
 experience" enough to include my production systems in the loop. I'm not
 satisfied with a tight feedback loop while writing the smallest possible change.
 I want to ship it to production in _minutes_ and find out if it works there.
-What's the point of putting a lot of effort in writing the "correct" code if I 
+What's the point of putting a lot of effort in writing the "correct" code if I
 don't know if it works in production?
 
 The urgency of shipping code to production has a positive effect on the culture
@@ -191,7 +190,7 @@ of a product development team. I have seen it first-hand many times: we want the
 "REPL experience" to include production? We're going to need fast CI and CD
 pipelines. We're going to need ways to observe the impact of changes on our
 production systems. Rollbacks have to be cheap. We may want to use feature flags
-so that the deployments are safer. We may _not_ want a staging environment so that 
+so that the deployments are safer. We may _not_ want a staging environment so that
 the pipeline to production is shorter. All of it contributes to the speed of
 iteration (from "Boyd's Law of Iteration").
 
@@ -219,7 +218,7 @@ made by [@fxn](https://twitter.com/fxn). It has stuck with me ever since.
 The way I do gardening evolved over time. I used to add some gardening to
 existing tasks. I grew out of it because it polluted code reviews with unrelated
 things and increased the size of a change. I value small changes more than
-gardening. 
+gardening.
 
 Nowadays, I have a small workflow to structure my gardening activities. I take
 notes of the little things I want to do while I'm doing other tasks. Sometimes,
@@ -241,7 +240,7 @@ likely one can be a good gardener. It's all connected.
 
 Since it's less common, I feel privileged (or unlucky, it depends on the day
 honestly) that I've been in charge of brand new, multi-year, projects many times in
-my career. These projects were all different, they involved a different team 
+my career. These projects were all different, they involved a different team
 and a different company every time. But the fact that I had to start from scratch
 in all of them gave me an opportunity to try things out and see what
 worked and what didn't. The following principles are my favourite parts of what
@@ -253,7 +252,7 @@ More than a decade ago, I ran into [readme driven
 development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
 I was happy I could give a name to something I had already been doing for a few
 years. Since then, I tweaked the name of the principle to "documentation driven
-development" because it's a tad more general and flexible. 
+development" because it's a tad more general and flexible.
 
 The idea is to write documentation for a system as if the system were already
 done. It's my favourite system design technique. The beauty and the irony of
@@ -275,7 +274,7 @@ are some things I have in any document, though:
   each other? A few diagrams go a long way. I sketch a few to get a sense of how
   to split responsibilities among the different parts. It also helps me
   understand what the highest level building blocks of the system should be.
-- __Prioritisation__ 
+- __Prioritisation__
   : Where do I start from? What needs to be already in place to start working on
   a specific part of the system? I write down the order in which it makes most
   sense to start building things. Depending on how the system is organised, I
@@ -308,7 +307,7 @@ tension:
 
 If the problem is complex, I may repeat this process a few times. If the problem
 is trivial, I may get away with not throwing code away. I'm ready to do so when
-I'm unhappy with my understanding of the problem. 
+I'm unhappy with my understanding of the problem.
 
 Please note: I didn't say anything about what I think of the code. My best-case
 scenario is that I don't hate it the day I write it and I may still not totally
@@ -333,7 +332,7 @@ I consider it to be the corresponding starting-from-scratch principle of [small
 changes, fast feedback loops](#small-changes-fast-feedback-loops). It's almost
 the same idea but the dynamics are a little different: there's obviously more
 freedom of movement when writing a new system. That freedom is detrimental to
-making small changes. 
+making small changes.
 
 Often I can't change a few lines even if I wanted to: I need to write a whole
 lot of code across multiple files to even see my little prototype do some basic
@@ -343,17 +342,17 @@ things. It's the nature of writing code from scratch. So here's the idea:
   : I REPL my way through code to figure out if what I put together in my head
   works in practice. I don't overthink it. It doesn't matter that the naming isn't
   good yet. It's OK, I know the code isn't production ready: I can get away
-  with not dealing with corner cases, failure modes, error codes from that third-party API. 
+  with not dealing with corner cases, failure modes, error codes from that third-party API.
   I note things down, leave to-dos for tomorrow's Luca. It's a
   deliberate choice: my goal is to get the code together. I don't have to make
   it good yet. I don't have to ship it to production in a minute.
 - __Make it good__
   : I go through my notes and the to-dos I left for myself. One by one I tick
-  items off the list. With every two or three items I get off the list, I step back 
+  items off the list. With every two or three items I get off the list, I step back
   a little to evaluate the design. Now I'm making it good so I want to get down
   to details. The way the code is organised has to make sense. I care just about
   everything: I only leave out speed. I am not trying to write slow code by
-  design (that wouldn't help and it's probably harder to do than it sounds?) but 
+  design (that wouldn't help and it's probably harder to do than it sounds?) but
   I'm also not trying to squeeze milliseconds off of every function.
 - __Make it fast__
   : It's time to measure things. To be fair, this isn't always
@@ -399,7 +398,7 @@ couldn't be more different.
 
 The primary audience is the machine. We often lie to ourselves and say things
 like "more than anything, you're writing for the next programmer that reads your
-code". 
+code".
 
 I'm sympathetic with the argument, but let's be honest: you can't ship code that
 doesn't compile. It doesn't matter how readable and understandable the code you
@@ -420,7 +419,7 @@ chapters have paragraphs, the paragraphs have sentences. From the
 perspective of a codebase, one way to look at it is: sentences are
 instructions, paragraphs are algorithms, chapters are modules, and a book is
 a system. I don't need the parallel to hold up in every situation, it's about
-abstraction. 
+abstraction.
 
 I want _homogeneous_ abstraction _within_ a layer and _heterogeneous_
 abstraction _between_ layers. I don't want to jump from shifting bits in one
@@ -445,19 +444,19 @@ I often say:
 > Common sense is not so common.
 
 It is common sense that facts are much more relevant than assumptions, isn't it?
-Well, I've been bitten by the wrong assumption many times. 
+Well, I've been bitten by the wrong assumption many times.
 
 For example, most of the bugs I've ever fixed were the result of
 miscommunication where two parties assumed what something meant without checking
 if they agreed. Fixing a bug is aligning the code with the facts.
 
 It's not a coincidence I'm mentioning bugs right now. This principle guides my
-debugging sessions. 
+debugging sessions.
 
 It goes like this: I read a piece of code, I know there's a bug in there. If I
 can't find the bug just by looking, this principle comes to rescue: somewhere in
 this piece of code there's at least one thing I'm considering a fact – but it's
-actually an assumption. 
+actually an assumption.
 
 So I move up one abstraction layer, I start debugging my facts, which can have
 any of these outcomes:
@@ -472,7 +471,7 @@ any of these outcomes:
 I apply this principle to performance improvements as well. Early in my career,
 I had a tendency to guess what made, say, an endpoint slow. Sometimes I even
 changed something without measuring. When I think about it now, it makes me
-smile and go "Oh, how young I was back then!". 
+smile and go "Oh, how young I was back then!".
 
 The guessing game was stimulating, but I had to abandon it because the facts
 (ah!) were showing me that it was a waste of time. I was wrong pretty often.
@@ -520,7 +519,7 @@ work, make it good, make it fast](#make-it-work-make-it-good-make-it-fast) works
 pretty well here – except there's no step three.
 
 "Name things what they do" also means that I prefer dull, descriptive, long
-names to short, fancy, clever ones. I also despise acronyms. 
+names to short, fancy, clever ones. I also despise acronyms.
 
 I like to extend this principle to everything, including services, machines. I
 prefer boring name schemes to fancy or funny ones. A trivial example:
@@ -558,13 +557,13 @@ Good design is an exercise in patience.
 
 It's hard to be patient when I think I have a clear idea in mind. It's half the
 excitement of working on a new problem and half the impatience of not being done
-with it. 
+with it.
 
 I want to do it all fast and perfect. I learned that this _never_ works in
 practice for me. I can't rush a good design. To complicate things, systems are
 living organisms, their only constant is change. They change because of business
 needs, scaling needs, or whatever. The list is too long. The point is that they
-change all the time. 
+change all the time.
 
 Evolving systems in a sustainable manner is hard. It's what I've seen most
 people struggle with. Over the years, I collected a few maxims that guide me
@@ -580,7 +579,7 @@ I want to add as little as possible to the system so I can listen to what the
 code is trying to tell me. Let me explain.
 
 I often think about code as a bi-directional form of communication. I'm trying to
-tell the machine what to do and the code tells me what to change. 
+tell the machine what to do and the code tells me what to change.
 
 The way the code looks, the way some parts need to change every time some other
 parts need to change, the non-obvious ways two parts depend on each other, the
@@ -591,10 +590,10 @@ the code is saying. I have to write less. Less is more.
 > Simple ain't easy
 
 Good design looks obvious. It's so simple that it has just about enough to solve the
-problem. But simple doesn't mean easy. 
+problem. But simple doesn't mean easy.
 
 Reaching a simple design takes the time it takes. It's a reminder I can't rush a
-good design. 
+good design.
 
 It's also the way I judge my solutions: I'm only happy when the code is so
 simple that I feel there's nothing to remove from it any more.
@@ -604,7 +603,7 @@ simple that I feel there's nothing to remove from it any more.
 I got this one from [Sandi
 Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction). She does a
 wonderful job of explaining it so I won't repeat what she means. You should
-read her article, she's a wonderful writer. 
+read her article, she's a wonderful writer.
 
 Exposing my teams to this idea over the past few years has been beneficial. I
 often trivialised it a little for the sake of making a point while sharing the
@@ -624,13 +623,13 @@ design.
 No other reason is good enough for a test to change. Which, in turn, means
 "actual tests" only test behaviour. I've seen tests testing language features,
 or missing language features (looking at you dynamically typed languages), or
-framework features. 
+framework features.
 
 These tests have a very annoying property in common: they change every time
 production code changes. My advice is to delete them. Yes, I just said that.
 
 When I bring this up, people usually understand my advice as either not to write
-tests at all or write only integration tests. 
+tests at all or write only integration tests.
 
 Obviously, no point in debating the first one. Of course you should write tests
 to verify your system. I'm not arguing that. I'm arguing the effectiveness of
@@ -654,35 +653,40 @@ convinced I am I can solve any problem.
 
 It is somewhat obvious that experience made me more confident. I gained
 experience through trial and error. Rinse and repeat. I learned what works and
-what doesn't by trying things out, often the hard way. So yes, experience makes me
-confident. Sounds good, right? Yes and no. I need balance.
+what doesn't by trying things out, often the hard way. So yes, experience makes
+me confident. Sounds good, right? Yes and no. I need balance.
 
 Confidence is good because it can make me fearless. I know you can throw any
-problem at me, I will find a way to solve it. Let me tell you a story about my
-first job that illustrates what I mean.
+problem at me, I will find a way to solve it.
+
+Let me tell you a story about my first job that illustrates what I mean.
 
 In the summer of 2006, I joined a company in Rome that processed hundreds of
 millions of events per day from poker machines. At the time, the legislation in
 Italy prescribed that these machines had to return 75% of winning. So our systems
 collected _any_ event these machines produced. The company ran monitoring and
-fraud detection algorithms. The whole system was a large collection of stored
-procedures on top of a giant Microsoft SQL Server installation (don't judge
-me for this architecture OK? I didn't design it). These stored procedures parsed
-the events (a large blob of text that we parsed with SQL. Yep, you read that
-right), stored the processed data in various tables, and ran a bunch of
-algorithms on the data. It was complicated for a young man fresh out of
-university.
+fraud detection algorithms.
+
+The whole system was a large collection of stored procedures on top of a giant
+Microsoft SQL Server installation (don't judge me for this architecture OK? I
+didn't design it). These stored procedures parsed the events (a large blob of
+text that we parsed with SQL. Yep, you read that right), stored the processed
+data in various tables, and ran a bunch of algorithms on the data. It was
+complicated for a young man fresh out of university.
 
 My first big task was to make use of a reserved part of the events. In practice,
-this meant that I had to figure out the impact this change had on the whole system,
-aka 200+ stored procedures. I knew I couldn't do it alone, but I tried
-anyway. It took me almost a week of despair to find the courage and tell my boss
-I had no idea what to do. When I talked to Mario (it was in... Italy so
-¯\_(ツ)_/¯)_, his answer filled me with anger first. He said something like
-"let's do this together, it'll take two hours to plan everything, then I leave
-you alone". Two hours?!? I had lost almost a week trying to make sense of the
-problem and came up with nothing, how were we going solve this in two hours?
-Well, he showed me and it was a profound learning experience.
+this meant that I had to figure out the impact this change had on the whole
+system, aka 200+ stored procedures.
+
+I knew I couldn't do it alone, but I tried anyway. It took me almost a week of
+despair to find the courage and tell my boss I had no idea what to do. When I
+talked to Mario (it was in Italy so 🤌🏻), his answer filled me with anger
+first. He said something like "let's do this together, it'll take two hours to
+plan everything, then I leave you alone".
+
+Two hours?!? I had lost almost a week trying to make sense of the problem and
+came up with nothing, how were we going solve this in two hours? Well, he showed
+me and it was a profound learning experience.
 
 We got into a meeting room and Mario did the most obvious thing: he broke down
 the problem in small steps, one stored procedure after the other. We put the
@@ -693,26 +697,32 @@ change and the reason why each of them needed to change. I was amazed.
 Mario had the confidence to solve the problem. He knew he could do it so there
 was no fear to cloud his thinking. He sat down with me and executed a simple
 process (simple ain't easy eh?) of laying down the foundation of a month of work
-in just two hours.
+in just two hours. That's the kind of confidence that makes you fearless.s
 
 If confidence has such a amazing effect on your ability to my difficult
-problems, what do I want to balance it with? Well my confidence feeds on ego.
-And that's a problem. While confidence makes me stronger, ego makes me dumb. At
-times, I have troubles telling them apart, after all they're close. The
-difference is only the way I look at things. When I'm confident, I take my time
-to break down a problem in smaller parts, I research the subject, I ask for
+problems, what do I want to balance it with? Well _my_ confidence feeds on _ego_.
+And that's a problem.
+
+While confidence makes me fearless, ego makes me dumb. At times, I have troubles
+telling them apart, after all they're close.
+
+The difference is only the way I look at things. When I'm confident, I take my
+time to break down a problem in smaller parts, I research the subject, I ask for
 help, I plan accurately. When I'm high on ego I look at problems from a
 pedestal, I underestimate them. I plan badly because "hey I'm great! of course I
 will solve this on the go, planning is for losers".
 
 That's why I seek ways to balance my confidence. I need enough confidence to
-eliminate any fear but not too much that I get high on ego. The way I find my
-balance is by putting to practice the idea "we're all junior at most things": I
-learn new things. Just in the past few years I tried drawing, rubik cubes,
-chess, you name it. When it comes to programming, I try to solve problems in
-areas I have no idea about or some problem that looks really hard. For example,
-writing a programming language sounds hard, so I toyed with it to find out
-that it's indeed hard but it's also "just" a program.
+eliminate any fear but not too much that I get high on ego.
+
+The way I find my balance is by putting to practice the idea "we're all junior
+at most things": I learn new things. Just in the past few years I tried drawing,
+rubik cubes, chess, you name it.
+
+When it comes to programming, I try to solve problems in areas I have no idea
+about or some problem that looks really hard. For example, writing a programming
+language sounds hard, so I toyed with it and found out that it's indeed hard but
+it's also "just" a program.
 
 The journey is humbling and the reward is two-fold: a balanced confidence and
 expanded knowledge.
