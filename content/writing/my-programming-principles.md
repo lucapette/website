@@ -81,7 +81,7 @@ where to start, which system maps to which part of the codebase. To orient
 myself, I read a whole feature end to end.
 
 For the sake of discussion, let's consider a web application composed of
-multiple services. One page in the app has an "innocent" button that stars a
+multiple services. One page in the app has an "innocent" button that starts a
 sequence of processes that ultimately result in sending a PDF report via email.
 You might have seen some variation of this.
 
@@ -697,7 +697,7 @@ change and the reason why each of them needed to change. I was amazed.
 Mario had the confidence to solve the problem. He knew he could do it so there
 was no fear to cloud his thinking. He sat down with me and executed a simple
 process (simple ain't easy eh?) of laying down the foundation of a month of work
-in just two hours. That's the kind of confidence that makes you fearless.s
+in just two hours. That's the kind of confidence that makes you fearless.
 
 If confidence has such a amazing effect on your ability to my difficult
 problems, what do I want to balance it with? Well _my_ confidence feeds on _ego_.
