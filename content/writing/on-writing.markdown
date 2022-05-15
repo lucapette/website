@@ -4,7 +4,7 @@ tags:
   - writing
 date: "2017-04-04T00:00:00Z"
 description: I love writing. And I love to write about it.
-keywords: writing
+keywords: writing, books
 title: On writing
 ---
 
