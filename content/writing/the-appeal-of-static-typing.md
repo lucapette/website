@@ -27,15 +27,16 @@ Before I dive into the topic, let me make some premises:
 
 While the premise should clarify I mean everything that follows as my personal
 opinion, I want to share the journey that got me here so that, if you do not
-know me personally, you know it's at least informed by more than two decades of
+know me personally, you know it's informed by more than two decades of
 programming.
 
 I started my programming journey in the early 2000s, I was a computer science
 student at the University of Naples, Italy. We did mostly C. I liked it,
-actually. It was difficult but very satisfying, I learned a lot. At the time I
-had to discuss my thesis in graphs algorithms, I realised I needed a way to plot
-lots of data. I run into Perl. Such a different experience from C! I liked how
-quickly I could get something working together.
+actually. It was difficult but very satisfying, I learned a lot.
+
+At the time I had to discuss my thesis in graphs algorithms, I realised I needed
+a way to plot lots of data. I run into Perl. Such a different experience from C!
+I liked how quickly I could get something working together.
 
 As soon as my professional career started, I did mostly Java for a better part
 of a decade of professional experience. I went through two jobs where I wrote a
@@ -53,7 +54,9 @@ end
 ```
 
 my Java brain exploded. I couldn't understand how any of it worked, I _had_ to
-understand how this worked.
+understand how this worked. So I spent a few years in the the land of
+dynamically typed languages. The euphoria kept me going for a while.
+Meta-programming was cool, RSpec was cool. The community was fantastic.
 
 ## Focus on "actual" tests
 
@@ -61,7 +64,7 @@ understand how this worked.
 
     * IntelliJ
     * vs code
-  
+
 ## The workflow
 
 
