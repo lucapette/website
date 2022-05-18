@@ -37,13 +37,14 @@ had to discuss my thesis in graphs algorithms, I realised I needed a way to plot
 lots of data. I run into Perl. Such a different experience from C! I liked how
 quickly I could get something working together.
 
-As soon as my professional career started, It was mostly Java for a a better
-part of the first decade of professional experience. I went through two jobs
-where I wrote a lot of Java before starting to feel a little discouraged by how
-slow things moved in the Java world. So I started looking for something
-different. That's how I found Ruby and Ruby on Rails.
+As soon as my professional career started, I did mostly Java for a better part
+of a decade of professional experience. I went through two jobs where I wrote a
+lot of Java before starting to feel a little discouraged by how slow things
+moved in the Java world. So I started looking for something different. That's
+how I found Ruby and Ruby on Rails.
 
-My world view was shattered. I remember the first time I read something like:
+My world view was shattered, everything magically worked. I remember the first
+time I read something like:
 
 ```ruby
 class Post
@@ -51,8 +52,8 @@ class Post
 end
 ```
 
-my brain was exploding. I couldn't understand how any of it worked. It looked so
-clean, so simple compared to hibernate.
+my Java brain exploded. I couldn't understand how any of it worked, I _had_ to
+understand how this worked.
 
 ## Focus on "actual" tests
 
