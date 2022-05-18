@@ -11,16 +11,16 @@ aliases:
   - /pry-everywhere
 ---
 
-I have to confess that I'm generally sceptical about alternatives for tools
-that work so fine like IRB. And I really like IRB. So why Pry? And why
-everywhere? Because _Pry features blew my mind_. When I wrote [about IRB
-customization](/why-you-should-spend-some-time-configuring-irb), I was
-doing what I always do when I like a tool: customize it in order to feel the
-tools more familiar with my way of thinking. So, when I run into
+I'm generally sceptical about alternatives of tools that work just fine like
+IRB. And I really like IRB. So why Pry? And why everywhere? Because _Pry
+features blew my mind_. When I wrote [about IRB
+customization](/writing/why-you-should-spend-some-time-configuring-irb), I was
+doing what I always do when I like a tool: customize it in order to make it more
+familiar with my way of thinking. So, when I run into
 [Pry](http://pry.github.com/), some of its features blew my mind because they
-were exactly what I really would like to have in IRB. For example, sometimes
-you would like to explore a class or an object quickly. The way you can do it
-with Pry feels just natural. It just seems the right way too do it:
+were exactly what I really wanted in IRB. For example, sometimes I like to
+quickly explore a class or an object. The way you can do it with Pry feels
+natural and intuitive:
 
 ```ruby
 1.9.2 (main):0 > cd Array
@@ -39,7 +39,7 @@ end
 ```
 
 Toy is a little method I have in my
-[.pryrc](https://github.com/lucapette/dotfiles/blob/master/pryrc) (and
+[.pryrc](https://github.com/lucapette/dotfiles/blob/main/pryrc) (and
 previously in my .irbrc) that I use when I want to play with arrays. Pry comes
 with wonderful commands like cd that operates both with classes and instance
 objects or like ls that you can use to list all the class methods (-m option)
@@ -53,10 +53,10 @@ after taking a look at [these](https://github.com/pry/pry/wiki)
 [wonderful](http://vimeo.com/26391171)
 [resources](http://railscasts.com/episodes/280-pry-with-rails).
 
-So the title of this post is "Pry everywhere" and now I'm going to show you what
-I've done to migrate to Pry. There are a lot of solutions about this topic but
-all of them involve something I don't like especially about rails integration.
-My requirements were fairly simple:
+The title of this article is "Pry everywhere" so let me show you what I've done
+to migrate to Pry. There are existing of solutions but they all involve
+something I don't like especially about their rails integration. My requirements
+were fairly simple:
 
 - I don't want to lose the customizations I've done with IRB
 - The same for rails console
@@ -91,11 +91,11 @@ Pry.start
 exit
 ```
 
-Practically, every time I start IRB I will start a Pry session. It feels like a
-dirty solutions and I have to confess I don't know if it has any issues. For
-now, it's working just fine with my requirements. The bundler code is necessary
-to require pry and other gems from rvm global gemset in a rails console without
-declaring them in the Gemfile. Then, in the .pryrc I have:
+In short, every time I start IRB I start a Pry session. It feels like a dirty
+solution and I'm not sure if it has any issues. For now, it's working just fine
+with my requirements. The bundler code is necessary to require pry and other
+gems from rvm global gemset in a rails console without declaring them in the
+Gemfile. Then, in the .pryrc I have:
 
 ```ruby
 
@@ -136,11 +136,10 @@ load File.dirname(**FILE**) + '/.railsrc' if defined?(Rails) && Rails.env
 
 If you compare this file with my previous
 [.irbrc](https://github.com/lucapette/dotfiles/blob/80eade149f8d6b93b5446efd03606690b4e74ca6/irbrc)
-you'll notice that this one is shorter. This means that Pry is doing a piece
-of the job I would like to have by default, like colors and [history
-commands](https://github.com/pry/pry/wiki/History). My .railsrc is very
-similar to the previous one but it has a different that could interest you if
-you are an hirb user:
+you'll notice that this one is shorter. It means that Pry is indeed doing part
+of what I want by default, like colors and [history
+commands](https://github.com/pry/pry/wiki/History). My .railsrc is very similar
+to the previous one minus one difference that is relevant to hirb users:
 
 ```ruby
 # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
@@ -152,7 +151,5 @@ end
 Hirb.enable
 ```
 
-This way, [Hirb](https://github.com/cldwalker/hirb) works flawlessly. And the
-combination of Rails and Pry is just fantastic. Give it a try. I have been able
-to migrate to Pry with a fair effort, hoping this kind of configuration can help
-you too!
+This makes [Hirb](https://github.com/cldwalker/hirb) work flawlessly. The
+combination of Rails and Pry is fantastic. Give it a try!
