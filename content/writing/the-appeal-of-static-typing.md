@@ -19,11 +19,11 @@ Before I dive into the topic, let me make some premises:
 - I don't want to convince you that you should drop your favourite language and
   go for the ones I'll discuss in the article. This is really just me sharing my
   experience, hoping some people will find the perspective useful.
-- Writing about static vs dynamic typing is quite a challenge for me personally.
-  I have always had problems expressing my opinion when I find something "too
-  obvious". In this case, it's: statically typed languages lead to a better
-  programming experience. Because it's obvious to me, it's hard to articulate.
-  So here we are, I never say no to a writing challenge.
+- Writing about static vs dynamic typing is quite a challenge for me. I have
+  always had problems expressing my opinion when I find something "too obvious".
+  In this case, it's: statically typed languages lead to a better programming
+  experience. Because it's obvious to me, it's hard to articulate. So here we
+  are, I never say no to a writing challenge.
 
 While the premises should clarify I mean everything that follows as my personal
 opinion, I want to share the journey that got me here. The way I got to my
@@ -84,10 +84,35 @@ is only available for JVM.
 I loved streaming so much I accepted that I had to go back to Java. I told
 myself "well it's going to be unproductive but I won't have to write my own
 Kafka Streams library". I was so wrong about this, it's kind of funny to write
-about it. The developer experience had improved a few order of magnitude since
-2008.
+about it.
+
+The developer experience has improved a few order of magnitude since 2008. Apart
+from a few little things here and there, I always felt very productive with
+[Spring Boot](https://spring.io/projects/spring-boot) and
+[Jdbi](https://jdbi.org/). So, before I knew it, did only Java and TypeScript
+for a few years.
+
+Recently, I started looking into Kotlin and maybe I found my favourite language.
+Kotlin feels a little like "Ruby with static types". That's my sweet spot.
+
+This journey is a circle, Java was my first professional programming language,
+and it's now my last.
+
+While I find the circle interesting in itself, the actual languages I went
+through is not what fascinates me about about the journey. It's more the opinion
+I reached: I don't really want to work with dynamically typed languages any
+more. I find the experience with statically compiled languages vastly superior.
+
+Let me dive into the experiences that, over the years, contributed the most to
+reaching this place.
 
 ## Focus on "actual" tests
+
+
+I recently wrote about [my programming principles]({{< ref
+"/writing/my-programming-principles" >}} "my programming principles"). One of
+the principles I had to debate the most in my career is relevant to this
+conversation.
 
 ## The tooling
 
