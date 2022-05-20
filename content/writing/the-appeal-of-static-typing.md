@@ -54,11 +54,12 @@ class Post
 end
 ```
 
-my Java brain exploded. I couldn't understand how any of it worked, I _had_ to
-understand how it worked. So I spent a few years in the the land of dynamically
-typed languages. The euphoria kept me going for a while. Meta-programming was
-cool, RSpec was cool, Sequel was cool. The community was fantastic. I left the
-Java world and did not look back for years.
+my Java brain exploded. I couldn't understand how any of it worked.
+
+I _had_ to understand how it worked. So I spent a few years in the the land of
+dynamically typed languages. The euphoria kept me going for a while.
+Meta-programming was cool, RSpec was cool, Sequel was cool. The community was
+fantastic. I left the Java world and did not look back for years.
 
 While I loved the language and its ecosystem, I was always uneasy putting Ruby
 applications to production. It feels funny writing this to me now because it
@@ -108,11 +109,10 @@ reaching this place.
 
 ## Focus on "actual" tests
 
-
-I recently wrote about [my programming principles]({{< ref
-"/writing/my-programming-principles" >}} "my programming principles"). One of
-the principles I had to debate the most in my career is relevant to this
-conversation.
+I follow a principle I call [write "actual" tests]({{< ref
+"/writing/my-programming-principles#write-actual-tests" >}} "write actual
+tests"). The idea is that tests only change when the production behaviour
+changes. The name is a little cheeky, I can live with that.
 
 ## The tooling
 
