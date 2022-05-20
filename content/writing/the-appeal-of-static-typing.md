@@ -164,14 +164,37 @@ pedant causation versus correlation conversation. I'm just sharing my opinion as
 a programmer. What I'm saying is that statically compiled languages allow me to
 focus much more on "actual" tests. I enjoy that a lot.
 
-I like to believe that is precisely the reason why these communities produce
-testing tools more apt to my needs. But, of course, nor I have any idea if
-that's true neither I care to figure out.
+I like to believe that the nature of these languages is the reason why their
+communities produce testing tools more apt to my needs.
 
 ## The tooling
 
-    * IntelliJ
-    * vs code
+When I say tooling, I mean mostly the editing experience. I call it tooling
+because, depending on the language, there are different tools involved which may
+or may not integrate well with each other.
+
+The appeal of static typing is more evident when it comes to tooling. I use:
+
+- IntelliJ for Java and Kotlin
+- VS code for TypeScript and Go
+
+Both IntelliJ and VS code are _spectacular_ tools. They excel at every aspect of
+every day programming. Be that editing, renaming, refactoring, debugging,
+testing. Anything really.
+
+They're both really fast (I catch myself asking the question "how is IntelliJ so
+fast at doing X?" weekly). It's worth underlining especially for people that,
+like me, used IDEs in the early 2000s. They were horrendous back then so if you
+never tried again, you'd rely on an experience that is very far from today's
+reality.
+
+It's worth noticing that the languages themselves contribute to a better
+experience. For example, the Go community has produced a lot of static analysis
+tools and VS code uses [many of
+them](https://github.com/golang/vscode-go/blob/master/docs/tools.md). So it's a
+bit of a catch-22 situation. These languages have better tools because the tools
+are (maybe?) easier to write. They are easier to write because these languages
+have better statical analysis tool.
 
 ## The workflow
 
