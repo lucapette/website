@@ -20,14 +20,14 @@ Before I dive into the topic, let me make some premises:
   go for the ones I'll discuss in the article. This is really just me sharing my
   experience, hoping some people will find the perspective useful.
 - Writing about static vs dynamic typing is quite a challenge for me. I have
-  always had problems expressing my opinion when I find something "too obvious".
-  In this case, it's: statically typed languages lead to a better programming
+  problems expressing my opinion when I find something "too obvious". In this
+  case, it's: statically typed languages lead to a better programming
   experience. Because it's obvious to me, it's hard to articulate. So here we
   are, I never say no to a writing challenge.
 
-While the premises should clarify I mean everything that follows as my personal
-opinion, I want to share the journey that got me here. The way I got to my
-informed opinion is the most interesting aspect of the conversation. I will
+While the premises should clarify I mean everything that follows as _my_
+personal opinion, I want to share the journey that got me here. The way I got to
+my informed opinion is the most interesting aspect of the conversation. I will
 expand on this as I conclude the article.
 
 ## How I got here
@@ -62,9 +62,8 @@ Meta-programming was cool, RSpec was cool, Sequel was cool. The community was
 fantastic. I left the Java world and did not look back for years.
 
 While I loved the language and its ecosystem, I was always uneasy putting Ruby
-applications to production. It feels funny writing this to me now because it
-took a long time to start looking for something else. I really loved the
-language!
+applications to production. Writing this feels funny to me now because I realise
+it took a long time to start looking for something else; I really loved Ruby!
 
 Around 2013, I started looking into Go. The language felt pretty ugly compared
 to Ruby but I immediately loved its "production qualities". It was tedious to
@@ -74,45 +73,100 @@ already very advanced compared Ruby (with the obvious exception of dependency
 management which, to this day, feels more like a practical joke in Go than a
 real tool).
 
-I went back and forth between Ruby and Go for a few years and also shared a
+I went back and forth between Ruby and Go for a few years. I also shared a
 longish article about [my experience with Go]({{< ref
 "/writing/my-experience-with-go" >}} "my experience with go") in 2017. Around
-the same time, I started getting much deeper into Apache Kafka. The "problem"
-here is that to exploit Kafka potential, you have to use a JVM based language.
-The official libraries are full featured and Kafka Streams, a wonderful library,
-is only available for JVM.
+that time, I started getting much deeper into Apache Kafka.
+
+The "problem" with is that to exploit its potential, you have to use a JVM based
+language. The official libraries are fully featured and Kafka Streams, a
+wonderful streaming library, is only available for JVM.
 
 I loved streaming so much I accepted that I had to go back to Java. I told
 myself "well it's going to be unproductive but I won't have to write my own
-Kafka Streams library". I was so wrong about this, it's kind of funny to write
-about it.
+Kafka Streams library". I was so wrong about this it's kind of funny.
 
-The developer experience has improved a few order of magnitude since 2008. Apart
+The developer experience had improved a few order of magnitude since 2008. Apart
 from a few little things here and there, I always felt very productive with
 [Spring Boot](https://spring.io/projects/spring-boot) and
 [Jdbi](https://jdbi.org/). So, before I knew it, did only Java and TypeScript
 for a few years.
 
 Recently, I started looking into Kotlin and maybe I found my favourite language.
-Kotlin feels a little like "Ruby with static types". That's my sweet spot.
+Kotlin feels a little like "Ruby with static types". That's my sweet spot. I
+will probably write about it toward the end of the year.
 
-This journey is a circle, Java was my first professional programming language,
-and it's now my last.
+This journey is a circle: Java was my first professional programming language,
+and it's now my last. While the circle interesting in itself, the languages I
+went through are not what fascinates me about the journey. Here's what stands
+out to me:
 
-While I find the circle interesting in itself, the actual languages I went
-through is not what fascinates me about about the journey. It's more the opinion
-I reached: I don't really want to work with dynamically typed languages any
-more. I find the experience with statically compiled languages vastly superior.
+- Every time I changed languages, the reasons had nothing to do with language
+  features. Also, it was definitely not a dynamically typed versus statically
+  typed fight.
+- Despite that, today I'm pretty much convinced I don't want to work with
+  dynamically typed languages any more. Which means that, after 2 decades of
+  programming, I finally developed some opinions about programming languages 🙃.
 
-Let me dive into the experiences that, over the years, contributed the most to
-reaching this place.
+With this journey in mind, let me dive into the experiences that led me here.
 
 ## Focus on "actual" tests
 
 I follow a principle I call [write "actual" tests]({{< ref
 "/writing/my-programming-principles#write-actual-tests" >}} "write actual
-tests"). The idea is that tests only change when the production behaviour
-changes. The name is a little cheeky, I can live with that.
+tests"). Quoting myself here:
+
+> A test must change only if the behaviour it verifies changed.
+>
+> No other reason is good enough for a test to change. Which, in turn, means
+> “actual tests” only test behaviour. I’ve seen tests testing language features,
+> or missing language features (looking at you dynamically typed languages), or
+> framework features.
+
+The name is a little cheeky, I can live with that. The last part of the quote is
+obviously relevant to this conversation. When I worked with Ruby a lot, I
+remember testing was a bittersweet experience.
+
+On one side, I **loved** RSpec. For real. It felt so natural to me. Its API was
+fantastic.
+
+On the other hand, testing Ruby code often felt very defensive. Lots of cases to
+consider for each parameter of each method. After all, one could pass _anything_
+at runtime so tests were meant to help cover edge cases.
+
+There was a constant cognitive overheard involved in writing tests. To add to
+that, a good chunk of these tests felt a little silly. Some of them were there
+because of missing language features. Of course, I mean static typing.
+
+I felt Ruby tried to keep me away from "actual" tests. The community also
+developed around Ruby strengths. That happens in all languages, after all we
+don't experience programming languages; we experience programming communities.
+Point being Ruby has great testing tools which focus on speeding things up, unit
+testing, mocking.
+
+"Actual" tests often means integration tests and it was challenging with Ruby.
+Not that I really understood this until I found a simple and effective way to
+ [test CLI in Go]({{< ref
+"/writing/writing-integration-tests-for-a-go-cli-application" >}} "test CLI in
+Go").
+
+The experience with Go first and then especially with Java has been very
+different from Ruby. High-level "actual" tests were easy to write and relatively
+fast. Because, again, these communities also developed around their languages
+strengths. Which meant, for example, I could "actually" test a Kafka Streams
+application with [Testcontainers](https://www.testcontainers.org/). Add one
+dependency here, two lines of code there, and bam you've got a running Kafka
+instance for each of your tests.
+
+I'm not sure how much of this has specifically to do with these languages being
+statically typed but, and this may surprise you, I _do not_ care about the
+pedant causation versus correlation conversation. I'm just sharing my opinion as
+a programmer. What I'm saying is that statically compiled languages allow me to
+focus much more on "actual" tests. I enjoy that a lot.
+
+I like to believe that is precisely the reason why these communities produce
+testing tools more apt to my needs. But, of course, nor I have any idea if
+that's true neither I care to figure out.
 
 ## The tooling
 
