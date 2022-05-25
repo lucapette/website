@@ -12,7 +12,7 @@ keywords:
 Before I dive into the topic, let me make some premises:
 
 - The point of this article isn't to say statically typed languages are better
-  than dynamically typed ones. That means nothing.
+  than dynamically typed ones.  That means nothing.
 - I will not try to convince you that you should drop your favourite language
   and go for the ones I'll discuss in the article.
 - I have problems expressing my opinion when I consider something "too obvious".
@@ -20,7 +20,7 @@ Before I dive into the topic, let me make some premises:
   experience. And I do think it's obvious. So here we are, I never say no to a
   writing challenge.
 
-The premises should clarify I mean everything that follows as _my_ personal
+These premises should clarify I mean everything that follows as _my_ personal
 opinion. I'm sharing my experience hoping it may be useful to other people.
 
 ## How I got here
@@ -161,11 +161,9 @@ statically typed language is autocompletion.
 I remember spending countless hours getting Ruby autocompletion working. It was
 never good enough. 
 
-The experience with Java or Kotlin is flawless. 
-
-The best example of this difference is JavaScript vs TypeScript. The experience
-with TypeScript is so much better that autocompletion would be enough of a good
-reason to adopt TypeScript.
+The experience with Java or Kotlin is flawless but the best example of this
+difference is JavaScript vs TypeScript. TypeScript autocompletion is so much
+better that it's enough of a good reason for adoption.
 
 
 The editing experience is also better for learning purposes. IntelliJ suggests
