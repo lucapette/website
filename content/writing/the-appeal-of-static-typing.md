@@ -49,7 +49,7 @@ matter how many tests we add, we still ship typos to production".
 Around 2013, I started looking into around for something more solid, possibly
 faster. I found Go. The language wasn't pretty but I loved how robust programs
 felt as soon as they compiled. Even though it was early days for the Go
-community, the tooling around the language was already advanced compared Ruby
+community, the tooling around the language was already advanced compared to Ruby
 (with the obvious exception of dependency management).
 
 I then went back and forth between Ruby and Go for a few years. In 2017, I
