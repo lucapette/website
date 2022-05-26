@@ -40,7 +40,7 @@ weeks. I got to feature parity in less than day!
 
 The euphoria kept me going for a few years: meta-programming was cool, RSpec was
 cool, Sequel was cool. The Ruby community was fantastic: it was inclusive and
-engaging. 
+engaging.
 
 While I loved the language and its ecosystem, I was always uncomfortable putting
 Ruby applications to production. I often trivialised the experience saying "No
@@ -75,7 +75,7 @@ years.
 This journey is a circle: Java was my first professional programming language,
 and it's now my last. While the circle is interesting in itself, the languages I
 went through are not what fascinates me. Especially in the context of an article
-about the appeal of static typing. 
+about the appeal of static typing.
 
 Here's what stands out to me:
 
@@ -114,7 +114,7 @@ think I was covering the gap for missing language features. I mean static types
 of course.
 
 The experience with Go first and then especially with Java has been very
-different. "Actual" tests were easy to write and relatively fast. 
+different. "Actual" tests were easy to write and relatively fast.
 
 One trivial example: I can "actually" test a Kafka Streams application with
 [Testcontainers](https://www.testcontainers.org/) with very little effort: add
@@ -159,10 +159,10 @@ The tools are easier to write because statically compiled languages are easier
 to statically analyse.
 
 The flagship example of how much better the editing experience is with
-statically typed language is autocompletion. 
+statically typed language is autocompletion.
 
 I remember spending countless hours getting Ruby autocompletion working. It was
-never good enough. 
+never good enough.
 
 The experience with Java or Kotlin is flawless but the best example of this
 difference is JavaScript vs TypeScript. TypeScript autocompletion is so much
@@ -170,7 +170,7 @@ better that I think it's enough of a good reason for adoption over JavaScript.
 
 The editing experience is also better for learning purposes. IntelliJ suggests
 more idiomatic code all the time. It provides warnings and suggests improvements
-based on best practice. 
+based on best practice.
 
 It is a little thing but it has a significant impact on the way I can learn a
 language. Let me provide an example:
@@ -181,7 +181,7 @@ val favouriteThings = listOf("Raindrops on roses", "Whiskers on kittens")
 println(favouriteThings.map { it.lowercase() }.joinToString(" & "))
 ```
 
-IntelliJ will show a warning on `map` and suggest this: 
+IntelliJ will show a warning on `map` and suggest this:
 
 ```java
 println(favouriteThings.joinToString(" & ") { it.lowercase() })
@@ -189,7 +189,7 @@ println(favouriteThings.joinToString(" & ") { it.lowercase() })
 
 That's how I learned that `joinToString` takes an optional `transform =  ((Byte)
 -> CharSequence)` last parameter (Kotlin has a nice syntactic sugar for so
-called trailing lambdas). 
+called trailing lambdas).
 
 The key is that this happens countless times a day so I end up learning a lot
 just by using IntelliJ.
@@ -202,23 +202,26 @@ remember where I read:
 > Sometimes we forget the most important aspect of writing a program: it has to
 > work.
 
-It's beautiful in its simplicity. 
+It's beautiful in its simplicity.
 
 How do I know if my code works? Well, of course I have to ship it to production.
 
 Shipping code is where my experience with dynamically typed languages and
 statically typed has been the most different. The TL;DR is: dynamically typed
-languages make me doubtful about what I'm shipping while statically typed
-languages make me confident.
+languages make me doubtful about what I'm shipping while statically typed ones
+make me confident.
 
 There's a few reasons that contribute to this so let's dive into them.
 
 ### Types are docs
 
-This comes up a lot and, I can't stress this enough, it's true. Types definitely
-act as documentation because how descriptive they are. Let me spell out the
-obvious: they're together with the rest of code. Too obvious right? Well that's
-the point. The co-location makes types the best possible kind of documentation:
+This comes up a lot and, I can't stress this enough, it's true.
+
+Types act as documentation because of how descriptive and verbose they are. Let
+me spell out the obvious: they're together with the rest of code.
+
+Too obvious right? Well that's the point. The co-location makes types the best
+possible kind of documentation:
 
 - they're never out of date
 - they're as close as possible to production code
@@ -229,34 +232,33 @@ They also help answer questions that come out all the time:
 - where do we use this class?
 - Can I pass a string to this third-party library method?
 
-What does this have to do with shipping code to production you may ask? Two
-things:
+What does all of this have to do with shipping code to production? Two things:
 
 - I have to keep less things in my head. Types store a lot of metadata
   information for me _in the code_. If I'm not sure about something, I can just
-  read the type. This obviously applies to libraries. Yes, I know it's obvious.
-  But I mention it anyway because the different between, say, integrating a Java
-  library and a Ruby one is staggering.
+  read the type. This obviously applies to libraries. Yes, I know it's obvious
+  but I mention it anyway because the difference between integrating a Java
+  library and a Ruby one has been staggering for me.
 - I don't have to care about typos or other silly mistakes like that. I can't
-  pass a double to a method expecting a string. Again, all too obvious. I wish I
-  could say I never shipped typos to production with Ruby.
+  pass a double to a method expecting a string. Again, all too obvious and I
+  wish I could say I never shipped typos to production with Ruby or multiplied a
+  string with a number.
 
 ### The reading experience
 
 Reading code is a core part of the practice of programming. Shipping code to
-production involved a lot of reading. Because of how helpful "types are docs" is
+production involves a lot of reading. Because of how helpful "types are docs" is
 in practice, I find the cognitive load of reading production code written in a
-statically typed language significantly smaller than the cognitive load of its
-dynamic counterpart.
+statically typed language significantly smaller than its dynamic counterpart.
 
-The thing is that reading code shows up everywhere in the process of shipping
-and maintaining production code:
+Reading code shows up everywhere in the process of shipping and maintaining
+production code:
 
 - I need to figure out where this annoying bug is? I need to read code
 - I need to update the way I use this library? I need to read code
 - I need to help someone ship their code? I need to read code
 
-Every time I need to read statically typed code, I need to put a a little less
+Every time I need to read statically typed code, I need to put a little less
 effort than doing so with a dynamically typed language. It adds up pretty fast.
 That energy surplus makes me more confident shipping statically typed code to
 production.
@@ -264,16 +266,16 @@ production.
 ### When it compiles, it probably works
 
 This also comes up a lot and I remember being very sceptical hearing this when I
-was working only with dynamically typed languages. I was... wrong. Because this
-too is true. The probably is important because it's not a 100% hit of course.
-But the point stands and plays into my conversation well: it's a matter of
-confidence.
+was working only with dynamically typed languages. I was... wrong.
 
-This becomes really evident when I'am trying to rush a bug fix to production. No
-matter how careful I am, this situation just happens from time to time. The last
-thing I want is second guessing the fix I'am about to ship. It's all about the
-cognitive load after all and the compiler telling me my code "works" factors in
-as well. Again, it makes me more confident.
+This too is true. The probably is important because it's not a 100% hit of
+course. But the point stands and makes more confident.
+
+The difference is really evident when I'am trying to rush a bug fix to
+production. No matter how careful I am, this situation just happens from time to
+time. The last thing I want is second guessing the fix I'am about to ship. It's
+all about the cognitive load after all and the compiler telling me my code
+"works" factors in as well.
 
 ## Experience is everything
 
@@ -283,11 +285,10 @@ non-goal for me but it's still interesting to go over why I think my experience
 won't convince anyone despite it did convince me.
 
 Back when worked only with dynamic languages, I came across these talking points
-many times. None convinced me. While the experience between these two worlds is
-very different, what makes it so isn't one big thing. It's more a lot of small
-every day things. 
+many times. None convinced me. While statically typed languages and dynamically
+typed ones are very different in practice, what makes them different isn't one
+big thing. It's a lot of small, every-day things.
 
-
-There's something else: it's hard to look for alternatives when you're happy
+There's something else: it's hard to come across alternatives if you're happy
 with what you're doing. Also, there's definitely nothing wrong with being happy
-with dynamically typed languages. In fact, they're pretty awesome!
+with dynamically typed languages.
