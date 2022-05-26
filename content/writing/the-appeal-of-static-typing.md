@@ -36,7 +36,7 @@ unproductive.
 In 2009, I finally was in a position to start looking for something different.
 That's how I found Ruby and Ruby on Rails.  As an exercise, I tried to build a
 prototype version of a new product my team had been working on for a couple of
-weeks. I got to feature parity in less than day!
+weeks. I got to feature parity in less than a day!
 
 The euphoria kept me going for a few years: meta-programming was cool, RSpec was
 cool, Sequel was cool. The Ruby community was fantastic: it was inclusive and
