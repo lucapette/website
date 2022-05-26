@@ -271,9 +271,9 @@ was working only with dynamically typed languages. I was... wrong.
 This too is true. The probably is important because it's not a 100% hit of
 course. But the point stands and makes more confident.
 
-The difference is really evident when I'am trying to rush a bug fix to
+The difference is really evident when I'm trying to rush a bug fix to
 production. No matter how careful I am, this situation just happens from time to
-time. The last thing I want is second guessing the fix I'am about to ship. It's
+time. The last thing I want is second guessing the fix I'm about to ship. It's
 all about the cognitive load after all and the compiler telling me my code
 "works" factors in as well.
 
@@ -284,10 +284,10 @@ languages, I'm somewhat sure this article won't convince a single soul. It was a
 non-goal for me but it's still interesting to go over why I think my experience
 won't convince anyone despite it did convince me.
 
-Back when worked only with dynamic languages, I came across these talking points
-many times. None convinced me. While statically typed languages and dynamically
-typed ones are very different in practice, what makes them different isn't one
-big thing. It's a lot of small, every-day things.
+Back when I worked only with dynamic languages, I came across these talking
+points many times. None convinced me. While statically typed languages and
+dynamically typed ones are very different in practice, what makes them different
+isn't one big thing. It's a lot of small, every-day things.
 
 There's something else: it's hard to come across alternatives if you're happy
 with what you're doing. Also, there's definitely nothing wrong with being happy
