@@ -3,6 +3,8 @@ title: "The Appeal of Static Typing"
 description: "or how I learned to stop worrying and love types."
 date: 2022-05-18T08:34:12+02:00
 draft: true
+tags:
+  - programming
 keywords:
   - programming
   - static typing

@@ -8,136 +8,194 @@ title: What I think about when programmers talk about speed
 ---
 
 A couple of weeks ago I had an interesting conversations with one of my team
-members. She confessed to me that she felt slow. I was pretty surprised but
-before moving on let me make a small premise: I hate the word performance. I'm
-not sure how it feels to native speakers or to people who didn't work for
-Accenture. But to me, it sounds like "oh the gigantic pile of bullshit coming
-from that manager that has no clue. Again." That's my usual reaction to
-"performance" and that's why I don't like to use it. I must confess I tried to
-find a better word for a long time but I ended up settling down for programmers'
-performance when it comes about measuring our job.
+members. She confessed to me that she felt she was a slow programmer.
 
-With this premise in mind, I told her I was surprised and then she asked me to
-tell her more. And that conversation lead me to write this article, it had two
-main topics:
+I was pretty surprised but, before moving on, let me make a premise: I _hate_ the
+word _performance_.
+
+I'm not sure how it feels to native speakers or to people who didn't work for
+Accenture. To me, it sounds like "oh the gigantic pile of bullshit coming from
+that manager that has no clue. Again."
+
+That's my usual reaction to the word "performance". So I don't like to use it. I
+tried to find a better word for a long time but I ended up settling down for
+programmers' performance when it comes about measuring our job anyway.
+
+With this premise in mind, let's move on.
+
+I told her I was surprised and then she asked me why. The conversation we had
+lead me to write this article. I will break it down in two main topics:
 
 - Three steps from an idea to the feature.
 - Forget about the code, no one cares about it.
 
-# Three steps from an idea to the feature
+## Three steps from an idea to the feature
 
-I'm trying to abstract from how programmers think and what the steps that make
-them write the code they write are. Of course, this is going to be a complete
-failure if you expect me to get it right and come up with a general solution.
-There are so many other ways of looking at it that I don't try to be right,
-furthermore everyone has an opinion anyway. I'm just trying to abstract a bit
-from the actual programming process to talk about speed and performance. So
-here we go:
+For the sake of the conversation, I'm going to come up with some generic steps
+programmers go through when doing their job:
 
 - Trying to figure out what to do
 - Writing the actual code that does that
 - Putting that code in production
 
-## Step 1: Trying to figure out what to do
+Nothing too exciting, right? But it gets us going.
 
-A programmer may be very sharp in understanding what to do. She knows the
-system very well, she has enough context to ask product managers the right
-questions, she doesn't miss details and so on. This generally takes time and I
-honestly haven't seen many people being fast at this stage. Generally the
-speed here is deeply connected with your own workflow. How involved
-are product managers at this point? Do you have a checklist for it?
+### Step 1: Trying to figure out what to do
 
-## Step 2: Writing the actual code that does that
+Even the sharpest programmer needs to understand what to do before writing some
+code. She may know the system very well, she may has enough context to ask
+product managers the right questions, she may not miss any details.
 
-This is the step where I've seen most different results. Some people are
-very fast at writing code, others are not. What matters here is your review
-culture. Are programmers helping each other? Are they moving code to the staging
-environment before/after a review? How does the review process work? I focus
-on those questions because, from what I've seen, most programmers that are
-"really fast" write code that is not ready to go anywhere. They miss the
-details, their code has a lot of "one time workarounds", there are typical
-startup comments everywhere ("#TODO Fix this").
+No matter of good they are this takes somme time time. I haven't seen many
+people being fast at this stage unless we're talking about a trivial feature.
 
-## Step 3: Putting that code in production
+Generally speed here is intrinsically connected with the product development
+workflow (how involved are product managers at this point? Is there any
+checklist that we can use to say a feature is ready to be worked on?)
 
-Here comes the boring/painful step. Given its qualities, it is obvious we are
-talking about the most important one as only what comes out of this step
-actually does something for your company, your product and your customers.
-Speed here is a mere consequence of the previous two stages. No
-actual work needs to be done at this point in the ideal world, right? The job
-you've done at step 1 is perfect and it made the code you wrote at step 2
-bug-free and perfectly compliant with the requirements. Now, tell me: how many
-times have you seen this happen? How often code gets merged and you forget
-about it forever? I'm not sure what your answer is. I'd say it's going to be
-close to "ehm... never!" though.
+### Step 2: Writing the actual code that does that
 
-From what I've seen in my career people have very different ways of dealing
-with those steps. I met a lot of people that change the order (like in: let's
-write the code who cares about the details of step one), people who skip/don't
-understand/don't care about step 3. And here it gets interesting, as most IT
-managers focus too much on one of the steps and so do the programmers they
-manage. My opinion is: none of them count as long as they're all there and the
-result is actually helping. It's important to understand that what matters is
-the actual result. And most managers I've met don't get they have to be
-patient. You have to wait for days to actually see the results. Don't stop at
-"oh I love this programmer, she finishes stories in no time". I suggest to be
-patient: look at her code one month later. Wait for bugs to come up, wait for
-other programmers to have to change her code.
-The bottomline: we focus on the wrong metrics and we have to pay more attention to
-the entire process.
+This is where programmers performance varies the most.
 
-# Forget about the code, no one cares about it
+Some people are very fast at writing code, others are not.
 
-I like to troll, that's why this section has this title. Of course,
-as a technologist, I perfectly know the code matters, the language you use
-influences the results, the frameworks you use will make your life easier next
-year. But that doesn't change the fact that we (the programmers) are the only ones
-caring about those topics and I'm fine with this. No one else cares. Your
-customers don't. They expect the button to work and they want to do whatever
-they please with your product. That's a point I never emphasize enough. We forget
-the fundamental property your code must have: it has to work. That's it.
-That's hard to keep in mind when it comes to speed. The programmer that
-generated this discussion forgot about this too when she felt slow. She told
-me: "Oh this guy opens pull requests all the time, that's super fast". Pull
-requests don't go to production the way they're opened. And even if they do,
-you'll have to fix the bugs that come out of that code. And that is a cost
-that has an impact on your customers and on your _real_ speed.
+Review culture has a big impact on this:
 
-I think this topic is strictly connected to what we decided to call "shipping
-culture". I see two kinds of attitude about shipping culture:
+- Are programmers helping each other?
+- Are they moving code to the staging environment before/after a review?
+- How does the review process work?
 
-- people justify shit going to production in name of shipping culture.
-- I see people who spend hours getting blown away by the next hipster language
-  features and how that will make them more productive.
+From what I've seen, most programmers that are "really fast" write code that is
+not ready to go anywhere.
 
-Now, there must be a third way right? It's the one where I say I'm right and I
-try to convince you to go my way. Well, sorry. I'm going to disappoint you a
-bit. I think there isn't a third way. And I like that. I like that our job as
-managers is to find a moving stable equilibrium between the two sides of the
-spectrum. The balance between "ship this shit" and "oh wait let's make this
-perfect first" dictates your speed in the short and in the long run. Focusing
-too much on the "ship this shit" will produce too much debt and focusing too
-much on "let's make it perfect" won't produce enough. A few paragraphs before
-I said we focus on the wrong metrics. And I really believe so. The balance I'm
-talking about here means forgetting to measure how many features a developer
-ships in a week or how fast she goes from starting to work on the feature to
-opening the pull request. Writing the code is the fun part, writing the code
-is the easy part. And no one cares but you about the code. I'm not sure I can
-propose metrics that work better for your team, in the end metrics are
-context-dependent. I can tell you I focus more on questions like "how ready is
-the code I get from this developer?" "do we always have to review all the
-lines?" "Are the features really bugged when they get on staging/production?".
-Your mileage may vary and those questions may not apply, all I'm trying to say
-is: focus on the value you add to your customers.
+They miss the details that make the code production ready, their code has a lot
+of "one time workarounds", there are typical startup comments everywhere ("#TODO
+Fix this").
 
-It is important to keep in mind that what we do is not writing code but adding
-a feature on your website so your customers can enjoy your product more. This
-attitude kills a lot of discussion around technology. It keeps priorities
-focused on what matters for your company and your product. This discussion
-plays a major role in "developers' speed". I'm not looking at their code, I'm
-looking at the features they write. And that's what I told the developer who
-felt slow. She might be kinda "slow" in the first two steps but we don't need
-to do almost anything in the third step. I like that and while explaining to
-her I feel she is pretty fast, I figured out I could share these ideas. Other
-people may benefit and realise they are not as slow as they think. Or better
-yet: they are not as fast as they think.
+It only feels like they're fast if you don't actually look closely at their
+code.
+
+### Step 3: Putting that code in production
+
+Here comes the critical step.
+
+Speed here is a consequence of what already happened in the two steps.
+
+No actual work needs to be done at this point in the ideal world, right?
+
+The job you've done at step 1 is perfect and made the code you wrote at step 2
+bug-free and perfectly compliant with the requirements!
+
+Now, I wonder: how many times have you seen this happen? How often code gets
+merged and you forget about it forever?
+
+I'm not sure what your answer is. It's probably closer to "ehm... never!" than
+"this happens all the time!" though.
+
+From what I've seen in my career, people have very different ways of dealing
+with these steps.
+
+I met a lot of people that change the order of these steps: "let's write the
+code who cares about the details of step one. We'll figure out later!".
+
+I also worked with many people who skip/don't understand/don't care about step
+3. Honestly too many.
+
+Most managers focus too much on a specific step so the programmers they manage
+tend to do the same.
+
+I think none of the steps per se actually matters. I like to say "code only
+works when it works in production". That doesn't meant the last step of this
+process is the most important.
+
+It means you have to be patient. You have to wait some time (that's highly
+dependent on the scale of the product you're working on) to say "yes, this
+actually works just fine".
+
+I wouldn't stop at "oh I love this programmer, she finishes stories in no time".
+Be patient: look at her code one month later.
+
+Wait for bugs to come up. Wait for other programmers' feedback on how easy it
+was to change her code (the most welcoming a piece of code is to change, the
+better its design don't you think?).
+
+The bottom-line: we often focus on the wrong metrics and we have to pay more
+attention to the entire process.
+
+## Forget about the code, no one cares about it
+
+I like to troll (I'm from Napoli eh 🤌). That's why this section has this title.
+
+Of course, as a technologist, I know code matters. I know the language you use
+influences your results, so do the frameworks and libraries.
+
+That doesn't change the fact that we (the programmers) are the only ones caring
+about those topics when it comes to product development.
+
+I'm fine with this. No one else cares. Your customers don't. They expect the
+button to work and they want to do whatever they please with your product.
+
+That's a point I never get tired to emphasise. We tend to forget the fundamental
+property code must have: it has to work. That's it. Nothing more.
+
+It's hard to keep that in mind when it comes to speed. The programmer that
+confessed me she felt slow also forgot about this.
+
+She told me: "Oh this programmer opens pull requests all the time, they're super
+fast!". Pull requests rarely go to production the way they're opened. And even
+when they do, you'll have to fix the bugs that come out of them.
+
+That is a cost that has an impact on your customers and on your _actual_ speed.
+
+I think this topic is often referred to as "shipping culture". Which often means
+one of these:
+
+- People justify bad code going to production in the name of it. So they're very
+  fast at breaking things.
+- People try to make things "perfect" before shipping them. So they're very slow
+  at not breaking things.
+
+Now, there must be some other way right? This is where where I tell you I know
+everything so I will convince you to do it my way... Well, no. I'm going to
+disappoint you a bit.
+
+I don't think there is some other way. I kind of like that our job is to find an
+equilibrium between the two sides of this spectrum.
+
+The more balance between "ship this 💩 now!" and "let's make this perfect first
+✨✨✨", the faster you actually are.
+
+Focusing too much on the former will produce too much debt and focusing too much
+on latter won't product enough.
+
+I do believe in the end the problem is that our industry focuses too much on the
+wrong metrics. The balance I'm talking about here means forgetting to measure
+how many features a developer ships in a week or how fast she goes from starting
+to work on the feature to opening the pull request. I'm not sure I can propose
+metrics that work better for your team, in the end all metrics are
+context-dependent.
+
+But I can share some questions that can help you shape better metrics:
+
+- How ready is the code I get from this developer?
+- Do we always have to review everything they write?
+- How often do we have to go back to something they wrote after we ship it?
+
+What I'm trying to say is this: focus on the value added to the customers of the
+product you're building.
+
+It is important to keep in mind that what we do is not writing code. We're not
+"code typists". We program systems that someone else needs to use to do their
+job.
+
+This perspective keeps priorities focused on what matters and it should play a
+major role in "developers' performance":
+
+> Don't look at their code, look at the features
+
+That's what I told the developer who felt slow: "we never have to touch the
+features you write after we ship them".
+
+I hope other people benefit from this perspective and realise they are not as
+slow as they think. The other way around may be a little harder to accept though
+:)
