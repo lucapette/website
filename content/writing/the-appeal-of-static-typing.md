@@ -1,10 +1,14 @@
 ---
 title: "The Appeal of Static Typing"
 description: "or how I learned to stop worrying and love types."
-date: 2022-05-18T08:34:12+02:00
-draft: true
+date: 2022-05-31T08:34:12+02:00
+tags:
+  - programming
 keywords:
   - programming
+  - Java
+  - Golang
+  - Ruby
   - static typing
   - dynamic typing
 ---
@@ -20,8 +24,9 @@ Before I dive into the topic, let me make a few premises:
   experience. And I do think it's obvious. So here we are, I never say no to a
   writing challenge.
 
-These premises should clarify that I mean everything that follows as _my_ personal
-opinion. I'm sharing my experience hoping that it may be useful to other people.
+These premises should clarify that I mean everything that follows as _my_
+personal opinion. I'm sharing my experience hoping that it may be useful to
+other people.
 
 ## How I got here
 
@@ -104,30 +109,28 @@ tests"). Here's a quick excerpt from the article:
 
 Those "missing language features" are relevant to the conversation.
 
-Testing dynamically typed code has always been bittersweet for me. On the one hand,
-I loved how expressive Ruby was. On the other hand, testing Ruby code made me a
-little paranoid. I could pass _anything_ at runtime to every method, so I had to
-test everything right?
+Testing dynamically typed code has always been bittersweet for me. On the one
+hand, I loved how expressive Ruby was. On the other hand, testing Ruby code made
+me a little paranoid. I could pass _anything_ at runtime to every method, so I
+had to test everything right?
 
 Also, a good chunk of the tests I wrote made me feel silly. I couldn't help but
-think that I was covering the gap for missing language features. I mean static types
-of course.
+think that I was covering the gap for missing language features. I mean static
+types of course.
 
 The experience with Go first and then with Java in particular has been very
 different. "Actual" tests were easy to write and they were relatively fast.
 
 One trivial example: I can "actually" test a Kafka Streams application with
 [Testcontainers](https://www.testcontainers.org/) with very little effort: add
-one dependency here, two lines of code there, and – bam – I've got a running Kafka
-instance inside my test.
-
-
+one dependency here, two lines of code there, and – bam – I've got a running
+Kafka instance inside my test.
 
 I like to think that the nature of these languages is the reason why their
 communities produce testing tools more apt to my needs. Hard to say but I _do
 not_ care enough for the pedant causation versus correlation conversation.
 
-Go and Java allowed me to focus much more on "actual" tests. I enjoy that a lot 
+Go and Java allowed me to focus much more on "actual" tests. I enjoy that a lot
 for a variety of reasons:
 
 - The compiler covers a lot of ground. I used to write many more tests in
@@ -158,7 +161,7 @@ tools because they are easier to write compared to dynamically typed languages.
 The tools are easier to write because statically compiled languages are easier
 to statically analyse.
 
-Autocompletion is the flagship example of how much better the editing experience 
+Autocompletion is the flagship example of how much better the editing experience
 with a statically typed language is.
 
 I remember spending countless hours getting Ruby autocompletion working. It was
@@ -259,9 +262,9 @@ production code:
 - I need to help someone ship their code? I need to read code.
 
 Every time I need to read statically typed code, I need to put a little less
-effort than when doing so with a dynamically typed language. It adds up pretty fast.
-That energy surplus makes me more confident of shipping statically typed code to
-production.
+effort than when doing so with a dynamically typed language. It adds up pretty
+fast. That energy surplus makes me more confident of shipping statically typed
+code to production.
 
 ### When it compiles, it probably works
 
@@ -273,21 +276,21 @@ course. But the point stands and makes me more confident.
 
 The difference is really evident when I'm trying to rush a bug fix to
 production. No matter how careful I am, this situation just happens from time to
-time. The last thing I want is to second-guess the fix I'm about to ship. It's
-all about the cognitive load after all and the compiler telling me that my code
-"works".
+time. The last thing I want is to second-guess the fix I'm about to ship. The
+compiler telling me that my code "works" reduces cognitive load which I
+appreciate even more under pressure.
 
 ## Experience is everything
 
 While I tried my best to explain some basic benefits of statically typed
-languages, I'm somewhat sure that this article won't convince a single soul. It was a
-non-goal for me but it's still interesting to go over why I think my experience
-won't convince anyone despite the fact that it did convince me.
+languages, I'm somewhat sure that this article won't convince a single soul. It
+was a non-goal for me but it's still interesting to go over why I think my
+experience won't convince anyone despite the fact that it did convince me.
 
 Back when I worked only with dynamic languages, I came across these talking
-points many times. None of them convinced me. While statically typed languages and
-dynamically typed ones are very different in practice, what makes them different
-is not one big thing. It's a lot of small, every-day things.
+points many times. None of them convinced me. While statically typed languages
+and dynamically typed ones are very different in practice, what makes them
+different is not one big thing. It's a lot of small, every-day things.
 
 There's something else: it's hard to come across alternatives if you're happy
 with what you're doing. Also, there's definitely nothing wrong with being happy
