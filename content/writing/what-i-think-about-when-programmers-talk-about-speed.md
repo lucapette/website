@@ -11,19 +11,6 @@ title: What I think about when programmers talk about speed
 A couple of weeks ago I had an interesting conversations with one of my team
 members. She confessed to me that she felt she was a slow programmer.
 
-I was pretty surprised but, before moving on, let me make a premise: I _hate_ the
-word _performance_.
-
-I'm not sure how it feels to native speakers or to people who didn't work for
-Accenture. To me, it sounds like "oh the gigantic pile of bullshit coming from
-that manager that has no clue. Again."
-
-That's my usual reaction to the word "performance". So I don't like to use it. I
-tried to find a better word for a long time but I ended up settling down for
-programmers' performance when it comes about measuring our job anyway.
-
-With this premise in mind, let's move on.
-
 I told her I was surprised and then she asked me why. The conversation we had
 lead me to write this article. I will break it down in two main topics:
 
@@ -39,32 +26,29 @@ programmers go through when doing their job:
 - Writing the actual code that does that
 - Putting that code in production
 
-Nothing too exciting, right? But it gets us going.
+Nothing too exciting, right? It's to get the conversation going.
 
 ### Step 1: Trying to figure out what to do
 
 Even the sharpest programmer needs to understand what to do before writing some
-code. She may know the system very well, she may has enough context to ask
+code. She may know the system very well, she may have enough context to ask
 product managers the right questions, she may not miss any details.
 
-No matter of good they are this takes somme time time. I haven't seen many
-people being fast at this stage unless we're talking about a trivial feature.
+No matter of good they are, this step takes some time. I haven't seen many
+programmers being fast at this stage unless they were working on a trivial
+feature.
 
-Generally speed here is intrinsically connected with the product development
+Speed at this stage is intrinsically connected with the product development
 workflow (how involved are product managers at this point? Is there any
-checklist that we can use to say a feature is ready to be worked on?)
+checklist that we can use to say a feature is ready to be worked on?) so, in a
+way, programmers' speed isn't only on them. It's more a team thing that an
+individual metric.
 
 ### Step 2: Writing the actual code that does that
 
-This is where programmers performance varies the most.
+This is where I've seen programmers performance varying the most.
 
-Some people are very fast at writing code, others are not.
-
-Review culture has a big impact on this:
-
-- Are programmers helping each other?
-- Are they moving code to the staging environment before/after a review?
-- How does the review process work?
+Some people are very fast at writing code, others not so much.
 
 From what I've seen, most programmers that are "really fast" write code that is
 not ready to go anywhere.
@@ -75,6 +59,10 @@ Fix this").
 
 It only feels like they're fast if you don't actually look closely at their
 code.
+
+At this stage, speed is tangible because its output is public to the rest of the
+team (pull requests being a common example) but also deceptive: producing code
+isn't the same as shipping it.
 
 ### Step 3: Putting that code in production
 

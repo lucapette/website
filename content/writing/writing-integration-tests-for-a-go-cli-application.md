@@ -4,7 +4,7 @@ tags:
   - golang
   - testing
 date: "2017-05-18T00:00:00Z"
-description: One way of doing end to end testing of Go CLI applications
+description: how I do end to end testing of Go CLI applications
 keywords: golang, testing, integration tests, end to end tests
 title: Writing integration tests for a Go CLI application
 aliases:
