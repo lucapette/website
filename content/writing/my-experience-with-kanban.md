@@ -8,8 +8,8 @@ keywords: kanban, management, productivity, team, development
 title: My experience with Kanban
 ---
 
-I've been wanting to write about Kanban for a long time. Sharing the
-way we organise processes is vital to the development of the techniques themselves.
+I've been wanting to write about Kanban for a long time. Sharing the way we
+organise processes is vital to the development of the techniques themselves.
 
 We try things out and see what works and what does not. Most of the time this
 process is too slow as we do not share as much as we could with the people
@@ -28,7 +28,7 @@ discussing in this article. All teams are different by definition so there are
 chances my ideas may work for you. Take everything with a grain of salt, my goal
 for this article is to provide you with food for thought about process.
 
-# By the way, what is Kanban?
+## By the way, what is Kanban?
 
 Well, this is a good question. I have no idea what "we use Kanban" means for
 other people, whoever you ask you get a different answer. But I know what it
@@ -124,7 +124,7 @@ few situations that justifies recurring, topic-bound, meetings. These meetings,
 if well run, have a great impact on your team: they will start owning their own
 workflow. That is the ultimate goal of my process.
 
-# Good for starters
+## Good for starters
 
 Despite the variance of personal interpretations, We can probably agree on the
 fact a Kanban workflow is some variation of the "to do, doing, done" sequential
@@ -143,7 +143,7 @@ using it your first day at work: you just move things to the right of your
 board. But it takes a while to understand the benefits of the deceptively
 approach.
 
-# Make the WIP obvious
+## Make the WIP obvious
 
 This is the hardest part in my experience. Making work in progress obvious to
 all people involved and helping them understand why we want to limit the work in
@@ -168,7 +168,7 @@ like to hear other people's opinion on this topic. Of course, a satisfying
 answer is a trick that lets the teams figure out on their own that there is too
 much going on.
 
-# Estimate anyway
+## Estimate anyway
 
 The traditional game of estimates makes no sense at all to me. You know the
 game: developers say something is bigger than it is in order to protect
@@ -191,11 +191,11 @@ up. I ask for estimates are:
   that is what happens to me all the time.
 - Keep WIP in sync. If you keep the rule that people will have to estimate
   stories anyway, they will ask in a chat or in person about estimating the
-  given story. That helps people say "Umm, you know, I wouldn't start this
-  story now. There are a lot of things we can test or review". It is a well
-  worth benefit.
+  given story. That helps people say "Umm, you know, I wouldn't start this story
+  now. There are a lot of things we can test or review". It is a well worth
+  benefit.
 
-# Get graphs about your work
+## Get graphs about your work
 
 I have just mentioned I am always surprised when I plot graphs about what we do.
 And that is a quite good reason to get graphs. Sometimes simple graphs like a
@@ -207,7 +207,7 @@ process. A warning for those managing one than more team: these graphs are not
 meant to measure any absolute quality of your teams. So you should not use them
 to compare them. To be fair, you shouldn't be comparing them anyway.
 
-# Kanban does not matter
+## Kanban does not matter
 
 This process served me well for a decade now but I do prefer to warn people once
 again: it is no silver bullet. In the end, every technique you end up using to

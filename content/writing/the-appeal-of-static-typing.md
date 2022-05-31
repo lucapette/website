@@ -61,9 +61,9 @@ I then went back and forth between Ruby and Go for a few years. In 2017, I
 summarised [my experience with Go]({{< ref "/writing/my-experience-with-go" >}}
 "my experience with go") in a longish article.
 
-Around that time, my interest for Apache Kafka and streaming systems started
-to peak. I had already written Kafka applications in C, Ruby, JavaScript, and Go
-so I knew that I had to write for the JVM to really exploit Kafka's potential. The
+Around that time, my interest for Apache Kafka and streaming systems started to
+peak. I had already written Kafka applications in C, Ruby, JavaScript, and Go so
+I knew that I had to write for the JVM to really exploit Kafka's potential. The
 official libraries offered so much more than the community ones and Kafka
 Streams - a wonderful streaming library I was very keen on using - was only
 available for JVM.
@@ -87,9 +87,9 @@ Here's what stands out to me:
 - Every time I changed languages, the reasons had nothing to do with language
   features. Also, I was definitely not framing my choice as dynamically typed
   versus statically typed.
-- Even though I've never cared much about language features, nowadays I try to avoid
-  working with dynamically typed languages. After 2 decades of programming, I
-  developed opinions about programming languages 🙃
+- Even though I've never cared much about language features, nowadays I try to
+  avoid working with dynamically typed languages. After 2 decades of
+  programming, I developed opinions about programming languages 🙃
 
 With this circular journey in mind, let's dive into what makes me say "Yep, I'm
 not going to do dynamically typed languages anymore".
