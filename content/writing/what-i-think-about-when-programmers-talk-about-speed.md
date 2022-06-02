@@ -17,9 +17,9 @@ While I have the tendency to dislike the terms "performance" and "speed", I get
 why programmers are so interested in this. After all, shipping code to
 production is a pretty tangible outcome.
 
-I'm writing about it because over the years a clear pattern emerged, especially
-with less experienced developer: a clear disconnect between the way they think
-about speed and the way I think about it.
+Over the years a pattern emerged, especially with less experienced developer: a
+clear disconnect between the way they think about speed and the way I think
+about it.
 
 In my conversations, I always cover the following:
 
