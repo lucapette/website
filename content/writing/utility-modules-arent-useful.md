@@ -18,13 +18,15 @@ A few weeks ago, Tania asked an intriguing question on twitter:
 > Does anybody have a really good system for organizing utils/helpers? Or is it
 > always just chaos?
 
-My default answer to util modules is "don't create them". As I said in the
-conversation with Tania, it may sound cheeky but I'm not trying to be funny or
-clever about it. I say "don't have util modules" because I genuinely believe
-that's the best way to organise them.
+My TL;DR answer to utility modules is "don't create them".
+
+As I said in the Twitter conversation with Tania, it may sound cheeky but I'm
+not trying to be funny or clever about it. I say "don't have utility modules"
+because I genuinely believe this approach leads to the best possible organisation.
+
 
 ## It's always Chaos
-  
+
 ## If you already have them, get rid of them
 
 ## If you don't, never introduce them
