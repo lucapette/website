@@ -11,19 +11,15 @@ title: What I think about when programmers talk about speed
 In my career as an engineering manager, I often find myself in conversations
 about speed of development with my direct reports.
 
-The topic isn't their overall performance as team members, it's specific about
-their speed of development: how fast they can write a feature and ship it.
+Speed intended as how fast they can write a feature and ship it.
 
 While I have the tendency to dislike the terms "performance" and "speed", I get
-why programmers are so interested in this. After all shipping code to production
-is a pretty tangible outcome.
+why programmers are so interested in this. After all, shipping code to
+production is a pretty tangible outcome.
 
 I'm writing about it because over the years a clear pattern emerged, especially
-with less experienced developer. There's often a clear disconnect between the
-way they think about speed and the way I think about it.
-
-It happens often enough that I think it makes sense to share these ideas with
-other people.
+with less experienced developer: a clear disconnect between the way they think
+about speed and the way I think about it.
 
 In my conversations, I always cover the following:
 
@@ -31,7 +27,8 @@ In my conversations, I always cover the following:
 - Forget about the code, no one cares about it.
 - A conscious shipping culture.
 
-I will do the same here.
+I will do the same here so I can also refer back to this when I find myself
+having such a discussion in the future. I have no doubt it will happen again.
 
 ## Three steps from an idea to the feature
 
