@@ -8,18 +8,13 @@ keywords: developers, speed, career
 title: What I think about when programmers talk about speed
 ---
 
-In my career as an engineering manager, I often find myself in conversations
-about speed of development with my direct reports.
+As an engineering manager, my direct reports often ask me to assess their speed.
+Often the problem is that they feel too slow. A little more rarely they want
+confirmation that they are fast.
 
-Speed intended as how fast they can write a feature and ship it.
-
-While I have the tendency to dislike the terms "performance" and "speed", I get
-why programmers are so interested in this. After all, shipping code to
-production is a pretty tangible outcome.
-
-Over the years a pattern emerged, especially with less experienced developer: a
-clear disconnect between the way they think about speed and the way I think
-about it.
+Over the years a pattern emerged in these conversations, especially with less
+experienced developers: there's often a clear disconnect between the way they
+think about speed and the way I think about it.
 
 In my conversations, I always cover the following:
 
