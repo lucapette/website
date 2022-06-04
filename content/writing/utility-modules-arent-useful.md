@@ -63,25 +63,28 @@ Trivially put, instead of `utils.TrimLeft` and `utils.TrimRight`, you get
 
 This example is trivial just to drive the point home.
 
-It's worth underlining that the way you may want to eliminate the catch-all
-nature from your utility modules is language dependent. So I won't try to
-provide code samples as they'd make sense only in the context of the language
-you're using.
+The way you may want to eliminate the catch-all nature from your utility modules
+is language dependent. So I won't try to provide code samples as they'd make
+sense only in the context of the language you're using.
 
 Libraries tend to be very idiomatic by definition. Which means reusing code is
-tightly connected to the nature of the language. One concrete example: languages
-like Ruby or Kotlin allow to you to do [extension oriented
-design](https://elizarov.medium.com/extension-oriented-design-13f4f27deaee).
+tightly connected to the nature of the language.
 
-That's really different from the way you would reuse code in Golang or Java for
-example. So I will discuss general strategies for utility modules more than
-specific ones. I believe those are more helpful.
+
+One concrete example: languages like Ruby or Kotlin allow to you to do
+[extension oriented
+design](https://elizarov.medium.com/extension-oriented-design-13f4f27deaee) and
+that's really different from the way you would reuse code in Golang or Java for
+example.
 
 To keep things practical, I'll discuss both the scenario in which you already
 have catch-all utility modules and the scenario in which you don't because
 you're starting from scratch working on a new system.
 
 ## If you already have them, get rid of them
+
+The title says it all. It's an exercise I put in practice more than once in my
+career.
 
 ## If you don't, never introduce them
 
