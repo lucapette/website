@@ -81,11 +81,18 @@ To keep things practical, I'll discuss both the scenario in which you already
 have catch-all utility modules and the scenario in which you don't because
 you're starting from scratch working on a new system.
 
-## If you already have them, get rid of them
+## If you have them, get rid of them
 
-The title says it all. It's an exercise I put in practice more than once in my
-career.
+It's never too late to get rid of big catch-all utility modules. It's an healthy
+way to reduce technical debt. The goal is to break down a big module into
+smaller purpose drive modules.
 
-## If you don't, never introduce them
+In practice it means a few things:
+
+- Some smaller modules will be immediately obvious. The ones I run into more
+  often dealt with strings and dates. They're also the easier to extract.
+-
+
+## If you don't have them, don't introduce them
 
 ## Purpose driven internal packages work
