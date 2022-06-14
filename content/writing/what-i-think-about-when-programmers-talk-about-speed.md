@@ -5,12 +5,12 @@ tags:
 date: "2015-04-28T00:00:00Z"
 description: Some random thoughts about programmers and their performance
 keywords: developers, speed, career
-title: What I think when I hear programmers talk about speed
+title: What I think about when programmers talk about speed
 ---
 
-As an engineering manager, I often have my direct reports ask me to assess their speed.
-They either feel too slow and want to improve their performance or, a bit less often, 
-they're looking for confirmation that they are fast.
+As an engineering manager, I often have my direct reports ask me to assess their
+speed. They either feel too slow and want to improve their performance or, a bit
+less often, they're looking for confirmation that they are fast.
 
 Over the years a pattern emerged in these conversations, especially with less
 experienced developers: there's often a clear disconnect between the way they
@@ -22,8 +22,8 @@ In my conversations, I always cover the following:
 - Forget about the code, no one cares about it.
 - A conscious shipping culture.
 
-I'm going to talk about it in this article so I can refer to it when I find myself
-in such a conversation in the future. I'm sure it will happen again.
+I'm going to talk about it in this article so I can refer to it when I find
+myself in such a conversation in the future. I'm sure it will happen again.
 
 ## Three steps from an idea to the feature
 
@@ -106,9 +106,9 @@ I also worked with many people who skip/don't understand/don't care about step
 1. Honestly, I've met too many.
 
 The point is that focusing too much on a specific step doesn't really make you a
-better programmer. I think you can't take these steps in isolation. They don't 
-matter on their own. The goal is to ship code to production, so we have a tendency 
-to optimise the workflow for shipping. Often we overestimate the importance of the 
+better programmer. I think you can't take these steps in isolation. They don't
+matter on their own. The goal is to ship code to production, so we have a tendency
+to optimise the workflow for shipping. Often we overestimate the importance of the
 latest step for this reason.
 
 In reality, you have to be patient. Only some time _after_ you shipped something
@@ -119,20 +119,20 @@ Don't stop at "Oh, I love working with X! They finish stories in no time". Be
 patient: look at the impact of their code over time.
 
 Wait for bugs to come up. Wait for other programmers' feedback on how easy it
-was to change their code. The more welcoming it is to change a piece of code, the
-better its design is, which means the better job the programmers did, don't you
-think?
+was to change their code. The more welcoming it is to change a piece of code,
+the better its design is, which means the better job the programmers did, don't
+you think?
 
 The bottomline: we often focus too much on producing code instead of thinking
 about the product we're building. Perfect segue into the next paragraph.
 
 ## Forget about the code, no one cares about it
 
-I've chosen this title because I like to troll (I'm from Napoli capisc? 🤌). Nope,
-not sorry.
+I've chosen this title because I like to troll (I'm from Napoli capisc? 🤌).
+Nope, not sorry.
 
-Of course, as a technologist, I know that code matters. I know the language we use
-influences results, so do the frameworks and libraries.
+Of course, as a technologist, I know that code matters. I know the language we
+use influences results, so do the frameworks and libraries.
 
 That doesn't change the fact that we (the programmers) are the only ones caring
 about the code, languages, and frameworks when it comes to product development.
@@ -140,8 +140,8 @@ about the code, languages, and frameworks when it comes to product development.
 No one else cares. Your customers surely don't.
 
 Everyone else just expects the damn button to work so they can do whatever they
-need to with it. They don't care how functional and side-effect free the
-code that handled the click was.
+need to with it. They don't care how functional and side-effect free the code
+that handled the click was.
 
 I never get tired of emphasising it. We tend to forget the fundamental property
 code must have: it has to work. That's it. Nothing more.
@@ -154,37 +154,38 @@ It's somewhat hard to keep that in mind when it comes to speed.
 I've had people telling me: "Oh, Margaret opens pull requests all the time, she
 is super fast!".
 
-Pull requests rarely go to production the way they've been opened though. Even when
-they do, you'll have to be on the lookout for bugs after you ship them.
+Pull requests rarely go to production the way they've been opened though. Even
+when they do, you'll have to be on the lookout for bugs after you ship them.
 
 ## A conscious shipping culture
 
-I often talk about being conscious of the way we want to ship code. 
-For the sake of the argument, I bring up these two extremes:
+I often talk about being conscious of the way we want to ship code. For the sake
+of the argument, I bring up these two extremes:
 
 - People justify bad code going to production in the name of "shipping culture".
   So they're very fast at breaking things.
 - People try to make things "perfect" before shipping them. So they're very slow
   at not breaking things.
 
-Now, there must be a golden mean here, right? And this is where I tell you that 
-I know how to find it and convince you to do it my way... 
+Now, there must be a golden mean here, right? And this is where I tell you that
+I know how to find it and convince you to do it my way...
 
-Well, no. I'm going to disappoint you a bit. I don't think there is one golden mean. 
-I like that our job is to find our own equilibrium between these two extremes. The more 
-balance between "ship this 💩 now!" and "let's make this perfect first ✨✨✨" you find, 
-the faster you actually become.
+Well, no. I'm going to disappoint you a bit. I don't think there is one golden
+mean. I like that our job is to find our own equilibrium between these two
+extremes. The more balance between "ship this 💩 now!" and "let's make this
+perfect first ✨✨✨" you find, the faster you actually become.
 
-Focusing too much on the former will produce too much technical debt, and focusing too much
-on the latter won't produce enough.
+Focusing too much on the former will produce too much technical debt, and
+focusing too much on the latter won't produce enough.
 
-I do believe that our industry focuses too much on the wrong metrics, so individually 
-we're peer-pressured into doing the same.
+I do believe that our industry focuses too much on the wrong metrics, so
+individually we're peer-pressured into doing the same.
 
 The balance I'm talking about here means forgetting to measure how many features
 a developer ships in a week or how fast they go from starting to work on a
-feature to opening a pull request. All metrics are context-dependent. Focus on the 
-value added to the customers of the product you're building. You'll find better metrics there.
+feature to opening a pull request. All metrics are context-dependent. Focus on
+the value added to the customers of the product you're building. You'll find
+better metrics there.
 
 Keep in mind that what we do is not writing code. We're not "code typists". The
 code isn't the goal. Products that work is the goal.
@@ -193,5 +194,5 @@ This perspective keeps priorities focused on what matters and it should play a
 major role in developers' performance.
 
 I hope other people benefit from this perspective and realise they are not as
-slow as they think. Or the other way around. The latter may be a little harder to
-accept :)
+slow as they think. Or the other way around. The latter may be a little harder
+to accept :)
