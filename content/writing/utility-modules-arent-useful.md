@@ -42,7 +42,7 @@ big module that exhibits a lot of problems:
 
 - There's all kind of unrelated code in the same place. You will need to change
   the same library very often. Depending on how your CI/CD pipeline works, it
-  can gets costly.
+  can get costly.
 - Because lots of code is unrelated, you'll also end up with very different
   abstraction levels in the same library.
 - Most of the codebase will use just a few functions from the utility module but
@@ -74,7 +74,7 @@ design](https://elizarov.medium.com/extension-oriented-design-13f4f27deaee).
 That's really different from the way you would reuse code in, say, Golang or Java.
 
 To keep things practical, I'll discuss both the scenario in which you already
-have catch-all utility modules and the scenario in which you don't because yet.
+have catch-all utility modules and the scenario in which you don't.
 
 ## If you have them, get rid of them
 
@@ -98,8 +98,8 @@ You will find functions that are used once or twice in the whole codebase. My
 suggestion is to [prefer duplication over the wrong
 abstraction](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction).
 
-Meaning that if a function it's used only once or twice, I don't mind getting
-rid of the abstraction all together and copy back the code where it's used.
+Meaning that if a function is used only once or twice, I don't mind getting rid
+of the abstraction all together and copy back the code where it's used.
 
 You will also run into some functions that are used a lot but have nothing to do
 with each other. That is the "core" problem of having introduced a catch-all
