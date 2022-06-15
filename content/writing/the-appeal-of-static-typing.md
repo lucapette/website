@@ -74,8 +74,8 @@ wrong_ about the productivity part, it's almost funny to write about it now.
 
 The developer experience had improved a few orders of magnitude since 2008.
 Spring had introduced Spring Boot and the old days of XMLs configurations were
-gone. The IDEs were so much faster! Before I knew it, I was doing only Java for a few
-years.
+gone. The IDEs were so much faster! Before I knew it, I was doing only Java for
+a few years.
 
 This journey is a circle: Java was my first professional programming language,
 and it's now my last. While the circle is interesting in itself, the languages I
