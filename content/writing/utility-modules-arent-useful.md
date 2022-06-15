@@ -37,12 +37,12 @@ well-known problems (not a big fan of the word "anti-pattern" but I can see why
 someone else would use it here).
 
 Once a utility module is in place, people will find it easier to add "one more
-function" there instead of introducing a new one. So, over time, you'll end up with one
-big module that exhibits a lot of problems:
+function" there instead of introducing a new one. So, over time, you'll end up
+with one big module that exhibits a lot of problems:
 
-- There're all kinds of unrelated code in the same place. You will need to change
-  the same library very often. Depending on how your CI/CD pipeline works, it
-  can get costly.
+- There're all kinds of unrelated code in the same place. You will need to
+  change the same library very often. Depending on how your CI/CD pipeline
+  works, it can get costly.
 - Given that lots of code is unrelated, you'll also end up with very different
   abstraction levels in the same library.
 - Most of the codebase will use just a few functions from the utility module but
@@ -84,12 +84,12 @@ way to reduce technical debt.
 The goal is to break down a big module into smaller purpose-driven modules. In
 practice, it means a few things. Let's go over them one by one.
 
-Some smaller candidate modules will be immediately obvious. The ones I often run into
-deal with strings and dates. They're also the easiest to extract.
+Some smaller candidate modules will be immediately obvious. The ones I often run
+into deal with strings and dates. They're also the easiest to extract.
 
-I start with these obvious modules as the first task I have to pay for the setup
-costs. That varies a lot depending on the nature of the codebase. More on this
-later.
+I start with these obvious modules, they're often easier to extract. As the
+first task has to pay for the setup costs, an easier task helps pay this cost
+which varies a lot depending on the nature of the codebase. More on this later.
 
 Once you're done extracting the obvious things, you'll dig deeper in the
 remaining functions.
@@ -127,7 +127,7 @@ That's why developers tend to introduce utility modules. They pay for this setup
 cost once and then run with it for a long time. And then they end up with the
 giant ball of mud we've already discussed.
 
-The first time you find yourself wanting to add an internal library, reflect on 
+The first time you find yourself wanting to add an internal library, reflect on
 this setup cost with the goal of minimising it for the future.
 
 The cheaper the setup cost, the easier it will be to never introduce a catch-all
@@ -137,18 +137,16 @@ Unfortunately, my advice here may not be practical depending on your context. My
 favourite solution to this problem is to organise the whole codebase into a
 mono-repository.
 
-I have all kinds of reasons to prefer a mono-repository (enough for a "the appeal
-of mono-repositories" article). The easiness of adding small,
+I have all kinds of reasons to prefer a mono-repository (enough for a "the
+appeal of mono-repositories" article). The easiness of adding small,
 purpose-specific internal libraries to the codebase is among the most important
 reasons.
-
 
 ## Conclusion
 
 I hope I managed to articulate the cheeky "best way to handle utility modules is
-not to have them". I like this topic because the advice sounds reasonable to me but, 
-in reality, it's often met with a lot of scepticism.
+not to have them". I like this topic because the advice sounds reasonable to me
+but, in reality, it's often met with a lot of scepticism.
 
-It funny how in an industry where the only constant is change
-we're in fact pretty resistant to it. This, however, is a topic for a
-different article.
+It funny how in an industry where the only constant is change we're in fact
+pretty resistant to it. This, however, is a topic for a different article.
