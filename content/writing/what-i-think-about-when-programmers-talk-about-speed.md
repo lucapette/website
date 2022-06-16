@@ -103,7 +103,7 @@ I've met a lot of people that like changing the order of these steps:
 figure out the details later!". Some say it works, others say it doesn't.
 
 I also worked with many people who skip/don't understand/don't care about step
-1. Honestly, I've met too many.
+one. Honestly, I've met too many.
 
 The point is that focusing too much on a specific step doesn't really make you a
 better programmer. I think you can't take these steps in isolation. They don't
