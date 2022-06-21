@@ -1,6 +1,6 @@
 ---
 title: "Utility Modules Aren't Useful"
-date: 2022-05-31T09:56:02+02:00
+date: 2022-06-21T08:56:02+02:00
 draft: true
 tags:
   - programming
@@ -21,16 +21,16 @@ A few weeks ago, Tania asked an intriguing question on Twitter:
 My TL;DR answer to utility modules is "don't create them".
 
 As I said on Twitter, it sounds cheeky but I'm not trying to be funny or clever
-about it. I say "don't have utility modules" because I genuinely believe this
-approach leads to a much better organisation of internal libraries.
+about it. I say "don't have utility modules" because I believe this approach
+leads to a much better organisation of internal libraries.
 
 It's hard for me to expand on such a nuanced topic on Twitter, so with Tania's
 encouragement, I've decided to write about it.
 
 ## It's always chaos
 
-If you do have utility modules, it's always chaos. I definitely agree with Tania
-on that.
+If you do have a utility module, it's always chaos. I definitely agree with
+Tania on that.
 
 The problem with a catch-all solution is that it brings in a variety of
 well-known problems (not a big fan of the word "anti-pattern" but I can see why
@@ -38,11 +38,11 @@ someone else would use it here).
 
 Once a utility module is in place, people will find it easier to add "one more
 function" there instead of introducing a new one. So, over time, you'll end up
-with one big module that exhibits a lot of problems:
+with one giant module that exhibits a lot of problems:
 
 - There're all kinds of unrelated code in the same place. You will need to
   change the same library very often. Depending on how your CI/CD pipeline
-  works, it can get costly.
+  works, it's at least inefficient and at worst very costly.
 - Given that lots of code is unrelated, you'll also end up with very different
   abstraction levels in the same library.
 - Most of the codebase will use just a few functions from the utility module but
@@ -64,42 +64,42 @@ In a way, my answer is somewhat funny because you can read it as "have lots of
 utility modules".
 
 I won't try to provide code samples as they'd make sense only in the context of
-the language they're writing in. Libraries tend to be very idiomatic by
-definition, so the way you reuse code is tightly connected to the nature of the
-language.
+the language they're written in. Libraries tend to be very idiomatic, so the way
+you reuse code is tightly connected to the nature of the language.
 
 One concrete example: languages like Ruby or Kotlin allow to you to do
 [extension oriented
 design](https://elizarov.medium.com/extension-oriented-design-13f4f27deaee).
-That's really different from the way you would reuse code in, say, Golang or Java.
+That's really different from the way you would reuse code in, say, Golang or
+Java.
 
 To keep things practical, I'll discuss both the scenario in which you already
 have catch-all utility modules and the one in which you don't.
 
 ## If you have them, get rid of them
 
-It's never too late to get rid of big catch-all utility modules. It's a healthy
+It's never too late to get rid of a big catch-all utility module. It's a healthy
 way to reduce technical debt.
 
 The goal is to break down a big module into smaller purpose-driven modules. In
 practice, it means a few things. Let's go over them one by one.
 
-Some smaller candidate modules will be immediately obvious. The ones I often run
-into deal with strings and dates. They're also the easiest to extract.
+Some smaller candidate modules will be immediately obvious. The most common deal
+with strings and dates. They're also the easiest to extract.
 
-I start with these obvious modules, they're often easier to extract. As the
-first task has to pay for the setup costs, an easier task helps pay this cost
-which varies a lot depending on the nature of the codebase. More on this later.
+I start with these obvious modules so that the setup cost of a new library can
+be absorbed without too much overhead. This cost which varies a lot depending on
+the nature of the codebase. More on this later.
 
 Once you're done extracting the obvious things, you'll dig deeper in the
 remaining functions.
 
 You will find functions that are used once or twice in the whole codebase. My
-suggestion is to [go with duplication rather than the wrong
+suggestion is to go with duplication rather than [the wrong
 abstraction](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction).
 
 Meaning that if a function is used only once or twice, I don't mind getting rid
-of the abstraction all together and copy the code to where it's used.
+of the abstraction all together and have a little duplication.
 
 You will also run into some functions that are used a lot but have nothing to do
 with each other. That is the "core" problem of having introduced a catch-all
@@ -112,20 +112,20 @@ library.
 In my experience, the hardest part of this process is naming. I keep it simple
 and [name things what they do]({{< ref
 "/writing/my-programming-principles#name-things-what-they-do" >}} "my
-programming principles").
+programming principles - name things what they do").
 
 ## If you don't have them, don't introduce them
 
-It sounds easier than it actually is to never introduce utility modules. The
+It sounds easier than it actually is to never introduce a utility module. The
 problem – as for extracting modules from a catch-all library – is the setup cost
 of a new library.
 
 In most codebases, adding an internal library is costly. There are many tasks
 involved with hosting it and releasing new versions.
 
-That's why developers tend to introduce utility modules. They pay for this setup
-cost once and then run with it for a long time. And then they end up with the
-giant ball of mud we've already discussed.
+That's why developers tend to introduce a utility module. They pay for this
+setup cost once and then run with it for a long time. And then they end up with
+the giant ball of mud we've already discussed.
 
 The first time you find yourself wanting to add an internal library, reflect on
 this setup cost with the goal of minimising it for the future.
