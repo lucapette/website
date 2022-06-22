@@ -1,7 +1,7 @@
 ---
 title: "Utility Modules Aren't Useful"
-date: 2022-06-21T08:56:02+02:00
-draft: true
+description: "Why I favour small purpose driven modules over big utility ones"
+date: 2022-06-22T08:56:02+02:00
 tags:
   - programming
 keywords:
