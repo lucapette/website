@@ -198,14 +198,14 @@ like going for a coffee" for other people. Both are fine.
 
 I believe leading by example is the best way to shape a good culture.
 
-Instead of telling people how to behave, be the person you want your team
-members to be.
+Instead of telling people how to behave, be the person you want your direct
+reports to be.
 
 Leading by example does wonders because it is self-reproducing. People have the
 tendency to emulate the behaviour of those they trust.
 
-That is good news: if people trust you as a leader, you can shape the culture of
-your team _just_ by doing what you think it is right.
+If people trust you as a leader, you can shape the culture of your team _just_
+by doing what you think it is right.
 
 Sometimes staying true to your values puts pressure on the decisions you have to
 take. The most obvious example of this problem is the situation in which you end
@@ -240,10 +240,10 @@ vital to a healthy culture.
 ## Fire fast, hire slow
 
 Most startups hire fast and fire slow and that is considered somehow normal. I
-apply the exact reversed principle: hire slow and fire fast. This sounds sounds
-great in theory but, to be fair, it is hard to practice. Growing companies are
-constantly understaffed and hiring is the only way to overcome the problem. It
-took me a while to accept that:
+apply the exact reversed principle: hire slow and fire fast. This sounds great
+in theory but, to be fair, it is hard to practice. Growing companies are
+constantly understaffed and hiring is how we overcome the problem. It took me a
+while to accept that:
 
 - You could always do more with more people
 - Hiring has no short term positive performance effect on you teams
@@ -323,23 +323,21 @@ possible. It is the best option.
 
 ## No privileges
 
-In the chapter "evolving teams", I spend a great deal of time talking about how
-to organize teams. Organizational design is such an important and fascinating
-topic to me, I dedicate a chapter to it. But the way you organize functions and
-roles inside teams plays a central role in culture too.
-
-The cultural aspect of organizational design starts with privileges and
-policies. In most environments, there is some degree of privilege when it comes
-to specific topics like deployment rights, access to different environments. A
+In most environments, there is some degree of privilege when it comes to
+specific topics like deployment rights, access to different environments. A
 common explanation for these privileges is risk mitigation. Those in charge want
 to minimize the mistakes made so they grant privileged access only to a handful
-of people. This approach creates a false sense of security but in fact they are
+of people.
+
+This approach creates a false sense of security but in fact they are
 not doing better than any other company out there. They have outages and break
-things like everybody else. In reality, these privileges create the worst
-dynamic: it frustrates younger team members because they cannot access some fo
-the obvious knowledge that would increase their seniority and makes sure only
-senior people can make mistakes. Getting rid of all forms of privilege may sound
-scary, but there is no need to freak out:
+things like everybody else.
+
+In reality, these privileges create the worst dynamic: it frustrates younger
+team members because they cannot access some fo the obvious knowledge that would
+increase their seniority and makes sure only senior people can make mistakes.
+Getting rid of all forms of privilege may sound scary, but there is no need to
+freak out:
 
 > Everyone can do everything does not mean everyone will
 
@@ -358,22 +356,17 @@ Mistakes will happen and, as a leader, you must welcome them because you can
 teach people how to react to them and what they can do so that the problem
 doesn't occur again. Use mistakes as a learning opportunity.
 
-Apply the "no privileges" policy aggressively. People should not be confined to
-only one phase of the product development process. Of course, people specialize
-because they care more about one thing or the other and it is important they can
-freely develop in the direction they want. Our systems are too complex for
-people to know the details of everything. But do not assign those specialties
-any privilege. In fact, I reject the notion of privilege entirely. If one can do
-something in a team, everyone else can too.
+I apply the "no privileges" policy aggressively. People should not be confined
+to only one phase of the product development process.
 
-In my career, I could not always apply a full "no privilege" policies. That is
-possible only if who is in charge fully supports the policy. Working in teams
-that foster a privilege-based culture has been a frustrating experience, but it
-gave me the opportunity to gather interesting data. I had a chance to A/B test
-policies. In more than 15 years of data collection, I observed that privileges
-have no effect on the amount of incidents. Moreover, the people making "big
-mistakes" were most times the most senior in the team. The same people that
-would have had the privileges to perform the task anyway if there were a policy.
+Of course, people specialize because they care more about one thing or the other
+and it is important they can freely develop in the direction they want.
+
+Our systems are too complex for people to know the details of everything. But I
+do not assign those any privilege.
+
+In fact, I reject the notion of privilege entirely. If one can do something in a
+team, everyone else can too.
 
 ## Be vulnerable
 
